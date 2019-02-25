@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA001222395FF005CE8A3 /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0415600222240306001E68CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,6 +340,7 @@
 				CF7CA0742223DC6D005CE8A3 /* APIError.swift */,
 				CF7CA0762223E1B6005CE8A3 /* APIResult.swift */,
 				CF7CA0782223E29C005CE8A3 /* DataParse.swift */,
+				0415600222240306001E68CD /* APIManager.swift */,
 			);
 			path = WebAPI;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				CF7CA04F2223D376005CE8A3 /* UIView+Extension.swift in Sources */,
 				CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */,
 				CF7CA0512223D376005CE8A3 /* UIButton+Extension.swift in Sources */,
+				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
