@@ -1,0 +1,6 @@
+framework module Pods_Fii {
+  umbrella header "Pods-Fii-umbrella.h"
+
+  export *
+  module * { export * }
+}
