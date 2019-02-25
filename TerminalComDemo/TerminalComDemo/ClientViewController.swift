@@ -100,6 +100,17 @@ class ClientViewController: UIViewController {
             make.top.equalTo(displayStrTF.snp.bottom).offset(30)
             make.height.equalTo(25)
         }
+        
+        disconnectBtn.setTitle("Disconnect", for: UIControl.State.normal)
+        disconnectBtn.backgroundColor = UIColor.red
+        disconnectBtn.addTarget(self, action: #selector(disconnectBtnTapped),
+                                for: UIControl.Event.touchUpInside)
+        view.addSubview(disconnectBtn)
+        disconnectBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(connectBtn.snp.right).offset(50)
+            make.centerY.equalTo(connectBtn.snp.centerY)
+            make.height.equalTo(25)
+        }
     }
     
     @objc func connectBtnTapped() {
@@ -109,16 +120,19 @@ class ClientViewController: UIViewController {
             switch client.send(string: self.displayStr) {
             case .success:
                 print("success")
-                guard let data = client.read(1024*10) else { return }
-                
-                if let response = String(bytes: data, encoding: .utf8) {
-                    print("success:", response)
+                if let data = client.readStr(1024 * 10) {
+                    print("reusult = \(data)")
                 }
             case .failure(let error):
-                print("fail:", error)
+                print("fail: error", error)
             }
         case .failure(let error):
-            print("fail:", error)
+            print("fail: error", error)
         }
+    }
+    
+    @objc func disconnectBtnTapped() {
+        
+        client.close()
     }
 }
