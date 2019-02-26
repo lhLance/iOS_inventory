@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: MainViewController.shared)
         
-        // 开屏图停留3秒
+        // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 1.0)
         
         return true

@@ -13,6 +13,25 @@ import Alamofire
 
 extension APIManager {
     
+//    enum HttpStatus: Int {
+//        case success = 200
+//        case operationSuccess = 201
+//        case cannotConnectServer = 1000
+//        case appKeyExpired = 1001
+//        case userNameOrPasswordError = 1002
+//        case paramCannotBeEmpty = 1003
+//        case serverError = 1004
+//        case userNoAccess = 1005
+//        case serverCannotRecVoice = 1006
+//        case incompleteAuthParam = 1007
+//        case incorrectAuthParam = 1008
+//        case programDirectoryNotFound = 1010
+//        case cannotReadProgramVersion = 1011
+//        case tcpConnectCannotMatchServerice = 1013
+//        case serviceNotStartOrServiceRunningError = 1014
+//        case incorrectVerificationCode = 1015
+//    }
+    
     typealias HTTPCallback = (Bool, JSON?, APIError?) -> Void
     
     static func get(api: String,
@@ -55,14 +74,14 @@ extension APIManager {
             switch resp.result {
             case .success(let value):
                  let json = JSON(value)
-                    if json["success"].boolValue {
-                        reqCallback(true, json["data"], nil)
-                    } else {
-                        let code = json["error_code"].intValue
-                        let msg = json["msg"].stringValue
-                        reqCallback(false, nil, APIError.business(code: code, msg: msg))
-                    }
-               // reqCallback(true, json, nil)
+                 let httpStatus = json["HttpStatus"]
+                 if httpStatus == 200 || httpStatus == 201 {
+                    reqCallback(true, json["HttpData"]["data"], nil)
+                 } else {
+                    let code = json["HttpData"]["code"].intValue
+                    let msg = json["HttpData"]["message"].stringValue
+                    reqCallback(false, nil, APIError.business(code: code, msg: msg))
+                 }
             case .failure(let error):
                 print(error)
             }

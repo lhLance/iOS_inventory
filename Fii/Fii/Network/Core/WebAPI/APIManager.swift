@@ -11,6 +11,12 @@ import SwiftyJSON
 import Alamofire
 import RxSwift
 
+#if DEBUG
+var base_url = APIManager.BaseURL.dev
+#else
+var base_url = APIManager.BaseURL.product
+#endif
+
 class APIManager {
     
     static let shared = APIManager()
@@ -27,13 +33,15 @@ class APIManager {
     }
     
     func sendRequest(_ path: String,
+                     baseUrl: BaseURL = base_url,
                      method: HTTPMethod = .get,
                      parameters: Parameters? = nil,
                      encoding: ParameterEncoding = URLEncoding.default,
                      headers: HTTPHeaders? = nil,
                      callBack:@escaping requestCallback)
     {
-        let dataRequest = sessionManager.request(path,
+        let url = baseUrl.rawValue + path
+        let dataRequest = sessionManager.request(url,
                                                  method: method,
                                                  parameters: parameters,
                                                  encoding: encoding,
@@ -41,6 +49,13 @@ class APIManager {
         dataRequest.responseData { (data) in
             callBack(data)
         }
+    }
+}
+
+extension APIManager {
+    enum BaseURL: String {
+        case dev = "http://10.143.62.150:8088"
+        case product = "https://10.143.62.150:8088"
     }
 }
 

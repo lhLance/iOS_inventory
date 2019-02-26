@@ -10,6 +10,8 @@
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
+		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
+		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA001222395FF005CE8A3 /* MainViewController.swift */; };
 		CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CA00622239600005CE8A3 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
+		CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIIServiceModel.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CA001222395FF005CE8A3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF265EB82224D75A00CE67C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CF7C9FF3222395FF005CE8A3 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 		CF7C9FFE222395FF005CE8A3 /* Fii */ = {
 			isa = PBXGroup;
 			children = (
+				CF265EB82224D75A00CE67C5 /* Model */,
 				CF7CA00B22239600005CE8A3 /* Info.plist */,
 				CF7CA03A2223C0F2005CE8A3 /* ThirdParty */,
 				CF7CA02F2223975E005CE8A3 /* AppMain */,
@@ -332,6 +345,7 @@
 		CF7CA0722223DB15005CE8A3 /* Busniess */ = {
 			isa = PBXGroup;
 			children = (
+				CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */,
 			);
 			path = Busniess;
 			sourceTree = "<group>";
@@ -563,6 +577,7 @@
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
+				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */,
@@ -573,6 +588,7 @@
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF7CA0502223D376005CE8A3 /* GCD+Extension.swift in Sources */,
 				CF7CA04C2223D376005CE8A3 /* UIImage+Extension.swift in Sources */,
+				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
