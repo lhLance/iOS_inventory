@@ -63,3 +63,103 @@ class FIIEquipSettingsModel: Codable {
     var `operator`: String?
     var time: String?
 }
+
+class FIISystemEventModel: Codable {
+    
+    var event: String?
+    var time: String?
+}
+
+class FIIEquipListModel: Codable {
+    
+    var Name: String?
+    var IsExpanded: String?
+    var Image: String?
+    var EquipNo: String?
+    var EquipStateYcNo: String?
+    var CeDianConfig: String?
+    var ClickShowPage: String?
+    var GWEquipTreeItems: [FIIEquipListModel]?
+}
+
+class FIIEquipRealStateModel: Codable {
+    
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var related_pic: String?
+    var m_iEquipNo: Int?
+    var m_Bufang: Bool?
+    var m_EquipNm: String?
+    var m_State: Int?
+}
+
+class FIIEquipmentItemStateModel: Codable {
+    
+    var EquipItem: [EquipItemModel]
+    var YCItemDict: [YCItemDictModel]
+    var YXItemDict: [YXItemDictModel]
+}
+
+extension FIIEquipmentItemStateModel {
+    
+    class EquipItemModel: Codable {
+        
+        var related_video: String
+        var ZiChanID: String
+        var PlanNo: String
+        var related_pic: String
+        var m_iEquipNo: Int
+        var m_Bufang: Bool
+        var m_EquipNm: String
+        var m_State: Int
+    }
+    
+    class YCItemDictModel: Codable {
+        
+        var related_video: String?
+        var ZiChanID: String?
+        var PlanNo: String?
+        var related_pic: String?
+        var m_iEquipNo: Int?
+        var m_Bufang: Bool?
+        var m_iYCNo: Int?
+        var m_YCNm: String?
+        var m_Unit: String?
+        var m_YCValue: Float?
+        var m_IsAlarm: Bool?
+        var m_AdviceMsg: String?
+        var m_bHasHistoryCcurve: Bool?
+    }
+    
+    class YXItemDictModel: Codable {
+        
+        var related_video: String?
+        var ZiChanID: String?
+        var PlanNo: String?
+        var related_pic: String?
+        var m_iEquipNo: Int?
+        var m_Bufang: Bool?
+        var m_iYXNo: Int?
+        var m_YXNm: String?
+        var m_YXValue: Bool?
+        var m_YXState: String?
+        var m_FullYXState: String?
+        var m_IsAlarm: Bool?
+        var m_AdviceMsg: String?
+    }
+}
+
+class FIIYCPHistoryModel: Codable {
+    
+    var dataTime: String?
+    var mySeriesPointType: String?
+    var value: String?
+}
+
+class EquipControlModel: Codable {
+    
+    var code: Int?
+    var message: String?
+    var data: String?
+}
