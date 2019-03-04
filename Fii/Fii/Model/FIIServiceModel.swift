@@ -157,9 +157,191 @@ class FIIYCPHistoryModel: Codable {
     var value: String?
 }
 
-class EquipControlModel: Codable {
+class FiiEquipControlModel: Codable {
     
     var code: Int?
     var message: String?
     var data: String?
+}
+
+class FiiEquipConfigModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var equip_nm: String?
+    var equip_detail: String?
+    var acc_cyc: Int?
+    var related_pic: String?
+    var proc_advice: String?
+    var out_of_contact: String?
+    var contacted: String?
+    var event_wav: String?
+    var local_addr: String?
+    var equip_addr: String?
+    var communication_param: String?
+    var communication_time_param: String?
+    var raw_equip_no: Int?
+    var tabname: String?
+    var alarm_scheme: Int?
+    var attrib: Int?
+    var sta_IP: String?
+    var AlarmRiseCycle: Int?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+}
+
+class FiiSetParamModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var set_no: Int?
+    var set_nm: String?
+    var set_type: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var record: Bool?
+    var action: String?
+    var value: String?
+    var canexecution: Bool?
+    var VoiceKeys: String?
+    var EnableVoice: Bool?
+    var qr_equip_no: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+}
+
+class FiiYCPConfigModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var yc_no: Int?
+    var yc_nm: String?
+    var mapping: Bool?
+    var yc_min: Float?
+    var yc_max: Float?
+    var physic_min: Float?
+    var physic_max: Float?
+    var val_min: Float?
+    var restore_min: Float?
+    var restore_max: Float?
+    var val_max: Float?
+    var val_trait: Int?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var safe_bgn: String?
+    var sade_end: String?
+    var alarm_acceptable_time: Int?
+    var restore_acceptable_time: Int?
+    var alarm_repeat_time: Int?
+    var proc_advice: String?
+    var lvl_level: Int?
+    var outmin_evt: String?
+    var outmax_evt: String?
+    var wave_file: String?
+    var related_pic: String?
+    var alarm_scheme: Int?
+    var curve_rcd: Bool?
+    var curve_limit: Float?
+    var alarm_shield: String?
+    var unit: String?
+    var AlarmRiseCycle: Int?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+}
+
+class FiiYXPConfig: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var yx_no: Int?
+    var yx_nm: String?
+    var proc_advice_r: String?
+    var proc_advice_d: String?
+    var level_r: Int?
+    var level_d: Int?
+    var evt_01: String?
+    var evt_10: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var safe_bgn: String?
+    var safe_end: String?
+    var alarm_acceptable_time: Int?
+    var restore_acceptable_time: Int?
+    var alarm_repeat_time: Int?
+    var wave_file: String?
+    var related_pic: String?
+    var alarm_scheme: Int?
+    var inversion: Bool?
+    var initval: Int?
+    var val_trait: Int?
+    var alarm_shield: String?
+    var AlarmRiseCycle: Int?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+}
+
+class FiiVideoConfigModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var equip_nm: String?
+    var equip_detail: String?
+    var acc_cyc: Int?
+    var related_pic: String?
+    var proc_advice: String?
+    var out_of_contact: String?
+    var contacted: String?
+    var event_wav: String?
+    var communication_drv: String?
+    var local_addr: String?
+    var equip_addr: String?
+    var communication_param: String?
+    var communication_time_param: String?
+    var raw_equip_no: String?
+    var tabname: String?
+    var alarm_scheme: Int?
+    var attrib: Int?
+    var sta_IP: String?
+    var AlarmRiseCycle: Int?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+    var 字段1: String?
+    var 字段2: String?
+}
+
+class FiiVideoDevInfoModel: Codable {
+    
+    var sta_n: Int?
+    var EquipNum: Int?
+    var ID: Int?
+    var ChannelName: String?
+    var ChannelType: Int?
+    var ChannelNum: String?
+    var ControlEquip: Int?
+    var Path: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var Action: String?
 }
