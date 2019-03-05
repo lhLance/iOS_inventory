@@ -643,6 +643,176 @@ final class AlarmCenterAPI {
     }
     
     /// 生成用户二维码
-//    static func 
+    static func CreateQRCode(appKey: String, infoKey: String, _ callBack: @escaping(String) -> Void)
+    {
+        let api = "/api/qrcode/create_qrcode"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.stringValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
     
+    /// 执行二维码数据
+    static func ExcuteQRCode(appKey: String, infoKey: String, qrData: String, _ callBack: @escaping(Bool) -> Void)
+    {
+        let api = "/api/qrcode/excu_qrcode"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["qr_data": qrData]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.boolValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 添加资产维护记录
+    static func AddAssetsRecord(appKey: String, infoKey: String, zcid: String, record: String, file: String, _ callBack: @escaping(Bool) -> Void)
+    {
+        let api = "/api/assets/add_record"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["zcid": zcid, "record": record, "file": file]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.boolValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 删除一条资产维护记录
+    static func DeleteAssetsRecord(appKey: String, infoKey: String, zcid: String, _ callBack: @escaping(Bool) -> Void)
+    {
+        let api = "/api/assets/remove_record"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["zcid": zcid]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.boolValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 设置资产图片
+    static func SetAssetsImage(appKey: String,
+                               infoKey: String,
+                               zcid: String,
+                               bs: String,
+                               _ callBack: @escaping(Bool) -> Void)
+    {
+        let api = "/api/assets/setup_zcimg"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["zcid": zcid, "bs": bs]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.boolValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取资产图片
+    static func GetAssetsImage(appKey: String,
+                               infoKey: String,
+                               zcid: String,
+                               _ callBack: @escaping(String) -> Void)
+    {
+        let api = "/api/assets/get_zcimg"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["zcid": zcid]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.stringValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取系统功能组态页
+    static func GetAdminModule(appKey: String,
+                               infoKey: String,
+                               _ callBack: @escaping([FiiGetAddinModuleModel]) -> Void)
+    {
+        let api = "/api/permis/get_addin_module"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGetAddinModuleModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取设备功能组态页
+    static func GetEquipPages(appKey: String, infoKey: String, _ callBack: @escaping([FiiGetEquipPagesModel]) -> Void)
+    {
+        let api = "/api/permis/get_equip_pages"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGetEquipPagesModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 文件上传
+    static func FileUpload(appKey: String, infoKey: String, address: String, _ callBack: @escaping([String]) -> Void)
+    {
+        let api = "/api/other/upload"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: String] = ["address": address]
+        
+        APIManager.post(api: api,
+                        params: param,
+                        headers: header) { (true, json, error) in
+            if let model = json?.toModel([String].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 实时快照
+    static func GetLoopCycleList(appKey: String, infoKey: String, dataTableIndex: String, _ callBack: @escaping([FiiLoopTaskDetailModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_LoopCycleList"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: String] = ["dataTableIndex": dataTableIndex]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiLoopTaskDetailModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取普通任务:设备控制
+    static func GetCommonTaskEquipControl(appKey: String, infoKey: String, dataTableIndex: String, _ callBack:@escaping() -> Void)
+    {
+        let api = 
+    }
 }

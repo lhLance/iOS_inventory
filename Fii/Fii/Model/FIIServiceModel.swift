@@ -345,3 +345,37 @@ class FiiVideoDevInfoModel: Codable {
     var Reserve3: String?
     var Action: String?
 }
+
+class FiiGetAddinModuleModel: Codable {
+    
+    var ID: String?
+    var Name: String?
+    var ClassName: String?
+    var HelpPath: String?
+    var MultiScreens: String?
+    var WebPage: String?
+}
+
+class FiiGetEquipPagesModel: Codable {
+    
+    var ID: String?
+    var Name: String?
+    var Pages: String?
+    var HelpPath: String?
+    var MultiScreens: String?
+    var WebPage: String?
+}
+
+class FiiLoopTaskDetailModel: Codable {
+    
+    var TableID: String?
+    var DoOrder: String?
+    var `Type`: String?
+    var equip_no: String?
+    var set_no: String?
+    var value: String?
+    var proc_code: String?
+    var set_name: String?
+    var SleepTime: String?
+    var SleepUnit: String?
+}
