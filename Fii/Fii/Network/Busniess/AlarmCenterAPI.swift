@@ -58,7 +58,10 @@ final class AlarmCenterAPI {
     }
     
     /// 获取事件报警配置
-    static func GetAlarmConfig(appKey: String, infoKey: String, _ callBack: @escaping ([FIIAlarmConfigModel]) -> Void) {
+    static func GetAlarmConfig(appKey: String,
+                               infoKey: String,
+                               _ callBack: @escaping ([FIIAlarmConfigModel]) -> Void)
+    {
         let api = "/api/event/alarm_config"
         let headers: [String: String] = ["Authorization": appKey + "-" + infoKey]
 
@@ -72,7 +75,11 @@ final class AlarmCenterAPI {
     }
     
     /// 获取系统报警实时事件
-    static func GetAlarmRealEvent(appKey: String, infoKey: String, levels: String, _ callBack: @escaping([FIIAlarmRealEventModel]) -> Void) {
+    static func GetAlarmRealEvent(appKey: String,
+                                  infoKey: String,
+                                  levels: String,
+                                  _ callBack: @escaping([FIIAlarmRealEventModel]) -> Void)
+    {
         let api = "/api/event/real_evt"
         let headers: [String: String] = ["Authorization": appKey + "-" + infoKey]
         let params: [String: Any] = ["levels": levels]
@@ -87,7 +94,11 @@ final class AlarmCenterAPI {
     }
     
     /// 获取系统报警实时事件数
-    static func GetAlarmEventCount(appKey: String, infoKey: String, levels: String, _ callBack: @escaping(String) -> Void) {
+    static func GetAlarmEventCount(appKey: String,
+                                   infoKey: String,
+                                   levels: String,
+                                   _ callBack: @escaping(String) -> Void)
+    {
         let api = "/api/event/real_evt_count"
         let headers: [String: String] = ["Authorization": appKey + "-" + infoKey]
         let params: [String: Any] = ["levels": levels]
@@ -128,7 +139,6 @@ final class AlarmCenterAPI {
                                 print("recieved data = \(String(describing: json))")
                             }
         }
-        
     }
     
     /// 查询设备事件
@@ -630,7 +640,10 @@ final class AlarmCenterAPI {
     }
     
     /// 获取视频设备信息
-    static func GetVideoDeiveInfo(appKey: String, infoKey: String, equipNo: String, _ callBack: @escaping([FiiVideoDevInfoModel]) -> Void)
+    static func GetVideoDeiveInfo(appKey: String,
+                                  infoKey: String,
+                                  equipNo: String,
+                                  _ callBack: @escaping([FiiVideoDevInfoModel]) -> Void)
     {
         let api = "/api/video/video_infor"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -806,7 +819,10 @@ final class AlarmCenterAPI {
     }
     
     /// 实时快照
-    static func GetLoopCycleList(appKey: String, infoKey: String, dataTableIndex: String, _ callBack: @escaping([FiiLoopTaskDetailModel]) -> Void)
+    static func GetLoopCycleList(appKey: String,
+                                 infoKey: String,
+                                 dataTableIndex: String,
+                                 _ callBack: @escaping([FiiLoopTaskDetailModel]) -> Void)
     {
         let api = "/api/GWServiceWebAPI/get_LoopCycleList"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -946,7 +962,15 @@ final class AlarmCenterAPI {
     {
         let api = "/api/GWServiceWebAPI/addLinkage"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
-        let params: [String: Any] = ["id": id, "equipNo": equipNo, "cType": cType, "cNo": cNo, "delay": delay, "linkEquipNo": linkEquipNo, "linkNo": linkNo, "optCode": optCode, "remarks": remarks]
+        let params: [String: Any] = ["id": id,
+                                     "equipNo": equipNo,
+                                     "cType": cType,
+                                     "cNo": cNo,
+                                     "delay": delay,
+                                     "linkEquipNo": linkEquipNo,
+                                     "linkNo": linkNo,
+                                     "optCode": optCode,
+                                     "remarks": remarks]
         
         APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
             if let model = json?.intValue {
@@ -1058,7 +1082,12 @@ final class AlarmCenterAPI {
     }
     
     /// 修改场景设置
-    static func updateScene(appKey: String, infoKey: String, equipNo: Int, setNo: Int, title: String, _ callBack: @escaping(Int) -> Void)
+    static func updateScene(appKey: String,
+                            infoKey: String,
+                            equipNo: Int,
+                            setNo: Int,
+                            title: String,
+                            _ callBack: @escaping(Int) -> Void)
     {
         let api = "/api/GWServiceWebAPI/updateScene"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -1074,7 +1103,9 @@ final class AlarmCenterAPI {
     }
     
     /// 获取报警排表数据
-    static func GetAlarmReportData(appKey: String, infoKey: String, _ callBack: @escaping([FiiAlarmTBListModel]) -> Void)
+    static func GetAlarmReportData(appKey: String,
+                                   infoKey: String,
+                                   _ callBack: @escaping([FiiAlarmTBListModel]) -> Void)
     {
         let api = "/api/GWServiceWebAPI/get_AlmReportData"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -1089,7 +1120,9 @@ final class AlarmCenterAPI {
     }
     
     /// 获取周排表数据
-    static func GetWeekAlmReportData(appKey: String, infoKey: String, _ callBack: @escaping([FiiWeekAlmReportData]) -> Void)
+    static func GetWeekAlmReportData(appKey: String,
+                                     infoKey: String,
+                                     _ callBack: @escaping([FiiWeekAlmReportData]) -> Void)
     {
         let api = "/api/GWServiceWebAPI/get_WeekAlmReportData"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -1103,7 +1136,94 @@ final class AlarmCenterAPI {
         }
     }
     
-    /// 
+    /// 获取特定日期排表数据
+    static func GetSpecialAlarmReportData(appKey: String,
+                                          infoKey: String,
+                                          _ callBack: @escaping([FiiSpecialAlarmReportData]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_SpeAlmReportData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiSpecialAlarmReportData].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 清空字段
+    static func NullTableCell(appKey: String, infoKey: String, _ callBack: @escaping(Int) -> Void) {
+        let api = "/api/GWServiceWebAPI/nullTableCell"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 新增人员信息
+    static func InsertEquipGroup(appKey: String,
+                                 infoKey: String,
+                                 ackLevel: Int,
+                                 admin: Int,
+                                 email: String,
+                                 mobileTel: String,
+                                 telPhone: String,
+                                 getDataTable: String,
+                                 ifName: String,
+                                 ifValue: String,
+                                 _ callBack: @escaping(Int) -> Void) {
+        
+        let api = "/api/GWServiceWebAPI/insertEquipGroup"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["AckLevel": ackLevel,
+                                     "Administrator": admin,
+                                     "EMail": email,
+                                     "MobileTel": mobileTel,
+                                     "Telphone": telPhone,
+                                     "getDataTable": getDataTable,
+                                     "ifName": ifName,
+                                     "ifValue": ifValue]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 删除设备分组范围数据
+    static func DeleteEquipGroup(appKey: String,
+                                 infoKey: String,
+                                 type: String,
+                                 getDataTable: String,
+                                 ifName: String,
+                                 ifValue: String,
+                                 _ callBack: @escaping(Int) -> Void) {
+        
+        let api = "/api/GWServiceWebAPI/insertEquipGroup"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["ifName": ifName,
+                                     "getDataTable": getDataTable,
+                                     "ifValue": ifValue,
+                                     "type": type]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
     
     
 }

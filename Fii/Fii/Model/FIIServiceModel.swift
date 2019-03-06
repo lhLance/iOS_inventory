@@ -468,3 +468,13 @@ class FiiWeekAlmReportData: Codable {
     var id: String?
 }
 
+class FiiSpecialAlarmReportData: Codable {
+    
+    var sta_n: String?
+    var group_no: String?
+    var Administrator: String?
+    var week_day: String?
+    var begin_time: String?
+    var end_time: String?
+    var remark: String?
+}
