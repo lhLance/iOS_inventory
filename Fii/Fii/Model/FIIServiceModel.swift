@@ -379,3 +379,92 @@ class FiiLoopTaskDetailModel: Codable {
     var SleepTime: String?
     var SleepUnit: String?
 }
+
+class FiiCommonTaskEquipControlModel: Codable {
+    
+    var ID: String?
+    var TableID: String?
+    var Time: String?
+    var TimeDur: String?
+    var equip_no: String?
+    var set_no: String?
+    var value: String?
+    var sta_n: String?
+    var set_nm: String?
+}
+
+class FiiSpecTableDataModel: Codable {
+    
+    var ID: String?
+    var DateName: String?
+    var BeginDate: String?
+    var EndDate: String?
+    var TableID: String?
+}
+
+class FiiProcWeekTableDataModel: Codable {
+    
+    var Mon: String?
+    var Tues: String?
+    var Wed: String?
+    var Thurs: String?
+    var Fri: String?
+    var Sat: String?
+    var Sun: String?
+}
+
+class FiiDataForListStrModel: Codable {
+    
+    var userName: String?
+    var expirationDate: String?
+}
+
+class FiiProcCycleTListDataModel: Codable {
+    
+    var TableID: String?
+    var TableName: String?
+    var BeginTime: String?
+    var EndTime: String?
+    var ZhenDianDo: String?
+    var ZhidingDo: String?
+    var CycleMustFinish: String?
+    var ZhidingTime: String?
+    var MaxCycleNum: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+    var Reference: String?
+}
+
+class FiiGetLinkageListModel: Codable {
+    
+    var ID: String?
+    var iequip_no: String?
+    var iycyx_no: String?
+    var iycyx_type: String?
+    var delay: String?
+    var oequip_no: String?
+    var ProcDesc: String?
+    var Enable: String?
+}
+
+class FiiAlarmTBListModel: Codable {
+    
+    var sta_n: String?
+    var group_no: String?
+    var Administrator: String?
+    var id: String?
+}
+
+class FiiWeekAlmReportData: Codable {
+    
+    var sta_n: String?
+    var group_no: String?
+    var Administrator: String?
+    var week_day: String?
+    var begin_time: String?
+    var end_time: String?
+    var remark: String?
+    var id: String?
+}
+

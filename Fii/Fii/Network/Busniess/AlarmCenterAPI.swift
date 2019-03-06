@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 final class AlarmCenterAPI {
     
     /// 登陆后获取APP key
-    static func GetAPPKey(userName: String, password: String, _ callBack: @escaping (FIIServiceModel) -> Void) {
-        
+    static func GetAPPKey(userName: String,
+                          password: String,
+                          _ callBack: @escaping (FIIServiceModel) -> Void)
+    {
         let api = "/api/server/getkey"
         let param: [String: Any] = ["username": userName, "userpwd": password]
         
@@ -674,7 +677,12 @@ final class AlarmCenterAPI {
     }
     
     /// 添加资产维护记录
-    static func AddAssetsRecord(appKey: String, infoKey: String, zcid: String, record: String, file: String, _ callBack: @escaping(Bool) -> Void)
+    static func AddAssetsRecord(appKey: String,
+                                infoKey: String,
+                                zcid: String,
+                                record: String,
+                                file: UIImage,
+                                _ callBack: @escaping(Bool) -> Void)
     {
         let api = "/api/assets/add_record"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -690,7 +698,10 @@ final class AlarmCenterAPI {
     }
     
     /// 删除一条资产维护记录
-    static func DeleteAssetsRecord(appKey: String, infoKey: String, zcid: String, _ callBack: @escaping(Bool) -> Void)
+    static func DeleteAssetsRecord(appKey: String,
+                                   infoKey: String,
+                                   zcid: String,
+                                   _ callBack: @escaping(Bool) -> Void)
     {
         let api = "/api/assets/remove_record"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
@@ -781,7 +792,7 @@ final class AlarmCenterAPI {
     {
         let api = "/api/other/upload"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
-        let param: [String: String] = ["address": address]
+        let param: [String: Any] = ["address": address]
         
         APIManager.post(api: api,
                         params: param,
@@ -799,7 +810,7 @@ final class AlarmCenterAPI {
     {
         let api = "/api/GWServiceWebAPI/get_LoopCycleList"
         let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
-        let param: [String: String] = ["dataTableIndex": dataTableIndex]
+        let param: [String: Any] = ["dataTableIndex": dataTableIndex]
         
         APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
             if let model = json?.toModel([FiiLoopTaskDetailModel].self) {
@@ -811,8 +822,288 @@ final class AlarmCenterAPI {
     }
     
     /// 获取普通任务:设备控制
-    static func GetCommonTaskEquipControl(appKey: String, infoKey: String, dataTableIndex: String, _ callBack:@escaping() -> Void)
+    static func GetCommonTaskEquipControl(appKey: String,
+                                          infoKey: String,
+                                          dataTableIndex: String,
+                                          _ callBack: @escaping([FiiCommonTaskEquipControlModel]) -> Void)
     {
-        let api = 
+        let api = "/api/GWServiceWebAPI/get_CommonTaskEquipControl"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["dataTableIndex": dataTableIndex]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiCommonTaskEquipControlModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
     }
+    
+    /// 获取特殊日期安排数据
+    static func GetSpecTableData(appKey: String,
+                                 infoKey: String,
+                                 dataTableIndex: String,
+                                 _ callBack: @escaping([FiiSpecTableDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_ProcSpecTableData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiSpecTableDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取每周任务安排数据
+    static func GetProcWeekTableData(appKey: String,
+                                     infoKey: String,
+                                     _ callBack: @escaping([FiiProcWeekTableDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_ProcWeekTableData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiProcWeekTableDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取循环任务数据
+    static func GetProcCycleTListData(appKey: String,
+                                      infoKey: String,
+                                      _ callBack: @escaping([FiiProcCycleTListDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_ProcCycleTListData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiProcCycleTListDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 设备联动
+    static func GetDataForListStr(appKey: String,
+                                  infoKey: String,
+                                  tType: String,
+                                  equip_nos: String,
+                                  yc_nos: String,
+                                  _ callBack: @escaping(FiiDataForListStrModel) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_DataForListStr"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["tType": tType, "equip_nos": equip_nos, "yc_nos": yc_nos]
+
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel(FiiDataForListStrModel.self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取设备联动配置列表
+    static func GetLinkAgeList(appKey: String,
+                               infoKey: String,
+                               _ callBack: @escaping([FiiGetLinkageListModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getLinkageList"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGetLinkageListModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 新增联动设置
+    static func AddLinkAge(appKey: String,
+                           infoKey: String,
+                           id: Int,
+                           equipNo: Int,
+                           cType: String,
+                           cNo: Int,
+                           delay: Int,
+                           linkEquipNo: Int,
+                           linkNo: Int,
+                           optCode: String,
+                           remarks: String,
+                           _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/addLinkage"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["id": id, "equipNo": equipNo, "cType": cType, "cNo": cNo, "delay": delay, "linkEquipNo": linkEquipNo, "linkNo": linkNo, "optCode": optCode, "remarks": remarks]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 删除联动设置
+    static func DeleteLinkAge(appKey: String,
+                              infoKey: String,
+                              id: Int,
+                              _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/deleteLinkage"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["id": id]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 修改联动设置
+    static func UpdateLinkAge(appKey: String,
+                              infoKey: String,
+                              id: Int,
+                              equipNo: Int,
+                              cType: String,
+                              cNo: Int,
+                              delay: Int,
+                              linkEquipNo: Int,
+                              linkNo: Int,
+                              optCode: String,
+                              remarks: String,
+                              _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/updateLinkage"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["id": id,
+                                     "equipNo": equipNo,
+                                     "cType": cType,
+                                     "cNo": cNo,
+                                     "delay": delay,
+                                     "linkEquipNo": linkEquipNo,
+                                     "linkNo": linkNo,
+                                     "optCode": optCode,
+                                     "remarks": remarks]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 新增场景
+    static func AddScene(appKey: String,
+                         infoKey: String,
+                         equipNo: Int,
+                         setNo: Int,
+                         title: String,
+                         _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/addScene"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["equipNo": equipNo,
+                                     "setNo": setNo,
+                                     "title": title]
+        
+        APIManager.post(api: api,
+                        params: params,
+                        headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 删除场景
+    static func DeleteScene(appKey: String,
+                            infoKey: String,
+                            equipNo: Int,
+                            setNo: Int,
+                            _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/deleteScene"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["equipNo": equipNo,
+                                     "setNo": setNo]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 修改场景设置
+    static func updateScene(appKey: String, infoKey: String, equipNo: Int, setNo: Int, title: String, _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/updateScene"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let params: [String: Any] = ["equipNo": equipNo, "setNo": setNo, "title": title]
+        
+        APIManager.post(api: api, params: params, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取报警排表数据
+    static func GetAlarmReportData(appKey: String, infoKey: String, _ callBack: @escaping([FiiAlarmTBListModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_AlmReportData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiAlarmTBListModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取周排表数据
+    static func GetWeekAlmReportData(appKey: String, infoKey: String, _ callBack: @escaping([FiiWeekAlmReportData]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_WeekAlmReportData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiWeekAlmReportData].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 
+    
+    
 }
