@@ -478,3 +478,83 @@ class FiiSpecialAlarmReportData: Codable {
     var end_time: String?
     var remark: String?
 }
+
+class FiiAdministratorDataModel: Codable {
+    
+    var Administrator: String?
+    var Telphone: String?
+    var MobileTel: String?
+    var EMail: String?
+    var AckLevel: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+}
+
+class FiiGWZiChanTableDataModel: Codable {
+    
+    var ZiChanID: String?
+    var ZiChanName: String?
+    var ZiChanType: String?
+    var ZiChanImage: String?
+    var changJia: String?
+    var LianXiRen: String?
+    var LianxiTel: String?
+    var GouMaiDate: String?
+    var ZiChanSite: String?
+    var WeiHuDate: String?
+    var WeiHuCycle: String?
+    var BaoXiuQiXian: String?
+    var LastEditMan: String?
+    var LastEditDate: String?
+    var related_pic: String?
+}
+
+class FiiVideoInfoDataModel: Codable {
+    
+    var sta_n: String?
+    var EquipNum: String?
+    var ID: String?
+    var ChannelName: String?
+    var ChannelType: String?
+    var ChannelNum: String?
+    var ControlEquip: String?
+    var Path: String?
+    var Action: String?
+    var StreamType: String?
+}
+
+class FiiAlarmProcDataModel: Codable {
+    
+    var Proc_Code: String?
+    var Proc_Module: String?
+    var Proc_name: String?
+    var Proc_parm: String?
+    var Comment: String?
+}
+
+class FiiPlanDataModel: Codable {
+    
+    var PlanNo: String?
+    var Content: String?
+    var LastEditor: String?
+    var EditDate: String?
+    var IsModel: String?
+}
+
+class FiiSetParmDataModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var set_no: Int?
+    var set_nm: String?
+    var set_type: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var Record: Bool?
+    var Action: String?
+    var Value: String?
+    var canexecution: Bool?
+    var VoiceKeys: Bool?
+    var EnableVoice: Bool?
+}

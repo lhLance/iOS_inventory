@@ -1225,5 +1225,105 @@ final class AlarmCenterAPI {
         }
     }
     
+    /// 获取报警排表信息
+    static func GetAdministratorData(appKey: String,
+                                     infoKey: String,
+                                     _ callBack: @escaping([FiiAdministratorDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_AdministratorData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiAdministratorDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
     
+    /// 获取资产列表
+    static func GetGWZiChanTableData(appKey: String,
+                                     infoKey: String,
+                                     _ callBack: @escaping([FiiGWZiChanTableDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_GWZiChanTableData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGWZiChanTableDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取视频信息数据
+    static func GetVideoInfoData(appKey: String,
+                                 infoKey: String,
+                                 _ callBack: @escaping([FiiVideoInfoDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_VideoInfoData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiVideoInfoDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取报警信息数据
+    static func GetAlramProData(appKey: String,
+                                infoKey: String,
+                                _ callBack: @escaping([FiiAlarmProcDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_AlarmProcData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiAlarmProcDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取计划信息数据
+    static func GetPlanData(appKey: String,
+                            infoKey: String,
+                            _ callBack: @escaping([FiiPlanDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_PlanData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiPlanDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取设备控制数据
+    static func SetParmData(appKey: String,
+                            infoKey: String,
+                            _ callBack: @escaping([FiiSetParmDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_SetParmData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiSetParmDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
 }
