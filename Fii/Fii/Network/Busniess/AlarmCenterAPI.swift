@@ -1326,4 +1326,129 @@ final class AlarmCenterAPI {
             }
         }
     }
+    
+    /// 获取系统控制数据
+    static func GetExProcCmdData(appKey: String, infoKey: String, _ callBack: @escaping([FiiExProcCmdDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_ExProcCmdData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiExProcCmdDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取普通任务列表数据
+    static func GetProcTimeTListData(appKey: String,
+                                     infoKey: String,
+                                     _ callBack: @escaping([FiiProcTimeTListDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_ProcTimeTListData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiProcTimeTListDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取ycp表数据
+    static func GetYcpData(appKey: String,
+                           infoKey: String,
+                           equip_no: Int,
+                           _ callBack: @escaping([FiiGetYcpDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getYcp"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["equip_no": equip_no]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGetYcpDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    
+    /// 获取yxp数据表
+    static func GetYxpData(appKey: String,
+                           infoKey: String,
+                           equip_no: Int,
+                           _ callBack: @escaping([FiiGetYxpDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getYxp"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["equip_no": equip_no]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiGetYxpDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取setParm数据
+    static func GetSetParmList(appKey: String,
+                               infoKey: String,
+                               findEquip: Bool,
+                               equip_no: String,
+                               _ callBack: @escaping([FiiSetparmListModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getSetparmList"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["findEquip": findEquip, "equip_no": equip_no]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiSetparmListModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取设备组数据
+    static func GetEquipGroupData(appKey: String, infoKey: String, _ callBack: @escaping([FiiEquipGroupDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/get_EquipGroupData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiEquipGroupDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取Equip所有设备数据
+    static func GetEquipData(appKey: String, infoKey: String, _ callBack: @escaping([FiiEquipDataModel]) -> Void) {
+        
+        let api = "/api/GWServiceWebAPI/get_EquipData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiEquipDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取图片验证码
+//    static func GenerateImageData
+    
 }
