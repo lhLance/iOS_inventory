@@ -558,3 +558,183 @@ class FiiSetParmDataModel: Codable {
     var VoiceKeys: Bool?
     var EnableVoice: Bool?
 }
+
+class FiiExProcCmdDataModel: Codable {
+    
+    var Proc_Code: String?
+    var cmd_nm: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var value: String?
+    var record: String?
+}
+
+class FiiProcTimeTListDataModel: Codable {
+    
+    var TableID: String?
+    var TableName: String?
+    var Comment: String?
+    var Reference: String?
+}
+
+class FiiGetYcpDataModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var yc_no: Int?
+    var yc_nm: String?
+    var Mapping: Int?
+    var yc_min: Int?
+    var yc_max: Int?
+    var physic_min: Int?
+    var physic_max: Int?
+    var val_min: Int?
+    var restore_min: Int?
+    var restore_max: Int?
+    var val_max: Int?
+    var val_trait: Int?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var safe_bgn: String?
+    var safe_end: String?
+    var alarm_acceptable_time: Int?
+    var restore_accpetable_time: Int?
+    var alarm_repeat_time: Int?
+    var proc_advice: String?
+    var lvl_level: Int?
+    var outmin_evt: String?
+    var outmax_evt: String?
+    var wave_file: String?
+    var related_pic: String?
+    var alarm_scheme: Int?
+    var curve_rcd: Int?
+    var curve_limit: Int?
+    var alarm_shield: String?
+    var Unit: String?
+    var AlarmRiseCycle: Int?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+}
+
+class FiiGetYxpDataModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var yx_no: Int?
+    var yx_nm: String?
+    var proc_advice_r: String?
+    var proc_advice_d: String?
+    var level_r: Int?
+    var level_d: Int?
+    var evt_01: String?
+    var evt_10: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var safe_bgn: String?
+    var safe_end: String?
+    var alarm_acceptable_time: Int?
+    var restore_acceptable_time: Int?
+    var alarm_repeat_time: Int?
+    var wave_file: String?
+    var related_pic: String?
+    var alarm_scheme: Int?
+    var Inversion: Bool?
+    var Initval: Int?
+    var val_trait: Int?
+    var alarm_shield: String?
+    var AlarmRiseCycle: Int?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNo: String?
+    var SafeTime: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+}
+
+class FiiSetparmListModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var set_no: Int?
+    var set_nm: String?
+    var set_type: String?
+    var main_instruction: String?
+    var minor_instruction: String?
+    var Record: Bool?
+    var Action: String?
+    var Value: String?
+    var canexecution: Bool?
+}
+
+class FiiEquipGroupDataModel: Codable {
+    
+    var sta_n: String?
+    var group_no: String?
+    var group_name: String?
+    var equipcomb: String?
+}
+
+class FiiEquipDataModel: Codable {
+    
+    var sta_n: Int?
+    var equip_no: Int?
+    var equip_nm: String?
+    var equip_detail: String?
+    var acc_cyc: Int?
+    var related_pic: String?
+    var proc_advice: String?
+    var out_of_contact: String?
+    var contacted: String?
+    var communication_drv: String?
+    var local_addr: String?
+    var equip_addr: String?
+    var communication_param: String?
+    var communication_time_param: String?
+    var raw_equip_no: Int?
+    var tabname: String?
+    var alarm_scheme: Int?
+    var attrib: Int?
+    var sta_IP: String?
+    var AlarmRiseCycle: Int?
+    var related_video: String?
+    var ZiChanID: String?
+    var PlanNO: String?
+    var SafeTime: String?
+    var Reserve1: String?
+    var Reserve2: String?
+    var Reserve3: String?
+}
+
+class FiiWelcomeSpeechModel: Codable {
+    
+    var BgImage: String?
+    var ID: Int?
+    var JSONContent: String?
+    var `Type`: Int?
+    var siginalVal: String?
+}
+
+class FiiClienTypeInfoModel: Codable {
+    
+    var userName: String?
+    var expirationDate: String?
+}
+
+class FiiUserItemModel: Codable {
+    
+    var AutoInspectionPages_List: [String?]
+    var ControlLevel: Int?
+    var HomePage_List: [String?]
+    var ID: Int?
+    var IsAdministrator: Bool?
+    var Remark: String?
+    var Role_List: [String?]
+    var UserName: String?
+    var UserPWD: String?
+}
