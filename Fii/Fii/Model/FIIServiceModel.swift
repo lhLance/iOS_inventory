@@ -710,3 +710,31 @@ class FiiEquipDataModel: Codable {
     var Reserve2: String?
     var Reserve3: String?
 }
+
+class FiiWelcomeSpeechModel: Codable {
+    
+    var BgImage: String?
+    var ID: Int?
+    var JSONContent: String?
+    var `Type`: Int?
+    var siginalVal: String?
+}
+
+class FiiClienTypeInfoModel: Codable {
+    
+    var userName: String?
+    var expirationDate: String?
+}
+
+class FiiUserItemModel: Codable {
+    
+    var AutoInspectionPages_List: [String?]
+    var ControlLevel: Int?
+    var HomePage_List: [String?]
+    var ID: Int?
+    var IsAdministrator: Bool?
+    var Remark: String?
+    var Role_List: [String?]
+    var UserName: String?
+    var UserPWD: String?
+}
