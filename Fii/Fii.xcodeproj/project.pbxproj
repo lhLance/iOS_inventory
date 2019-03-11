@@ -219,6 +219,12 @@
 		CF7CA02E22239755005CE8A3 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C0EDD2236445300DF0D99 /* Home */,
+				CF8C0EDC2236444900DF0D99 /* Me */,
+				CF8C0EDB2236443200DF0D99 /* DeviceList */,
+				CF8C0EDA2236442400DF0D99 /* VoiceControl */,
+				CF8C0ED92236427300DF0D99 /* RealtimeShot */,
+				CF8C0ED82236426800DF0D99 /* Login */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -360,6 +366,48 @@
 				0415600422240A9D001E68CD /* APIManager+HTTP.swift */,
 			);
 			path = WebAPI;
+			sourceTree = "<group>";
+		};
+		CF8C0ED82236426800DF0D99 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CF8C0ED92236427300DF0D99 /* RealtimeShot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RealtimeShot;
+			sourceTree = "<group>";
+		};
+		CF8C0EDA2236442400DF0D99 /* VoiceControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VoiceControl;
+			sourceTree = "<group>";
+		};
+		CF8C0EDB2236443200DF0D99 /* DeviceList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeviceList;
+			sourceTree = "<group>";
+		};
+		CF8C0EDC2236444900DF0D99 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		CF8C0EDD2236445300DF0D99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DCF16C870F388810E55E3A31 /* Pods */ = {
