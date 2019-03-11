@@ -44,9 +44,9 @@
 		CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */; };
 		CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE02236491800DF0D99 /* MeVC.swift */; };
 		CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */; };
-		CF8C0EE52236494C00DF0D99 /* DeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE42236494C00DF0D99 /* DeviceListVC.swift */; };
 		CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */; };
 		CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */; };
+		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,9 +115,9 @@
 		CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE02236491800DF0D99 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListVC.swift; sourceTree = "<group>"; };
-		CF8C0EE42236494C00DF0D99 /* DeviceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListVC.swift; sourceTree = "<group>"; };
 		CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegsVC.swift; sourceTree = "<group>"; };
+		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,7 +399,7 @@
 		CF8C0EDA2236442400DF0D99 /* VoiceControl */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EE42236494C00DF0D99 /* DeviceListVC.swift */,
+				CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */,
 			);
 			path = VoiceControl;
 			sourceTree = "<group>";
@@ -649,11 +649,11 @@
 				CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */,
 				CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */,
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
+				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
-				CF8C0EE52236494C00DF0D99 /* DeviceListVC.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
 				CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */,
 				CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */,

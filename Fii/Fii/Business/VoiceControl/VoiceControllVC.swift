@@ -1,5 +1,5 @@
 //
-//  DeviceListVC.swift
+//  VoiceControllVC.swift
 //  Fii
 //
 //  Created by Liu Tao on 2019/3/11.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DeviceListVC: UIViewController {
+class VoiceControllVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.gray
     }
 
 }
