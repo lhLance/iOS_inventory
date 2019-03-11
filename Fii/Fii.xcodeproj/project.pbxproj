@@ -12,6 +12,7 @@
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
+		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA001222395FF005CE8A3 /* MainViewController.swift */; };
 		CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CA00622239600005CE8A3 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
 		CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIIServiceModel.swift; sourceTree = "<group>"; };
+		CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiTabBarController.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CA001222395FF005CE8A3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				CF7CA05B2223D7C6005CE8A3 /* DashLine.swift */,
 				CF7CA05A2223D7C6005CE8A3 /* MaqueeView.swift */,
 				CF7CA05C2223D7C7005CE8A3 /* PenetrateView.swift */,
+				CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
+				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */,
 				CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */,
 				CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */,
