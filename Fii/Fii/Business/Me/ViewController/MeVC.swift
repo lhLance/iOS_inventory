@@ -13,6 +13,11 @@ class MeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+    }
+    
+    func setupView() {
+        
         view.backgroundColor = UIColor.cyan
     }
 

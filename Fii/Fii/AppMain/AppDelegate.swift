@@ -16,36 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let vc1 = HomeVC()
-        let vc2 = MeVC()
-        let vc3 = DeviceListVC()
-        let vc4 = VoiceControllVC()
-        let vc5 = RealTimeVC()
+        let homeVC = HomeVC()
+        let meVC = MeVC()
+        let deviceListVC = DeviceListVC()
+        let voiceConVC = VoiceControllVC()
+        let realVC = RealTimeVC()
         
         let childVCs = [
-            createTabbarChildVC(vc: vc1,
+            createTabbarChildVC(vc: homeVC,
                                 title: "首页",
                                 normalImage: UIImage("home")!,
                                 selectImage: UIImage("home")!,
                                 tag: 0),
-            createTabbarChildVC(vc: vc2,
+            createTabbarChildVC(vc: meVC,
                                 title: "实时快照",
                                 normalImage: UIImage("screen_shot")!,
                                 selectImage: UIImage("screen_shot")!,
                                 tag: 0),
-            createTabbarChildVC(vc: vc3,
+            createTabbarChildVC(vc: deviceListVC,
                                 title: "语音",
                                 normalImage: UIImage("voice")!,
                                 selectImage: UIImage("voice")!,
                                 tag: 0),
-            createTabbarChildVC(vc: vc4,
+            createTabbarChildVC(vc: voiceConVC,
                                 title: "设备数据",
                                 normalImage: UIImage("device_data")!,
                                 selectImage: UIImage("device_data")!,
                                 tag: 0),
-            createTabbarChildVC(vc: vc5, title: "我的",
-                                normalImage: UIImage.init("me")!,
-                                selectImage: UIImage.init("me")!,
+            createTabbarChildVC(vc: realVC, title: "我的",
+                                normalImage: UIImage("me")!,
+                                selectImage: UIImage("me")!,
                                 tag: 0)
         ]
         

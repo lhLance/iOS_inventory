@@ -383,7 +383,10 @@
 		CF8C0ED82236426800DF0D99 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */,
+				CFAEC19C22374CDD00F38B82 /* ViewController */,
+				CFAEC19B22374CD800F38B82 /* ViewModel */,
+				CFAEC19A22374CD300F38B82 /* View */,
+				CFAEC19922374CCF00F38B82 /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -391,7 +394,10 @@
 		CF8C0ED92236427300DF0D99 /* RealtimeShot */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */,
+				CFAEC19822374CC400F38B82 /* ViewController */,
+				CFAEC19722374CBD00F38B82 /* ViewModel */,
+				CFAEC19622374CB800F38B82 /* View */,
+				CFAEC19522374CB300F38B82 /* Model */,
 			);
 			path = RealtimeShot;
 			sourceTree = "<group>";
@@ -399,7 +405,10 @@
 		CF8C0EDA2236442400DF0D99 /* VoiceControl */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */,
+				CFAEC19422374CA600F38B82 /* ViewController */,
+				CFAEC19322374CA000F38B82 /* ViewModel */,
+				CFAEC19222374C9C00F38B82 /* View */,
+				CFAEC19122374C9500F38B82 /* Model */,
 			);
 			path = VoiceControl;
 			sourceTree = "<group>";
@@ -407,7 +416,10 @@
 		CF8C0EDB2236443200DF0D99 /* DeviceList */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */,
+				CFAEC19022374C8A00F38B82 /* ViewController */,
+				CFAEC18F22374C8400F38B82 /* ViewModel */,
+				CFAEC18E22374C7F00F38B82 /* View */,
+				CFAEC18D22374C7900F38B82 /* Model */,
 			);
 			path = DeviceList;
 			sourceTree = "<group>";
@@ -415,7 +427,10 @@
 		CF8C0EDC2236444900DF0D99 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EE02236491800DF0D99 /* MeVC.swift */,
+				CFAEC18C22374C6900F38B82 /* ViewController */,
+				CFAEC18B22374C6200F38B82 /* ViewModel */,
+				CFAEC18A22374C5C00F38B82 /* View */,
+				CFAEC18922374C5500F38B82 /* Model */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -423,9 +438,186 @@
 		CF8C0EDD2236445300DF0D99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */,
+				CFAEC18822374C4200F38B82 /* ViewController */,
+				CFAEC18722374C2D00F38B82 /* ViewModel */,
+				CFAEC18622374C2700F38B82 /* View */,
+				CFAEC18522374C1B00F38B82 /* Model */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CFAEC18522374C1B00F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC18622374C2700F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC18722374C2D00F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC18822374C4200F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAEC18922374C5500F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC18A22374C5C00F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC18B22374C6200F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC18C22374C6900F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EE02236491800DF0D99 /* MeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAEC18D22374C7900F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC18E22374C7F00F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC18F22374C8400F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC19022374C8A00F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAEC19122374C9500F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC19222374C9C00F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC19322374CA000F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC19422374CA600F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAEC19522374CB300F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC19622374CB800F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC19722374CBD00F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC19822374CC400F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAEC19922374CCF00F38B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAEC19A22374CD300F38B82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAEC19B22374CD800F38B82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAEC19C22374CDD00F38B82 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DCF16C870F388810E55E3A31 /* Pods */ = {
