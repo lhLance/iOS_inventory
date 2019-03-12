@@ -13,42 +13,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        let homeVC = LoginRegsVC()//HomeVC()
+        let meVC = MeVC()
+        let deviceListVC = DeviceListVC()
+        let voiceConVC = VoiceControllVC()
+        let realVC = RealTimeVC()
+        
+        let childVCs = [
+            createTabbarChildVC(vc: homeVC,
+                                title: "首页",
+                                normalImage: UIImage("home")!,
+                                selectImage: UIImage("home")!,
+                                tag: 0),
+            createTabbarChildVC(vc: realVC,
+                                title: "实时快照",
+                                normalImage: UIImage("screen_shot")!,
+                                selectImage: UIImage("screen_shot")!,
+                                tag: 0),
+            createTabbarChildVC(vc: deviceListVC,
+                                title: "语音",
+                                normalImage: UIImage("voice")!,
+                                selectImage: UIImage("voice")!,
+                                tag: 0),
+            createTabbarChildVC(vc: voiceConVC,
+                                title: "设备数据",
+                                normalImage: UIImage("device_data")!,
+                                selectImage: UIImage("device_data")!,
+                                tag: 0),
+            createTabbarChildVC(vc: meVC, title: "我的",
+                                normalImage: UIImage("me")!,
+                                selectImage: UIImage("me")!,
+                                tag: 0)
+        ]
+        
+        let rootVC = FiiTabBarController(childVCs)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController.shared)
         
         // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 1.0)
         
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    func createTabbarChildVC(vc: UIViewController,
+                             title: String,
+                             normalImage: UIImage,
+                             selectImage: UIImage,
+                             tag: Int) -> UIViewController
+    {
+        let item = UITabBarItem.init(title: title,
+                                     image: normalImage.withRenderingMode(.alwaysOriginal),
+                                     tag: tag)
+        item.selectedImage = selectImage.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem = item
+        
+        return UINavigationController(rootViewController: vc)
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
 
 }
 

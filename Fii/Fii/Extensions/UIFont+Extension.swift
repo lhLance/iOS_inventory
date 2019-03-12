@@ -10,5 +10,18 @@ import UIKit
 
 extension UIFont {
     
+    static func MILanTing(_ size: CGFloat) -> UIFont {
+        
+        return UIFont(name: "MILanTing_GB", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
     
+    static func Kmedium(_ size: CGFloat) -> UIFont {
+        
+        return UIFont.init(name: "Kmedium", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    static func FZLTZCHJW(_ size: CGFloat) -> UIFont {
+        
+        return UIFont.init(name: "FZLTZCHJW", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
 }
