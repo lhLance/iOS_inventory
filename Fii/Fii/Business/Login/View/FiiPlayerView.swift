@@ -7,16 +7,16 @@
 //
 
 import UIKit
+import AVKit
 
 class FiiPlayerView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-     // 
+    var playerLayer: AVPlayerLayer?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        playerLayer?.frame = self.bounds
     }
-    */
 
 }

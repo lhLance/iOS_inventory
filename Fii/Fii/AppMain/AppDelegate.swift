@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let homeVC = HomeVC()
+        let homeVC = LoginRegsVC()//HomeVC()
         let meVC = MeVC()
         let deviceListVC = DeviceListVC()
         let voiceConVC = VoiceControllVC()
