@@ -47,6 +47,7 @@
 		CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */; };
 		CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */; };
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
+		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegsVC.swift; sourceTree = "<group>"; };
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
+		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -601,6 +603,7 @@
 		CFAEC19A22374CD300F38B82 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
+				CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
 				CF7CA05E2223D7C7005CE8A3 /* DashLine.swift in Sources */,
