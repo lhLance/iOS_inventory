@@ -49,6 +49,7 @@
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
 		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
+		CFAEC1E5223797C200F38B82 /* video_min.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E4223797C200F38B82 /* video_min.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
 		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		CFAEC1E4223797C200F38B82 /* video_min.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_min.mp4; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -629,6 +631,7 @@
 		CFAEC1E122378D5B00F38B82 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				CFAEC1E4223797C200F38B82 /* video_min.mp4 */,
 				CFAEC1E222378D6C00F38B82 /* video.mp4 */,
 			);
 			path = Videos;
@@ -751,6 +754,7 @@
 			files = (
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
+				CFAEC1E5223797C200F38B82 /* video_min.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

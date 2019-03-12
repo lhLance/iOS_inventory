@@ -17,15 +17,26 @@ class LoginRegsVC: UIViewController {
     var player: AVPlayer?
     var playerItem: AVPlayerItem?
     
+    var loginBtn: UIButton?
+    var registerBtn: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+    }
+    
+    func setupView() {
+        
         setupPlayerView()
+        setupButtons()
     }
     
     func setupPlayerView() {
         
+        
         guard let path = Bundle.main.path(forResource: "video", ofType: ".mp4") else { return }
+        
         let url = URL(fileURLWithPath: path)
         
         playerItem = AVPlayerItem(url: url)
@@ -42,6 +53,7 @@ class LoginRegsVC: UIViewController {
         
         playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
         playerView.added(into: view)
+        playerView.backgroundColor = UIColor.red
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playToEndTime),
@@ -52,6 +64,42 @@ class LoginRegsVC: UIViewController {
     deinit {
         playerItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
         playerItem?.removeObserver(self, forKeyPath: "status")
+    }
+    
+    func setupButtons() {
+        
+        loginBtn = UIButton("登录", UIColor.white, .MILanTing(16))
+        loginBtn?.cornerRadius = 4.0
+        loginBtn?.backgroundColor = UIColor.hex(0x0099F1)
+        loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: UIControl.Event.touchUpInside)
+        loginBtn?.added(into: view)
+        loginBtn?.snp.makeConstraints({ (make) in
+            make.width.equalTo(120)
+            make.height.equalTo(45)
+            make.bottom.equalTo(-30)
+            make.left.equalTo(40)
+        })
+        
+        registerBtn = UIButton("注册", UIColor.white, .MILanTing(16))
+        registerBtn?.cornerRadius = 4.0
+        registerBtn?.backgroundColor = UIColor.hex(0x0099F1)
+        registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: UIControl.Event.touchUpInside)
+        registerBtn?.added(into: view)
+        registerBtn?.snp.makeConstraints({ (make) in
+            make.width.equalTo(120)
+            make.height.equalTo(45)
+            make.bottom.equalTo(-30)
+            make.right.equalTo(-40)
+        })
+        
+    }
+    
+    @objc func loginBtnTapped() {
+        
+    }
+    
+    @objc func registerBtnTapped() {
+        
     }
     
 
