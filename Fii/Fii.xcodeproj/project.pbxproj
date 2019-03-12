@@ -905,11 +905,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF7CA04F2223D376005CE8A3 /* UIView+Extension.swift in Sources */,
-<<<<<<< HEAD
-=======
-				CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */,
-				3432947E22379A1500A34B14 /* MeViewController.swift in Sources */,
->>>>>>> 74c3d23e036babdb52b36d583d245412002a338c
 				CF7CA0512223D376005CE8A3 /* UIButton+Extension.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
