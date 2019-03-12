@@ -17,4 +17,6 @@ target 'Fii' do
     pod 'SnapKit'
     pod 'MJRefresh'
     pod 'Charts'
+    # Grama
+    pod 'Then', '~> 2.4.0'
 end

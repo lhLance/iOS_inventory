@@ -18,6 +18,7 @@ PODS:
   - SnapKit (4.2.0)
   - Starscream (3.0.6)
   - SwiftyJSON (4.2.0)
+  - Then (2.4.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - SnapKit
   - Starscream
   - SwiftyJSON
+  - Then (~> 2.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -45,6 +47,7 @@ SPEC REPOS:
     - SnapKit
     - Starscream
     - SwiftyJSON
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: 51bc941628383c967c8a284666ec32e142e1cfcf
+PODFILE CHECKSUM: f047e62425cf7db14bdf9e81cdc0bb72a7fe211a
 
 COCOAPODS: 1.6.0

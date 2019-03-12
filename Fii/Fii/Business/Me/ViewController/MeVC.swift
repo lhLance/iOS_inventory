@@ -18,7 +18,9 @@ class MeVC: UIViewController {
     
     func setupView() {
         
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = UIColor.white
+        
+        
     }
 
 }
