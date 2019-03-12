@@ -1311,7 +1311,7 @@ final class AlarmCenterAPI {
     }
     
     /// 获取设备控制数据
-    static func SetParmData(appKey: String,
+    static func GetSetParmData(appKey: String,
                             infoKey: String,
                             _ callBack: @escaping([FiiSetParmDataModel]) -> Void)
     {
@@ -1449,6 +1449,161 @@ final class AlarmCenterAPI {
     }
     
     /// 获取图片验证码
-//    static func GenerateImageData
+    static func GenerateImageData(appKey: String, infoKey: String, equip_no: Int,  _ callBack: @escaping(String) -> Void) {
+        
+        let api = "/api/GWServiceWebAPI/set_GenerateImageData"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["equip_no": equip_no]
+        
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.stringValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 连接服务器
+    static func ConnectService(appKey: String, infoKey: String, _ callBack: @escaping(Bool) -> Void) {
+        
+        let api = "/api/server/ConnectService"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.boolValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 返回欢迎词最新一条保存记录
+    static func GetWelcomeSpeech(appKey: String, infoKey: String, _ callBack: @escaping([FiiWelcomeSpeechModel]) -> Void) {
+        
+        let api = "/api/GWServiceWebAPI/getWelcomeSpeech"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiWelcomeSpeechModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 版本适配
+    static func VersionAdapt(appKey: String, infoKey: String, _ callBack: @escaping(String) -> Void) {
+        
+        let api = "/api/server/version_adapt"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.stringValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 验证cookie存储客户端信息是否过期
+    static func GetClientTypeInfo(appKey: String,
+                                  infoKey: String,
+                                  _ callBack: @escaping(FiiClienTypeInfoModel) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getClientTypeInfo"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel(FiiClienTypeInfoModel.self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取文件夹结构
+    static func GetFileStructure(appKey: String,
+                                 infoKey: String,
+                                 filePath: String,
+                                 fileName: String,
+                                 _ callBack: @escaping([String]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/GetFileStructure"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["filePath": filePath, "fielName": fileName]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([String].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取setParm表数据
+    static func GetSetParmRadioList(appKey: String,
+                                    infoKey: String,
+                                    setEquip: Int,
+                                    setNo: String, _ callBack: @escaping([FiiSetParmDataModel]) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/getSetParmRadioList"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["Set_equip": setEquip, "Set_no": setNo]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.toModel([FiiSetParmDataModel].self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 获取用户权限
+    static func GetUserItem(appKey: String, infoKey: String, _ callBack: @escaping(FiiUserItemModel) -> Void)
+    {
+        let api = "/api/Permis/get_user_item"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        
+        APIManager.post(api: api, headers: header) { (true, json, error) in
+            if let model = json?.toModel(FiiUserItemModel.self) {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
+    
+    /// 插入数据
+    static func InsertWelcomeSpeech(appKey: String,
+                                    infoKey: String,
+                                    jsonContent: String,
+                                    bgImage: String,
+                                    type: Int,
+                                    siginalVal: Int,
+                                    _ callBack: @escaping(Int) -> Void)
+    {
+        let api = "/api/GWServiceWebAPI/insertWelcomeSpeech"
+        let header: [String: String] = ["Authorization": appKey + "-" + infoKey]
+        let param: [String: Any] = ["JSONContent": jsonContent,
+                                    "BGImage": bgImage,
+                                    "TYPE": type,
+                                    "siginalVal": siginalVal]
+        
+        APIManager.post(api: api, params: param, headers: header) { (true, json, error) in
+            if let model = json?.intValue {
+                callBack(model)
+            } else {
+                print("recieved data = \(String(describing: json))")
+            }
+        }
+    }
     
 }

@@ -38,7 +38,7 @@ class FiiTabBar: UITabBar {
         
         self.barTintColor = UIColor.white
         self.isTranslucent = false
-        
+
         let normal_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
                                  NSAttributedString.Key.foregroundColor: UIColor.hex(0x515151)]
         let select_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
