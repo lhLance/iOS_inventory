@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
+		3432947A2237430B00A34B14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343294782237430B00A34B14 /* LoginViewController.swift */; };
+		3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 343294792237430B00A34B14 /* LoginViewController.xib */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		0415600222240306001E68CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
+		343294782237430B00A34B14 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		343294792237430B00A34B14 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
@@ -135,6 +139,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34329473223742DD00A34B14 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				34329474223742DD00A34B14 /* Me */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		34329474223742DD00A34B14 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				34329475223742DD00A34B14 /* controller */,
+				34329476223742DD00A34B14 /* model */,
+				34329477223742DD00A34B14 /* view */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		34329475223742DD00A34B14 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				343294782237430B00A34B14 /* LoginViewController.swift */,
+				343294792237430B00A34B14 /* LoginViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		34329476223742DD00A34B14 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		34329477223742DD00A34B14 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		4965C6C5C0B1734301FD2D4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +221,7 @@
 		CF7C9FFE222395FF005CE8A3 /* Fii */ = {
 			isa = PBXGroup;
 			children = (
+				34329473223742DD00A34B14 /* Classes */,
 				CF265EB82224D75A00CE67C5 /* Model */,
 				CF7CA00B22239600005CE8A3 /* Info.plist */,
 				CF7CA03A2223C0F2005CE8A3 /* ThirdParty */,
@@ -477,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +631,7 @@
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
+				3432947A2237430B00A34B14 /* LoginViewController.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF7CA0502223D376005CE8A3 /* GCD+Extension.swift in Sources */,
