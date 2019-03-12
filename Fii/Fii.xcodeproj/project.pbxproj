@@ -11,6 +11,8 @@
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		3432947A2237430B00A34B14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343294782237430B00A34B14 /* LoginViewController.swift */; };
 		3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 343294792237430B00A34B14 /* LoginViewController.xib */; };
+		3432947E22379A1500A34B14 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432947C22379A1500A34B14 /* MeViewController.swift */; };
+		3432947F22379A1500A34B14 /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3432947D22379A1500A34B14 /* MeViewController.xib */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
@@ -67,6 +69,8 @@
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
 		343294782237430B00A34B14 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		343294792237430B00A34B14 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3432947C22379A1500A34B14 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		3432947D22379A1500A34B14 /* MeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			children = (
 				343294782237430B00A34B14 /* LoginViewController.swift */,
 				343294792237430B00A34B14 /* LoginViewController.xib */,
+				3432947C22379A1500A34B14 /* MeViewController.swift */,
+				3432947D22379A1500A34B14 /* MeViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3432947F22379A1500A34B14 /* MeViewController.xib in Resources */,
 				3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 			);
@@ -620,6 +627,7 @@
 			files = (
 				CF7CA04F2223D376005CE8A3 /* UIView+Extension.swift in Sources */,
 				CF7CA002222395FF005CE8A3 /* MainViewController.swift in Sources */,
+				3432947E22379A1500A34B14 /* MeViewController.swift in Sources */,
 				CF7CA0512223D376005CE8A3 /* UIButton+Extension.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
