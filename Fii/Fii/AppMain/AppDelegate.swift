@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 normalImage: UIImage("home")!,
                                 selectImage: UIImage("home")!,
                                 tag: 0),
-            createTabbarChildVC(vc: meVC,
+            createTabbarChildVC(vc: realVC,
                                 title: "实时快照",
                                 normalImage: UIImage("screen_shot")!,
                                 selectImage: UIImage("screen_shot")!,
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 normalImage: UIImage("device_data")!,
                                 selectImage: UIImage("device_data")!,
                                 tag: 0),
-            createTabbarChildVC(vc: realVC, title: "我的",
+            createTabbarChildVC(vc: meVC, title: "我的",
                                 normalImage: UIImage("me")!,
                                 selectImage: UIImage("me")!,
                                 tag: 0)
