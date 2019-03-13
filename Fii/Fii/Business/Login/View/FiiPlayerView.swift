@@ -17,6 +17,8 @@ class FiiPlayerView: UIView {
         super.layoutSubviews()
         
         playerLayer?.frame = self.bounds
+        
+        // 可扩展
     }
 
 }

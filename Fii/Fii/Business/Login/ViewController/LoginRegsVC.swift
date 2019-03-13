@@ -22,6 +22,8 @@ class LoginRegsVC: UIViewController {
     var loginBtn: UIButton?
     var registerBtn: UIButton?
     
+    let openScreenView = OpenScreenView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +32,22 @@ class LoginRegsVC: UIViewController {
     
     func setupView() {
         
-        setupPlayerView()
-        setupButtons()
+//        setupPlayerView()
+//        setupButtons()
+        setupOpenScreenView()
+    }
+    
+    func setupOpenScreenView() {
+        
+        openScreenView.added(into: view)
+        openScreenView.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.bottom.equalTo(-UIScreen.tabBarHeight)
+        }
+        openScreenView.count = 4
     }
     
     func setupPlayerView() {
-        
         
         guard let path = Bundle.main.path(forResource: "video", ofType: ".mp4") else { return }
         

@@ -11,12 +11,12 @@
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		3432947A2237430B00A34B14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343294782237430B00A34B14 /* LoginViewController.swift */; };
 		3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 343294792237430B00A34B14 /* LoginViewController.xib */; };
-		3432947E22379A1500A34B14 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432947C22379A1500A34B14 /* MeViewController.swift */; };
 		3432947F22379A1500A34B14 /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3432947D22379A1500A34B14 /* MeViewController.xib */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
 		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
+		CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76EEEC2238D56400182867 /* OpenScreenView.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CA00622239600005CE8A3 /* Assets.xcassets */; };
 		CF7CA01522239600005CE8A3 /* FiiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA01422239600005CE8A3 /* FiiTests.swift */; };
@@ -53,7 +53,6 @@
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
 		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
-		CFAEC1E5223797C200F38B82 /* video_min.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E4223797C200F38B82 /* video_min.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +84,7 @@
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
 		CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIIServiceModel.swift; sourceTree = "<group>"; };
 		CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiTabBarController.swift; sourceTree = "<group>"; };
+		CF76EEEC2238D56400182867 /* OpenScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreenView.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CA00622239600005CE8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
 		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		CFAEC1E4223797C200F38B82 /* video_min.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_min.mp4; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -661,6 +660,7 @@
 			isa = PBXGroup;
 			children = (
 				CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */,
+				CF76EEEC2238D56400182867 /* OpenScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -683,7 +683,6 @@
 		CFAEC1E122378D5B00F38B82 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				CFAEC1E4223797C200F38B82 /* video_min.mp4 */,
 				CFAEC1E222378D6C00F38B82 /* video.mp4 */,
 			);
 			path = Videos;
@@ -808,7 +807,6 @@
 				3432947B2237430B00A34B14 /* LoginViewController.xib in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
-				CFAEC1E5223797C200F38B82 /* video_min.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +929,7 @@
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
+				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
