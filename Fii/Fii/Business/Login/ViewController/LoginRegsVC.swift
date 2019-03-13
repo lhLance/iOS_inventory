@@ -10,6 +10,8 @@ import UIKit
 import AVKit
 import AVFoundation
 
+let VIDEO_HEIGHT = (UIScreen.width * 2178) / 1006
+
 class LoginRegsVC: UIViewController {
 
     var playerView = FiiPlayerView()
@@ -51,7 +53,7 @@ class LoginRegsVC: UIViewController {
         playerView.playerLayer = self.playerLayer
         playerView.layer.insertSublayer(playerLayer!, at: 0)
         
-        playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
+        playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: VIDEO_HEIGHT)
         playerView.added(into: view)
         playerView.backgroundColor = UIColor.red
         
@@ -95,11 +97,11 @@ class LoginRegsVC: UIViewController {
     }
     
     @objc func loginBtnTapped() {
-        
+        print("login btn tapped...")
     }
     
     @objc func registerBtnTapped() {
-        
+        print("register btn tapped...")
     }
     
 
