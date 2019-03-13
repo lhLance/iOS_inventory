@@ -40,9 +40,9 @@ class FiiTabBar: UITabBar {
         self.isTranslucent = false
 
         let normal_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
-                                 NSAttributedString.Key.foregroundColor: UIColor.hex(0x515151)]
+                                 NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         let select_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
-                                 NSAttributedString.Key.foregroundColor: UIColor.hex(0xdf3231)]
+                                 NSAttributedString.Key.foregroundColor: UIColor.black]
         
         UITabBarItem.appearance().setTitleTextAttributes(normal_attributes, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(select_attributes, for: .selected)

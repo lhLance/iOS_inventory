@@ -50,7 +50,7 @@ class OpenScreenView: UIView {
         scrollView.delegate = self
         scrollView.alwaysBounceHorizontal = true
         scrollView.isPagingEnabled = true
-        scrollView.backgroundColor = UIColor.cyan
+        scrollView.showsHorizontalScrollIndicator = false
         
         pageControl.added(into: self)
         pageControl.currentPage = 0
@@ -62,12 +62,12 @@ class OpenScreenView: UIView {
         
         layoutIfNeeded()
         
-        scrollView.frame = self.bounds
+        scrollView.frame = bounds
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: width * CGFloat(count), height: height)
         
-        pageControl.center.x = width / 2
-        pageControl.frame.origin.y = height - 10 + pageControl.height
+        pageControl.centerX = width / 2
+        pageControl.origin.y = height - 60 + pageControl.height
         pageControl.numberOfPages = count
         
         for i in 0..<count {
@@ -112,8 +112,32 @@ class OpenScreenView: UIView {
                         make.centerX.equalToSuperview()
                     })
                 })
+                
+                let skipBtn = UIButton().then { (btn) in
+                    btn.backgroundColor = UIColor.lightGray
+                    btn.cornerRadius = 20
+                    btn.Text("跳过").TitleColor(UIColor.white).Font(.Kmedium(16))
+                    btn.added(into: imgV)
+                    btn.snp.makeConstraints({ (make) in
+                        make.width.equalTo(160)
+                        make.height.equalTo(40)
+                        make.top.equalTo(pageControl.snp.bottom).offset(15)
+                        make.centerX.equalToSuperview()
+                    })
+                    btn.addTarget(self, action: #selector(skipBtnTapped), for: .touchUpInside)
+                }
+                
+                if i == count - 1 {
+                    skipBtn.isHidden = false
+                } else {
+                    skipBtn.isHidden = true
+                }
             }
         }
+    }
+    
+    @objc func skipBtnTapped() {
+        print("skipBtnTapped")
     }
 }
 
