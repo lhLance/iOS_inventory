@@ -78,7 +78,7 @@ class LoginRegsVC: UIViewController {
             make.width.equalTo(120)
             make.height.equalTo(45)
             make.bottom.equalTo(-30)
-            make.left.equalTo(40)
+            make.right.equalTo(-40)
         })
         
         registerBtn = UIButton("注册", UIColor.white, .MILanTing(16))
@@ -90,7 +90,7 @@ class LoginRegsVC: UIViewController {
             make.width.equalTo(120)
             make.height.equalTo(45)
             make.bottom.equalTo(-30)
-            make.right.equalTo(-40)
+            make.left.equalTo(40)
         })
         
     }
