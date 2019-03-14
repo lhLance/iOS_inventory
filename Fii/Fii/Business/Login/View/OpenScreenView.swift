@@ -62,7 +62,7 @@ class OpenScreenView: UIView {
         pageControl.numberOfPages = count
         
         for i in 0..<count {
-            let imgView = UIImageView.init(frame: CGRect.init(CGFloat(i) * width , 0, width, height))
+            let imgView = UIImageView.init(frame: CGRect(CGFloat(i) * width , 0, width, height))
             imgView.added(into: scrollView)
             imgView.image = UIImage.init(imgArr[i])
         }
