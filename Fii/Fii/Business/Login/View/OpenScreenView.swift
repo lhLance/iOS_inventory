@@ -72,6 +72,7 @@ class OpenScreenView: UIView {
         
         for i in 0..<count {
             _ = UIImageView().then { (imgV) in
+                imgV.isUserInteractionEnabled = true
                 imgV.frame = CGRect(CGFloat(i) * width,
                                     0,
                                     width,
@@ -99,7 +100,7 @@ class OpenScreenView: UIView {
                     })
                 })
                 
-                _ = UILabel().then({ (subT) in
+                let subTitleLbl = UILabel().then({ (subT) in
                     subT.numberOfLines = 0
                     subT.lineBreakMode = .byWordWrapping
                     subT.Text(subTitleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.Kmedium(15))
@@ -120,7 +121,7 @@ class OpenScreenView: UIView {
                     btn.snp.makeConstraints({ (make) in
                         make.width.equalTo(160)
                         make.height.equalTo(40)
-                        make.top.equalTo(pageControl.snp.bottom).offset(15)
+                        make.top.equalTo(subTitleLbl.snp.bottom).offset(180)
                         make.centerX.equalToSuperview()
                     })
                     btn.addTarget(self, action: #selector(skipBtnTapped), for: .touchUpInside)
