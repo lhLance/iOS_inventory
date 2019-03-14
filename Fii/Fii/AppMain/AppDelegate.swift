@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 0.0)
         
-        setupOpenScreenView()
+        setupOpenScreenView(vc: rootVC)
         
         return true
     }
@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UINavigationController(rootViewController: vc)
     }
     
-    func setupOpenScreenView() {
+    func setupOpenScreenView(vc: UIViewController) {
         
         let opView = OpenScreenView()
         
@@ -90,6 +90,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         opView.count = 4
         opView.skipBtnTap = {
             opView.removeFromSuperview()
+            
+            let subVC = LoginRegsVC()
+            vc.present(subVC, animated: true, completion: nil)
         }
     }
 

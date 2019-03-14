@@ -22,8 +22,6 @@ class LoginRegsVC: UIViewController {
     var loginBtn: UIButton?
     var registerBtn: UIButton?
     
-    let openScreenView = OpenScreenView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

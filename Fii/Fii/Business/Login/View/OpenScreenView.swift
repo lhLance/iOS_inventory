@@ -50,7 +50,7 @@ class OpenScreenView: UIView {
         
         scrollView.added(into: self)
         scrollView.delegate = self
-        scrollView.alwaysBounceHorizontal = true
+        scrollView.bounces = false
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         
