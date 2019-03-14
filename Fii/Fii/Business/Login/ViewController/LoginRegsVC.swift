@@ -34,17 +34,6 @@ class LoginRegsVC: UIViewController {
         
         setupPlayerView()
         setupButtons()
-//        setupOpenScreenView()
-    }
-    
-    func setupOpenScreenView() {
-        
-        openScreenView.added(into: view)
-        openScreenView.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
-            make.bottom.equalTo(-UIScreen.tabBarHeight)
-        }
-        openScreenView.count = 4
     }
     
     func setupPlayerView() {
