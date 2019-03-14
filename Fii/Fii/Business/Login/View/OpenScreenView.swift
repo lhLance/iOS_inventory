@@ -69,7 +69,11 @@ class OpenScreenView: UIView {
         scrollView.contentSize = CGSize(width: width * CGFloat(count), height: height)
         
         pageControl.centerX = width / 2
-        pageControl.origin.y = height - 60 + pageControl.height
+        if UIDevice.isPhoneX || UIDevice.isPhoneXR || UIDevice.isPhoneXMax {
+            pageControl.origin.y = height - UIScreen.tabBarHeight - 70
+        } else {
+            pageControl.origin.y = height - UIScreen.tabBarHeight - 50
+        }
         pageControl.numberOfPages = count
         
         for i in 0..<count {
@@ -84,7 +88,7 @@ class OpenScreenView: UIView {
                 
                 _ = UIImageView().then({ (subImgV) in
                     subImgV.frame = CGRect(0.2 * width,
-                                           0.3 * width,
+                                           0.4 * width,
                                            0.6 * width,
                                            0.6 * width)
                     subImgV.added(into: imgV)
@@ -96,20 +100,20 @@ class OpenScreenView: UIView {
                     title.added(into: imgV)
                     title.snp.makeConstraints({ (make) in
                         make.width.equalToSuperview()
-                        make.height.equalTo(40)
-                        make.top.equalTo(width)
+                        make.height.equalTo(30)
+                        make.top.equalTo(1.2 * width)
                         make.centerX.equalToSuperview()
                     })
                 })
                 
-                let subTitleLbl = UILabel().then({ (subT) in
+                _ = UILabel().then({ (subT) in
                     subT.numberOfLines = 0
                     subT.lineBreakMode = .byWordWrapping
                     subT.Text(subTitleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.Kmedium(15))
                     subT.added(into: imgV)
                     subT.snp.makeConstraints({ (make) in
                         make.width.equalTo(width * 0.8)
-                        make.height.equalTo(80)
+                        make.height.equalTo(60)
                         make.top.equalTo(titleLbl.snp.bottom).offset(5)
                         make.centerX.equalToSuperview()
                     })
@@ -123,7 +127,7 @@ class OpenScreenView: UIView {
                     btn.snp.makeConstraints({ (make) in
                         make.width.equalTo(160)
                         make.height.equalTo(40)
-                        make.top.equalTo(subTitleLbl.snp.bottom).offset(180)
+                        make.bottom.equalTo(-20)
                         make.centerX.equalToSuperview()
                     })
                     btn.addTarget(self, action: #selector(skipBtnTapped), for: .touchUpInside)
