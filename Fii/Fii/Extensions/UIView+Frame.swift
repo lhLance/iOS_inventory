@@ -215,6 +215,13 @@ extension UIButton {
         return self
     }
     
+    @discardableResult func Font(_ font: UIFont) -> Self {
+        
+        self.titleLabel?.font = font
+        
+        return self
+    }
+    
     @discardableResult func TitleColor(_ color: UIColor) -> Self {
         
         self.setTitleColor(color, for: .normal)
