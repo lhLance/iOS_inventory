@@ -32,9 +32,9 @@ class LoginRegsVC: UIViewController {
     
     func setupView() {
         
-//        setupPlayerView()
-//        setupButtons()
-        setupOpenScreenView()
+        setupPlayerView()
+        setupButtons()
+//        setupOpenScreenView()
     }
     
     func setupOpenScreenView() {
