@@ -22,6 +22,13 @@ class LoginRegsVC: UIViewController {
     var loginBtn: UIButton?
     var registerBtn: UIButton?
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,7 +82,7 @@ class LoginRegsVC: UIViewController {
         loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: UIControl.Event.touchUpInside)
         loginBtn?.added(into: view)
         loginBtn?.snp.makeConstraints({ (make) in
-            make.width.equalTo(120)
+            make.width.equalTo(130)
             make.height.equalTo(45)
             make.bottom.equalTo(-30)
             make.right.equalTo(-40)
@@ -87,7 +94,7 @@ class LoginRegsVC: UIViewController {
         registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: UIControl.Event.touchUpInside)
         registerBtn?.added(into: view)
         registerBtn?.snp.makeConstraints({ (make) in
-            make.width.equalTo(120)
+            make.width.equalTo(130)
             make.height.equalTo(45)
             make.bottom.equalTo(-30)
             make.left.equalTo(40)
@@ -97,10 +104,17 @@ class LoginRegsVC: UIViewController {
     
     @objc func loginBtnTapped() {
         print("login btn tapped...")
+        let vc = LoginVC()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func registerBtnTapped() {
         print("register btn tapped...")
+        
+        let vc = RegisterVC()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 

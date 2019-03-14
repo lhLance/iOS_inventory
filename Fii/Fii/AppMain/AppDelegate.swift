@@ -92,7 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             opView.removeFromSuperview()
             
             let subVC = LoginRegsVC()
-            vc.present(subVC, animated: true, completion: nil)
+            let navSubVC = UINavigationController(rootViewController: subVC)
+            vc.present(navSubVC, animated: true, completion: nil)
         }
     }
 

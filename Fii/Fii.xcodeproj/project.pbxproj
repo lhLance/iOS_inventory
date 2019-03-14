@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
+		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
+		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
@@ -72,6 +74,8 @@
 /* Begin PBXFileReference section */
 		0415600222240306001E68CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
+		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 			isa = PBXGroup;
 			children = (
 				CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */,
+				04F9C015223A785C00C1859C /* LoginVC.swift */,
+				04F9C017223A788B00C1859C /* RegisterVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */,
+				04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */,
 				CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */,
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
 				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
@@ -884,6 +891,7 @@
 				CF7CA06A2223D8D8005CE8A3 /* UIColor+Extension.swift in Sources */,
 				CF7CA0522223D376005CE8A3 /* UILabel+Extension.swift in Sources */,
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
+				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				CF7CA0642223D872005CE8A3 /* Alert.swift in Sources */,
 				CF7CA0422223CE4A005CE8A3 /* UIScreen+Extension.swift in Sources */,
