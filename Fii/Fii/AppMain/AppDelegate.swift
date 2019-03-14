@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let homeVC = LoginRegsVC()//HomeVC()
+        let homeVC = HomeVC()
         let meVC = MeVC()
         let deviceListVC = DeviceListVC()
         let voiceConVC = VoiceControllVC()
@@ -57,7 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // 开屏图停留
-        _ = Thread.sleep(forTimeInterval: 1.0)
+        _ = Thread.sleep(forTimeInterval: 0.0)
+        
+        setupOpenScreenView()
         
         return true
     }
@@ -75,6 +77,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc.tabBarItem = item
         
         return UINavigationController(rootViewController: vc)
+    }
+    
+    func setupOpenScreenView() {
+        
+        let opView = OpenScreenView()
+        
+        UIWindow.keyWindow?.addSubview(opView)
+        opView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        opView.count = 4
+        opView.skipBtnTap = {
+            opView.removeFromSuperview()
+        }
     }
 
 }

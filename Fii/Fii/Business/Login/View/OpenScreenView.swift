@@ -12,6 +12,8 @@ import SnapKit
 
 class OpenScreenView: UIView {
 
+    var skipBtnTap: (() -> Void)?
+    
     var count: Int? {
         didSet {
             reload(count: count ?? 0)
@@ -138,6 +140,7 @@ class OpenScreenView: UIView {
     
     @objc func skipBtnTapped() {
         print("skipBtnTapped")
+        skipBtnTap?()
     }
 }
 
