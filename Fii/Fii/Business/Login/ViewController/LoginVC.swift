@@ -60,7 +60,7 @@ class LoginVC: UIViewController {
         }
 
         _ = UIButton().then({ (b) in
-            b.backgroundColor = UIColor.cyan
+            b.setBackgroundImage(UIImage("clear"), for: .normal)
             b.added(into: view)
             b.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(20)
@@ -94,7 +94,7 @@ class LoginVC: UIViewController {
         }
         
         _ = UIButton().then({ (b) in
-            b.backgroundColor = UIColor.cyan
+            b.setBackgroundImage(UIImage("lock"), for: .normal)
             b.added(into: view)
             b.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(20)
@@ -107,6 +107,7 @@ class LoginVC: UIViewController {
         let line2 = UIView().then { (line) in
             line.added(into: view)
             line.snp.makeConstraints({ (make) in
+                make.left.equalTo(15)
                 make.width.equalTo(passwordTf.snp.width)
                 make.top.equalTo(passwordTf.snp.bottom).offset(5)
                 make.height.equalTo(1)
@@ -145,6 +146,12 @@ class LoginVC: UIViewController {
     
     @objc func loginBtnTapped() {
         print("loginBtnTapped...")
+        AlarmCenterAPI.GetAPPKey(userName: "aaa",
+                                 password: "000") { (model) in
+                                    
+            UserInfo.shared.appKey = model.appkey
+            UserInfo.shared.infoKey = model.infokey
+        }
     }
     
     @objc func registerBtnTapped() {

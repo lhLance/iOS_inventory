@@ -53,6 +53,7 @@
 		CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */; };
 		CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */; };
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
+		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
 		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegsVC.swift; sourceTree = "<group>"; };
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
+		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */,
+				CFA83706223CBEB60054F311 /* UserInfo.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
+				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */,
 				CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */,
