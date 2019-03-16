@@ -32,3 +32,13 @@ extension UIColor {
         return self.withAlphaComponent(value)
     }
 }
+
+private func colorValue(_ value : CGFloat) -> CGFloat {
+    return value / 255.0
+}
+
+func colorWithRGBA(red : CGFloat,green : CGFloat ,blue : CGFloat,alpha : CGFloat) -> UIColor{
+    
+    return UIColor(red: colorValue(red), green: colorValue(green), blue: colorValue(blue), alpha: alpha)
+}
+

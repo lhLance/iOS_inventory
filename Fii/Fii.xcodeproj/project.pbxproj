@@ -11,6 +11,9 @@
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
+		34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */; };
+		34F4BC1B223B75B70057080A /* CloumnCategoryMenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */; };
+		34F4BC1D223B75E50057080A /* CloumnFirstCategorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
@@ -76,6 +79,9 @@
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryDetailController.swift; sourceTree = "<group>"; };
+		34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryMenuTableController.swift; sourceTree = "<group>"; };
+		34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnFirstCategorTableViewCell.swift; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
@@ -157,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34F4BC17223B75B60057080A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */,
+				34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4965C6C5C0B1734301FD2D4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,8 +420,8 @@
 		CF8C0ED92236427300DF0D99 /* RealtimeShot */ = {
 			isa = PBXGroup;
 			children = (
+				34F4BC17223B75B60057080A /* Controller */,
 				CFAEC19822374CC400F38B82 /* ViewController */,
-				CFAEC19722374CBD00F38B82 /* ViewModel */,
 				CFAEC19622374CB800F38B82 /* View */,
 				CFAEC19522374CB300F38B82 /* Model */,
 			);
@@ -583,15 +598,9 @@
 		CFAEC19622374CB800F38B82 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CFAEC19722374CBD00F38B82 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CFAEC19822374CC400F38B82 /* ViewController */ = {
@@ -856,9 +865,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF7CA04F2223D376005CE8A3 /* UIView+Extension.swift in Sources */,
+				34F4BC1D223B75E50057080A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				CF7CA0512223D376005CE8A3 /* UIButton+Extension.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
+				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
@@ -895,6 +906,7 @@
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				CF7CA0642223D872005CE8A3 /* Alert.swift in Sources */,
 				CF7CA0422223CE4A005CE8A3 /* UIScreen+Extension.swift in Sources */,
+				34F4BC1B223B75B70057080A /* CloumnCategoryMenuTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
