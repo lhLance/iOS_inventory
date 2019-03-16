@@ -47,8 +47,8 @@ class LoginVC: UIViewController {
             make.height.equalTo(25)
         }
         
-        userNameTf.borderStyle = .line
-        userNameTf.keyboardType = .phonePad
+        userNameTf.borderStyle = .none
+        userNameTf.keyboardType = .asciiCapable
         userNameTf.attributedPlaceholder = NSAttributedString(string: "请输入账号",
                                                               attributes: [NSAttributedString.Key.font : UIFont.MILanTing(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         userNameTf.added(into: view)
@@ -56,11 +56,33 @@ class LoginVC: UIViewController {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(20)
-            make.top.equalTo(logInLbl.snp.bottom).offset(5)
+            make.top.equalTo(logInLbl.snp.bottom).offset(30)
+        }
+
+        _ = UIButton().then({ (b) in
+            b.backgroundColor = UIColor.cyan
+            b.added(into: view)
+            b.snp.makeConstraints({ (make) in
+                make.width.height.equalTo(20)
+                make.right.equalTo(userNameTf.snp.right).offset(-5)
+                make.centerY.equalTo(userNameTf.snp.centerY)
+            })
+            b.addTarget(self, action: #selector(clearBtnTapped), for: .touchUpInside)
+        })
+        
+        let line1 = UIView().then { (line) in
+            line.added(into: userNameTf)
+            line.snp.makeConstraints({ (make) in
+                make.width.equalTo(userNameTf.snp.width)
+                make.top.equalTo(userNameTf.snp.bottom).offset(5)
+                make.height.equalTo(1)
+            })
+            line.backgroundColor = UIColor.groupTableViewBackground
         }
         
-        passwordTf.borderStyle = .line
-        passwordTf.keyboardType = .phonePad
+        passwordTf.isSecureTextEntry = true
+        passwordTf.borderStyle = .none
+        passwordTf.keyboardType = .asciiCapable
         passwordTf.attributedPlaceholder = NSAttributedString(string: "请输入密码",
                                                               attributes: [NSAttributedString.Key.font : UIFont.MILanTing(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         passwordTf.added(into: view)
@@ -68,10 +90,31 @@ class LoginVC: UIViewController {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(20)
-            make.top.equalTo(userNameTf.snp.bottom).offset(20)
+            make.top.equalTo(line1.snp.bottom).offset(20)
         }
         
-        loginBtn.cornerRadius = 4
+        _ = UIButton().then({ (b) in
+            b.backgroundColor = UIColor.cyan
+            b.added(into: view)
+            b.snp.makeConstraints({ (make) in
+                make.width.height.equalTo(20)
+                make.right.equalTo(passwordTf.snp.right).offset(-5)
+                make.centerY.equalTo(passwordTf.snp.centerY)
+            })
+            b.addTarget(self, action: #selector(passwordBtnTapped), for: .touchUpInside)
+        })
+        
+        let line2 = UIView().then { (line) in
+            line.added(into: view)
+            line.snp.makeConstraints({ (make) in
+                make.width.equalTo(passwordTf.snp.width)
+                make.top.equalTo(passwordTf.snp.bottom).offset(5)
+                make.height.equalTo(1)
+            })
+            line.backgroundColor = UIColor.groupTableViewBackground
+        }
+        
+        loginBtn.cornerRadius = 5
         loginBtn.backgroundColor = UIColor.hex(0x9DCCFF)
         loginBtn.Text("登录").Font(UIFont.MILanTing(16)).TitleColor(UIColor.white)
         loginBtn.added(into: view)
@@ -79,7 +122,7 @@ class LoginVC: UIViewController {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(50)
-            make.top.equalTo(passwordTf.snp.bottom).offset(50)
+            make.top.equalTo(line2.snp.bottom).offset(50)
         }
         loginBtn.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         
@@ -90,6 +133,14 @@ class LoginVC: UIViewController {
             make.top.equalTo(loginBtn.snp.bottom).offset(10)
         }
         regisBtn.addTarget(self, action: #selector(registerBtnTapped), for: .touchUpInside)
+    }
+    
+    @objc func clearBtnTapped() {
+        userNameTf.text = ""
+    }
+    
+    @objc func passwordBtnTapped() {
+        passwordTf.isSecureTextEntry = !passwordTf.isSecureTextEntry
     }
     
     @objc func loginBtnTapped() {
