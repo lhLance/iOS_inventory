@@ -148,9 +148,8 @@ class LoginVC: UIViewController {
         print("loginBtnTapped...")
         AlarmCenterAPI.GetAPPKey(userName: "aaa",
                                  password: "000") { (model) in
-                                    
-            UserInfo.shared.appKey = model.appkey
-            UserInfo.shared.infoKey = model.infokey
+                UserInfo.shared.appKey = model.appkey ?? ""
+                UserInfo.shared.infoKey = model.infokey ?? ""
         }
     }
     

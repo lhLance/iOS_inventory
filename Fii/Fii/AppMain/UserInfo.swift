@@ -12,8 +12,8 @@ class UserInfo {
     
     static let shared = UserInfo()
 
-    var appKey: String? = nil
-    var infoKey: String? = nil
-    var version: String? = nil
-    var authName: String? = nil
+    var appKey = ""
+    var infoKey = ""
+    var version = ""
+    var authName = ""
 }

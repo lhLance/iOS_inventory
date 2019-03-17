@@ -21,7 +21,13 @@ class LoginRegsVC: UIViewController {
     
     var loginBtn: UIButton?
     var registerBtn: UIButton?
+    var discriptionLabel = UILabel()
     
+    let descriptionArr = ["6+全自动无人自主熄灯工厂",
+                          "11+覆盖国家",
+                          "2000000+员工",
+                          "3300+研发专利",
+                          "40000+技术人才"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,12 +67,54 @@ class LoginRegsVC: UIViewController {
         
         playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: VIDEO_HEIGHT)
         playerView.added(into: view)
-        playerView.backgroundColor = UIColor.red
+        playerView.backgroundColor = UIColor.white
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playToEndTime),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem)
+        
+        discriptionLabel.TextAlignment(.center).TextColor(UIColor.white).Font(UIFont.MILanTing(22))
+        discriptionLabel.added(into: view)
+        discriptionLabel.snp.makeConstraints({ (make) in
+            make.center.equalToSuperview()
+            make.height.equalTo(60)
+            make.width.equalToSuperview()
+        })
+
+        displayTitle()
+    }
+    
+    func displayTitle() {
+        UIView.animate(withDuration: 2.0, animations: {
+            self.discriptionLabel.Text(self.descriptionArr[0])
+        }) { (bool) in
+            if bool {
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.discriptionLabel.Text(self.descriptionArr[1])
+                }, completion: { (bool) in
+                    if bool {
+                        UIView.animate(withDuration: 2.0, animations: {
+                            self.discriptionLabel.Text(self.descriptionArr[2])
+                        }, completion: { (bool) in
+                            if bool {
+                                UIView.animate(withDuration: 2.0, animations: {
+                                    self.discriptionLabel.Text(self.descriptionArr[3])
+                                }, completion: { (bool) in
+                                    if bool {
+                                        UIView.animate(withDuration: 2.0, animations: {
+                                            self.discriptionLabel.Text(self.descriptionArr[4])
+                                        }, completion: { bool in
+                                            self.displayTitle()
+                                        } )
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        }
     }
     
     deinit {
