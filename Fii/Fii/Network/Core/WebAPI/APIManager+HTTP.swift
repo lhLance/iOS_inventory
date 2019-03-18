@@ -83,6 +83,7 @@ extension APIManager {
                     reqCallback(false, nil, APIError.business(code: code, msg: msg))
                  }
             case .failure(let error):
+                reqCallback(false, nil, APIError.unknow)
                 print(error)
             }
         }

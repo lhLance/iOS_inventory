@@ -146,10 +146,26 @@ class LoginVC: UIViewController {
     
     @objc func loginBtnTapped() {
         print("loginBtnTapped...")
-        AlarmCenterAPI.GetAPPKey(userName: "aaa",
-                                 password: "000") { (model) in
-                UserInfo.shared.appKey = model.appkey ?? ""
-                UserInfo.shared.infoKey = model.infokey ?? ""
+        AlarmCenterAPI.GetAPPKey(userName: "管理员",
+                                 password: "gw8888@") { [unowned self] (model) in
+                                    if model.appkey == nil || model.infokey == nil {
+                                        let v = AlertView()
+                                        v.added(into: self.view)
+                                        v.snp.makeConstraints({ (make) in
+                                            make.edges.equalToSuperview()
+                                        })
+                                        v.confirmBtnTap = {
+                                            v.removeFromSuperview()
+                                        }
+                                        
+                                    } else {
+                                        UserInfo.shared.appKey = model.appkey ?? ""
+                                        UserInfo.shared.infoKey = model.infokey ?? ""
+                                        
+                                        Toast.show(message: "登录成功")
+                                        
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
         }
     }
     

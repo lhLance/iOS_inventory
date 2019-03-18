@@ -23,6 +23,7 @@ final class AlarmCenterAPI {
             if let model = json?.toModel(FIIServiceModel.self) {
                 callBack(model)
             } else {
+                callBack(FIIServiceModel())
                 print("recieved data = \(String(describing: json))")
             }
         }
