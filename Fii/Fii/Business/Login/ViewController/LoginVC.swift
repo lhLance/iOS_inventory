@@ -172,7 +172,7 @@ class LoginVC: UIViewController {
                                         UserInfo.shared.appKey = model.appkey ?? ""
                                         UserInfo.shared.infoKey = model.infokey ?? ""
                                         
-                                        Toast.show(message: "登录成功")
+                                        // Toast.show(message: "登录成功")
                                         
                                         self.dismiss(animated: true, completion: nil)
                                     }
