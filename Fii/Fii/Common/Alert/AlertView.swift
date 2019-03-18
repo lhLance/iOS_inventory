@@ -13,7 +13,21 @@ class AlertView: UIView {
     
     var confirmBtnTap: (() -> Void)?
     
+    var titleOne: String? {
+        didSet {
+            self.topLabel?.Text(titleOne)
+        }
+    }
+    
+    var titleTwo: String? {
+        didSet {
+            self.bottomLabel?.Text(titleTwo)
+        }
+    }
+    
     private var titleView: UIView?
+    private var topLabel: UILabel?
+    private var bottomLabel: UILabel?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,7 +43,7 @@ class AlertView: UIView {
 
     func setupView() {
         
-        self.backgroundColor = UIColor(white: 0.5, alpha: 0.6)
+        backgroundColor = UIColor(white: 0.5, alpha: 0.6)
         
         titleView = UIView().then({ (t) in
             t.backgroundColor = UIColor.white
@@ -40,22 +54,22 @@ class AlertView: UIView {
                 make.center.equalToSuperview()
             })
             
-            let topLbl = UILabel().then({ (l) in
-                l.Text("登录失败").FontColor(UIFont.MILanTing(16), UIColor.black).TextAlignment(.center)
+            topLabel = UILabel().then({ (l) in
+                l.FontColor(UIFont.MILanTing(16), UIColor.black).TextAlignment(.center)
                 l.added(into: t)
                 l.snp.makeConstraints({ (make) in
-                    make.top.equalTo(20)
+                    make.top.equalTo(0.05 * UIScreen.height)
                     make.centerX.equalToSuperview()
                     make.width.equalToSuperview()
                     make.height.equalTo(15)
                 })
             })
             
-            let bottomLbl = UILabel().then({ (l) in
-                l.Text("账号或密码错误, 请重新输入").FontColor(UIFont.MILanTing(16), UIColor.lightGray).TextAlignment(.center)
+            bottomLabel = UILabel().then({ (l) in
+                l.FontColor(UIFont.MILanTing(16), UIColor.lightGray).TextAlignment(.center)
                 l.added(into: t)
                 l.snp.makeConstraints({ (make) in
-                    make.top.equalTo(topLbl.snp.bottom).offset(6)
+                    make.top.equalTo(topLabel?.snp.bottom ?? (0.05 * UIScreen.height + 15)).offset(15)
                     make.centerX.equalToSuperview()
                     make.width.equalToSuperview()
                     make.height.equalTo(15)
@@ -63,10 +77,10 @@ class AlertView: UIView {
             })
             
             let lineView = UIView().then({ (l) in
-                l.backgroundColor = UIColor.lightGray
+                l.backgroundColor = UIColor.hex(0xCCCCCC)
                 l.added(into: t)
                 l.snp.makeConstraints({ (make) in
-                    make.top.equalTo(bottomLbl.snp.bottom).offset(10)
+                    make.bottom.equalTo(-50)
                     make.centerX.equalToSuperview()
                     make.width.equalToSuperview()
                     make.height.equalTo(3)
@@ -74,7 +88,8 @@ class AlertView: UIView {
             })
             
             _ = UIButton().then({ (b) in
-                b.Text("确定").TitleColor(UIColor.blue).Font(UIFont.MILanTing(16))
+                b.cornerRadius = 2.0
+                b.Text("确定").TitleColor(UIColor.hex(0x2C7CFD)).Font(UIFont.MILanTing(16))
                 b.added(into: t)
                 b.snp.makeConstraints({ (make) in
                     make.width.equalToSuperview()
@@ -83,14 +98,11 @@ class AlertView: UIView {
                 })
                 b.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
             })
-            
-            
         })
     }
     
     @objc func confirmBtnTapped() {
         print("confirmBtnTapped...")
         confirmBtnTap?()
-//        self.removeFromSuperview()
     }
 }

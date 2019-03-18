@@ -145,11 +145,22 @@ class LoginVC: UIViewController {
     }
     
     @objc func loginBtnTapped() {
-        print("loginBtnTapped...")
-        AlarmCenterAPI.GetAPPKey(userName: "管理员",
-                                 password: "gw8888@") { [unowned self] (model) in
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.added(into: loginBtn)
+        activityIndicator.snp.makeConstraints { (make) in
+            make.width.height.equalTo(25)
+            make.centerY.equalToSuperview()
+            make.right.equalTo(loginBtn.snp.centerX).offset(-16)
+        }
+        activityIndicator.startAnimating()
+        
+        AlarmCenterAPI.GetAPPKey(userName: userNameTf.text ?? "",
+                                 password: passwordTf.text ?? "") { [unowned self] (model) in
                                     if model.appkey == nil || model.infokey == nil {
                                         let v = AlertView()
+                                        v.titleOne = "登录失败"
+                                        v.titleTwo = "账号或密码错误, 请重新输入"
                                         v.added(into: self.view)
                                         v.snp.makeConstraints({ (make) in
                                             make.edges.equalToSuperview()
@@ -157,7 +168,6 @@ class LoginVC: UIViewController {
                                         v.confirmBtnTap = {
                                             v.removeFromSuperview()
                                         }
-                                        
                                     } else {
                                         UserInfo.shared.appKey = model.appkey ?? ""
                                         UserInfo.shared.infoKey = model.infokey ?? ""
@@ -166,6 +176,9 @@ class LoginVC: UIViewController {
                                         
                                         self.dismiss(animated: true, completion: nil)
                                     }
+                                    
+                                    activityIndicator.stopAnimating()
+                                    activityIndicator.removeFromSuperview()
         }
     }
     
