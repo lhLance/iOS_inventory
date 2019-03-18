@@ -23,16 +23,18 @@ class LoginRegsVC: UIViewController {
     var registerBtn: UIButton?
     var discriptionLabel = UILabel()
     
-    let descriptionArr = ["6+全自动无人自主熄灯工厂",
-                          "11+覆盖国家",
-                          "2000000+员工",
-                          "3300+研发专利",
-                          "40000+技术人才"]
+    let descriptionArr = ["6+ 全自动无人自主熄灯工厂",
+                          "11+ 覆盖国家",
+                          "2000000+ 员工",
+                          "3300+ 研发专利",
+                          "40000+ 技术人才"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        
+        displayTitle()
     }
     
     override func viewDidLoad() {
@@ -81,8 +83,6 @@ class LoginRegsVC: UIViewController {
             make.height.equalTo(60)
             make.width.equalToSuperview()
         })
-
-        displayTitle()
     }
     
     func displayTitle() {

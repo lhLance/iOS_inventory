@@ -127,7 +127,7 @@ class LoginVC: UIViewController {
         }
         loginBtn.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         
-        regisBtn.Text("注册新账号").TitleColor(UIColor.hex(0x9DCCFF)).Font(UIFont.MILanTing(14))
+        regisBtn.Text("注册新账号").TitleColor(UIColor.hex(0x2C7CFD)).Font(UIFont.MILanTing(14))
         regisBtn.added(into: view)
         regisBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
