@@ -109,6 +109,7 @@ class MeVC: UIViewController {
             cell.added(into: scrollView)
             cell.image = item.img
             cell.title = item.name
+            cell.index = index
             
             if let prevCell = prevCell {
                 cell.snp.makeConstraints { (make) in
@@ -150,6 +151,8 @@ class Cell: UIView {
             titleLbl.text = title
         }
     }
+    
+    var index = 0
     
     private let imageV = UIImageView()
     private let arrowImgV = UIImageView()
@@ -204,5 +207,15 @@ class Cell: UIView {
     
     @objc func tapGestureBtnTapped() {
         print("tapGestureBtnTapped...")
+        switch index {
+        case 0:
+            let vc = AboutVC()
+            
+            break
+        case 1: break
+        case 2: break
+        case 3: break
+        case 4: break
+        }
     }
 }

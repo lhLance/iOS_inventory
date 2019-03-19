@@ -47,6 +47,7 @@
 		CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0742223DC6D005CE8A3 /* APIError.swift */; };
 		CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0762223E1B6005CE8A3 /* APIResult.swift */; };
 		CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0782223E29C005CE8A3 /* DataParse.swift */; };
+		CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8595272240E4ED00B9F60C /* AboutVC.swift */; };
 		CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */; };
 		CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE02236491800DF0D99 /* MeVC.swift */; };
 		CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */; };
@@ -128,6 +129,7 @@
 		CF7CA0742223DC6D005CE8A3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7CA0762223E1B6005CE8A3 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		CF7CA0782223E29C005CE8A3 /* DataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParse.swift; sourceTree = "<group>"; };
+		CF8595272240E4ED00B9F60C /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE02236491800DF0D99 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListVC.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				CF8C0EE02236491800DF0D99 /* MeVC.swift */,
+				CF8595272240E4ED00B9F60C /* AboutVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,
+				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
