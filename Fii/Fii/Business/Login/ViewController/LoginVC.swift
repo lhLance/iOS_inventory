@@ -14,6 +14,8 @@ import RxCocoa
 
 class LoginVC: UIViewController {
 
+    var penetrateView: PenetrateView?
+    
     let logInLbl = UILabel()
     let userNameTf = UITextField()
     let passwordTf = UITextField()
@@ -147,13 +149,8 @@ class LoginVC: UIViewController {
     @objc func loginBtnTapped() {
         
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.added(into: loginBtn)
-        activityIndicator.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
-            make.centerY.equalToSuperview()
-            make.right.equalTo(loginBtn.snp.centerX).offset(-16)
-        }
-        activityIndicator.startAnimating()
+        
+        LoginingBtnState(activityIndicator: activityIndicator)
         
         AlarmCenterAPI.GetAPPKey(userName: userNameTf.text ?? "",
                                  password: passwordTf.text ?? "") { [unowned self] (model) in
@@ -177,14 +174,57 @@ class LoginVC: UIViewController {
                                         self.dismiss(animated: true, completion: nil)
                                     }
                                     
-                                    activityIndicator.stopAnimating()
-                                    activityIndicator.removeFromSuperview()
+                                    self.LoginBtnState(activityIndicator: activityIndicator)
         }
     }
     
     @objc func registerBtnTapped() {
         let vc = RegisterVC()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func LoginBtnState(activityIndicator: UIActivityIndicatorView) {
+        
+        loginBtn.Text("登录")
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+        
+        penetrateView?.removeFromSuperview()
+    }
+    
+    func LoginingBtnState(activityIndicator: UIActivityIndicatorView) {
+        
+        loginBtn.Text("")
+        
+         penetrateView = PenetrateView().then({ (v) in
+            v.added(into: loginBtn)
+            v.snp.makeConstraints({ (make) in
+                make.center.equalToSuperview()
+                make.width.equalTo(85)
+                make.height.equalTo(25)
+            })
+            
+            activityIndicator.added(into: v)
+            activityIndicator.snp.makeConstraints { (make) in
+                make.width.height.equalTo(25)
+                make.centerY.equalToSuperview()
+                make.left.equalToSuperview()
+            }
+            activityIndicator.startAnimating()
+            
+            _ = UILabel().then({ (lbl) in
+                lbl.Font(UIFont.MILanTing(16)).Text("登录").TextAlignment(.center).TextColor(UIColor.white)
+                lbl.added(into: v)
+                lbl.snp.makeConstraints({ (make) in
+                    make.height.equalTo(25)
+                    make.width.equalTo(60)
+                    make.centerY.equalToSuperview()
+                    make.left.equalTo(activityIndicator.snp.right)
+                })
+            })
+        })
+        
+
     }
     
     func bindUI() {

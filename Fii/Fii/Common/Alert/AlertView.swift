@@ -47,6 +47,7 @@ class AlertView: UIView {
         
         titleView = UIView().then({ (t) in
             t.backgroundColor = UIColor.white
+            t.cornerRadius = 2.0
             t.added(into: self)
             t.snp.makeConstraints({ (make) in
                 make.width.equalTo(0.7 * UIScreen.width)
