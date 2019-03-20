@@ -33,4 +33,20 @@ extension String {
         }
         return NSDictionary()
     }
+    
+    func ga_heightForComment(fontSize: CGFloat, width: CGFloat) -> CGFloat {
+        
+        let font = UIFont.systemFont(ofSize: fontSize)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(rect.height)
+    }
+    
+    func ga_heightForComment(fontSize: CGFloat, width: CGFloat, maxHeight: CGFloat) -> CGFloat {
+        
+        let font = UIFont.systemFont(ofSize: fontSize)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(rect.height)>maxHeight ? maxHeight : ceil(rect.height)
+    }
 }
