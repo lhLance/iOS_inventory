@@ -47,6 +47,7 @@
 		CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0742223DC6D005CE8A3 /* APIError.swift */; };
 		CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0762223E1B6005CE8A3 /* APIResult.swift */; };
 		CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0782223E29C005CE8A3 /* DataParse.swift */; };
+		CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */; };
 		CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8595272240E4ED00B9F60C /* AboutVC.swift */; };
 		CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */; };
 		CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE02236491800DF0D99 /* MeVC.swift */; };
@@ -129,6 +130,7 @@
 		CF7CA0742223DC6D005CE8A3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7CA0762223E1B6005CE8A3 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		CF7CA0782223E29C005CE8A3 /* DataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParse.swift; sourceTree = "<group>"; };
+		CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		CF8595272240E4ED00B9F60C /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE02236491800DF0D99 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 			children = (
 				CF8C0EE02236491800DF0D99 /* MeVC.swift */,
 				CF8595272240E4ED00B9F60C /* AboutVC.swift */,
+				CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */,
 				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
+				CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */,
 				CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */,
 				CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */,
 				CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */,

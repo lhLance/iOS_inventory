@@ -109,7 +109,6 @@ class MeVC: UIViewController {
             cell.added(into: scrollView)
             cell.image = item.img
             cell.title = item.name
-            cell.index = index
             
             if let prevCell = prevCell {
                 cell.snp.makeConstraints { (make) in
@@ -129,6 +128,24 @@ class MeVC: UIViewController {
             }
             
             prevCell = cell
+            
+            cell.cellTap = { [unowned self] in
+                switch index {
+                case 0:
+                    let vc = AboutVC()
+                    vc.title = "关于我们"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                case 1:
+                    let vc = HelpVC()
+                    vc.title = "帮助"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                case 2: break
+                case 3: break
+                case 4: break
+                default:
+                    break
+                }
+            }
         }
     }
     
@@ -139,6 +156,8 @@ class MeVC: UIViewController {
 }
 
 class Cell: UIView {
+    
+    var cellTap: (() -> Void)?
     
     var image: UIImage? {
         didSet {
@@ -151,8 +170,6 @@ class Cell: UIView {
             titleLbl.text = title
         }
     }
-    
-    var index = 0
     
     private let imageV = UIImageView()
     private let arrowImgV = UIImageView()
@@ -207,15 +224,7 @@ class Cell: UIView {
     
     @objc func tapGestureBtnTapped() {
         print("tapGestureBtnTapped...")
-        switch index {
-        case 0:
-            let vc = AboutVC()
-            
-            break
-        case 1: break
-        case 2: break
-        case 3: break
-        case 4: break
-        }
+        
+        cellTap?()
     }
 }
