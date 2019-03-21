@@ -61,6 +61,7 @@ class LoginRegsVC: UIViewController {
         // 监听状态改变
         playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
         player = AVPlayer(playerItem: playerItem)
+        player?.automaticallyWaitsToMinimizeStalling = false
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         playerLayer?.contentsScale = UIScreen.main.scale
@@ -86,6 +87,7 @@ class LoginRegsVC: UIViewController {
     }
     
     func displayTitle() {
+        
         UIView.animate(withDuration: 2.0, animations: {
             self.discriptionLabel.Text(self.descriptionArr[0])
         }) { (bool) in

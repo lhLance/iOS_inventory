@@ -57,6 +57,7 @@
 		CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */; };
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
 		CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D2055223F3EB500CEF14C /* AlertView.swift */; };
+		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
 		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
@@ -141,6 +142,7 @@
 		CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegsVC.swift; sourceTree = "<group>"; };
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
 		CF9D2055223F3EB500CEF14C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 				CF8C0EE02236491800DF0D99 /* MeVC.swift */,
 				CF8595272240E4ED00B9F60C /* AboutVC.swift */,
 				CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */,
+				CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				CF7CA04C2223D376005CE8A3 /* UIImage+Extension.swift in Sources */,
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
+				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
 				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */,
