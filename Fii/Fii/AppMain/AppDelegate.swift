@@ -31,13 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                               name: SDK_Constant.UserName,
                               portraitUri: SDK_Constant.Uri) { model in
                                 
-                                RCIMClient.shared()?.connect(withToken: model.token, success: { (userId) in
-                                    print("登录成功，当前登录的用户ID: \(String(describing: userId))")
-                                }, error: { (status) in
-                                    print("登录的错误码为\(status)")
-                                }, tokenIncorrect: {
-                                    print("token 错误")
-                                })
+                                if let token = model.token {
+                                    print("model.token = \(token)")
+                                    RCIMClient.shared()?.connect(withToken: token, success: { (userId) in
+                                        print("登录成功，当前登录的用户ID: \(String(describing: userId))")
+                                    }, error: { (status) in
+                                        print("登录的错误码为\(status)")
+                                    }, tokenIncorrect: {
+                                        print("token 错误")
+                                    })
+                                }
         }
     }
     
