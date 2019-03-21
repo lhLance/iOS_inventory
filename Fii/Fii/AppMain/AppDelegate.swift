@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupRongCloud() {
         
         RCIM.shared()?.initWithAppKey(SDK_Constant.RongCloudAppkey)
+        RongCloudAPI.getToken(userId: <#T##String#>, name: <#T##String#>, portraitUri: <#T##String#>, <#T##callBack: (FiiRongCloudModel) -> Void##(FiiRongCloudModel) -> Void#>)
     }
     
     func setupVCs() {

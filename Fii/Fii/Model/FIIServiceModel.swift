@@ -8,6 +8,13 @@
 
 import Foundation
 
+class FiiRongCloudModel: Codable {
+    
+    var code: Int? // 200 为正常
+    var token: String?
+    var userId: String?
+}
+
 class FIIServiceModel: Codable {
     
     var appkey: String?
