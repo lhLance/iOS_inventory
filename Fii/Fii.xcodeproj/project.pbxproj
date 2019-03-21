@@ -19,39 +19,6 @@
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
 		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
 		CF63E728224339AB00D94D1E /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E727224339AB00D94D1E /* SDK.swift */; };
-		CF63E7642243820700D94D1E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7632243820700D94D1E /* AssetsLibrary.framework */; };
-		CF63E7662243820D00D94D1E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7652243820D00D94D1E /* AudioToolbox.framework */; };
-		CF63E7682243821400D94D1E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7672243821400D94D1E /* AVFoundation.framework */; };
-		CF63E76A2243821C00D94D1E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7692243821C00D94D1E /* CFNetwork.framework */; };
-		CF63E76C2243822200D94D1E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E76B2243822200D94D1E /* CoreAudio.framework */; };
-		CF63E76E2243823400D94D1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E76D2243823400D94D1E /* CoreGraphics.framework */; };
-		CF63E7702243824200D94D1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E76F2243824200D94D1E /* CoreLocation.framework */; };
-		CF63E7722243825600D94D1E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7712243825600D94D1E /* CoreMedia.framework */; };
-		CF63E774224382E600D94D1E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E773224382E600D94D1E /* CoreTelephony.framework */; };
-		CF63E776224382F300D94D1E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E775224382F300D94D1E /* CoreVideo.framework */; };
-		CF63E778224382FB00D94D1E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E777224382FB00D94D1E /* ImageIO.framework */; };
-		CF63E77A2243830500D94D1E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7792243830500D94D1E /* libc++.tbd */; };
-		CF63E77C2243831400D94D1E /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E77B2243831400D94D1E /* libc++abi.tbd */; };
-		CF63E77E2243832400D94D1E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E77D2243832400D94D1E /* libsqlite3.tbd */; };
-		CF63E780224384F400D94D1E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E77F224384F400D94D1E /* libxml2.tbd */; };
-		CF63E7822243851200D94D1E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7812243851200D94D1E /* libz.tbd */; };
-		CF63E7842243851E00D94D1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7832243851E00D94D1E /* MapKit.framework */; };
-		CF63E7862243852A00D94D1E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7852243852900D94D1E /* OpenGLES.framework */; };
-		CF63E7882243853200D94D1E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7872243853200D94D1E /* QuartzCore.framework */; };
-		CF63E78C2243854400D94D1E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E78B2243854400D94D1E /* SystemConfiguration.framework */; };
-		CF63E78E2243854D00D94D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E78D2243854D00D94D1E /* UIKit.framework */; };
-		CF63E7902243855300D94D1E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E78F2243855300D94D1E /* Photos.framework */; };
-		CF63E7922243855D00D94D1E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E7912243855D00D94D1E /* SafariServices.framework */; };
-		CF63E7A0224386B300D94D1E /* .RongIMLib.framework.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E795224386B300D94D1E /* .RongIMLib.framework.icloud */; };
-		CF63E7A1224386B300D94D1E /* .libvo-amrwbenc.a.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E796224386B300D94D1E /* .libvo-amrwbenc.a.icloud */; };
-		CF63E7A2224386B300D94D1E /* .libopencore-amrnb.a.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E797224386B300D94D1E /* .libopencore-amrnb.a.icloud */; };
-		CF63E7A3224386B300D94D1E /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63E798224386B300D94D1E /* libopencore-amrwb.a */; };
-		CF63E7A4224386B300D94D1E /* RCConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF63E799224386B300D94D1E /* RCConfig.plist */; };
-		CF63E7A5224386B300D94D1E /* release_notes_ios.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF63E79A224386B300D94D1E /* release_notes_ios.txt */; };
-		CF63E7A6224386B300D94D1E /* .RongCallLib.framework.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E79C224386B300D94D1E /* .RongCallLib.framework.icloud */; };
-		CF63E7A7224386B300D94D1E /* .GPUImage.framework.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E79D224386B300D94D1E /* .GPUImage.framework.icloud */; };
-		CF63E7A8224386B300D94D1E /* .Blink.framework.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E79E224386B300D94D1E /* .Blink.framework.icloud */; };
-		CF63E7A9224386B300D94D1E /* .Bailingquic.framework.icloud in Resources */ = {isa = PBXBuildFile; fileRef = CF63E79F224386B300D94D1E /* .Bailingquic.framework.icloud */; };
 		CF63E7AB2243892900D94D1E /* RongCloudAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E7AA2243892900D94D1E /* RongCloudAPI.swift */; };
 		CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76EEEC2238D56400182867 /* OpenScreenView.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
@@ -118,6 +85,7 @@
 /* Begin PBXFileReference section */
 		0415600222240306001E68CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
+		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryDetailController.swift; sourceTree = "<group>"; };
@@ -129,7 +97,6 @@
 		CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIIServiceModel.swift; sourceTree = "<group>"; };
 		CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiTabBarController.swift; sourceTree = "<group>"; };
 		CF63E727224339AB00D94D1E /* SDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDK.swift; sourceTree = "<group>"; };
-		CF63E72922433DD800D94D1E /* Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Home-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF63E7632243820700D94D1E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		CF63E7652243820D00D94D1E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF63E7672243821400D94D1E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -154,16 +121,6 @@
 		CF63E78D2243854D00D94D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF63E78F2243855300D94D1E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		CF63E7912243855D00D94D1E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		CF63E795224386B300D94D1E /* .RongIMLib.framework.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .RongIMLib.framework.icloud; sourceTree = "<group>"; };
-		CF63E796224386B300D94D1E /* .libvo-amrwbenc.a.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ".libvo-amrwbenc.a.icloud"; sourceTree = "<group>"; };
-		CF63E797224386B300D94D1E /* .libopencore-amrnb.a.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ".libopencore-amrnb.a.icloud"; sourceTree = "<group>"; };
-		CF63E798224386B300D94D1E /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
-		CF63E799224386B300D94D1E /* RCConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RCConfig.plist; sourceTree = "<group>"; };
-		CF63E79A224386B300D94D1E /* release_notes_ios.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes_ios.txt; sourceTree = "<group>"; };
-		CF63E79C224386B300D94D1E /* .RongCallLib.framework.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .RongCallLib.framework.icloud; sourceTree = "<group>"; };
-		CF63E79D224386B300D94D1E /* .GPUImage.framework.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .GPUImage.framework.icloud; sourceTree = "<group>"; };
-		CF63E79E224386B300D94D1E /* .Blink.framework.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .Blink.framework.icloud; sourceTree = "<group>"; };
-		CF63E79F224386B300D94D1E /* .Bailingquic.framework.icloud */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .Bailingquic.framework.icloud; sourceTree = "<group>"; };
 		CF63E7AA2243892900D94D1E /* RongCloudAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RongCloudAPI.swift; sourceTree = "<group>"; };
 		CF76EEEC2238D56400182867 /* OpenScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreenView.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,30 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF63E7922243855D00D94D1E /* SafariServices.framework in Frameworks */,
-				CF63E7902243855300D94D1E /* Photos.framework in Frameworks */,
-				CF63E78E2243854D00D94D1E /* UIKit.framework in Frameworks */,
-				CF63E78C2243854400D94D1E /* SystemConfiguration.framework in Frameworks */,
-				CF63E7882243853200D94D1E /* QuartzCore.framework in Frameworks */,
-				CF63E7862243852A00D94D1E /* OpenGLES.framework in Frameworks */,
-				CF63E7842243851E00D94D1E /* MapKit.framework in Frameworks */,
-				CF63E7822243851200D94D1E /* libz.tbd in Frameworks */,
-				CF63E780224384F400D94D1E /* libxml2.tbd in Frameworks */,
-				CF63E77E2243832400D94D1E /* libsqlite3.tbd in Frameworks */,
-				CF63E77C2243831400D94D1E /* libc++abi.tbd in Frameworks */,
-				CF63E7A3224386B300D94D1E /* libopencore-amrwb.a in Frameworks */,
-				CF63E77A2243830500D94D1E /* libc++.tbd in Frameworks */,
-				CF63E778224382FB00D94D1E /* ImageIO.framework in Frameworks */,
-				CF63E776224382F300D94D1E /* CoreVideo.framework in Frameworks */,
-				CF63E774224382E600D94D1E /* CoreTelephony.framework in Frameworks */,
-				CF63E7722243825600D94D1E /* CoreMedia.framework in Frameworks */,
-				CF63E7702243824200D94D1E /* CoreLocation.framework in Frameworks */,
-				CF63E76E2243823400D94D1E /* CoreGraphics.framework in Frameworks */,
-				CF63E76C2243822200D94D1E /* CoreAudio.framework in Frameworks */,
-				CF63E76A2243821C00D94D1E /* CFNetwork.framework in Frameworks */,
-				CF63E7682243821400D94D1E /* AVFoundation.framework in Frameworks */,
-				CF63E7662243820D00D94D1E /* AudioToolbox.framework in Frameworks */,
-				CF63E7642243820700D94D1E /* AssetsLibrary.framework in Frameworks */,
 				9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,39 +251,6 @@
 				CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CF63E793224386B300D94D1E /* Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev */ = {
-			isa = PBXGroup;
-			children = (
-				CF63E794224386B300D94D1E /* IMLib */,
-				CF63E79A224386B300D94D1E /* release_notes_ios.txt */,
-			);
-			path = Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev;
-			sourceTree = "<group>";
-		};
-		CF63E794224386B300D94D1E /* IMLib */ = {
-			isa = PBXGroup;
-			children = (
-				CF63E795224386B300D94D1E /* .RongIMLib.framework.icloud */,
-				CF63E796224386B300D94D1E /* .libvo-amrwbenc.a.icloud */,
-				CF63E797224386B300D94D1E /* .libopencore-amrnb.a.icloud */,
-				CF63E798224386B300D94D1E /* libopencore-amrwb.a */,
-				CF63E799224386B300D94D1E /* RCConfig.plist */,
-			);
-			path = IMLib;
-			sourceTree = "<group>";
-		};
-		CF63E79B224386B300D94D1E /* CallLib */ = {
-			isa = PBXGroup;
-			children = (
-				CF63E79C224386B300D94D1E /* .RongCallLib.framework.icloud */,
-				CF63E79D224386B300D94D1E /* .GPUImage.framework.icloud */,
-				CF63E79E224386B300D94D1E /* .Blink.framework.icloud */,
-				CF63E79F224386B300D94D1E /* .Bailingquic.framework.icloud */,
-			);
-			name = CallLib;
-			path = ../../../../Desktop/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib;
 			sourceTree = "<group>";
 		};
 		CF7C9FF3222395FF005CE8A3 = {
@@ -437,7 +337,7 @@
 			children = (
 				CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */,
 				CFA83706223CBEB60054F311 /* UserInfo.swift */,
-				CF63E72922433DD800D94D1E /* Home-Bridging-Header.h */,
+				04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -659,8 +559,6 @@
 		CFA4D437224336B200AC586A /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				CF63E79B224386B300D94D1E /* CallLib */,
-				CF63E793224386B300D94D1E /* Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev */,
 				CF63E727224339AB00D94D1E /* SDK.swift */,
 			);
 			path = SDK;
@@ -944,17 +842,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF63E7A2224386B300D94D1E /* .libopencore-amrnb.a.icloud in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
-				CF63E7A7224386B300D94D1E /* .GPUImage.framework.icloud in Resources */,
 				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
-				CF63E7A4224386B300D94D1E /* RCConfig.plist in Resources */,
-				CF63E7A9224386B300D94D1E /* .Bailingquic.framework.icloud in Resources */,
-				CF63E7A0224386B300D94D1E /* .RongIMLib.framework.icloud in Resources */,
-				CF63E7A1224386B300D94D1E /* .libvo-amrwbenc.a.icloud in Resources */,
-				CF63E7A6224386B300D94D1E /* .RongCallLib.framework.icloud in Resources */,
-				CF63E7A5224386B300D94D1E /* release_notes_ios.txt in Resources */,
-				CF63E7A8224386B300D94D1E /* .Blink.framework.icloud in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,7 +1201,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1346,7 +1235,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

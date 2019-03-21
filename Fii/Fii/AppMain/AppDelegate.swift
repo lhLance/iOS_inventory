@@ -26,8 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupRongCloud() {
         
-        RCIM.shared()?.initWithAppKey(SDK_Constant.RongCloudAppkey)
-        RongCloudAPI.getToken(userId: <#T##String#>, name: <#T##String#>, portraitUri: <#T##String#>, <#T##callBack: (FiiRongCloudModel) -> Void##(FiiRongCloudModel) -> Void#>)
+        RCIMClient.shared()?.initWithAppKey(SDK_Constant.RongCloudAppkey)
+        RongCloudAPI.getToken(userId: SDK_Constant.UserID,
+                              name: SDK_Constant.UserName,
+                              portraitUri: SDK_Constant.Uri) { model in
+                                
+                                RCIMClient.shared()?.connect(withToken: model.token, success: { (userId) in
+                                    print("登录成功，当前登录的用户ID: \(String(describing: userId))")
+                                }, error: { (status) in
+                                    print("登录的错误码为\(status)")
+                                }, tokenIncorrect: {
+                                    print("token 错误")
+                                })
+        }
     }
     
     func setupVCs() {
