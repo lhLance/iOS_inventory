@@ -19,4 +19,7 @@ target 'Fii' do
     pod 'Charts'
     # Grama
     pod 'Then', '~> 2.4.0'
+    # SDK
+    pod 'RongCloudIM/IMLib'
+    pod 'RongCloudIM/IMKit'
 end

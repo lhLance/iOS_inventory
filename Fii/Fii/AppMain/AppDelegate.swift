@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+
+        setupVCs()
+        // setupOpenScreenView(vc: rootVC)
+        setupRongCloud()
+        
+        return true
+    }
+    
+    func setupRongCloud() {
+        
+        RCIM.shared()?.initWithAppKey(SDK_Constant.RongCloudAppkey)
+    }
+    
+    func setupVCs() {
+        
         let homeVC = HomeVC()
         let meVC = MeVC()
         let deviceListVC = DeviceListVC()
@@ -58,10 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 0.0)
-        
-        // setupOpenScreenView(vc: rootVC)
-        
-        return true
     }
     
     func createTabbarChildVC(vc: UIViewController,
