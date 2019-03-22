@@ -19,7 +19,6 @@
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
 		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
 		CF63E728224339AB00D94D1E /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E727224339AB00D94D1E /* SDK.swift */; };
-		CF63E7AB2243892900D94D1E /* RongCloudAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E7AA2243892900D94D1E /* RongCloudAPI.swift */; };
 		CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76EEEC2238D56400182867 /* OpenScreenView.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CA00622239600005CE8A3 /* Assets.xcassets */; };
@@ -121,7 +120,6 @@
 		CF63E78D2243854D00D94D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF63E78F2243855300D94D1E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		CF63E7912243855D00D94D1E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		CF63E7AA2243892900D94D1E /* RongCloudAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RongCloudAPI.swift; sourceTree = "<group>"; };
 		CF76EEEC2238D56400182867 /* OpenScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreenView.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -451,7 +449,6 @@
 			isa = PBXGroup;
 			children = (
 				CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */,
-				CF63E7AA2243892900D94D1E /* RongCloudAPI.swift */,
 			);
 			path = Busniess;
 			sourceTree = "<group>";
@@ -747,7 +744,6 @@
 				CF7C9FF9222395FF005CE8A3 /* Frameworks */,
 				CF7C9FFA222395FF005CE8A3 /* Resources */,
 				185C84FC4B7D5209C340EAE8 /* [CP] Embed Pods Frameworks */,
-				54B19EAA50D62DB09FCFAF8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -910,38 +906,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fii/Pods-Fii-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54B19EAA50D62DB09FCFAF8D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fii/Pods-Fii-resources.sh",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCColor.plist",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCColor.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fii/Pods-Fii-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8E43E59286C008B40DD2E231 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -988,7 +952,6 @@
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
 				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
-				CF63E7AB2243892900D94D1E /* RongCloudAPI.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
@@ -1201,7 +1164,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1235,7 +1198,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

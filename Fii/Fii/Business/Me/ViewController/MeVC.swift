@@ -139,7 +139,9 @@ class MeVC: UIViewController {
                     let vc = HelpVC()
                     vc.title = "帮助"
                     self.navigationController?.pushViewController(vc, animated: true)
-                case 2: break
+                case 2:
+                    let vc = CustomerServiceVC()
+                    self.navigationController?.pushViewController(vc, animated: true)
                 case 3: break
                 case 4: break
                 default:

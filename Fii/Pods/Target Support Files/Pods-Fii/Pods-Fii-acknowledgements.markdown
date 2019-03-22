@@ -304,10 +304,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## RongCloudIM
-
-Copyright 2014 Rong Cloud
-
 ## RxAtomic
 
 **The MIT License**

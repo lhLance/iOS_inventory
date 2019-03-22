@@ -19,29 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setupVCs()
         // setupOpenScreenView(vc: rootVC)
-        setupRongCloud()
         
         return true
-    }
-    
-    func setupRongCloud() {
-        
-        RCIMClient.shared()?.initWithAppKey(SDK_Constant.RongCloudAppkey)
-        RongCloudAPI.getToken(userId: SDK_Constant.UserID,
-                              name: SDK_Constant.UserName,
-                              portraitUri: SDK_Constant.Uri) { model in
-                                
-                                if let token = model.token {
-                                    print("model.token = \(token)")
-                                    RCIMClient.shared()?.connect(withToken: token, success: { (userId) in
-                                        print("登录成功，当前登录的用户ID: \(String(describing: userId))")
-                                    }, error: { (status) in
-                                        print("登录的错误码为\(status)")
-                                    }, tokenIncorrect: {
-                                        print("token 错误")
-                                    })
-                                }
-        }
     }
     
     func setupVCs() {

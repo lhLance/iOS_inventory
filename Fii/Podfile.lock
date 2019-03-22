@@ -6,9 +6,6 @@ PODS:
   - Differentiator (3.1.0)
   - Kingfisher (4.10.1)
   - MJRefresh (3.1.15.7)
-  - RongCloudIM/IMKit (2.9.12):
-    - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.9.12)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -28,8 +25,6 @@ DEPENDENCIES:
   - Charts
   - Kingfisher
   - MJRefresh
-  - RongCloudIM/IMKit
-  - RongCloudIM/IMLib
   - RxCocoa
   - RxDataSources
   - RxSwift
@@ -45,7 +40,6 @@ SPEC REPOS:
     - Differentiator
     - Kingfisher
     - MJRefresh
-    - RongCloudIM
     - RxAtomic
     - RxCocoa
     - RxDataSources
@@ -61,7 +55,6 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  RongCloudIM: c00152f04571af9ac7623de2f56eb97038848096
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
@@ -71,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: d2caee2f823bf5acfa2b3ef86aee236d057d15d9
+PODFILE CHECKSUM: f4426a5d8a18d1b443353ec2b07bd80a380a8c50
 
 COCOAPODS: 1.6.0

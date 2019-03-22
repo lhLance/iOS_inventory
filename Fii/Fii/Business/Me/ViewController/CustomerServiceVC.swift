@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import WebKit
 
 class CustomerServiceVC: UIViewController {
 
+    let urlStr = "https://cschat-ccs.aliyun.com/index.htm?tntInstId=_1ERC6BE&scene=SCE00004113"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,12 @@ class CustomerServiceVC: UIViewController {
     
     func setupView() {
         
+        let webView = WKWebView()
+        webView.added(into: view)
+        webView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        webView.load(URLRequest(url: URL(string: urlStr)!))
     }
 
 }

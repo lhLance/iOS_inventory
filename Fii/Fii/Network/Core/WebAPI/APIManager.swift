@@ -40,11 +40,7 @@ class APIManager {
                      headers: HTTPHeaders? = nil,
                      callBack:@escaping requestCallback)
     {
-        var url = baseUrl.rawValue + path
-        
-        if path.contains("http") {
-            url = path
-        }
+        let url = baseUrl.rawValue + path
         
         let dataRequest = sessionManager.request(url,
                                                  method: method,
