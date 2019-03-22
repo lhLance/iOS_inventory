@@ -14,6 +14,9 @@ class AboutVC: UIViewController {
     var titleLabl: UILabel?
     var titleBtn: UIButton?
     var middleText: UILabel?
+    var wechatTitle: UILabel?
+    var wechatLine: UIView?
+    var wechatName: UILabel?
     var bussinessTitle: UILabel?
     var bussinessLine: UIView?
     var bussinessNO: UILabel?
@@ -70,7 +73,7 @@ class AboutVC: UIViewController {
         middleText = UILabel().then({ (m) in
             m.added(into: view)
             m.snp.makeConstraints({ (make) in
-                make.top.equalTo(titleBtn?.snp.bottom ?? 0).offset(25)
+                make.top.equalTo(titleBtn?.snp.bottom ?? 0).offset(20)
                 make.width.equalTo(0.7 * UIScreen.width)
                 make.height.equalTo(120)
                 make.centerX.equalToSuperview()
@@ -80,14 +83,41 @@ class AboutVC: UIViewController {
             m.numberOfLines = 0
         })
         
+        wechatTitle = UILabel().then({ (t) in
+            t.added(into: view)
+            t.snp.makeConstraints({ (make) in
+                make.top.equalTo(middleText?.snp.bottom ?? 0).offset(20)
+                make.height.equalTo(20)
+                make.centerX.equalToSuperview()
+            })
+            t.TextAlignment(.center).TextColor(UIColor.black).Text("微信公众号").Font(UIFont.MILanTing(16))
+        })
+        
+        wechatLine = UIView().then({ (l) in
+            l.added(into: view)
+            l.snp.makeConstraints({ (make) in
+                make.width.equalTo(0.5 * UIScreen.width)
+                make.height.equalTo(APP.SINGLE_LINE_HEIGHT)
+                make.top.equalTo(wechatTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                make.centerX.equalToSuperview()
+            })
+            l.backgroundColor = UIColor.lightGray
+        })
+
+        wechatName = UILabel().then({ (lbl) in
+            lbl.added(into: view)
+            lbl.snp.makeConstraints({ (make) in
+                make.top.equalTo(wechatLine?.snp.bottom ?? 0).offset(15)
+                make.centerX.equalToSuperview()
+                make.height.equalTo(20)
+            })
+            lbl.Text("工业富联601138").Font(UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+        })
+        
         bussinessTitle = UILabel().then({ (t) in
             t.added(into: view)
             t.snp.makeConstraints({ (make) in
-                if UIDevice.isPhoneX || UIDevice.isPhoneXR || UIDevice.isPhoneXMax {
-                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(25)
-                } else {
-                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(13)
-                }
+                make.top.equalTo(wechatName?.snp.bottom ?? 0).offset(25)
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
@@ -98,8 +128,8 @@ class AboutVC: UIViewController {
             l.added(into: view)
             l.snp.makeConstraints({ (make) in
                 make.width.equalTo(0.5 * UIScreen.width)
-                make.height.equalTo(0.5)
-                make.top.equalTo(bussinessTitle?.snp.bottom ?? 0).offset(15)
+                make.height.equalTo(APP.SINGLE_LINE_HEIGHT)
+                make.top.equalTo(bussinessTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
                 make.centerX.equalToSuperview()
             })
             l.backgroundColor = UIColor.lightGray

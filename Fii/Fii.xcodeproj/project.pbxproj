@@ -62,6 +62,7 @@
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
 		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
 		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
+		CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3DD502244D15C006CB9E7 /* APP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
 		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		CFE3DD502244D15C006CB9E7 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +338,7 @@
 				CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */,
 				CFA83706223CBEB60054F311 /* UserInfo.swift */,
 				04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */,
+				CFE3DD502244D15C006CB9E7 /* APP.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
 				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
+				CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
 				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */,
