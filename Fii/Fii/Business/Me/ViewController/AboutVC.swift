@@ -83,7 +83,11 @@ class AboutVC: UIViewController {
         bussinessTitle = UILabel().then({ (t) in
             t.added(into: view)
             t.snp.makeConstraints({ (make) in
-                make.top.equalTo(middleText?.snp.bottom ?? 0).offset(25)
+                if UIDevice.isPhoneX || UIDevice.isPhoneXR || UIDevice.isPhoneXMax {
+                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(25)
+                } else {
+                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(13)
+                }
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
@@ -126,7 +130,6 @@ class AboutVC: UIViewController {
             lbl.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
-                // make.top.equalTo(bussinessFax?.snp.bottom ?? 0).offset(35)
                 make.bottom.equalTo(-50)
             })
             lbl.TextFont("富士康工业互联网股份有限公司", UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
