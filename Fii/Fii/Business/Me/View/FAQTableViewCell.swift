@@ -13,6 +13,12 @@ class FAQTableViewCell: UITableViewCell {
     
     static let identifier = "FAQTableViewCell"
     
+    var questionStr: String? {
+        didSet {
+            titleLabel.Text(questionStr)
+        }
+    }
+    
     var contentStr: String? {
         didSet {
             contentLabel.Text(contentStr)
@@ -39,9 +45,20 @@ class FAQTableViewCell: UITableViewCell {
     
     func setupView() {
         
+        backgroundColor = UIColor.groupTableViewBackground
+        
+        contentView.backgroundColor = UIColor.white
+        contentView.cornerRadius = 5.0
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.left.equalTo(11)
+            make.right.equalTo(-11)
+            make.bottom.equalToSuperview()
+        }
+        
         openButton.added(into: contentView)
         openButton.snp.makeConstraints({ (make) in
-            make.width.height.equalTo(60)
+            make.width.height.equalTo(80)
             make.right.equalTo(-5)
             make.top.equalTo(5)
         })

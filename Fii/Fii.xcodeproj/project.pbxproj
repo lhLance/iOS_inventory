@@ -58,6 +58,9 @@
 		CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */; };
 		CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */; };
 		CF8EF53B2245BA85006BAFD1 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF53A2245BA85006BAFD1 /* UIWindow+Extension.swift */; };
+		CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */; };
+		CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF5472245DFF6006BAFD1 /* FileCache.swift */; };
+		CF8EF54A2245E04C006BAFD1 /* MeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */; };
 		CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D2055223F3EB500CEF14C /* AlertView.swift */; };
 		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
@@ -171,6 +174,9 @@
 		CF8C0EE82236498400DF0D99 /* LoginRegsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegsVC.swift; sourceTree = "<group>"; };
 		CF8C0EEA223655CF00DF0D99 /* VoiceControllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControllVC.swift; sourceTree = "<group>"; };
 		CF8EF53A2245BA85006BAFD1 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		CF8EF5472245DFF6006BAFD1 /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
+		CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingCell.swift; sourceTree = "<group>"; };
 		CF9D2055223F3EB500CEF14C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -411,6 +417,7 @@
 			children = (
 				CF7CA0662223D899005CE8A3 /* BlockConfig.swift */,
 				CF7CA0652223D898005CE8A3 /* GCDTimer.swift */,
+				CF8EF5472245DFF6006BAFD1 /* FileCache.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -475,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7CCEF72242202E00BBA836 /* FAQTableViewCell.swift */,
+				CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -603,6 +611,7 @@
 				CF8595272240E4ED00B9F60C /* AboutVC.swift */,
 				CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */,
 				CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */,
+				CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -963,6 +972,7 @@
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
 				CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */,
+				CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */,
 				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */,
@@ -971,9 +981,11 @@
 				CF63E728224339AB00D94D1E /* SDK.swift in Sources */,
 				CF8C0EE92236498400DF0D99 /* LoginRegsVC.swift in Sources */,
 				CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */,
+				CF8EF54A2245E04C006BAFD1 /* MeSettingCell.swift in Sources */,
 				CF7CA0502223D376005CE8A3 /* GCD+Extension.swift in Sources */,
 				CF7CA04C2223D376005CE8A3 /* UIImage+Extension.swift in Sources */,
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
+				CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
 				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
 				CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */,
