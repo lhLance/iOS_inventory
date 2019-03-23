@@ -98,12 +98,22 @@ extension HelpVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.clickOpenAction = { [unowned self] isSelected in
             cell.openButton.isSelected = isSelected
-            self.flags[indexPath.item] = isSelected
-            
+            self.flags[indexPath.row] = isSelected
+
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! FAQTableViewCell
+        
+        cell.openButton.isSelected = !cell.openButton.isSelected
+        self.flags[indexPath.row] = cell.openButton.isSelected
+        
+        tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
