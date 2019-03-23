@@ -123,15 +123,3 @@ extension Toast {
         }
     }
 }
-
-extension UIWindow {
-    
-    var topVC: UIViewController? {
-        if let tabVC = self.rootViewController as? UITabBarController,
-            let navVC = tabVC.selectedViewController as? UINavigationController,
-            let topVC = navVC.topViewController {
-            return topVC
-        }
-        return nil
-    }
-}

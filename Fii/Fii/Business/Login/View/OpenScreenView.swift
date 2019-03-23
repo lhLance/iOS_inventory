@@ -69,7 +69,7 @@ class OpenScreenView: UIView {
         scrollView.contentSize = CGSize(width: width * CGFloat(count), height: height)
         
         pageControl.centerX = width / 2
-        if UIDevice.isPhoneX || UIDevice.isPhoneXR || UIDevice.isPhoneXMax {
+        if UIDevice.isPhoneXorMore {
             pageControl.origin.y = height - UIScreen.tabBarHeight - 70
         } else {
             pageControl.origin.y = height - UIScreen.tabBarHeight - 50

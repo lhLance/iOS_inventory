@@ -13,7 +13,7 @@ extension UIImage {
     /// 绘制导航栏渐变色背景
     static func drawNavBarImg(colorTop: UIColor, colorBottom: UIColor) -> UIImage {
         
-        let height: CGFloat = (UIDevice.isPhoneX || UIDevice.isPhoneXR || UIDevice.isPhoneXMax) ? 88 : 64
+        let height: CGFloat = UIDevice.isPhoneXorMore ? 88 : 64
         let rect = CGRect(x: 0, y: 0, width: 100, height: height)
         
         UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
