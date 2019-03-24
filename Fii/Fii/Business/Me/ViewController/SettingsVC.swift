@@ -25,6 +25,9 @@ class SettingsVC: UIViewController {
     }
     
     func setupSubviews() {
+        
+        view.backgroundColor = UIColor.white
+        
         let header = UIView.init().setup { (v) in
             
             let tap = UITapGestureRecognizer(target: self, action: #selector(gotoUserInfoVC))
