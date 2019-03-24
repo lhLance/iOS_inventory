@@ -40,7 +40,11 @@ class AboutVC: UIViewController {
             img.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(90)
                 make.centerX.equalToSuperview()
-                make.top.equalTo(UIScreen.navBarHeight + 50)
+                if UIDevice.isPhone5orSE {
+                    make.top.equalTo(UIScreen.navBarHeight + 10)
+                } else {
+                    make.top.equalTo(UIScreen.navBarHeight + 50)
+                }
             })
             img.cornerRadius = 45
             img.ImageName("Icon")
@@ -48,7 +52,7 @@ class AboutVC: UIViewController {
         
         titleLabl = UILabel().then({ (lbl) in
             lbl.added(into: view)
-            lbl.TextFont("Fii v1.0.0", UIFont.MILanTing(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont(APP.version, UIFont.MILanTing(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
             lbl.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
                 make.top.equalTo(titleImg?.snp.bottom ?? 0).offset(5)
@@ -62,7 +66,11 @@ class AboutVC: UIViewController {
                 make.width.equalTo(0.7 * UIScreen.width)
                 make.height.equalTo(40)
                 make.centerX.equalToSuperview()
-                make.top.equalTo(titleLabl?.snp.bottom ?? 0).offset(30)
+                if UIDevice.isPhone5orSE {
+                    make.top.equalTo(titleLabl?.snp.bottom ?? 0).offset(5)
+                } else {
+                    make.top.equalTo(titleLabl?.snp.bottom ?? 0).offset(30)
+                }
             })
             b.borderColor = UIColor.red
             b.borderWidth = 1.0
@@ -73,9 +81,15 @@ class AboutVC: UIViewController {
         middleText = UILabel().then({ (m) in
             m.added(into: view)
             m.snp.makeConstraints({ (make) in
-                make.top.equalTo(titleBtn?.snp.bottom ?? 0).offset(20)
-                make.width.equalTo(0.7 * UIScreen.width)
-                make.height.equalTo(120)
+                if UIDevice.isPhone5orSE {
+                    make.top.equalTo(titleBtn?.snp.bottom ?? 0).offset(5)
+                    make.width.equalTo(0.8 * UIScreen.width)
+                    make.height.equalTo(110)
+                } else {
+                    make.top.equalTo(titleBtn?.snp.bottom ?? 0).offset(20)
+                    make.width.equalTo(0.7 * UIScreen.width)
+                    make.height.equalTo(120)
+                }
                 make.centerX.equalToSuperview()
             })
             m.TextColor(UIColor.lightGray).Text("公司是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。").Font(UIFont.MILanTing(15)).TextAlignment(.center)
@@ -86,7 +100,11 @@ class AboutVC: UIViewController {
         wechatTitle = UILabel().then({ (t) in
             t.added(into: view)
             t.snp.makeConstraints({ (make) in
-                make.top.equalTo(middleText?.snp.bottom ?? 0).offset(20)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(20)
+                } else {
+                    make.top.equalTo(middleText?.snp.bottom ?? 0).offset(5)
+                }
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
@@ -98,7 +116,11 @@ class AboutVC: UIViewController {
             l.snp.makeConstraints({ (make) in
                 make.width.equalTo(0.5 * UIScreen.width)
                 make.height.equalTo(APP.SINGLE_LINE_HEIGHT)
-                make.top.equalTo(wechatTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(wechatTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                } else {
+                    make.top.equalTo(wechatTitle?.snp.bottom ?? 0).offset(5 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                }
                 make.centerX.equalToSuperview()
             })
             l.backgroundColor = UIColor.lightGray
@@ -107,7 +129,11 @@ class AboutVC: UIViewController {
         wechatName = UILabel().then({ (lbl) in
             lbl.added(into: view)
             lbl.snp.makeConstraints({ (make) in
-                make.top.equalTo(wechatLine?.snp.bottom ?? 0).offset(15)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(wechatLine?.snp.bottom ?? 0).offset(15)
+                } else {
+                    make.top.equalTo(wechatLine?.snp.bottom ?? 0).offset(5)
+                }
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
@@ -117,7 +143,11 @@ class AboutVC: UIViewController {
         bussinessTitle = UILabel().then({ (t) in
             t.added(into: view)
             t.snp.makeConstraints({ (make) in
-                make.top.equalTo(wechatName?.snp.bottom ?? 0).offset(25)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(wechatName?.snp.bottom ?? 0).offset(25)
+                } else {
+                    make.top.equalTo(wechatName?.snp.bottom ?? 0).offset(10)
+                }
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
@@ -129,7 +159,11 @@ class AboutVC: UIViewController {
             l.snp.makeConstraints({ (make) in
                 make.width.equalTo(0.5 * UIScreen.width)
                 make.height.equalTo(APP.SINGLE_LINE_HEIGHT)
-                make.top.equalTo(bussinessTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(bussinessTitle?.snp.bottom ?? 0).offset(15 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                } else {
+                    make.top.equalTo(bussinessTitle?.snp.bottom ?? 0).offset(5 + APP.SINGLE_LINE_ADJUST_OFFSET)
+                }
                 make.centerX.equalToSuperview()
             })
             l.backgroundColor = UIColor.lightGray
@@ -138,7 +172,11 @@ class AboutVC: UIViewController {
         bussinessNO = UILabel().then({ (lbl) in
             lbl.added(into: view)
             lbl.snp.makeConstraints({ (make) in
-                make.top.equalTo(bussinessLine?.snp.bottom ?? 0).offset(15)
+                if UIDevice.isPhoneXorMore || UIDevice.isPhone678Plus {
+                    make.top.equalTo(bussinessLine?.snp.bottom ?? 0).offset(15)
+                } else {
+                    make.top.equalTo(bussinessLine?.snp.bottom ?? 0).offset(5)
+                }
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
@@ -160,7 +198,7 @@ class AboutVC: UIViewController {
             lbl.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
-                make.bottom.equalTo(-50)
+                make.bottom.equalTo(-60)
             })
             lbl.TextFont("富士康工业互联网股份有限公司", UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
@@ -171,7 +209,7 @@ class AboutVC: UIViewController {
                 make.width.equalTo(0.9 * UIScreen.width)
                 make.centerX.equalToSuperview()
                 make.height.equalTo(40)
-                make.bottom.equalTo(-5)
+                make.bottom.equalTo(-15)
             })
             lbl.TextFont("Copyright © 2017 Foxconn Industrial Internet Co., Ltd. All rights reserved.", UIFont.MILanTing(13)).TextColor(UIColor.lightGray).TextAlignment(.center)
             lbl.numberOfLines = 0

@@ -13,13 +13,19 @@ class FAQTableViewCell: UITableViewCell {
     
     static let identifier = "FAQTableViewCell"
     
+    var questionStr: String? {
+        didSet {
+            titleLabel.Text(questionStr)
+        }
+    }
+    
     var contentStr: String? {
         didSet {
             contentLabel.Text(contentStr)
         }
     }
 
-    var clickOpenAction: ((Bool) -> Void)?
+     var clickOpenAction: ((Bool) -> Void)?
     
     private var titleLabel = UILabel()
     private var contentLabel = UILabel()
@@ -39,20 +45,31 @@ class FAQTableViewCell: UITableViewCell {
     
     func setupView() {
         
+        backgroundColor = UIColor.groupTableViewBackground
+        
+        contentView.backgroundColor = UIColor.white
+        contentView.cornerRadius = 7.0
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.left.equalTo(11)
+            make.right.equalTo(-11)
+            make.bottom.equalToSuperview()
+        }
+        
         openButton.added(into: contentView)
         openButton.snp.makeConstraints({ (make) in
-            make.width.height.equalTo(60)
-            make.right.equalTo(-5)
-            make.top.equalTo(5)
+            make.width.height.equalTo(20)
+            make.right.equalTo(-15)
+            make.top.equalTo(35)
         })
-        openButton.backgroundColor = UIColor.cyan
-        openButton.setTitle("展开", for: .normal)
-        openButton.setTitle("收起", for: .selected)
+        openButton.backgroundColor = UIColor.white
+        openButton.setBackgroundImage(UIImage("arrow_down"), for: .normal)
+        openButton.setBackgroundImage(UIImage("arrow_up"), for: .selected)
         openButton.addTarget(self, action: #selector(clickOpenBtn(_:)), for: .touchUpInside)
         
         titleLabel.added(into: contentView)
         titleLabel.snp.makeConstraints({ (make) in
-            make.left.equalTo(5)
+            make.left.equalTo(15)
             make.right.equalTo(openButton.snp.left).offset(5)
             make.top.equalTo(5)
             make.height.equalTo(80)

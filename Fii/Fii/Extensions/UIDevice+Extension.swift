@@ -11,34 +11,31 @@ import UIKit
 
 extension UIDevice {
     
-    static var isPhoneX: Bool {
+    static var isPhoneXorMore: Bool {
         return UIScreen.main.bounds.size.height == 812
     }
     
-    static var isPhoneXMax: Bool {
-        return UIScreen.main.bounds.size.height == 896
+    static var isPhone678Plus: Bool {
+        return UIScreen.main.bounds.size.height == 736
     }
     
-    static var isPhoneXR: Bool {
-        return UIScreen.main.bounds.size.width == 276
+    static var isPhone678: Bool {
+        return UIScreen.main.bounds.size.height == 667
+    }
+    
+    static var isPhone5orSE: Bool {
+        return UIScreen.main.bounds.size.height == 568
     }
     
     /*判断是否是刘海屏*/
-    public func isIphoneXMore()->Bool
+    public func isIphoneXMore() -> Bool
     {
-        var isMore:Bool = false;
-        if #available(iOS 11.0, *){
-            isMore = CGFloat((UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!) > CGFloat(0);
+        var isMore: Bool = false
+        if #available(iOS 11.0, *) {
+            isMore = CGFloat((UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!) > CGFloat(0)
         }
-        return isMore;
+        return isMore
     }
     
     static let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
-    }
-    
-    extension UIWindow {
-        
-        static var keyWindow: UIWindow? {
-            return UIApplication.shared.keyWindow
-        }
 }

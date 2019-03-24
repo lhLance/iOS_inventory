@@ -139,7 +139,7 @@ class MeVC: UIViewController {
                     self.hidesBottomBarWhenPushed = false
                 case 1:
                     let vc = HelpVC()
-                    vc.title = "帮助"
+                    vc.title = "常见问题"
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
@@ -149,7 +149,11 @@ class MeVC: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 3: break
-                case 4: break
+                case 4:
+                    let vc = SettingsVC()
+                    self.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.hidesBottomBarWhenPushed = false
                 default:
                     break
                 }
