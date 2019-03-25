@@ -45,7 +45,7 @@ class SettingsVC: UIViewController {
             })
             
             let datas = [
-                (img: #imageLiteral(resourceName: "set_clear"), name: "清理缓存"),
+                (img: #imageLiteral(resourceName: "set_clear"), name: NSLocalizedString("set_clearCache", comment: "")),
                 (img: #imageLiteral(resourceName: "set_update"), name: "检查更新"),
                 (img: #imageLiteral(resourceName: "set_language"), name: "语言")
                 ]

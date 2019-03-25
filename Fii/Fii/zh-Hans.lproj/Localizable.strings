@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Fii
+
+  Created by Liu Tao on 2019/3/25.
+  Copyright © 2019年 Liu Tao. All rights reserved.
+*/
+
+set_clearCache = "清理缓存";
