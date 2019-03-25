@@ -8,19 +8,18 @@
 
 import UIKit
 
-private let kCategoryMenuWidth = CGFloat(95);
+private let kCategoryMenuWidth = CGFloat(95)
 
 
 class RealTimeVC: UIViewController {
 
-    let  cloumnCategoryMenuTableVc = CloumnCategoryMenuTableController();
+    let cloumnCategoryMenuTableVc = CloumnCategoryMenuTableController()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.blue
-        self.setupUI();
+        self.setupUI()
     }
 
 }
@@ -28,7 +27,7 @@ class RealTimeVC: UIViewController {
 
 extension RealTimeVC{
    private func setupUI(){
-    cloumnCategoryMenuTableVc.view.frame = CGRect(0, kNavigationBarH + kStatusBarH, kCategoryMenuWidth, self.view.frame.height - kStatusBarH - kNavigationBarH);
-    self.view.addSubview(cloumnCategoryMenuTableVc.view);
+    cloumnCategoryMenuTableVc.view.frame = CGRect(0, kNavigationBarH + kStatusBarH, kCategoryMenuWidth, self.view.frame.height - kStatusBarH - kNavigationBarH)
+    self.view.addSubview(cloumnCategoryMenuTableVc.view)
     }
 }
