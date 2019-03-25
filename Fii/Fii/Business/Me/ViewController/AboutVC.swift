@@ -52,7 +52,7 @@ class AboutVC: UIViewController {
         
         titleLabl = UILabel().then({ (lbl) in
             lbl.added(into: view)
-            lbl.TextFont(APP.version, UIFont.MILanTing(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont("Fii v1.0.1", UIFont.MILanTing(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
             lbl.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
                 make.top.equalTo(titleImg?.snp.bottom ?? 0).offset(5)

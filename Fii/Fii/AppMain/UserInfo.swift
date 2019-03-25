@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserInfo {
     
@@ -14,6 +15,10 @@ class UserInfo {
 
     var appKey = ""
     var infoKey = ""
-    var version = ""
+    var alarmCenterVersion = ""
     var authName = ""
+    
+    var avatar = UIImage("avatar")
+    var userName = "null"
+    var userEmail = "null"
 }

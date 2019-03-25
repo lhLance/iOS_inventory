@@ -20,11 +20,22 @@ class MeVC: UIViewController {
     
     let scrollView = UIScrollView()
     let containerView = UIView()
+    var quitView: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if APP.isLogin {
+            quitView?.isHidden = true
+        } else {
+            quitView?.isHidden = false
+        }
     }
     
     func setupView() {
@@ -59,13 +70,14 @@ class MeVC: UIViewController {
             
             let avatar = UIImageView().then({ (imgV) in
                 imgV.added(into: v)
-                imgV.backgroundColor = UIColor.green
+                imgV.backgroundColor = UIColor.white
                 imgV.cornerRadius = 30
                 imgV.snp.makeConstraints({ (make) in
                     make.width.height.equalTo(60)
                     make.centerY.equalToSuperview()
                     make.left.equalTo(30)
                 })
+                imgV.image = UserInfo.shared.avatar
             })
             
             _ = UILabel().then({ (lbl) in
@@ -76,7 +88,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.top.equalTo(avatar.snp.top).offset(8)
                 })
-                lbl.Text("Thomas Lau").TextColor(UIColor.white).Font(UIFont.MILanTing(15))
+                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.white).Font(UIFont.MILanTing(15))
             })
 
             _ = UILabel().then({ (lbl) in
@@ -87,11 +99,11 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.bottom.equalTo(avatar.snp.bottom).offset(-8)
                 })
-                lbl.Text("xiaolangshou@foxmail.com").TextColor(UIColor.white).Font(UIFont.MILanTing(14))
+                lbl.Text(UserInfo.shared.userEmail).TextColor(UIColor.white).Font(UIFont.MILanTing(14))
             })
         })
         
-        let quitView = UIButton().then { (v) in
+        quitView = UIButton().then { (v) in
             v.backgroundColor = UIColor.white
             v.added(into: scrollView)
             v.snp.makeConstraints({ (make) in
@@ -116,7 +128,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(50)
                     make.top.equalTo(prevCell.snp.bottom).offset(1)
                     if index == dataArr.count - 1 {
-                        make.bottom.equalTo(quitView.snp.top).offset(-15)
+                        make.bottom.equalTo(quitView?.snp.top ?? 0).offset(-15)
                     }
                 }
             } else {
@@ -145,12 +157,14 @@ class MeVC: UIViewController {
                     self.hidesBottomBarWhenPushed = false
                 case 2:
                     let vc = CustomerServiceVC()
+                    vc.title = "客服"
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 3: break
                 case 4:
                     let vc = SettingsVC()
+                    vc.title = "设置"
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
@@ -163,6 +177,10 @@ class MeVC: UIViewController {
     
     @objc func quitBtnTapped() {
         print("quit btn tapped...")
+        
+        let vc = LoginRegsVC()
+        let navVC = UINavigationController(rootViewController: vc)
+        self.present(navVC, animated: true, completion: nil)
     }
     
 }

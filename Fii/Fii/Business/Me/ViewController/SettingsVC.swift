@@ -20,49 +20,19 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "设置"
         setupSubviews()
     }
     
     func setupSubviews() {
-        let header = UIView.init().setup { (v) in
-            
-            let tap = UITapGestureRecognizer(target: self, action: #selector(gotoUserInfoVC))
-            v.addGestureRecognizer(tap)
-            v.backgroundColor = UIColor.white
-            v.becomeSubviewIn(view)
-            v.snp.makeConstraints {
-                $0.top.equalTo(0)
-                $0.left.right.equalTo(0)
-                $0.height.equalTo(96)
-            }
-            
-            _ = UIView.init().setup({ (line) in
-                line.backgroundColor = UIColor.hex(0xE3E6F4)
-                line.becomeSubviewIn(v).snp.makeConstraints {
-                    $0.left.right.bottom.equalTo(0)
-                    $0.height.equalTo(0.5)
-                }
-            })
-            
-            let _ = UIButton.init(type: .custom).setup({ (btn) in
-                btn.addTarget(self, action: #selector(gotoSetMeInfo), for: .touchUpInside)
-                btn.backgroundColor = UIColor.green
-                btn.becomeSubviewIn(v)
-                btn.snp.makeConstraints {
-                    $0.centerY.equalToSuperview()
-                    $0.right.equalTo(-15)
-                }
-            })
-        }
         
+        view.backgroundColor = UIColor.white
         
         _ = UIStackView.init().setup({ (stack) in
             stack.distribution = .fillEqually
             stack.axis = .vertical
             stack.becomeSubviewIn(self.view).snp.makeConstraints {
                 $0.left.right.equalTo(0)
-                $0.top.equalTo(header.snp.bottom)
+                $0.top.equalTo(UIScreen.navBarHeight)
             }
             
             let datas = [
@@ -111,6 +81,12 @@ extension SettingsVC {
                 self.cellArr[0].detailText = "缓存大小: \(size)MB"
             }
         case .checkVersion:
+            // 本地版本 vs 服务器版本
+            if APP.version >= 1 {
+                Alert.show(title: "当前已是最新版本")
+            } else {
+                Alert.show(title: "版本较低，请更新")
+            }
             break
         }
     }

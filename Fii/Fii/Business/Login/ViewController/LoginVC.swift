@@ -165,12 +165,14 @@ class LoginVC: UIViewController {
                                         v.confirmBtnTap = {
                                             v.removeFromSuperview()
                                         }
+                                        APP.isLogin = false
                                     } else {
                                         UserInfo.shared.appKey = model.appkey ?? ""
                                         UserInfo.shared.infoKey = model.infokey ?? ""
                                         
                                         // Toast.show(message: "登录成功")
                                         
+                                        APP.isLogin = true
                                         self.dismiss(animated: true, completion: nil)
                                     }
                                     

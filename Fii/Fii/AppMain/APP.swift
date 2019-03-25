@@ -13,5 +13,6 @@ class APP {
     static let SINGLE_LINE_HEIGHT = 1 / UIScreen.main.scale
     static let SINGLE_LINE_ADJUST_OFFSET = (1 / UIScreen.main.scale) / 2
     
-    static let version = "Fii v1.0.1"
+    static let version = 1
+    static var isLogin = false
 }
