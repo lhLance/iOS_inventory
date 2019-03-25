@@ -111,7 +111,7 @@ extension HelpVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! FAQTableViewCell
         
         cell.openButton.isSelected = !cell.openButton.isSelected
-        self.flags[indexPath.row] = cell.openButton.isSelected
+        flags[indexPath.row] = cell.openButton.isSelected
         
         tableView.reloadRows(at: [indexPath], with: .fade)
     }

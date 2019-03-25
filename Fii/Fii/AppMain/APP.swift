@@ -10,9 +10,18 @@ import UIKit
 
 class APP {
     
+    enum Language: String {
+        case En
+        case Ch
+    }
+    
     static let SINGLE_LINE_HEIGHT = 1 / UIScreen.main.scale
     static let SINGLE_LINE_ADJUST_OFFSET = (1 / UIScreen.main.scale) / 2
     
     static let version = 1
+    
     static var isLogin = false
+    
+    static var currentLanguage = Language.Ch
+    
 }

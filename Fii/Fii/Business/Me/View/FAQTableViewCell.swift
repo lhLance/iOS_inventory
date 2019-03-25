@@ -80,8 +80,8 @@ class FAQTableViewCell: UITableViewCell {
         
         contentLabel.added(into: contentView)
         contentLabel.snp.makeConstraints({ (make) in
-            make.left.equalTo(5)
-            make.right.equalTo(-5)
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.bottom.equalTo(-5)
         })
