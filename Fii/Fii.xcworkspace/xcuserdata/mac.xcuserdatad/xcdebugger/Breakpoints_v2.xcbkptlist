@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fii/AppMain/AppDelegate.swift"
-            timestampString = "574874518.155921"
+            timestampString = "575099322.471728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "setupRongCloud()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "setupVCs()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
 
         setupVCs()
-        // setupOpenScreenView(vc: rootVC)
         
         return true
     }
@@ -67,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 0.0)
+        
+        setupOpenScreenView(vc: rootVC)
     }
     
     func createTabbarChildVC(vc: UIViewController,
