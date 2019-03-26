@@ -7,5 +7,14 @@
 */
 
 "set_clearCache" = "Clear cache";
+"set_cache_size" = "cache size";
 "set_checkUpdate" = "Check update";
 "set_language" = "Language";
+
+"me_about" = "about";
+"me_help" = "help";
+"me_customer_service" = "customer service";
+"me_like" = "like";
+"me_settings" = "settings";
+"me_log_out" = "log out";
+

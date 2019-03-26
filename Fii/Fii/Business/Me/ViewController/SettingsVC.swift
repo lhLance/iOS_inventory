@@ -77,7 +77,7 @@ class SettingsVC: UIViewController {
                 cellArr[i] = MeSettingCell(img: data.img, title: data.name)
                 if i == 0 {
                     let size = FileCache.fileSizeOfCache()
-                    cellArr[i].detailText = "缓存大小: \(size)MB"
+                    cellArr[i].detailText = LanguageHelper.getString(key: "set_cache_size")  + " \(size)MB"
                 }
                 cellArr[i].tag = i
                 cellArr[i].tap.addTarget(self, action: #selector(handleUserAction(_:)))

@@ -7,5 +7,13 @@
 */
 
 "set_clearCache" = "清理緩存";
+"set_cache_size" = "緩存大小";
 "set_checkUpdate" = "檢查更新";
 "set_language" = "語言";
+
+"me_about" = "關於";
+"me_help" = "幫助";
+"me_customer_service" = "客服";
+"me_like" = "收藏";
+"me_settings" = "設置";
+"me_log_out" = "退出登錄";
