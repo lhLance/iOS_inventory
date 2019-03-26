@@ -16,35 +16,17 @@ class SettingsVC: UIViewController {
     let checkUpdateCell = MeSettingCell()
     let languageCell = MeSettingCell()
     
+    var sView: UIScrollView?
+    var stack: UIStackView?
     var cellArr = [MeSettingCell()]
     var datas = [(img: UIImage, name: String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        reloadData()
-        setupSubviews()
-    }
-    
-    @objc func reloadData() {
-        
-        datas = [
-            (img: #imageLiteral(resourceName: "set_clear"), name: LanguageHelper.getString(key: "set_clearCache")),
-            (img: #imageLiteral(resourceName: "set_update"), name: "检查更新"),
-            (img: #imageLiteral(resourceName: "set_language"), name: "语言")
-        ]
-    }
-    
-    func setupSubviews() {
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reloadData),
-                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
-                                               object: nil)
-        
         view.backgroundColor = UIColor.white
         
-        let sView = UIScrollView().then({ (s) in
+        sView = UIScrollView().then({ (s) in
             s.alwaysBounceVertical = true
             s.added(into: view)
             s.snp.makeConstraints({ (make) in
@@ -52,14 +34,41 @@ class SettingsVC: UIViewController {
             })
         })
         
-        _ = UIStackView().setup({ (stack) in
+        reloadData()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupSubviews()
+    }
+    
+    @objc func reloadData() {
+        
+        datas = [
+            (img: #imageLiteral(resourceName: "set_clear"), name: LanguageHelper.getString(key: "set_clearCache")),
+            (img: #imageLiteral(resourceName: "set_update"), name: LanguageHelper.getString(key: "set_checkUpdate")),
+            (img: #imageLiteral(resourceName: "set_language"), name: LanguageHelper.getString(key: "set_language"))
+        ]
+    }
+    
+    func setupSubviews() {
+        
+        stack?.removeFromSuperview()
+        stack = UIStackView().setup({ (stack) in
             stack.distribution = .fillEqually
             stack.axis = .vertical
-            stack.added(into: sView).snp.makeConstraints({
+            stack.added(into: sView ?? view).snp.makeConstraints({
                 $0.left.right.equalTo(0)
                 $0.top.equalTo(0)
             })
             
+            cellArr.removeAll()
             cellArr.append(cacheCell)
             cellArr.append(checkUpdateCell)
             cellArr.append(languageCell)
@@ -69,8 +78,6 @@ class SettingsVC: UIViewController {
                 if i == 0 {
                     let size = FileCache.fileSizeOfCache()
                     cellArr[i].detailText = "缓存大小: \(size)MB"
-                } else if i == 2 {
-                    cellArr[i].detailText = APP.currentLanguage.rawValue == "En" ? "English" : "中文"
                 }
                 cellArr[i].tag = i
                 cellArr[i].tap.addTarget(self, action: #selector(handleUserAction(_:)))
@@ -113,20 +120,9 @@ extension SettingsVC {
                 Alert.show(title: "版本较低，请更新")
             }
         case .language:
-            switch APP.currentLanguage.rawValue {
-            case "En":
-                APP.currentLanguage = .Ch
-                cellArr[2].detailText = "中文"
-                LanguageHelper.shareInstance.setLanguage(langeuage: "zh-Hans")
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
-            case "Ch":
-                APP.currentLanguage = .En
-                cellArr[2].detailText = "English"
-                LanguageHelper.shareInstance.setLanguage(langeuage: "en")
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
-            default:
-                break
-            }
+            
+            let vc = LanguageVC()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

@@ -7,3 +7,5 @@
 */
 
 "set_clearCache" = "Clear cache";
+"set_checkUpdate" = "Check update";
+"set_language" = "Language";

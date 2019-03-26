@@ -6,6 +6,6 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
-"set_clearCache" = "清理缓存";
-"set_checkUpdate" = "检查更新";
-"set_language" = "语言";
+"set_clearCache" = "清理緩存";
+"set_checkUpdate" = "檢查更新";
+"set_language" = "語言";

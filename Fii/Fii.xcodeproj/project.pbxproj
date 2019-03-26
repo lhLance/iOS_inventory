@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
+		04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265366224A36B9007ACD55 /* LanguageVC.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
 		34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */; };
@@ -91,6 +92,8 @@
 /* Begin PBXFileReference section */
 		0415600222240306001E68CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
+		04265366224A36B9007ACD55 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
+		04265368224A3C4C007ACD55 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -619,6 +622,7 @@
 				CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */,
 				CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */,
 				CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */,
+				04265366224A36B9007ACD55 /* LanguageVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -843,6 +847,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = CF7C9FF3222395FF005CE8A3;
 			productRefGroup = CF7C9FFD222395FF005CE8A3 /* Products */;
@@ -1009,6 +1014,7 @@
 				CF7CA06A2223D8D8005CE8A3 /* UIColor+Extension.swift in Sources */,
 				CF7CA0522223D376005CE8A3 /* UILabel+Extension.swift in Sources */,
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
+				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				CF7CCEF82242202E00BBA836 /* FAQTableViewCell.swift in Sources */,
@@ -1055,6 +1061,7 @@
 			children = (
 				CF5C075E2248C40400070FCA /* en */,
 				CF5C07602248C44100070FCA /* zh-Hans */,
+				04265368224A3C4C007ACD55 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1208,7 +1215,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1242,7 +1249,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liutao/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/iOS_inventory/Fii/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

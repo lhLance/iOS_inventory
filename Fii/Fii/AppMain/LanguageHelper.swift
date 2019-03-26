@@ -18,7 +18,6 @@ class LanguageHelper {
     let def = UserDefaults.standard
     var bundle: Bundle?
     
-    
     class func getString(key:String) -> String {
         
         let bundle = LanguageHelper.shareInstance.bundle
@@ -28,7 +27,7 @@ class LanguageHelper {
     
     func initUserLanguage() {
         
-        var string:String = def.value(forKey: UserLanguage) as! String? ?? ""
+        var string: String = def.value(forKey: UserLanguage) as! String? ?? ""
         
         if string == "" {
             let languages = def.object(forKey: AppleLanguages) as? NSArray
@@ -52,7 +51,7 @@ class LanguageHelper {
         bundle = Bundle(path: path!)
     }
     
-    func setLanguage(langeuage:String) {
+    func setLanguage(langeuage: String) {
         
         let path = Bundle.main.path(forResource:langeuage , ofType: "lproj")
         bundle = Bundle(path: path!)
