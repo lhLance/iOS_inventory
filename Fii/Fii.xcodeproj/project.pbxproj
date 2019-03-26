@@ -51,6 +51,7 @@
 		CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CA0782223E29C005CE8A3 /* DataParse.swift */; };
 		CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */; };
 		CF7CCEF82242202E00BBA836 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CCEF72242202E00BBA836 /* FAQTableViewCell.swift */; };
+		CF852516224A14D100F1B389 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852515224A14D100F1B389 /* LanguageHelper.swift */; };
 		CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8595272240E4ED00B9F60C /* AboutVC.swift */; };
 		CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */; };
 		CF8C0EE12236491800DF0D99 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C0EE02236491800DF0D99 /* MeVC.swift */; };
@@ -169,6 +170,7 @@
 		CF7CA0782223E29C005CE8A3 /* DataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParse.swift; sourceTree = "<group>"; };
 		CF7CCEEE2241DFA900BBA836 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		CF7CCEF72242202E00BBA836 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		CF852515224A14D100F1B389 /* LanguageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
 		CF8595272240E4ED00B9F60C /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		CF8C0EDE223648ED00DF0D99 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CF8C0EE02236491800DF0D99 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */,
+				CF852515224A14D100F1B389 /* LanguageHelper.swift */,
 				CFA83706223CBEB60054F311 /* UserInfo.swift */,
 				04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */,
 				CFE3DD502244D15C006CB9E7 /* APP.swift */,
@@ -959,6 +962,7 @@
 				CF7CA04F2223D376005CE8A3 /* UIView+Extension.swift in Sources */,
 				34F4BC1D223B75E50057080A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				CF7CA0512223D376005CE8A3 /* UIButton+Extension.swift in Sources */,
+				CF852516224A14D100F1B389 /* LanguageHelper.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,

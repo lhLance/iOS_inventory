@@ -17,14 +17,30 @@ class SettingsVC: UIViewController {
     let languageCell = MeSettingCell()
     
     var cellArr = [MeSettingCell()]
+    var datas = [(img: UIImage, name: String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        reloadData()
         setupSubviews()
     }
     
+    @objc func reloadData() {
+        
+        datas = [
+            (img: #imageLiteral(resourceName: "set_clear"), name: LanguageHelper.getString(key: "set_clearCache")),
+            (img: #imageLiteral(resourceName: "set_update"), name: "检查更新"),
+            (img: #imageLiteral(resourceName: "set_language"), name: "语言")
+        ]
+    }
+    
     func setupSubviews() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
         
         view.backgroundColor = UIColor.white
         
@@ -44,11 +60,6 @@ class SettingsVC: UIViewController {
                 $0.top.equalTo(0)
             })
             
-            let datas = [
-                (img: #imageLiteral(resourceName: "set_clear"), name: NSLocalizedString("set_clearCache", comment: "")),
-                (img: #imageLiteral(resourceName: "set_update"), name: "检查更新"),
-                (img: #imageLiteral(resourceName: "set_language"), name: "语言")
-                ]
             cellArr.append(cacheCell)
             cellArr.append(checkUpdateCell)
             cellArr.append(languageCell)
@@ -106,9 +117,13 @@ extension SettingsVC {
             case "En":
                 APP.currentLanguage = .Ch
                 cellArr[2].detailText = "中文"
+                LanguageHelper.shareInstance.setLanguage(langeuage: "zh-Hans")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
             case "Ch":
                 APP.currentLanguage = .En
                 cellArr[2].detailText = "English"
+                LanguageHelper.shareInstance.setLanguage(langeuage: "en")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
             default:
                 break
             }

@@ -6,4 +6,4 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
-set_clearCache = "清理缓存";
+"set_clearCache" = "清理缓存";

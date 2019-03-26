@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
 
         setupVCs()
+        setupLanguage()
         
         return true
+    }
+    
+    func setupLanguage() {
+        
+        LanguageHelper.shareInstance.initUserLanguage()
     }
     
     func setupVCs() {
