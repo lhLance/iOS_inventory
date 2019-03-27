@@ -23,7 +23,7 @@ class LanguageVC: UIViewController {
     
     func setupView() {
         
-        tableView = UITableView()
+        tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
         tableView?.added(into: view)
         tableView?.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview()
@@ -31,6 +31,8 @@ class LanguageVC: UIViewController {
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "CELL")
+        tableView?.separatorStyle = .none
+        tableView?.backgroundColor = UIColor.groupTableViewBackground
     }
     
     func reloadData() {
