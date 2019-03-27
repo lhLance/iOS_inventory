@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class TimeEfficiencyAnalysisView: UIView {
-
+    
+    var title: UILabel?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,6 +27,14 @@ class TimeEfficiencyAnalysisView: UIView {
     
     func setupView() {
         
+        title = UILabel()
+        title?.added(into: self)
+        title?.snp.makeConstraints({ (make) in
+            make.top.equalTo(5)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+        })
+        title?.Text("时间效率分析").Font(UIFont.MILanTing(16))
     }
 
 }

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class OEEEfficiencyAnalysisView: UIView {
 
+    var title: UILabel?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,5 +27,13 @@ class OEEEfficiencyAnalysisView: UIView {
     
     func setupView() {
         
+        title = UILabel()
+        title?.added(into: self)
+        title?.snp.makeConstraints({ (make) in
+            make.top.equalTo(5)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+        })
+        title?.Text("OEE效率分析").Font(UIFont.MILanTing(16))
     }
 }
