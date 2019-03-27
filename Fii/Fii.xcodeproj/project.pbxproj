@@ -64,6 +64,10 @@
 		CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */; };
 		CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF5472245DFF6006BAFD1 /* FileCache.swift */; };
 		CF8EF54A2245E04C006BAFD1 /* MeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */; };
+		CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93DF99224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift */; };
+		CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93DF9B224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift */; };
+		CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93DF9D224B0D5400B26509 /* NumberOfPartsView.swift */; };
+		CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93DF9F224B0D7400B26509 /* BootStatisticsView.swift */; };
 		CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D2055223F3EB500CEF14C /* AlertView.swift */; };
 		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
@@ -185,6 +189,10 @@
 		CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		CF8EF5472245DFF6006BAFD1 /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
 		CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingCell.swift; sourceTree = "<group>"; };
+		CF93DF99224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEfficiencyAnalysisView.swift; sourceTree = "<group>"; };
+		CF93DF9B224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEEEfficiencyAnalysisView.swift; sourceTree = "<group>"; };
+		CF93DF9D224B0D5400B26509 /* NumberOfPartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPartsView.swift; sourceTree = "<group>"; };
+		CF93DF9F224B0D7400B26509 /* BootStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootStatisticsView.swift; sourceTree = "<group>"; };
 		CF9D2055223F3EB500CEF14C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -569,12 +577,37 @@
 		CF8C0EDD2236445300DF0D99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CF93DF98224B0BAD00B26509 /* Model */,
+				CF93DF97224B0B9C00B26509 /* View */,
+				CF93DF96224B0B9400B26509 /* ViewModel */,
 				CFAEC18822374C4200F38B82 /* ViewController */,
-				CFAEC18722374C2D00F38B82 /* ViewModel */,
-				CFAEC18622374C2700F38B82 /* View */,
-				CFAEC18522374C1B00F38B82 /* Model */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CF93DF96224B0B9400B26509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF93DF97224B0B9C00B26509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF93DF99224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift */,
+				CF93DF9B224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift */,
+				CF93DF9D224B0D5400B26509 /* NumberOfPartsView.swift */,
+				CF93DF9F224B0D7400B26509 /* BootStatisticsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF93DF98224B0BAD00B26509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CFA4D437224336B200AC586A /* SDK */ = {
@@ -583,27 +616,6 @@
 				CF63E727224339AB00D94D1E /* SDK.swift */,
 			);
 			path = SDK;
-			sourceTree = "<group>";
-		};
-		CFAEC18522374C1B00F38B82 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CFAEC18622374C2700F38B82 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CFAEC18722374C2D00F38B82 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CFAEC18822374C4200F38B82 /* ViewController */ = {
@@ -970,8 +982,11 @@
 				CF852516224A14D100F1B389 /* LanguageHelper.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
+				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
+				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
+				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
@@ -983,6 +998,7 @@
 				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
+				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
