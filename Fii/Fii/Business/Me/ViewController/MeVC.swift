@@ -12,15 +12,11 @@ import SnapKit
 
 class MeVC: UIViewController {
 
-    var dataArr = [(img: UIImage("about"), name: "关于"),
-                   (img: UIImage("help"), name: "帮助"),
-                   (img: UIImage("customer_service"), name: "客服"),
-                   (img: UIImage("like"), name: "收藏"),
-                   (img: UIImage("settings"), name: "设置")]
+    var dataArr = [(img: UIImage?, name: String?)]()
+    var quitView: UIButton?
     
     let scrollView = UIScrollView()
     let containerView = UIView()
-    var quitView: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +32,20 @@ class MeVC: UIViewController {
         } else {
             quitView?.isHidden = false
         }
+        
+        reloadData()
+        setupCells()
+    }
+    
+    @objc func reloadData() {
+        
+       dataArr = [(img: UIImage("about"), name: LanguageHelper.getString(key: "me_about")),
+         (img: UIImage("help"), name: LanguageHelper.getString(key: "me_help")),
+         (img: UIImage("customer_service"), name: LanguageHelper.getString(key: "me_customer_service")),
+         (img: UIImage("like"), name: LanguageHelper.getString(key: "me_like")),
+         (img: UIImage("settings"), name: LanguageHelper.getString(key: "me_settings"))]
+        
+        quitView?.Text(LanguageHelper.getString(key: "me_log_out"))
     }
     
     func setupView() {
@@ -48,16 +58,21 @@ class MeVC: UIViewController {
             make.edges.equalToSuperview()
         }
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+    }
+    
+    func setupCells() {
+        
+        scrollView.removeAllSubviews()
+        
         containerView.added(into: scrollView)
         containerView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
         }
-        
-        setupCells()
-    }
-    
-    func setupCells() {
         
         let topView = UIImageView().then({ (v) in
             v.ImageName("me_back")
@@ -111,7 +126,7 @@ class MeVC: UIViewController {
                 make.height.equalTo(50)
             })
             
-            v.Text("退出登录").TitleColor(UIColor.red).Font(.MILanTing(16))
+            v.Text(LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.red).Font(.MILanTing(16))
             v.addTarget(self, action: #selector(quitBtnTapped), for: .touchUpInside)
         }
         
@@ -180,7 +195,7 @@ class MeVC: UIViewController {
         
         let vc = LoginRegsVC()
         let navVC = UINavigationController(rootViewController: vc)
-        self.present(navVC, animated: true, completion: nil)
+        present(navVC, animated: true, completion: nil)
     }
     
 }
