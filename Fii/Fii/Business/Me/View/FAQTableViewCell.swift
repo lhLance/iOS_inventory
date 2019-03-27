@@ -74,7 +74,7 @@ class FAQTableViewCell: UITableViewCell {
             make.top.equalTo(5)
             make.height.equalTo(80)
         })
-        titleLabel.TextFontColor("title", UIFont.MILanTing(16.0), UIColor.black)
+        titleLabel.TextFontColor("title", UIFont.PFRegular(16.0), UIColor.black)
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
         
@@ -85,7 +85,7 @@ class FAQTableViewCell: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.bottom.equalTo(-10)
         })
-        contentLabel.TextFontColor("", UIFont.MILanTing(16.0), UIColor.lightGray)
+        contentLabel.TextFontColor("", UIFont.PFRegular(16.0), UIColor.lightGray)
         contentLabel.numberOfLines = 0
         contentLabel.lineBreakMode = .byWordWrapping
     }

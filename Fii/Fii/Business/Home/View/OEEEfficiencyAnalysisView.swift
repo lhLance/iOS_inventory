@@ -34,6 +34,6 @@ class OEEEfficiencyAnalysisView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("OEE效率分析").Font(UIFont.MILanTing(16))
+        title?.Text("OEE效率分析").Font(UIFont.PFRegular(16))
     }
 }

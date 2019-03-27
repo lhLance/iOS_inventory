@@ -77,7 +77,7 @@ class LoginRegsVC: UIViewController {
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem)
         
-        discriptionLabel.TextAlignment(.center).TextColor(UIColor.white).Font(UIFont.MILanTing(22))
+        discriptionLabel.TextAlignment(.center).TextColor(UIColor.white).Font(UIFont.PFRegular(22))
         discriptionLabel.added(into: view)
         discriptionLabel.snp.makeConstraints({ (make) in
             make.center.equalToSuperview()
@@ -126,7 +126,7 @@ class LoginRegsVC: UIViewController {
     
     func setupButtons() {
         
-        loginBtn = UIButton("登录", UIColor.white, .MILanTing(16))
+        loginBtn = UIButton("登录", UIColor.white, UIFont.PFMedium(16))
         loginBtn?.cornerRadius = 4.0
         loginBtn?.backgroundColor = UIColor.hex(0x0099F1)
         loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: UIControl.Event.touchUpInside)
@@ -138,7 +138,7 @@ class LoginRegsVC: UIViewController {
             make.right.equalTo(-40)
         })
         
-        registerBtn = UIButton("注册", UIColor.white, .MILanTing(16))
+        registerBtn = UIButton("注册", UIColor.white, UIFont.PFMedium(16))
         registerBtn?.cornerRadius = 4.0
         registerBtn?.backgroundColor = UIColor.hex(0x0099F1)
         registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: UIControl.Event.touchUpInside)

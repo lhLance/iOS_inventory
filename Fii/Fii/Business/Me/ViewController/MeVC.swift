@@ -103,7 +103,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.top.equalTo(avatar.snp.top).offset(8)
                 })
-                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.white).Font(UIFont.MILanTing(15))
+                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.white).Font(UIFont.PFRegular(15))
             })
 
             _ = UILabel().then({ (lbl) in
@@ -114,7 +114,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.bottom.equalTo(avatar.snp.bottom).offset(-8)
                 })
-                lbl.Text(UserInfo.shared.userEmail).TextColor(UIColor.white).Font(UIFont.MILanTing(14))
+                lbl.Text(UserInfo.shared.userEmail).TextColor(UIColor.white).Font(UIFont.PFRegular(14))
             })
         })
         
@@ -126,7 +126,7 @@ class MeVC: UIViewController {
                 make.height.equalTo(50)
             })
             
-            v.Text(LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.red).Font(.MILanTing(16))
+            v.Text(LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.red).Font(.PFRegular(16))
             v.addTarget(self, action: #selector(quitBtnTapped), for: .touchUpInside)
         }
         
@@ -257,7 +257,7 @@ class Cell: UIView {
             make.right.equalTo(-10)
         }
         
-        titleLbl.FontColor(UIFont.MILanTing(16), UIColor.gray)
+        titleLbl.FontColor(.PFMedium(16), UIColor.gray)
         titleLbl.added(into: self)
         titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(imageV.snp.right).offset(10)

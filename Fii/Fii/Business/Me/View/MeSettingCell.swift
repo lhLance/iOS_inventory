@@ -20,9 +20,9 @@ class MeSettingCell: UIView {
     var bottomLine = UIView()
     
     let icon = UIImageView.init()
-    let titleLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .left, font: UIFont.MILanTing(14))
+    let titleLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .left, font: UIFont.PFRegular(14))
     let arrow = UIImageView.init("return")
-    let detailLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .right, font: UIFont.MILanTing(14))
+    let detailLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .right, font: UIFont.PFRegular(14))
     
     let tap = UITapGestureRecognizer.init()
     

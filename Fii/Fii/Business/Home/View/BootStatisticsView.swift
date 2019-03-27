@@ -33,7 +33,7 @@ class BootStatisticsView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("开机统计").Font(UIFont.MILanTing(16))
+        title?.Text("开机统计").Font(UIFont.PFRegular(16))
     }
 
 }

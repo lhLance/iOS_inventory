@@ -52,7 +52,7 @@ class AboutVC: UIViewController {
         
         titleLabl = UILabel().then({ (lbl) in
             lbl.added(into: view)
-            lbl.TextFont("Fii v1.0.1", UIFont.MILanTing(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont("Fii v1.0.1", UIFont.PFRegular(16)).TextColor(UIColor.lightGray).TextAlignment(.center)
             lbl.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
                 make.top.equalTo(titleImg?.snp.bottom ?? 0).offset(5)
@@ -75,7 +75,7 @@ class AboutVC: UIViewController {
             b.borderColor = UIColor.red
             b.borderWidth = 1.0
             b.cornerRadius = 20
-            b.Text("兼善天下企业，赋能全球制造").TitleColor(UIColor.red).Font(UIFont.MILanTing(16))
+            b.Text("兼善天下企业，赋能全球制造").TitleColor(UIColor.red).Font(UIFont.PFRegular(16))
         })
         
         middleText = UILabel().then({ (m) in
@@ -92,7 +92,7 @@ class AboutVC: UIViewController {
                 }
                 make.centerX.equalToSuperview()
             })
-            m.TextColor(UIColor.lightGray).Text("公司是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。").Font(UIFont.MILanTing(15)).TextAlignment(.center)
+            m.TextColor(UIColor.lightGray).Text("公司是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。").Font(UIFont.PFRegular(15)).TextAlignment(.center)
             m.lineBreakMode = .byWordWrapping
             m.numberOfLines = 0
         })
@@ -108,7 +108,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
-            t.TextAlignment(.center).TextColor(UIColor.black).Text("微信公众号").Font(UIFont.MILanTing(16))
+            t.TextAlignment(.center).TextColor(UIColor.black).Text("微信公众号").Font(UIFont.PFRegular(16))
         })
         
         wechatLine = UIView().then({ (l) in
@@ -137,7 +137,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.Text("工业富联601138").Font(UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.Text("工业富联601138").Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bussinessTitle = UILabel().then({ (t) in
@@ -151,7 +151,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
-            t.TextAlignment(.center).TextColor(UIColor.black).Text("商务合作").Font(UIFont.MILanTing(16))
+            t.TextAlignment(.center).TextColor(UIColor.black).Text("商务合作").Font(UIFont.PFRegular(16))
         })
         
         bussinessLine = UIView().then({ (l) in
@@ -180,7 +180,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.Text("官方电话: 0755-33855777").Font(UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.Text("官方电话: 0755-33855777").Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bussinessFax = UILabel().then({ (lbl) in
@@ -190,7 +190,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.TextFont("官方传真: 0755-33855778", UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont("官方传真: 0755-33855778", UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         companyName = UILabel().then({ (lbl) in
@@ -200,7 +200,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.bottom.equalTo(-60)
             })
-            lbl.TextFont("富士康工业互联网股份有限公司", UIFont.MILanTing(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont("富士康工业互联网股份有限公司", UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bottomLbl = UILabel().then({ (lbl) in
@@ -211,7 +211,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(40)
                 make.bottom.equalTo(-15)
             })
-            lbl.TextFont("Copyright © 2017 Foxconn Industrial Internet Co., Ltd. All rights reserved.", UIFont.MILanTing(13)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont("Copyright © 2017 Foxconn Industrial Internet Co., Ltd. All rights reserved.", UIFont.PFRegular(13)).TextColor(UIColor.lightGray).TextAlignment(.center)
             lbl.numberOfLines = 0
             lbl.lineBreakMode = .byWordWrapping
         })

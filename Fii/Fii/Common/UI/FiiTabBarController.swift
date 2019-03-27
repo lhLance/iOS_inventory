@@ -39,9 +39,9 @@ class FiiTabBar: UITabBar {
         self.barTintColor = UIColor.white
         self.isTranslucent = false
 
-        let normal_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
+        let normal_attributes = [NSAttributedString.Key.font: UIFont.PFMedium(11),
                                  NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-        let select_attributes = [NSAttributedString.Key.font: UIFont.Kmedium(11),
+        let select_attributes = [NSAttributedString.Key.font: UIFont.PFMedium(11),
                                  NSAttributedString.Key.foregroundColor: UIColor.black]
         
         UITabBarItem.appearance().setTitleTextAttributes(normal_attributes, for: .normal)

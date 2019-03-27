@@ -40,7 +40,7 @@ class LoginVC: UIViewController {
         
         view.backgroundColor = UIColor.white
         
-        logInLbl.TextColor(UIColor.black).TextFont("登录", UIFont.MILanTing(16))
+        logInLbl.TextColor(UIColor.black).TextFont("登录", .PFMedium(16))
         logInLbl.added(into: view)
         logInLbl.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
         userNameTf.borderStyle = .none
         userNameTf.keyboardType = .asciiCapable
         userNameTf.attributedPlaceholder = NSAttributedString(string: "请输入账号",
-                                                              attributes: [NSAttributedString.Key.font : UIFont.MILanTing(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
+                                                              attributes: [NSAttributedString.Key.font : UIFont.PFMedium(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         userNameTf.added(into: view)
         userNameTf.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -86,7 +86,7 @@ class LoginVC: UIViewController {
         passwordTf.borderStyle = .none
         passwordTf.keyboardType = .asciiCapable
         passwordTf.attributedPlaceholder = NSAttributedString(string: "请输入密码",
-                                                              attributes: [NSAttributedString.Key.font : UIFont.MILanTing(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
+                                                              attributes: [NSAttributedString.Key.font : UIFont.PFMedium(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         passwordTf.added(into: view)
         passwordTf.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -119,7 +119,7 @@ class LoginVC: UIViewController {
         
         loginBtn.cornerRadius = 5
         loginBtn.backgroundColor = UIColor.hex(0x9DCCFF)
-        loginBtn.Text("登录").Font(UIFont.MILanTing(16)).TitleColor(UIColor.white)
+        loginBtn.Text("登录").Font(.PFMedium(16)).TitleColor(UIColor.white)
         loginBtn.added(into: view)
         loginBtn.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -129,7 +129,7 @@ class LoginVC: UIViewController {
         }
         loginBtn.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         
-        regisBtn.Text("注册新账号").TitleColor(UIColor.hex(0x2C7CFD)).Font(UIFont.MILanTing(14))
+        regisBtn.Text("注册新账号").TitleColor(UIColor.hex(0x2C7CFD)).Font(.PFMedium(14))
         regisBtn.added(into: view)
         regisBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -215,7 +215,7 @@ class LoginVC: UIViewController {
             activityIndicator.startAnimating()
             
             _ = UILabel().then({ (lbl) in
-                lbl.Font(UIFont.MILanTing(16)).Text("登录").TextAlignment(.center).TextColor(UIColor.white)
+                lbl.Font(UIFont.PFRegular(16)).Text("登录").TextAlignment(.center).TextColor(UIColor.white)
                 lbl.added(into: v)
                 lbl.snp.makeConstraints({ (make) in
                     make.height.equalTo(25)

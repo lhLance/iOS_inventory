@@ -56,7 +56,7 @@ class AlertView: UIView {
             })
             
             topLabel = UILabel().then({ (l) in
-                l.FontColor(UIFont.MILanTing(16), UIColor.black).TextAlignment(.center)
+                l.FontColor(UIFont.PFRegular(16), UIColor.black).TextAlignment(.center)
                 l.added(into: t)
                 l.snp.makeConstraints({ (make) in
                     make.top.equalTo(0.05 * UIScreen.height)
@@ -67,7 +67,7 @@ class AlertView: UIView {
             })
             
             bottomLabel = UILabel().then({ (l) in
-                l.FontColor(UIFont.MILanTing(16), UIColor.lightGray).TextAlignment(.center)
+                l.FontColor(UIFont.PFRegular(16), UIColor.lightGray).TextAlignment(.center)
                 l.added(into: t)
                 l.snp.makeConstraints({ (make) in
                     make.top.equalTo(topLabel?.snp.bottom ?? (0.05 * UIScreen.height + 15)).offset(15)
@@ -90,7 +90,7 @@ class AlertView: UIView {
             
             _ = UIButton().then({ (b) in
                 b.cornerRadius = 2.0
-                b.Text("确定").TitleColor(UIColor.hex(0x2C7CFD)).Font(UIFont.MILanTing(16))
+                b.Text("确定").TitleColor(UIColor.hex(0x2C7CFD)).Font(UIFont.PFRegular(16))
                 b.added(into: t)
                 b.snp.makeConstraints({ (make) in
                     make.width.equalToSuperview()

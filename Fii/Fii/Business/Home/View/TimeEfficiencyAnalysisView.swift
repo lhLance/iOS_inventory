@@ -34,7 +34,7 @@ class TimeEfficiencyAnalysisView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("时间效率分析").Font(UIFont.MILanTing(16))
+        title?.Text("时间效率分析").Font(UIFont.PFRegular(16))
     }
 
 }

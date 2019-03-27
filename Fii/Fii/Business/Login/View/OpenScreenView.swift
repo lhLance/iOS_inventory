@@ -96,7 +96,7 @@ class OpenScreenView: UIView {
                 })
                 
                 let titleLbl = UILabel().then({ (title) in
-                    title.Text(titleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.Kmedium(26))
+                    title.Text(titleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.PFMedium(26))
                     title.added(into: imgV)
                     title.snp.makeConstraints({ (make) in
                         make.width.equalToSuperview()
@@ -109,7 +109,7 @@ class OpenScreenView: UIView {
                 _ = UILabel().then({ (subT) in
                     subT.numberOfLines = 0
                     subT.lineBreakMode = .byWordWrapping
-                    subT.Text(subTitleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.Kmedium(15))
+                    subT.Text(subTitleArr[i]).TextAlignment(.center).TextColor(UIColor.white).Font(.PFMedium(15))
                     subT.added(into: imgV)
                     subT.snp.makeConstraints({ (make) in
                         make.width.equalTo(width * 0.8)
@@ -122,7 +122,7 @@ class OpenScreenView: UIView {
                 let skipBtn = UIButton().then { (btn) in
                     btn.backgroundColor = UIColor.lightGray
                     btn.cornerRadius = 20
-                    btn.Text("跳过").TitleColor(UIColor.white).Font(.Kmedium(16))
+                    btn.Text("跳过").TitleColor(UIColor.white).Font(.PFMedium(16))
                     btn.added(into: imgV)
                     btn.snp.makeConstraints({ (make) in
                         make.width.equalTo(160)

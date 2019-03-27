@@ -10,6 +10,12 @@
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265366224A36B9007ACD55 /* LanguageVC.swift */; };
+		04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */; };
+		04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */; };
+		04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */; };
+		04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */; };
+		04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */; };
+		04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
 		34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */; };
@@ -99,6 +105,12 @@
 		04265366224A36B9007ACD55 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		04265368224A3C4C007ACD55 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
+		04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Light.ttf; sourceTree = "<group>"; };
+		04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Regular.ttf; sourceTree = "<group>"; };
+		04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Heavy.ttf; sourceTree = "<group>"; };
+		04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Medium.ttf; sourceTree = "<group>"; };
+		04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_ExtraLight.ttf; sourceTree = "<group>"; };
+		04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Bold.ttf; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryDetailController.swift; sourceTree = "<group>"; };
@@ -168,10 +180,6 @@
 		CF7CA0652223D898005CE8A3 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 		CF7CA0662223D899005CE8A3 /* BlockConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockConfig.swift; sourceTree = "<group>"; };
 		CF7CA0692223D8D8005CE8A3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		CF7CA06D2223D94F005CE8A3 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		CF7CA06E2223D960005CE8A3 /* FZLTZCHJW.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZLTZCHJW.ttf; sourceTree = "<group>"; };
-		CF7CA06F2223D960005CE8A3 /* Kmedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kmedium.ttf; sourceTree = "<group>"; };
-		CF7CA0702223D961005CE8A3 /* MILanTing_GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MILanTing_GB.ttf; sourceTree = "<group>"; };
 		CF7CA0742223DC6D005CE8A3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7CA0762223E1B6005CE8A3 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		CF7CA0782223E29C005CE8A3 /* DataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParse.swift; sourceTree = "<group>"; };
@@ -460,10 +468,12 @@
 		CF7CA06C2223D91D005CE8A3 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				CF7CA06E2223D960005CE8A3 /* FZLTZCHJW.ttf */,
-				CF7CA06F2223D960005CE8A3 /* Kmedium.ttf */,
-				CF7CA0702223D961005CE8A3 /* MILanTing_GB.ttf */,
-				CF7CA06D2223D94F005CE8A3 /* iconfont.ttf */,
+				04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */,
+				04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */,
+				04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */,
+				04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */,
+				04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */,
+				04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -878,8 +888,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */,
+				04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */,
+				04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CF5C075D2248C40400070FCA /* Localizable.strings in Resources */,
+				04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */,
+				04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */,
+				04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */,
 				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
