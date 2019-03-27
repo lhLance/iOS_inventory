@@ -59,6 +59,7 @@ extension LanguageVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
         
         cell?.textLabel?.text = dataArr?[indexPath.row]
+        cell?.textLabel?.font = UIFont.MILanTing(CGFloat(16))
         
         return cell ?? UITableViewCell()
     }

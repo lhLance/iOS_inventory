@@ -122,6 +122,7 @@ extension SettingsVC {
         case .language:
             
             let vc = LanguageVC()
+            vc.title = "语言"
             navigationController?.pushViewController(vc, animated: true)
         }
     }
