@@ -236,6 +236,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A8C97C224BA828001D6987 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				CF5C075F2248C40400070FCA /* Localizable.strings */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 		34F4BC17223B75B60057080A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +321,6 @@
 				CFA4D437224336B200AC586A /* SDK */,
 				CF265EB82224D75A00CE67C5 /* Model */,
 				CF7CA00B22239600005CE8A3 /* Info.plist */,
-				CF5C075F2248C40400070FCA /* Localizable.strings */,
 				CF7CA02F2223975E005CE8A3 /* AppMain */,
 				CF7CA032222397FF005CE8A3 /* Network */,
 				CF7CA03122239772005CE8A3 /* Common */,
@@ -345,6 +352,7 @@
 		CF7CA02D22239744005CE8A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04A8C97C224BA828001D6987 /* Language */,
 				CFAEC1E122378D5B00F38B82 /* Videos */,
 				CF7CA06C2223D91D005CE8A3 /* Font */,
 				CF7CA06B2223D912005CE8A3 /* Assets */,
