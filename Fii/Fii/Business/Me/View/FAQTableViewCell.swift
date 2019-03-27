@@ -83,7 +83,7 @@ class FAQTableViewCell: UITableViewCell {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.bottom.equalTo(-5)
+            make.bottom.equalTo(-10)
         })
         contentLabel.TextFontColor("", UIFont.MILanTing(16.0), UIColor.lightGray)
         contentLabel.numberOfLines = 0
