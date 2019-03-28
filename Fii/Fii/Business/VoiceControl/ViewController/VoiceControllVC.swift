@@ -25,6 +25,20 @@ class VoiceControllVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setUpUI();
+        
+    }
+    
+    
+
+}
+
+
+
+extension VoiceControllVC:OEEventsObserverDelegate{
+    
+    
+    private func setUpUI(){
         
         self.speechLab = UILabel(frame: CGRect(x:100,
                                                y: 100,
@@ -44,19 +58,20 @@ class VoiceControllVC: UIViewController {
         self.startBtn.center = view.center
         view.addSubview(self.startBtn)
         
-        /*下边命令词不准确*/
+        /*命令词*/
         self.lmGenerator = OELanguageModelGenerator.init();
         self.pocketsphinx = OEPocketsphinxController.sharedInstance();
         self.chineseWords = ["左边", "上边", "向下移动", "右边","四分之三","在中国","向左移动"];
         self.openEarsEventsObserver = OEEventsObserver.init();
         self.openEarsEventsObserver.delegate = self;
         
-        self.errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any], withFilesNamed: ChineseModel, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String;
+        self.errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
+                                                                withFilesNamed: ChineseModel,
+                                                                forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String;
         self.chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel);
         self.chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
         
     }
-    
     
     @objc func startVoiceBtnCkick(btn:UIButton)
     {
@@ -66,7 +81,10 @@ class VoiceControllVC: UIViewController {
             
             self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
             try? self.pocketsphinx.setActive(true);
-            self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath, dictionaryAtPath: self.chineseDicPath, acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"), languageModelIsJSGF: false);
+            self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
+                                                              dictionaryAtPath: self.chineseDicPath,
+                                                              acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
+                                                              languageModelIsJSGF: false);
         }
         else{
             
@@ -77,11 +95,6 @@ class VoiceControllVC: UIViewController {
         self.startBtn.isSelected = !self.startBtn.isSelected
     }
 
-}
-
-
-
-extension VoiceControllVC:OEEventsObserverDelegate{
     
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")

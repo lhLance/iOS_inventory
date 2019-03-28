@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIView {
+    
+//    static let kViewW = self.frame.size.width
+//    static let kViewH = self.frame.size.higth
+    
     // subviews
     func removeAllSubviews() {
         for view in subviews {
