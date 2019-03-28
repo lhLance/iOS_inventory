@@ -18,6 +18,11 @@
 		04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
+		34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */; };
+		34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */; };
+		34F38D40224C536E0059E19A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3C224C536E0059E19A /* OpenEars.framework */; };
+		34F38D41224C536E0059E19A /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3D224C536E0059E19A /* Slt.framework */; };
+		34F38D46224C55180059E19A /* YHRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D44224C55180059E19A /* YHRippleButton.swift */; };
 		34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */; };
 		34F4BC1B223B75B70057080A /* CloumnCategoryMenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */; };
 		34F4BC1D223B75E50057080A /* CloumnFirstCategorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */; };
@@ -113,6 +118,11 @@
 		04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Bold.ttf; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelChinese.bundle; sourceTree = "<group>"; };
+		34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		34F38D3C224C536E0059E19A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		34F38D3D224C536E0059E19A /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		34F38D44224C55180059E19A /* YHRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHRippleButton.swift; sourceTree = "<group>"; };
 		34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryDetailController.swift; sourceTree = "<group>"; };
 		34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryMenuTableController.swift; sourceTree = "<group>"; };
 		34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnFirstCategorTableViewCell.swift; sourceTree = "<group>"; };
@@ -215,7 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F38D41224C536E0059E19A /* Slt.framework in Frameworks */,
 				9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */,
+				34F38D40224C536E0059E19A /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +254,39 @@
 				CF5C075F2248C40400070FCA /* Localizable.strings */,
 			);
 			path = Language;
+			sourceTree = "<group>";
+		};
+		34F38D39224C536E0059E19A /* OpenEars */ = {
+			isa = PBXGroup;
+			children = (
+				34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */,
+				34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */,
+				34F38D3C224C536E0059E19A /* OpenEars.framework */,
+				34F38D3D224C536E0059E19A /* Slt.framework */,
+			);
+			path = OpenEars;
+			sourceTree = "<group>";
+		};
+		34F38D42224C55180059E19A /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		34F38D43224C55180059E19A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				34F38D44224C55180059E19A /* YHRippleButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34F38D45224C55180059E19A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		34F4BC17223B75B60057080A /* Controller */ = {
@@ -562,10 +607,10 @@
 		CF8C0EDA2236442400DF0D99 /* VoiceControl */ = {
 			isa = PBXGroup;
 			children = (
+				34F38D42224C55180059E19A /* Control */,
+				34F38D45224C55180059E19A /* Model */,
+				34F38D43224C55180059E19A /* View */,
 				CFAEC19422374CA600F38B82 /* ViewController */,
-				CFAEC19322374CA000F38B82 /* ViewModel */,
-				CFAEC19222374C9C00F38B82 /* View */,
-				CFAEC19122374C9500F38B82 /* Model */,
 			);
 			path = VoiceControl;
 			sourceTree = "<group>";
@@ -631,6 +676,7 @@
 		CFA4D437224336B200AC586A /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				34F38D39224C536E0059E19A /* OpenEars */,
 				CF63E727224339AB00D94D1E /* SDK.swift */,
 			);
 			path = SDK;
@@ -684,27 +730,6 @@
 				CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		CFAEC19122374C9500F38B82 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CFAEC19222374C9C00F38B82 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CFAEC19322374CA000F38B82 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CFAEC19422374CA600F38B82 /* ViewController */ = {
@@ -902,8 +927,10 @@
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CF5C075D2248C40400070FCA /* Localizable.strings in Resources */,
 				04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */,
+				34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */,
 				04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */,
 				04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */,
+				34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */,
 				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1008,6 +1035,7 @@
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,
+				34F38D46224C55180059E19A /* YHRippleButton.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
@@ -1235,7 +1263,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPF3349M6Q;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
+				);
 				INFOPLIST_FILE = Fii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1264,6 +1295,7 @@
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud/IMLib",
 					"$(PROJECT_DIR)/Fii/SDK/CallLib",
+					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
 				);
 				INFOPLIST_FILE = Fii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

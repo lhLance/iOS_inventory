@@ -9,5 +9,10 @@
 #ifndef Fii_Home_Bridging_Header_h
 #define Fii_Home_Bridging_Header_h
 
+#import <OpenEars/OEEventsObserver.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEPocketsphinxController.h>
+
 
 #endif /* Fii_Home_Bridging_Header_h */
