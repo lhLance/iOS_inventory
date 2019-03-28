@@ -80,7 +80,10 @@ extension PageTitleView{
                                             blue: kNormalColor.2, alpha: 1.0);
             label.textAlignment = NSTextAlignment.center;
             let labelX:CGFloat = labelW * CGFloat(index);
-            label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH);
+            label.frame = CGRect(x: labelX,
+                                 y: labelY,
+                                 width: labelW,
+                                 height: labelH);
             
             scrollView.addSubview(label);
             titleLables.append(label);
@@ -109,10 +112,7 @@ extension PageTitleView{
                                            green: kSelectColor.1,
                                            blue: kSelectColor.2, alpha: 1.0);
         
-        
-//        firstLab.textColor = UIColor.orange;
         scrollView.addSubview(scrollLine);
-        //#mark 为何这里计算的不太对
         scrollLine.frame = CGRect(x: firstLab.frame.origin.x,
                                   y: self.frame.height - kscroolLineH * 3,
                                   width: firstLab.frame.width,
@@ -173,10 +173,6 @@ extension PageTitleView{
         targetLabel.textColor = colorWithRGBA(red: kNormalColor.0 + colorDelta.0*progress,
                                               green: kNormalColor.1 + colorDelta.1*progress,
                                               blue: kNormalColor.2 + colorDelta.2*progress, alpha: 1.0);
-        
-//        sourceLabel.textColor = UIColor.darkGray;
-//        targetLabel.textColor = UIColor.orange;
-        
         currentIndex = targetIndex;
         print("haha----")
         
