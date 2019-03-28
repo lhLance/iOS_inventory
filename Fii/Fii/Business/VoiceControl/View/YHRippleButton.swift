@@ -1,9 +1,9 @@
 //
 //  YHRippleButton.swift
-//  YHRipple
+//  Fii
 //
-//  Created by yuhua on 2018/5/24.
-//  Copyright © 2018年 余华. All rights reserved.
+//  Created by yetao on 2019/3/13.
+//  Copyright © 2019 Liu Tao. All rights reserved.
 //
 
 import UIKit
@@ -22,7 +22,10 @@ class YHRippleButton: UIButton {
         self.rippleColor = rippleColor
         
         let backLayer = CALayer()
-        backLayer.frame = CGRect(x: frame.width/4, y: frame.width/4, width: frame.width/2, height: frame.width/2)
+        backLayer.frame = CGRect(x: frame.width/4,
+                                 y: frame.width/4,
+                                 width: frame.width/2,
+                                 height: frame.width/2)
         backLayer.cornerRadius = frame.width/4
         backLayer.backgroundColor = rippleColor.cgColor
         layer.addSublayer(backLayer)
@@ -38,7 +41,11 @@ class YHRippleButton: UIButton {
     }
     
     private func began() {
-        rippleLayer = CALayer.createRippleLayer(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height), duration: 4, ripColor: rippleColor)
+        rippleLayer = CALayer.createRippleLayer(frame: CGRect(x: 0,
+                                                              y: 0,
+                                                              width: frame.width,
+                                                              height: frame.height),
+                                                duration: 4, ripColor: rippleColor)
         layer.insertSublayer(rippleLayer!, at: 0)
         rippleState = true
     }
@@ -55,8 +62,14 @@ extension CALayer {
     //创建出动画layer
     static func createRippleLayer(frame: CGRect, duration: CFTimeInterval, ripColor: UIColor = .red) -> CALayer {
         let shape = CAShapeLayer()
-        let newFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width*CGFloat(5/4), height: frame.height*CGFloat(5/4))
-        let bound = CGRect(x: 0, y: 0, width: frame.width*CGFloat(5/4), height: frame.height*CGFloat(5/4))
+        let newFrame = CGRect(x: frame.minX,
+                              y: frame.minY,
+                              width: frame.width*CGFloat(5/4),
+                              height: frame.height*CGFloat(5/4))
+        let bound = CGRect(x: 0,
+                           y: 0,
+                           width: frame.width*CGFloat(5/4),
+                           height: frame.height*CGFloat(5/4))
         shape.frame = bound
         shape.path = UIBezierPath(ovalIn: bound).cgPath
         shape.fillColor = ripColor.cgColor

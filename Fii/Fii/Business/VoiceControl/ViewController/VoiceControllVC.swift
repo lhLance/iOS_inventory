@@ -26,12 +26,19 @@ class VoiceControllVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.speechLab = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 50));
+        self.speechLab = UILabel(frame: CGRect(x:100,
+                                               y: 100,
+                                               width: 200,
+                                               height: 50));
         self.speechLab.backgroundColor = UIColor.yellow;
         self.speechLab.textAlignment = NSTextAlignment.center;
         self.view.addSubview(self.speechLab);
         
-        self.startBtn = YHRippleButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200), rippleColor: .blue)
+        self.startBtn = YHRippleButton(frame: CGRect(x: 0,
+                                                     y: 0,
+                                                     width: 200,
+                                                     height: 200),
+                                       rippleColor: .blue)
         self.startBtn.setTitle("开始", for: .normal)
         self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
         self.startBtn.center = view.center
@@ -75,11 +82,13 @@ class VoiceControllVC: UIViewController {
 
 
 extension VoiceControllVC:OEEventsObserverDelegate{
+    
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")
         self.speechLab.text = hypothesis;
         
     }
+    
     func pocketsphinxDidStartListening() {
         print("\(#function)已经开始接听")
     }
@@ -87,26 +96,33 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     func pocketsphinxDidDetectSpeech() {
         print("\(#function)已经发现语音")
     }
+    
     func pocketsphinxDidDetectFinishedSpeech() {
         print("\(#function)一段时间没有监听到语音")
     }
+    
     func pocketsphinxDidStopListening() {
         print("\(#function)已经停止监听")
     }
+    
     func pocketsphinxDidSuspendRecognition() {
         print("\(#function)已经暂停识别")
     }
+    
     func pocketsphinxDidResumeRecognition() {
         print("\(#function)已经恢复识别")
     }
+    
     func pocketSphinxContinuousSetupDidFail(withReason reasonForFailure: String!) {
         print("\(#function)监听设置不成功,返回失败的原因: \(String(describing: reasonForFailure))");
         
     }
+    
     func pocketSphinxContinuousTeardownDidFail(withReason reasonForFailure: String!) {
         print("\(#function)监听关闭不成功,返回失败原因:\(String(describing: reasonForFailure))");
         
     }
+    
     func pocketsphinxTestRecognitionCompleted() {
         
     }
