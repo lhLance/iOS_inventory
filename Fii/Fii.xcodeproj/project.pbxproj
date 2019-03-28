@@ -22,7 +22,7 @@
 		34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */; };
 		34F38D40224C536E0059E19A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3C224C536E0059E19A /* OpenEars.framework */; };
 		34F38D41224C536E0059E19A /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3D224C536E0059E19A /* Slt.framework */; };
-		34F38D46224C55180059E19A /* YHRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D44224C55180059E19A /* YHRippleButton.swift */; };
+		34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D49224C5B0F0059E19A /* YHRippleButton.swift */; };
 		34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */; };
 		34F4BC1B223B75B70057080A /* CloumnCategoryMenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */; };
 		34F4BC1D223B75E50057080A /* CloumnFirstCategorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */; };
@@ -122,7 +122,7 @@
 		34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		34F38D3C224C536E0059E19A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		34F38D3D224C536E0059E19A /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
-		34F38D44224C55180059E19A /* YHRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHRippleButton.swift; sourceTree = "<group>"; };
+		34F38D49224C5B0F0059E19A /* YHRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHRippleButton.swift; sourceTree = "<group>"; };
 		34F4BC18223B75B60057080A /* CloumnCategoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryDetailController.swift; sourceTree = "<group>"; };
 		34F4BC19223B75B60057080A /* CloumnCategoryMenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnCategoryMenuTableController.swift; sourceTree = "<group>"; };
 		34F4BC1C223B75E50057080A /* CloumnFirstCategorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnFirstCategorTableViewCell.swift; sourceTree = "<group>"; };
@@ -267,22 +267,22 @@
 			path = OpenEars;
 			sourceTree = "<group>";
 		};
-		34F38D42224C55180059E19A /* Control */ = {
+		34F38D47224C5B0F0059E19A /* Control */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Control;
 			sourceTree = "<group>";
 		};
-		34F38D43224C55180059E19A /* View */ = {
+		34F38D48224C5B0F0059E19A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				34F38D44224C55180059E19A /* YHRippleButton.swift */,
+				34F38D49224C5B0F0059E19A /* YHRippleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		34F38D45224C55180059E19A /* Model */ = {
+		34F38D4A224C5B0F0059E19A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -607,9 +607,9 @@
 		CF8C0EDA2236442400DF0D99 /* VoiceControl */ = {
 			isa = PBXGroup;
 			children = (
-				34F38D42224C55180059E19A /* Control */,
-				34F38D45224C55180059E19A /* Model */,
-				34F38D43224C55180059E19A /* View */,
+				34F38D47224C5B0F0059E19A /* Control */,
+				34F38D4A224C5B0F0059E19A /* Model */,
+				34F38D48224C5B0F0059E19A /* View */,
 				CFAEC19422374CA600F38B82 /* ViewController */,
 			);
 			path = VoiceControl;
@@ -1035,7 +1035,7 @@
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F4BC1A223B75B70057080A /* CloumnCategoryDetailController.swift in Sources */,
-				34F38D46224C55180059E19A /* YHRippleButton.swift in Sources */,
+				34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
