@@ -1235,24 +1235,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPF3349M6Q;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/CallLib",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Fii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
@@ -1281,12 +1270,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud/IMLib",
-					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_SDK_v2_9_12_Dev/IMLib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
