@@ -364,13 +364,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		34F38D72224CA3CB0059E19A /* ScrollPageController */ = {
+		34F38D72224CA3CB0059E19A /* ScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
 				34F38D73224CA3CB0059E19A /* PageContenvView.swift */,
 				34F38D74224CA3CB0059E19A /* PageTitleView.swift */,
 			);
-			path = ScrollPageController;
+			path = ScrollPageView;
 			sourceTree = "<group>";
 		};
 		34F38D75224CA3CB0059E19A /* SwiftyGif */ = {
@@ -529,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				34F38D7F224CABD10059E19A /* Tools */,
-				34F38D72224CA3CB0059E19A /* ScrollPageController */,
 				34F38D75224CA3CB0059E19A /* SwiftyGif */,
 				CF7CA0622223D867005CE8A3 /* Alert */,
 				CF7CA0592223D7AC005CE8A3 /* Utilities */,
@@ -574,6 +573,7 @@
 		CF7CA0572223D7A1005CE8A3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				34F38D72224CA3CB0059E19A /* ScrollPageView */,
 				CF7CA05B2223D7C6005CE8A3 /* DashLine.swift */,
 				CF7CA05A2223D7C6005CE8A3 /* MaqueeView.swift */,
 				CF7CA05C2223D7C7005CE8A3 /* PenetrateView.swift */,
