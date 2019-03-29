@@ -164,26 +164,26 @@ class MeVC: UIViewController {
                 switch index {
                 case 0:
                     let vc = AboutVC()
-                    vc.title = "关于我们"
+                    vc.title = LanguageHelper.getString(key: "me_about_us")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 1:
                     let vc = HelpVC()
-                    vc.title = "常见问题"
+                    vc.title = LanguageHelper.getString(key: "me_help_title")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 2:
                     let vc = CustomerServiceVC()
-                    vc.title = "客服"
+                    vc.title = LanguageHelper.getString(key: "me_customer_service")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 3: break
                 case 4:
                     let vc = SettingsVC()
-                    vc.title = "设置"
+                    vc.title = LanguageHelper.getString(key: "me_settings")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false

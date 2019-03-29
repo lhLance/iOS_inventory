@@ -38,23 +38,42 @@ class HelpVC: UIViewController {
         setupView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setupView() {
         
         view.backgroundColor = UIColor.white
         tableView.added(into: view)
         
-        updateData()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
     }
     
-    func updateData() {
+    @objc func updateData() {
         
         let testStr = [
-            ["Fii是一家什么样的公司？", "Fii是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。致力于为企业提供以自动化、网络化、平台化、大数据为基础的科技服务综合解决方案，引领传统制造向智能制造的转型;并以此为基础构建云计算、移动终端、物联网、大数据、人工智能、高速网络和机器人为技术平台的“先进制造+工业互联网”新生态。"],
-            ["Fii主要从事什么工作？","公司主要从事各类电子设备产品的设计、研发、制造与销售业务，依托于工业互联网为全球知名客户提供智能制造和科技服务解决方案。公司主要产品涵盖通信网络设备、云服务设备、精密工具和工业机器人。相关产品主要应用于智能手机、宽带和无线网络、多媒体服务运营商的基础建设、电信运营商的基础建设、互联网增值服务商所需终端产品、企业网络及数据中心的基础建设以及精密核心零组件的自动化智能制造等。"],
-            ["Fii的产品与服务是什么？","公司主要提供5大方向的解决方案服务：工业互联网、工业机器人、精密工具、通讯网络设备、云服务设备。"],
-            ["公司的经营理念是什么？", "本公司以创意、创新、创业为使命，凭借在智能制造的经验累积，将持续深耕物联网、大数据分析、演算法、人工智能、数据中心等技术及服务，为客户提供全方位的工业互联网服务。"],
-            ["语音识别功能怎么用？","语音识别功能需要同事开启移动蜂窝网络和局域网才能使用，如果不能同时开启两网，请使用语音离线包功能。"]
+            
+            [LanguageHelper.getString(key: "me_help_question1_title"), LanguageHelper.getString(key: "me_help_question1_text")],
+            [LanguageHelper.getString(key: "me_help_question2_title"), LanguageHelper.getString(key: "me_help_question2_text")],
+            [LanguageHelper.getString(key: "me_help_question3_title"), LanguageHelper.getString(key: "me_help_question3_text")],
+            [LanguageHelper.getString(key: "me_help_question4_title"), LanguageHelper.getString(key: "me_help_question4_text")],
+            [LanguageHelper.getString(key: "me_help_question5_title"), LanguageHelper.getString(key: "me_help_question5_text")]
         ]
+        
+        titleStrArr.removeAll()
+        dataStrArr.removeAll()
+        heightArr.removeAll()
+        flags.removeAll()
         
         for item in testStr {
             titleStrArr.append(item[0])
@@ -132,6 +151,5 @@ extension HelpVC: UITableViewDelegate, UITableViewDataSource {
         
         return 0.001
     }
-    
     
 }

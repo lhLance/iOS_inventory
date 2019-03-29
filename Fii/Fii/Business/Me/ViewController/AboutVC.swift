@@ -30,7 +30,28 @@ class AboutVC: UIViewController {
         setupView()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reloadData() {
+        
+        titleBtn?.Text(LanguageHelper.getString(key: "me_about_slogan"))
+        middleText?.Text(LanguageHelper.getString(key: "me_about_discription"))
+        wechatTitle?.Text(LanguageHelper.getString(key: "me_about_wechat_title"))
+        wechatName?.Text(LanguageHelper.getString(key: "me_about_wechat"))
+        bussinessTitle?.Text(LanguageHelper.getString(key: "me_about_bussiness_title"))
+        bussinessNO?.Text(LanguageHelper.getString(key: "me_about_bussiness_phone"))
+        bussinessFax?.Text(LanguageHelper.getString(key: "me_about_bussiness_fax"))
+        companyName?.Text(LanguageHelper.getString(key: "me_about_company_name"))
+    }
+    
     func setupView() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
         
         view.backgroundColor = UIColor.white
         
@@ -75,7 +96,7 @@ class AboutVC: UIViewController {
             b.borderColor = UIColor.red
             b.borderWidth = 1.0
             b.cornerRadius = 20
-            b.Text("兼善天下企业，赋能全球制造").TitleColor(UIColor.red).Font(UIFont.PFRegular(16))
+            b.Text(LanguageHelper.getString(key: "me_about_slogan")).TitleColor(UIColor.red).Font(UIFont.PFRegular(16))
         })
         
         middleText = UILabel().then({ (m) in
@@ -92,7 +113,7 @@ class AboutVC: UIViewController {
                 }
                 make.centerX.equalToSuperview()
             })
-            m.TextColor(UIColor.lightGray).Text("公司是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。").Font(UIFont.PFRegular(15)).TextAlignment(.center)
+            m.TextColor(UIColor.lightGray).Text(LanguageHelper.getString(key: "me_about_discription")).Font(UIFont.PFRegular(15)).TextAlignment(.center)
             m.lineBreakMode = .byWordWrapping
             m.numberOfLines = 0
         })
@@ -108,7 +129,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
-            t.TextAlignment(.center).TextColor(UIColor.black).Text("微信公众号").Font(UIFont.PFRegular(16))
+            t.TextAlignment(.center).TextColor(UIColor.black).Text(LanguageHelper.getString(key: "me_about_wechat_title")).Font(UIFont.PFRegular(16))
         })
         
         wechatLine = UIView().then({ (l) in
@@ -137,7 +158,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.Text("工业富联601138").Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.Text(LanguageHelper.getString(key: "me_about_wechat")).Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bussinessTitle = UILabel().then({ (t) in
@@ -151,7 +172,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.centerX.equalToSuperview()
             })
-            t.TextAlignment(.center).TextColor(UIColor.black).Text("商务合作").Font(UIFont.PFRegular(16))
+            t.TextAlignment(.center).TextColor(UIColor.black).Text(LanguageHelper.getString(key: "me_about_bussiness_title")).Font(UIFont.PFRegular(16))
         })
         
         bussinessLine = UIView().then({ (l) in
@@ -180,7 +201,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.Text("官方电话: 0755-33855777").Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.Text(LanguageHelper.getString(key: "me_about_bussiness_phone")).Font(UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bussinessFax = UILabel().then({ (lbl) in
@@ -190,7 +211,7 @@ class AboutVC: UIViewController {
                 make.centerX.equalToSuperview()
                 make.height.equalTo(20)
             })
-            lbl.TextFont("官方传真: 0755-33855778", UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont(LanguageHelper.getString(key: "me_about_bussiness_fax"), UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         companyName = UILabel().then({ (lbl) in
@@ -200,7 +221,7 @@ class AboutVC: UIViewController {
                 make.height.equalTo(20)
                 make.bottom.equalTo(-60)
             })
-            lbl.TextFont("富士康工业互联网股份有限公司", UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
+            lbl.TextFont(LanguageHelper.getString(key: "me_about_company_name"), UIFont.PFRegular(15)).TextColor(UIColor.lightGray).TextAlignment(.center)
         })
         
         bottomLbl = UILabel().then({ (lbl) in
