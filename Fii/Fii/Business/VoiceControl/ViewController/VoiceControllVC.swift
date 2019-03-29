@@ -11,21 +11,21 @@ private let ChineseModel = "LanguageModelFilesOfChinese"
 
 class VoiceControllVC: UIViewController {
 
-    var openEarsEventsObserver:OEEventsObserver!;
+    var openEarsEventsObserver:OEEventsObserver!
     var lmGenerator:OELanguageModelGenerator!
     var pocketsphinx:OEPocketsphinxController!
-    var englishWords:NSArray! = [];
-    var chineseWords:NSArray! = [];
-    var startBtn:UIButton!;
-    var chineseLmPath:String = "";
-    var chineseDicPath:String = "";
-    var errString:String! = "";
-    var speechLab:UILabel!;
+    var englishWords:NSArray! = []
+    var chineseWords:NSArray! = []
+    var startBtn:UIButton!
+    var chineseLmPath:String = ""
+    var chineseDicPath:String = ""
+    var errString:String! = ""
+    var speechLab:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setUpUI();
+        setUpUI()
         
     }
     
@@ -43,10 +43,10 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         self.speechLab = UILabel(frame: CGRect(x:100,
                                                y: 100,
                                                width: 200,
-                                               height: 50));
-        self.speechLab.backgroundColor = UIColor.yellow;
-        self.speechLab.textAlignment = NSTextAlignment.center;
-        self.view.addSubview(self.speechLab);
+                                               height: 50))
+        self.speechLab.backgroundColor = UIColor.yellow
+        self.speechLab.textAlignment = NSTextAlignment.center
+        self.view.addSubview(self.speechLab)
         
         self.startBtn = YHRippleButton(frame: CGRect(x: 0,
                                                      y: 0,
@@ -59,16 +59,16 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         view.addSubview(self.startBtn)
         
         /*命令词*/
-        self.lmGenerator = OELanguageModelGenerator.init();
-        self.pocketsphinx = OEPocketsphinxController.sharedInstance();
-        self.chineseWords = ["左边", "上边", "向下移动", "右边","四分之三","在中国","向左移动"];
-        self.openEarsEventsObserver = OEEventsObserver.init();
-        self.openEarsEventsObserver.delegate = self;
+        self.lmGenerator = OELanguageModelGenerator.init()
+        self.pocketsphinx = OEPocketsphinxController.sharedInstance()
+        self.chineseWords = ["左边", "上边", "向下移动", "右边","四分之三","在中国","向左移动"]
+        self.openEarsEventsObserver = OEEventsObserver.init()
+        self.openEarsEventsObserver.delegate = self
         
         self.errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
                                                                 withFilesNamed: ChineseModel,
-                                                                forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String;
-        self.chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel);
+                                                                forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String
+        self.chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel)
         self.chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
         
     }
@@ -80,17 +80,17 @@ extension VoiceControllVC:OEEventsObserverDelegate{
             print("\(#function)+ \(#file)")
             
             self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
-            try? self.pocketsphinx.setActive(true);
+            try? self.pocketsphinx.setActive(true)
             self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
                                                               dictionaryAtPath: self.chineseDicPath,
                                                               acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
-                                                              languageModelIsJSGF: false);
+                                                              languageModelIsJSGF: false)
         }
         else{
             
             print("\(#function) + \(#file)")
             self.startBtn.setTitle("开始", for: UIControl.State.normal)
-            self.pocketsphinx.stopListening();
+            self.pocketsphinx.stopListening()
         }
         self.startBtn.isSelected = !self.startBtn.isSelected
     }
@@ -98,7 +98,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")
-        self.speechLab.text = hypothesis;
+        self.speechLab.text = hypothesis
         
     }
     
@@ -127,12 +127,12 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     }
     
     func pocketSphinxContinuousSetupDidFail(withReason reasonForFailure: String!) {
-        print("\(#function)监听设置不成功,返回失败的原因: \(String(describing: reasonForFailure))");
+        print("\(#function)监听设置不成功,返回失败的原因: \(String(describing: reasonForFailure))")
         
     }
     
     func pocketSphinxContinuousTeardownDidFail(withReason reasonForFailure: String!) {
-        print("\(#function)监听关闭不成功,返回失败原因:\(String(describing: reasonForFailure))");
+        print("\(#function)监听关闭不成功,返回失败原因:\(String(describing: reasonForFailure))") 
         
     }
     

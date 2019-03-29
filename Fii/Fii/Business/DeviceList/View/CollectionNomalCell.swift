@@ -12,12 +12,10 @@ class CollectionNomalCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLab: UILabel!
     @IBOutlet weak var ImageV: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        
-//        self.layer.cornerRadius = 5.0
-//        self.layer.masksToBounds = true;
         
         
     }

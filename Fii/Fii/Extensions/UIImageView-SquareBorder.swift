@@ -19,8 +19,8 @@ public enum SquareBorder{
 extension UIImageView{
     
     convenience init(frame: CGRect,imageName:String, direct:SquareBorder) {
-        self.init(imageName);
-        self.frame = frame;
+        self.init(imageName)
+        self.frame = frame
         switch direct {
         case .topLeft:
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

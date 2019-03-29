@@ -11,12 +11,12 @@
 
 import UIKit
 
-let kCategoryMenuWidth = CGFloat(95);
+let kCategoryMenuWidth = CGFloat(95)
 
-private let kcurrentScreenW = CGFloat(UIScreen.width - kCategoryMenuWidth);
+private let kcurrentScreenW = CGFloat(UIScreen.width - kCategoryMenuWidth)
 
 
-private let kItemMargin:CGFloat = 10;
+private let kItemMargin:CGFloat = 10
 private let kItemW = (kcurrentScreenW - 3*kItemMargin)/2
 private let kNomalItemH = kItemW*3/4
 
@@ -28,8 +28,8 @@ class CloumnCategoryDetailController: UICollectionViewController,UICollectionVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNoticeData();
-        setupCell();
+        initNoticeData()
+        setupCell()
         // Do any additional setup after loading the view.
     }
 
@@ -71,7 +71,7 @@ extension CloumnCategoryDetailController{
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.orange;
+        cell.backgroundColor = UIColor.orange
         // Configure the cell
         
         return cell
