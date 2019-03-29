@@ -331,7 +331,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		34F38D4C224C9B730059E19A /* Image */ = {
+		34F38D4C224C9B730059E19A /* Gif */ = {
 			isa = PBXGroup;
 			children = (
 				34F38D4D224C9B730059E19A /* AGV.gif */,
@@ -342,7 +342,7 @@
 				34F38D52224C9B730059E19A /* FOXNUM.gif */,
 				34F38D53224C9B730059E19A /* Super-TG.gif */,
 			);
-			path = Image;
+			path = Gif;
 			sourceTree = "<group>";
 		};
 		34F38D61224CA3380059E19A /* View */ = {
@@ -491,7 +491,7 @@
 		CF7CA02D22239744005CE8A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				34F38D4C224C9B730059E19A /* Image */,
+				34F38D4C224C9B730059E19A /* Gif */,
 				04A8C97C224BA828001D6987 /* Language */,
 				CFAEC1E122378D5B00F38B82 /* Videos */,
 				CF7CA06C2223D91D005CE8A3 /* Font */,
