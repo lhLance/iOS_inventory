@@ -48,6 +48,10 @@ class SettingsVC: UIViewController {
         setupSubviews()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func reloadData() {
         
         datas = [

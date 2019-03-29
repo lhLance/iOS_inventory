@@ -14,26 +14,37 @@ import UIKit
 let kCategoryMenuWidth = CGFloat(95)
 
 private let kcurrentScreenW = CGFloat(UIScreen.width - kCategoryMenuWidth)
-
-
-private let kItemMargin:CGFloat = 10
-private let kItemW = (kcurrentScreenW - 3*kItemMargin)/2
+private let kItemMargin: CGFloat = 10
+private let kItemW = (kcurrentScreenW - 3 * kItemMargin)/2
 private let kNomalItemH = kItemW*3/4
 
 
 private let reuseIdentifier = "Cell"
 
-class CloumnCategoryDetailController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+class CloumnCategoryDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initNoticeData()
         setupCell()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    private func setupCell() {
+        
+        collectionView.backgroundColor = UIColor.white
+        collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+    }
+    
+    private func initNoticeData(){
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(test),
+                                               name: NSNotification.Name(rawValue:"isTest"),
+                                               object: nil)
+    }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -44,50 +55,48 @@ class CloumnCategoryDetailController: UICollectionViewController,UICollectionVie
 
 extension CloumnCategoryDetailController{
     
-    private func  setupCell(){
-        self.collectionView.backgroundColor = UIColor.white
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    override func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
 
-    }
-    private func initNoticeData(){
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(test),
-                                               name: NSNotification.Name(rawValue:"isTest"),
-                                               object: nil)
-    }
-    // MARK: UICollectionViewDataSource
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int
+    {
+
         return 20
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         cell.backgroundColor = UIColor.orange
-        // Configure the cell
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize
+    {
         return CGSize(width: 0, height: 10)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets
+    {
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
 
     
-    @objc func test(notification:Notification){
+    @objc func test(notification: Notification) {
+        
         print("收到通知啦....")
         guard let userInfo = notification.userInfo,
             let section = userInfo["one"] ,
@@ -97,8 +106,6 @@ extension CloumnCategoryDetailController{
             return
         }
         print("传回索引是  \(section) + \(row)")
-        
-        
     }
     
 

@@ -37,6 +37,10 @@ class MeVC: UIViewController {
         setupCells()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func reloadData() {
         
        dataArr = [(img: UIImage("about"), name: LanguageHelper.getString(key: "me_about")),
