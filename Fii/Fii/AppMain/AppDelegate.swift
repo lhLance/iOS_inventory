@@ -12,13 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rootVC: FiiTabBarController?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
 
-        setupVCs()
         setupLanguage()
+        setupVCs()
         
         return true
     }
@@ -26,6 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupLanguage() {
         
         LanguageHelper.shareInstance.initUserLanguage()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reloadData() {
+        
+        setupVCs()
     }
     
     func setupVCs() {
@@ -63,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 tag: 0)
         ]
         
-        let rootVC = FiiTabBarController(childVCs)
+        rootVC = FiiTabBarController(childVCs)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
