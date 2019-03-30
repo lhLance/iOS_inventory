@@ -18,6 +18,13 @@
 		04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
+		34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5A224F15F9006D46CA /* ChatTableView.swift */; };
+		34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5C224F16C5006D46CA /* ChatDataSource.swift */; };
+		34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5E224F171F006D46CA /* ChatUserInfo.swift */; };
+		34905B61224F1746006D46CA /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B60224F1746006D46CA /* MessageItem.swift */; };
+		34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */; };
+		34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B64224F17C9006D46CA /* ChatTableViewCell.swift */; };
+		34905B67224F6691006D46CA /* VoiceCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B66224F6691006D46CA /* VoiceCurveView.swift */; };
 		34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */; };
 		34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */; };
 		34F38D40224C536E0059E19A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3C224C536E0059E19A /* OpenEars.framework */; };
@@ -142,6 +149,13 @@
 		04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Bold.ttf; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		34905B5A224F15F9006D46CA /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
+		34905B5C224F16C5006D46CA /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		34905B5E224F171F006D46CA /* ChatUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserInfo.swift; sourceTree = "<group>"; };
+		34905B60224F1746006D46CA /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableHeaderViewCell.swift; sourceTree = "<group>"; };
+		34905B64224F17C9006D46CA /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		34905B66224F6691006D46CA /* VoiceCurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCurveView.swift; sourceTree = "<group>"; };
 		34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelChinese.bundle; sourceTree = "<group>"; };
 		34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		34F38D3C224C536E0059E19A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -320,6 +334,10 @@
 			isa = PBXGroup;
 			children = (
 				34F38D49224C5B0F0059E19A /* YHRippleButton.swift */,
+				34905B5A224F15F9006D46CA /* ChatTableView.swift */,
+				34905B64224F17C9006D46CA /* ChatTableViewCell.swift */,
+				34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */,
+				34905B66224F6691006D46CA /* VoiceCurveView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +345,9 @@
 		34F38D4A224C5B0F0059E19A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34905B5C224F16C5006D46CA /* ChatDataSource.swift */,
+				34905B5E224F171F006D46CA /* ChatUserInfo.swift */,
+				34905B60224F1746006D46CA /* MessageItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1126,6 +1147,7 @@
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */,
+				34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
@@ -1135,6 +1157,7 @@
 				34F38D69224CA3380059E19A /* CloumnCategoryMenuTableController.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				34F38D68224CA3380059E19A /* CloumnCategoryDetailController.swift in Sources */,
+				34905B61224F1746006D46CA /* MessageItem.swift in Sources */,
 				CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */,
 				04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */,
 				CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */,
@@ -1146,6 +1169,7 @@
 				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				34F38D71224CA3380059E19A /* UIImageView-SquareBorder.swift in Sources */,
+				34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
 				CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */,
@@ -1183,18 +1207,22 @@
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
+				34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */,
 				CF7CA05E2223D7C7005CE8A3 /* DashLine.swift in Sources */,
 				CF7CA0402223CD2B005CE8A3 /* UIDevice+Extension.swift in Sources */,
 				CF7CA06A2223D8D8005CE8A3 /* UIColor+Extension.swift in Sources */,
 				CF7CA0522223D376005CE8A3 /* UILabel+Extension.swift in Sources */,
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
+				34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */,
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				34F38D81224CABD10059E19A /* Common.swift in Sources */,
 				CF7CCEF82242202E00BBA836 /* FAQTableViewCell.swift in Sources */,
+				34905B67224F6691006D46CA /* VoiceCurveView.swift in Sources */,
 				CF7CA0642223D872005CE8A3 /* Alert.swift in Sources */,
 				CF7CA0422223CE4A005CE8A3 /* UIScreen+Extension.swift in Sources */,
+				34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
