@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 //! Project version number for SwiftyGif.
-FOUNDATION_EXPORT double SwiftyGifVersionNumber;
+FOUNDATION_EXPORT double SwiftyGifVersionNumber
 
 //! Project version string for SwiftyGif.
-FOUNDATION_EXPORT const unsigned char SwiftyGifVersionString[];
+FOUNDATION_EXPORT const unsigned char SwiftyGifVersionString[]
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftyGif/PublicHeader.h>
 

@@ -10,7 +10,7 @@ import UIKit
 
 let Top_HIGHT = UIDevice.current.isIphoneXMore() ? 20 : 0
 
-let kNavigationBar :CGFloat = CGFloat(44);
+let kNavigationBar :CGFloat = CGFloat(44)
 
 let kTabBarH = CGFloat(49)
 /// 底部宏，吃一见长一智吧，别写数字了

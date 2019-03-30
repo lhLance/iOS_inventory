@@ -12,13 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rootVC: FiiTabBarController?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
 
-        setupVCs()
         setupLanguage()
+        setupVCs()
         
         return true
     }
@@ -26,6 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupLanguage() {
         
         LanguageHelper.shareInstance.initUserLanguage()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reloadData() {
+        
+        setupVCs()
     }
     
     func setupVCs() {
@@ -38,32 +53,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let childVCs = [
             createTabbarChildVC(vc: homeVC,
-                                title: "首页",
+                                title: LanguageHelper.getString(key: "home_title"),
                                 normalImage: UIImage("home_none")!,
                                 selectImage: UIImage("home")!,
                                 tag: 0),
             createTabbarChildVC(vc: realVC,
-                                title: "实时快照",
+                                title: LanguageHelper.getString(key: "real_time_shot_title"),
                                 normalImage: UIImage("screen_shot_none")!,
                                 selectImage: UIImage("screen_shot")!,
                                 tag: 0),
             createTabbarChildVC(vc: voiceConVC,
-                                title: "语音",
+                                title: LanguageHelper.getString(key: "voice_title"),
                                 normalImage: UIImage("voice_none")!,
                                 selectImage: UIImage("voice")!,
                                 tag: 0),
             createTabbarChildVC(vc: deviceListVC,
-                                title: "设备数据",
+                                title: LanguageHelper.getString(key: "device_list_title"),
                                 normalImage: UIImage("device_data_none")!,
                                 selectImage: UIImage("device_data")!,
                                 tag: 0),
-            createTabbarChildVC(vc: meVC, title: "我的",
+            createTabbarChildVC(vc: meVC, title: LanguageHelper.getString(key: "me_title"),
                                 normalImage: UIImage("me_none")!,
                                 selectImage: UIImage("me")!,
                                 tag: 0)
         ]
         
-        let rootVC = FiiTabBarController(childVCs)
+        rootVC = FiiTabBarController(childVCs)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white

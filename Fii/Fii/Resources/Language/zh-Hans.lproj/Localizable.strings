@@ -6,13 +6,39 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
-"set_clearCache" = "清理缓存";
-"set_cache_size" = "缓存大小";
-"set_checkUpdate" = "检查更新";
-"set_language" = "语言";
+"home_title" = "首页";
+"real_time_shot_title" = "实时快照";
+"voice_title" = "语音";
+"device_list_title" = "设备数据";
+"me_title" = "我的";
+
+"me_set_clearCache" = "清理缓存";
+"me_set_cache_size" = "缓存大小";
+"me_set_checkUpdate" = "检查更新";
+"me_set_language" = "语言";
 
 "me_about" = "关于";
+"me_about_us" = "关于我们";
+"me_about_slogan" = "兼善天下企业，赋能全球制造";
+"me_about_discription" = "公司是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。";
+"me_about_wechat_title" = "微信公众号";
+"me_about_wechat" = "工业富联601138";
+"me_about_bussiness_title" = "商务合作";
+"me_about_bussiness_phone" = "官方电话: 0755-33855777";
+"me_about_bussiness_fax" = "官方传真: 0755-33855778";
+"me_about_company_name" = "富士康工业互联网股份有限公司";
 "me_help" = "帮助";
+"me_help_title" = "常见问题";
+"me_help_question1_title" = "Fii是一家什么样的公司？";
+"me_help_question1_text" = "Fii是全球领先的通信网络设备、云服务设备、精密工具及工业机器人专业设计制造服务商，为客户提供以工业互联网平台为核心的新形态电子设备产品智能制造服务。致力于为企业提供以自动化、网络化、平台化、大数据为基础的科技服务综合解决方案，引领传统制造向智能制造的转型;并以此为基础构建云计算、移动终端、物联网、大数据、人工智能、高速网络和机器人为技术平台的“先进制造+工业互联网”新生态。";
+"me_help_question2_title" = "Fii主要从事什么工作？";
+"me_help_question2_text" = "公司主要从事各类电子设备产品的设计、研发、制造与销售业务，依托于工业互联网为全球知名客户提供智能制造和科技服务解决方案。公司主要产品涵盖通信网络设备、云服务设备、精密工具和工业机器人。相关产品主要应用于智能手机、宽带和无线网络、多媒体服务运营商的基础建设、电信运营商的基础建设、互联网增值服务商所需终端产品、企业网络及数据中心的基础建设以及精密核心零组件的自动化智能制造等。";
+"me_help_question3_title" = "Fii的产品与服务是什么？";
+"me_help_question3_text" = "公司主要提供5大方向的解决方案服务：工业互联网、工业机器人、精密工具、通讯网络设备、云服务设备。";
+"me_help_question4_title" = "公司的经营理念是什么？";
+"me_help_question4_text" = "本公司以创意、创新、创业为使命，凭借在智能制造的经验累积，将持续深耕物联网、大数据分析、演算法、人工智能、数据中心等技术及服务，为客户提供全方位的工业互联网服务。";
+"me_help_question5_title" = "语音识别功能怎么用？";
+"me_help_question5_text" = "语音识别功能需要同时开启移动蜂窝网络和局域网才能使用，如果不能同时开启两网，请使用语音离线包功能。";
 "me_customer_service" = "客服";
 "me_like" = "收藏";
 "me_settings" = "设置";

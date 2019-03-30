@@ -18,7 +18,7 @@ class LanguageHelper {
     let def = UserDefaults.standard
     var bundle: Bundle?
     
-    class func getString(key:String) -> String {
+    class func getString(key: String) -> String {
         
         let bundle = LanguageHelper.shareInstance.bundle
         let str = bundle?.localizedString(forKey: key, value: nil, table: nil)
@@ -51,11 +51,11 @@ class LanguageHelper {
         bundle = Bundle(path: path!)
     }
     
-    func setLanguage(langeuage: String) {
+    func setLanguage(language: String) {
         
-        let path = Bundle.main.path(forResource:langeuage , ofType: "lproj")
+        let path = Bundle.main.path(forResource:language , ofType: "lproj")
         bundle = Bundle(path: path!)
-        def.set(langeuage, forKey: UserLanguage)
+        def.set(language, forKey: UserLanguage)
         def.synchronize()
     }
 }

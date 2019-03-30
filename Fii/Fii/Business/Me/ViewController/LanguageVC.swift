@@ -68,15 +68,15 @@ extension LanguageVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            LanguageHelper.shareInstance.setLanguage(langeuage: "zh-Hans")
+            LanguageHelper.shareInstance.setLanguage(language: "zh-Hans")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
             navigationController?.popViewController(animated: true)
         case 1:
-            LanguageHelper.shareInstance.setLanguage(langeuage: "zh-Hant")
+            LanguageHelper.shareInstance.setLanguage(language: "zh-Hant")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
             navigationController?.popViewController(animated: true)
         case 2:
-            LanguageHelper.shareInstance.setLanguage(langeuage: "en")
+            LanguageHelper.shareInstance.setLanguage(language: "en")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LanguageChanged"), object: nil)
             navigationController?.popViewController(animated: true)
         default:

@@ -6,15 +6,41 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
-"set_clearCache" = "Clear cache";
-"set_cache_size" = "cache size";
-"set_checkUpdate" = "Check update";
-"set_language" = "Language";
+"home_title" = "Home";
+"real_time_shot_title" = "Shot";
+"voice_title" = "Voice";
+"device_list_title" = "Device";
+"me_title" = "Me";
 
-"me_about" = "about";
-"me_help" = "help";
-"me_customer_service" = "customer service";
-"me_like" = "like";
-"me_settings" = "settings";
-"me_log_out" = "log out";
+"me_set_clearCache" = "Clear cache";
+"me_set_cache_size" = "cache size";
+"me_set_checkUpdate" = "Check update";
+"me_set_language" = "Language";
+
+"me_about" = "About";
+"me_about_us" = "About us";
+"me_about_slogan" = "Empowering global manufacturing";
+"me_about_discription" = "The company is the world's leading communications, network equipment, cloud service equipment, precision tool, and industrial robot professional design and manufacturing service providers. To provide customers with intelligent manufacturing services for new forms of electronic equipment products with the core of the industrial Internet platform.";
+"me_about_wechat_title" = "WeChat public number";
+"me_about_wechat" = "Industrial Fulian 601138";
+"me_about_bussiness_title" = "Business Cooperation";
+"me_about_bussiness_phone" = "Official phone number: 0755-33855777";
+"me_about_bussiness_fax" = "Official fax: 0755-33855778";
+"me_about_company_name" = "Foxconn Industrial Internet Co., Ltd.";
+"me_help" = "Help";
+"me_help_title" = "FAQ";
+"me_help_question1_title" = "What kind of company is Fii?";
+"me_help_question1_text" = "Foxconn Industrial Internet (Fii) is a world's leading professional design and manufacturing service provider of communication network equipment, cloud service equipment, precision tools and industrial robots, providing customers with intelligent manufacturing services for new forms of electronic equipment products centered on the industrial Internet platform. Fii is committed to providing enterprises with comprehensive solutions of technology services based on automation, network, platform and big data, leading the transformation from traditional manufacturing to intelligent manufacturing.";
+"me_help_question2_title" = "What is the main job of Fii?";
+"me_help_question2_text" = "The company is engaged in the design, research and development, manufacturing, and sales of various electronic equipment products. It relies on Industrial Internet to provide intelligent manufacturing and technology service solutions to world-renowned customers. Fii's main products cover communication network equipment, cloud service equipment, precision tools and industrial robots.";
+"me_help_question3_title" = "What is Fii's products and services?";
+"me_help_question3_text" = "The company mainly provides solutions in five major directions: industrial internet, industrial robots, precision tools, communication network equipment, and cloud service equipment.";
+"me_help_question4_title" = "What is the company's business philosophy?";
+"me_help_question4_text" = "With the mission of creativity, innovation, and entrepreneurship, the company will continue to deepen the technologies and services of the IoT, big data analysis, algorithms, artificial intelligence, data centers, and other technologies to offer customers a full range of industrial Internet service.";
+"me_help_question5_title" = "How to use the speech recognition function?";
+"me_help_question5_text" = "The voice recognition function needs to be enabled for both the mobile cellular network and the local area network. If the two networks cannot be enabled at the same time, please use the voice offline package function.";
+"me_customer_service" = "Customer service";
+"me_like" = "Like";
+"me_settings" = "Settings";
+"me_log_out" = "Log out";
 

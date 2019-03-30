@@ -6,13 +6,39 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
-"set_clearCache" = "清理緩存";
-"set_cache_size" = "緩存大小";
-"set_checkUpdate" = "檢查更新";
-"set_language" = "語言";
+"home_title" = "首頁";
+"real_time_shot_title" = "實時快照";
+"voice_title" = "語音";
+"device_list_title" = "設備數據";
+"me_title" = "我的";
+
+"me_set_clearCache" = "清理緩存";
+"me_set_cache_size" = "緩存大小";
+"me_set_checkUpdate" = "檢查更新";
+"me_set_language" = "語言";
 
 "me_about" = "關於";
+"me_about_us" = "關於我们";
+"me_about_slogan" = "兼善天下企業，賦能全球制造";
+"me_about_discription" = "公司是全球領先的通信網絡設備、雲服務設備、精密工具及工業機器人專業設計制造服務商，為客戶提供以工業互聯網平臺為核心的新形態電子設備產品智能制造服務。";
+"me_about_wechat_title" = "微信公眾號";
+"me_about_wechat" = "工業富聯601138";
+"me_about_bussiness_title" = "商務合作";
+"me_about_bussiness_phone" = "官方電話: 0755-33855777";
+"me_about_bussiness_fax" = "官方傳真: 0755-33855778";
+"me_about_company_name" = "富士康工業互聯網股份有限公司";
 "me_help" = "幫助";
+"me_help_title" = "常見問題";
+"me_help_question1_title" = "Fii是壹家什麽樣的公司？";
+"me_help_question1_text" = "Fii是全球領先的通信網絡設備、雲服務設備、精密工具及工業機器人專業設計制造服務商，為客戶提供以工業互聯網平臺為核心的新形態電子設備產品智能制造服務。致力於為企業提供以自動化、網絡化、平臺化、大數據為基礎的科技服務綜合解決方案，引領傳統制造向智能制造的轉型;並以此為基礎構建雲計算、移動終端、物聯網、大數據、人工智能、高速網絡和機器人為技術平臺的“先進制造+工業互聯網”新生態。";
+"me_help_question2_title" = "Fii主要從事什麽工作？";
+"me_help_question2_text" = "公司主要從事各類電子設備產品的設計、研發、制造與銷售業務，依托於工業互聯網為全球知名客戶提供智能制造和科技服務解決方案。公司主要產品涵蓋通信網絡設備、雲服務設備、精密工具和工業機器人。相關產品主要應用於智能手機、寬帶和無線網絡、多媒體服務運營商的基礎建設、電信運營商的基礎建設、互聯網增值服務商所需終端產品、企業網絡及數據中心的基礎建設以及精密核心零組件的自動化智能制造等。";
+"me_help_question3_title" = "Fii的產品與服務是什麽？";
+"me_help_question3_text" = "公司主要提供5大方向的解決方案服務：工業互聯網、工業機器人、精密工具、通訊網絡設備、雲服務設備。";
+"me_help_question4_title" = "公司的經營理念是什麽？";
+"me_help_question4_text" = "本公司以創意、創新、創業為使命，憑借在智能制造的經驗累積，將持續深耕物聯網、大數據分析、演算法、人工智能、數據中心等技術及服務，為客戶提供全方位的工業互聯網服務。";
+"me_help_question5_title" = "語音識別功能怎麽用？";
+"me_help_question5_text" = "語音識別功能需要同时開啟移動蜂窩網絡和局域網才能使用，如果不能同時開啟兩網，請使用語音離線包功能。";
 "me_customer_service" = "客服";
 "me_like" = "收藏";
 "me_settings" = "設置";

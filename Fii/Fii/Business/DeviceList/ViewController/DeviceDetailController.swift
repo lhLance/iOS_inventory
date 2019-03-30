@@ -20,14 +20,14 @@ class DeviceDetailController: UIViewController {
     
     var rewindTimer: Timer?
     var forwardTimer: Timer?
-    var gifName:String?;
+    var gifName: String?
     
-    var centerPoint:CGPoint = CGPoint(x: UIScreen.width/2.0, y: UIScreen.height/2.0);
+    var centerPoint:CGPoint = CGPoint(x: UIScreen.width/2.0, y: UIScreen.height/2.0)
     
-    var topLeftCenter:CGPoint=CGPoint.zero;
-    var bottomLeftCenter:CGPoint=CGPoint.zero;
-    var topRightCenter:CGPoint=CGPoint.zero;
-    var bottomRightCenter:CGPoint=CGPoint.zero;
+    var topLeftCenter:CGPoint=CGPoint.zero
+    var bottomLeftCenter:CGPoint=CGPoint.zero
+    var topRightCenter:CGPoint=CGPoint.zero
+    var bottomRightCenter:CGPoint=CGPoint.zero
 
     
     
@@ -35,10 +35,10 @@ class DeviceDetailController: UIViewController {
         let imageView =  UIImageView(frame: CGRect(x: 0,
                                                    y: 0,
                                                    width: kImageW,
-                                                   height: kImageH));
-        imageView.center = centerPoint;
-        return imageView;
-        }();
+                                                   height: kImageH))
+        imageView.center = centerPoint
+        return imageView
+        }()
     
 
     
@@ -48,10 +48,10 @@ class DeviceDetailController: UIViewController {
                                                       width: kSquareSize,
                                                       height: kSquareSize),
                                         imageName: "jiao_big",
-                                        direct: SquareBorder.topLeft);
-        leftTopImageV.center = (self?.topLeftCenter)!;
-        return leftTopImageV;
-        }();
+                                        direct: SquareBorder.topLeft)
+        leftTopImageV.center = (self?.topLeftCenter)!
+        return leftTopImageV
+        }()
     
     private lazy var leftBottomimageView:UIImageView = { [weak self] in /*弱引用*/
         let leftBottomImageV = UIImageView(frame: CGRect(x: 0,
@@ -59,10 +59,10 @@ class DeviceDetailController: UIViewController {
                                                          width: kSquareSize,
                                                          height: kSquareSize),
                                            imageName: "jiao_big",
-                                           direct: SquareBorder.bottomLeft);
-        leftBottomImageV.center = (self?.bottomLeftCenter)!;
-        return leftBottomImageV;
-        }();
+                                           direct: SquareBorder.bottomLeft)
+        leftBottomImageV.center = (self?.bottomLeftCenter)!
+        return leftBottomImageV
+        }()
     
     
     
@@ -72,10 +72,10 @@ class DeviceDetailController: UIViewController {
                                                        width: kSquareSize,
                                                        height: kSquareSize),
                                          imageName: "jiao_big",
-                                         direct: SquareBorder.topRight);
-        rightTopimageV.center = (self?.topRightCenter)!;
-        return rightTopimageV;
-        }();
+                                         direct: SquareBorder.topRight)
+        rightTopimageV.center = (self?.topRightCenter)!
+        return rightTopimageV
+        }()
     
     private lazy var rightBottomimageView:UIImageView = { [weak self] in /*弱引用*/
         let rightBottomimageV = UIImageView(frame: CGRect(x: 0,
@@ -83,19 +83,19 @@ class DeviceDetailController: UIViewController {
                                                           width: kSquareSize,
                                                           height: kSquareSize),
                                             imageName: "jiao_big",
-                                            direct: SquareBorder.bottomRight);
-        rightBottomimageV.center = (self?.bottomRightCenter)!;
-        return rightBottomimageV;
-        }();
+                                            direct: SquareBorder.bottomRight)
+        rightBottomimageV.center = (self?.bottomRightCenter)!
+        return rightBottomimageV
+        }()
     
     
-    let gifMangager = SwiftyGifManager(memoryLimit: 60);
+    let gifMangager = SwiftyGifManager(memoryLimit: 60)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setInitData();
-        setUpUI();
+        setInitData()
+        setUpUI()
         // Do any additional setup after loading the view.
     }
     
@@ -106,16 +106,16 @@ class DeviceDetailController: UIViewController {
 extension DeviceDetailController{
     
     private func setInitData(){
-        self.view.backgroundColor = colorWithRGBA(red: 10, green: 33, blue: 44, alpha: 1.0);
-        self.imageView.backgroundColor = colorWithRGBA(red: 8, green: 24, blue: 32, alpha: 1.0);
+        self.view.backgroundColor = colorWithRGBA(red: 10, green: 33, blue: 44, alpha: 1.0)
+        self.imageView.backgroundColor = colorWithRGBA(red: 8, green: 24, blue: 32, alpha: 1.0)
         self.topLeftCenter = CGPoint(x: self.centerPoint.x - kImageW/2.0 - kSquareMargin + kSquareSize/2.0,
-                                     y: self.centerPoint.y - kImageH/2.0 - kSquareMargin + kSquareSize/2.0);
+                                     y: self.centerPoint.y - kImageH/2.0 - kSquareMargin + kSquareSize/2.0)
         self.bottomLeftCenter = CGPoint(x: self.centerPoint.x - kImageW/2.0 - kSquareMargin + kSquareSize/2.0,
-                                        y: self.centerPoint.y + kImageH/2.0 + kSquareMargin - kSquareSize/2.0);
+                                        y: self.centerPoint.y + kImageH/2.0 + kSquareMargin - kSquareSize/2.0)
         self.topRightCenter = CGPoint(x: self.centerPoint.x + kImageW/2.0 + kSquareMargin - kSquareSize/2.0,
-                                      y: self.centerPoint.y - kImageH/2.0 - kSquareMargin + kSquareSize/2.0);
+                                      y: self.centerPoint.y - kImageH/2.0 - kSquareMargin + kSquareSize/2.0)
         self.bottomRightCenter = CGPoint(x: self.centerPoint.x + kImageW/2.0 + kSquareMargin - kSquareSize/2.0,
-                                         y: self.centerPoint.y + kImageH/2.0 + kSquareMargin - kSquareSize/2.0);
+                                         y: self.centerPoint.y + kImageH/2.0 + kSquareMargin - kSquareSize/2.0)
     }
     
     private func setUpUI(){
@@ -123,20 +123,20 @@ extension DeviceDetailController{
         imageView.added(into: view)
         leftTopimageView.added(into: view)
         leftBottomimageView.added(into: view)
-        rightTopimageView.added(into: view);
+        rightTopimageView.added(into: view)
         rightBottomimageView.added(into: view)
         
         if let imgName = gifName{
-            let gifImage = UIImage(gifName: imgName);
+            let gifImage = UIImage(gifName: imgName)
             imageView.setGifImage(gifImage, manager: gifMangager)
         }
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(sender:)))
-        imageView.addGestureRecognizer(panGesture);
-        imageView.isUserInteractionEnabled = true;
-        imageView.delegate = self;
+        imageView.addGestureRecognizer(panGesture)
+        imageView.isUserInteractionEnabled = true
+        imageView.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(togglePlay))
-        imageView.addGestureRecognizer(tapGesture);
+        imageView.addGestureRecognizer(tapGesture)
         
     }
     
