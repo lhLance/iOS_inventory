@@ -123,7 +123,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 //        if !self.startBtn.isSelected
 //        {
 //            print("\(#function)+ \(#file)")
-//            
+//
 //            self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
 //            try? self.pocketsphinx.setActive(true)
 //            self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
@@ -132,7 +132,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 //                                                              languageModelIsJSGF: false)
 //        }
 //        else{
-//            
+//
 //            print("\(#function) + \(#file)")
 //            self.startBtn.setTitle("开始", for: UIControl.State.normal)
 //            self.pocketsphinx.stopListening()
@@ -193,7 +193,11 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
     
     func setupChatTable()
     {
-        tableView = ChatTableView(frame: CGRect(x: 0, y: 20, width: view.width, height:view.height ), style: .plain)
+        tableView = ChatTableView(frame: CGRect(x: 0,
+                                                y: 20,
+                                                width: view.width,
+                                                height:view.height ),
+                                  style: .plain)
         //创建一个重用的单元格
         tableView!.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatCell")
         me = ChatUserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
@@ -233,12 +237,18 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
     func setupSendPanel()
     {
         let screenWidth = UIScreen.main.bounds.width
-        let sendView = UIView(frame:CGRect(x: 0,y: self.view.frame.size.height - 156,width: screenWidth,height: 56))
+        let sendView = UIView(frame:CGRect(x: 0,
+                                           y: self.view.frame.size.height - 156,
+                                           width: screenWidth,
+                                           height: 56))
         
         sendView.backgroundColor=UIColor.lightGray
         sendView.alpha=0.9
         
-        txtMsg = UITextField(frame:CGRect(x: 7,y: 10,width: screenWidth - 95,height: 36))
+        txtMsg = UITextField(frame:CGRect(x: 7,
+                                          y: 10,
+                                          width: screenWidth - 95,
+                                          height: 36))
         txtMsg.backgroundColor = UIColor.white
         txtMsg.textColor=UIColor.black
         txtMsg.font=UIFont.boldSystemFont(ofSize: 12)
@@ -250,7 +260,10 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
         sendView.addSubview(txtMsg)
         self.view.addSubview(sendView)
         
-        let sendButton = UIButton(frame:CGRect(x: screenWidth - 80,y: 10,width: 72,height: 36))
+        let sendButton = UIButton(frame:CGRect(x: screenWidth - 80,
+                                               y: 10,
+                                               width: 72,
+                                               height: 36))
         sendButton.backgroundColor=UIColor(red: 0x37/255, green: 0xba/255, blue: 0x46/255, alpha: 1)
         sendButton.addTarget(self, action:#selector(sendMessage) ,
                              for:UIControl.Event.touchUpInside)
@@ -274,9 +287,9 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
         
         Chats.add(thisChat)
         Chats.add(thatChat)
+
         self.tableView.chatDataSource = self
         self.tableView.reloadData()
-        
         //self.showTableView()
         sender?.resignFirstResponder()
         sender?.text = ""

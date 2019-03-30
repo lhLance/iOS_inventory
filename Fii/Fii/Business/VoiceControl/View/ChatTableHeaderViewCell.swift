@@ -40,7 +40,10 @@ class ChatTableHeaderViewCell: UITableViewCell {
             return
         }
         self.selectionStyle = UITableViewCell.SelectionStyle.none
-        self.label = UILabel(frame:CGRect(x: CGFloat(0), y: CGFloat(0), width: self.frame.size.width, height: height))
+        self.label = UILabel(frame:CGRect(x: CGFloat(0),
+                                          y: CGFloat(0),
+                                          width: self.frame.size.width,
+                                          height: height))
         
         self.label.text = text
         self.label.font = UIFont.boldSystemFont(ofSize: 12)

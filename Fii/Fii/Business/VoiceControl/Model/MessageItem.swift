@@ -29,22 +29,34 @@ class MessageItem {
     
     //设置我的文本消息边距
     class func getTextInsetsMine() -> UIEdgeInsets {
-        return UIEdgeInsets(top:5, left:10, bottom:11, right:17)
+        return UIEdgeInsets(top:5,
+                            left:10,
+                            bottom:11,
+                            right:17)
     }
     
     //设置他人的文本消息边距
     class func getTextInsetsSomeone() -> UIEdgeInsets {
-        return UIEdgeInsets(top:5, left:15, bottom:11, right:10)
+        return UIEdgeInsets(top:5,
+                            left:15,
+                            bottom:11,
+                            right:10)
     }
     
     //设置我的图片消息边距
     class func getImageInsetsMine() -> UIEdgeInsets {
-        return UIEdgeInsets(top:11, left:13, bottom:16, right:22)
+        return UIEdgeInsets(top:11,
+                            left:13,
+                            bottom:16,
+                            right:22)
     }
     
     //设置他人的图片消息边距
     class func getImageInsetsSomeone() -> UIEdgeInsets {
-        return UIEdgeInsets(top:11, left:13, bottom:16, right:22)
+        return UIEdgeInsets(top:11,
+                            left:13,
+                            bottom:16,
+                            right:22)
     }
     
     //构造文本消息体
@@ -59,7 +71,9 @@ class MessageItem {
             CGSize(width: CGFloat(width), height: CGFloat(height)),
                                       options: .usesLineFragmentOrigin, attributes:atts, context:nil)
         
-        let label =  UILabel(frame:CGRect(x: 0, y: 0, width: size.size.width,
+        let label =  UILabel(frame:CGRect(x: 0,
+                                          y: 0,
+                                          width: size.size.width,
                                           height: size.size.height))
         
         label.numberOfLines = 0
@@ -91,7 +105,10 @@ class MessageItem {
             size.height /= (size.width / 220);
             size.width = 220;
         }
-        let imageView = UIImageView(frame:CGRect(x: 0, y: 0, width: size.width,
+        let imageView = UIImageView(frame:CGRect(x: 0,
+                                                 y: 0,
+                                                 width:
+            size.width,
                                                  height: size.height))
         imageView.image = image
         imageView.layer.cornerRadius = 5.0

@@ -68,7 +68,10 @@ class ChatTableViewCell:UITableViewCell {
             //头像居于消息底部
             let avatarY =  height
             //set the frame correctly
-            self.avatarImage.frame = CGRect(x: avatarX, y: avatarY, width: 50, height: 50)
+            self.avatarImage.frame = CGRect(x: avatarX,
+                                            y: avatarY,
+                                            width: 50,
+                                            height: 50)
             self.addSubview(self.avatarImage)
             
             let delta =  self.frame.size.height - (self.msgItem.insets.top
@@ -86,7 +89,9 @@ class ChatTableViewCell:UITableViewCell {
         
         self.customView = self.msgItem.view
         self.customView.frame = CGRect(x: x + self.msgItem.insets.left,
-                                       y: y + self.msgItem.insets.top, width: width, height: height)
+                                       y: y + self.msgItem.insets.top,
+                                       width: width,
+                                       height: height)
         
         self.addSubview(self.customView)
         
@@ -101,7 +106,8 @@ class ChatTableViewCell:UITableViewCell {
             self.bubbleImage.image = UIImage(named:"mebubble.png")!
                 .stretchableImage(withLeftCapWidth: 15, topCapHeight:14)
         }
-        self.bubbleImage.frame = CGRect(x: x, y: y,
+        self.bubbleImage.frame = CGRect(x: x,
+                                        y: y,
                                         width: width + self.msgItem.insets.left + self.msgItem.insets.right,
                                         height: height + self.msgItem.insets.top + self.msgItem.insets.bottom)
     }

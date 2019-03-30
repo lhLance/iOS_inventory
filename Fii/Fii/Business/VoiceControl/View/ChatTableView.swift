@@ -33,9 +33,7 @@ class ChatTableView: UITableView {
         self.snapInterval = TimeInterval(60 * 60 * 24) //one day
         self.typingBubble = ChatBubbleTypingType.nobody
         self.bubbleSection = NSMutableArray()
-        
         super.init(frame:frame,  style:style)
-        
         self.backgroundColor = UIColor.clear
         self.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.delegate = self
