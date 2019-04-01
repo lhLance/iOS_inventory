@@ -41,6 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func reloadData() {
         
         setupVCs()
+        
+        if let rootVC = rootVC {
+            
+            rootVC.selectedIndex = 4
+            
+            let meVC = rootVC.selectedViewController as! UINavigationController
+            let vc = SettingsVC()
+            meVC.pushViewController(vc, animated: true)
+        }
     }
     
     func setupVCs() {

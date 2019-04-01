@@ -41,5 +41,6 @@
 "me_help_question5_text" = "語音識別功能需要同时開啟移動蜂窩網絡和局域網才能使用，如果不能同時開啟兩網，請使用語音離線包功能。";
 "me_customer_service" = "客服";
 "me_like" = "收藏";
+"me_like_not" = "該功能暫未開啟";
 "me_settings" = "設置";
 "me_log_out" = "退出登錄";

@@ -41,6 +41,7 @@
 "me_help_question5_text" = "The voice recognition function needs to be enabled for both the mobile cellular network and the local area network. If the two networks cannot be enabled at the same time, please use the voice offline package function.";
 "me_customer_service" = "Customer service";
 "me_like" = "Like";
+"me_like_not" = "This function is not open";
 "me_settings" = "Settings";
 "me_log_out" = "Log out";
 

@@ -180,7 +180,8 @@ class MeVC: UIViewController {
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
-                case 3: break
+                case 3:
+                    Alert.show(title: LanguageHelper.getString(key: "me_like_not"))
                 case 4:
                     let vc = SettingsVC()
                     vc.title = LanguageHelper.getString(key: "me_settings")
