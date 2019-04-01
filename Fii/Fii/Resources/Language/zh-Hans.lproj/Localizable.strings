@@ -41,5 +41,6 @@
 "me_help_question5_text" = "语音识别功能需要同时开启移动蜂窝网络和局域网才能使用，如果不能同时开启两网，请使用语音离线包功能。";
 "me_customer_service" = "客服";
 "me_like" = "收藏";
+"me_like_not" = "该功能暂未开启";
 "me_settings" = "设置";
 "me_log_out" = "退出登录";

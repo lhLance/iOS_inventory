@@ -51,9 +51,9 @@ class LoginRegsVC: UIViewController {
     
     func setupPlayerView() {
         
-        guard let path = Bundle.main.path(forResource: "video", ofType: ".mp4") else { return }
+        let path = Bundle.main.path(forResource: "video", ofType: ".mp4")
         
-        let url = URL(fileURLWithPath: path)
+        let url = URL(fileURLWithPath: path!)
         
         playerItem = AVPlayerItem(url: url)
         // 监听缓冲进度改变
@@ -129,7 +129,7 @@ class LoginRegsVC: UIViewController {
         loginBtn = UIButton("登录", UIColor.white, UIFont.PFMedium(16))
         loginBtn?.cornerRadius = 4.0
         loginBtn?.backgroundColor = UIColor.hex(0x0099F1)
-        loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: UIControl.Event.touchUpInside)
+        loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         loginBtn?.added(into: view)
         loginBtn?.snp.makeConstraints({ (make) in
             make.width.equalTo(130)
@@ -141,7 +141,7 @@ class LoginRegsVC: UIViewController {
         registerBtn = UIButton("注册", UIColor.white, UIFont.PFMedium(16))
         registerBtn?.cornerRadius = 4.0
         registerBtn?.backgroundColor = UIColor.hex(0x0099F1)
-        registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: UIControl.Event.touchUpInside)
+        registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: .touchUpInside)
         registerBtn?.added(into: view)
         registerBtn?.snp.makeConstraints({ (make) in
             make.width.equalTo(130)
@@ -156,7 +156,7 @@ class LoginRegsVC: UIViewController {
         print("login btn tapped...")
         let vc = LoginVC()
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func registerBtnTapped() {
@@ -164,7 +164,7 @@ class LoginRegsVC: UIViewController {
         
         let vc = RegisterVC()
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
@@ -174,8 +174,8 @@ extension LoginRegsVC {
     
     @objc func playToEndTime() {
         print("播放完成, 重新播放")
-        self.player?.seek(to: CMTime.zero)
-        self.player?.play()
+        player?.seek(to: CMTime.zero)
+        player?.play()
     }
     
     override func observeValue(forKeyPath keyPath: String?,
@@ -191,7 +191,7 @@ extension LoginRegsVC {
             // 监听状态改变
             if playerItem.status == AVPlayerItem.Status.readyToPlay {
                 // 只有在这个状态下才能播放
-                self.player?.play()
+                player?.play()
             } else {
                 print("加载异常")
             }

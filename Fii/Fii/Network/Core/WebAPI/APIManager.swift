@@ -28,7 +28,7 @@ class APIManager {
     private init() {
 
         let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 5
+        config.timeoutIntervalForRequest = 15
         sessionManager = SessionManager.init(configuration: config)
     }
     

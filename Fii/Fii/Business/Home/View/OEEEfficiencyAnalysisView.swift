@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Charts
 
 class OEEEfficiencyAnalysisView: UIView {
 
