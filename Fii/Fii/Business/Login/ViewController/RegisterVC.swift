@@ -26,6 +26,6 @@ class RegisterVC: UIViewController {
     
     func setupView() {
         
-        view.backgroundColor = UIColor.purple
+        view.backgroundColor = UIColor.white
     }
 }
