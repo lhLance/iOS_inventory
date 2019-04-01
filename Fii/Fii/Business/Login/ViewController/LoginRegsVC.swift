@@ -8,15 +8,12 @@
 
 import UIKit
 import AVKit
-import AVFoundation
 
 let VIDEO_HEIGHT = (UIScreen.width * 2178) / 1006
 
 class LoginRegsVC: UIViewController {
 
-    var playerView = FiiPlayerView()
-    var playerLayer: AVPlayerLayer?
-    var player: AVPlayer?
+    var avPlayer: AVPlayer!
     var playerItem: AVPlayerItem?
     
     var loginBtn: UIButton?
@@ -51,31 +48,30 @@ class LoginRegsVC: UIViewController {
     
     func setupPlayerView() {
         
-        let path = Bundle.main.path(forResource: "video", ofType: ".mp4")
-        
-        let url = URL(fileURLWithPath: path!)
+        guard let filePath = Bundle.main.path(forResource: "aaa", ofType: ".mp4") else { return }
+        let url = URL(fileURLWithPath: filePath)
         
         playerItem = AVPlayerItem(url: url)
         // 监听缓冲进度改变
         playerItem?.addObserver(self, forKeyPath: "loadedTimeRanges", options: .new, context: nil)
         // 监听状态改变
         playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-        player = AVPlayer(playerItem: playerItem)
-        player?.automaticallyWaitsToMinimizeStalling = false
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
-        playerLayer?.contentsScale = UIScreen.main.scale
-        playerView.playerLayer = self.playerLayer
-        playerView.layer.insertSublayer(playerLayer!, at: 0)
+        avPlayer = AVPlayer(playerItem: playerItem)
+        avPlayer.automaticallyWaitsToMinimizeStalling = false
         
-        playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: VIDEO_HEIGHT)
-        playerView.added(into: view)
-        playerView.backgroundColor = UIColor.white
+        let avPlayerController = AVPlayerViewController()
+        avPlayerController.player = avPlayer
+        avPlayerController.showsPlaybackControls = false
+        avPlayerController.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: VIDEO_HEIGHT)
+        
+        avPlayerController.player?.play()
+        view.addSubview(avPlayerController.view)
+        addChild(avPlayerController)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playToEndTime),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: player?.currentItem)
+                                               object: avPlayer.currentItem)
         
         discriptionLabel.TextAlignment(.center).TextColor(UIColor.white).Font(UIFont.PFRegular(22))
         discriptionLabel.added(into: view)
@@ -174,8 +170,8 @@ extension LoginRegsVC {
     
     @objc func playToEndTime() {
         print("播放完成, 重新播放")
-        player?.seek(to: CMTime.zero)
-        player?.play()
+        avPlayer.seek(to: CMTime.zero)
+        avPlayer.play()
     }
     
     override func observeValue(forKeyPath keyPath: String?,
@@ -191,7 +187,7 @@ extension LoginRegsVC {
             // 监听状态改变
             if playerItem.status == AVPlayerItem.Status.readyToPlay {
                 // 只有在这个状态下才能播放
-                player?.play()
+                avPlayer.play()
             } else {
                 print("加载异常")
             }

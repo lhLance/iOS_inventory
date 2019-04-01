@@ -42,7 +42,5 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>microphoneDesciption</string>
 </dict>
 </plist>

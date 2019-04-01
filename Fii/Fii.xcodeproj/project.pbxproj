@@ -10,6 +10,7 @@
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265366224A36B9007ACD55 /* LanguageVC.swift */; };
+		043C3800225257830069647F /* aaa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 043C37FF225257830069647F /* aaa.mp4 */; };
 		04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */; };
 		04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */; };
 		04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */; };
@@ -113,8 +114,6 @@
 		CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D2055223F3EB500CEF14C /* AlertView.swift */; };
 		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
-		CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */; };
-		CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFAEC1E222378D6C00F38B82 /* video.mp4 */; };
 		CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3DD502244D15C006CB9E7 /* APP.swift */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +139,7 @@
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
 		04265366224A36B9007ACD55 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		04265368224A3C4C007ACD55 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		043C37FF225257830069647F /* aaa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aaa.mp4; sourceTree = "<group>"; };
 		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Light.ttf; sourceTree = "<group>"; };
 		04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Regular.ttf; sourceTree = "<group>"; };
@@ -277,8 +277,6 @@
 		CF9D2055223F3EB500CEF14C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
-		CFAEC1E222378D6C00F38B82 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		CFE3DD502244D15C006CB9E7 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -876,7 +874,6 @@
 		CFAEC19A22374CD300F38B82 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CFAEC1DF2237882200F38B82 /* FiiPlayerView.swift */,
 				CF76EEEC2238D56400182867 /* OpenScreenView.swift */,
 			);
 			path = View;
@@ -902,7 +899,7 @@
 		CFAEC1E122378D5B00F38B82 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				CFAEC1E222378D6C00F38B82 /* video.mp4 */,
+				043C37FF225257830069647F /* aaa.mp4 */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -1031,6 +1028,7 @@
 				04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CF5C075D2248C40400070FCA /* Localizable.strings in Resources */,
+				043C3800225257830069647F /* aaa.mp4 in Resources */,
 				04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */,
 				34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */,
 				34F38D59224C9B730059E19A /* FOXNUM.gif in Resources */,
@@ -1044,7 +1042,6 @@
 				34F38D55224C9B730059E19A /* ATM.gif in Resources */,
 				34F38D57224C9B730059E19A /* FOXBOT.gif in Resources */,
 				34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */,
-				CFAEC1E322378D6C00F38B82 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,7 +1199,6 @@
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
 				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				34F38D6A224CA3380059E19A /* DeviceDetailController.swift in Sources */,
-				CFAEC1E02237882200F38B82 /* FiiPlayerView.swift in Sources */,
 				34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */,
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
