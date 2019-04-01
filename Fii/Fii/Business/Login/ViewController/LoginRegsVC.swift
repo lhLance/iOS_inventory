@@ -129,7 +129,7 @@ class LoginRegsVC: UIViewController {
         loginBtn = UIButton("登录", UIColor.white, UIFont.PFMedium(16))
         loginBtn?.cornerRadius = 4.0
         loginBtn?.backgroundColor = UIColor.hex(0x0099F1)
-        loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: UIControl.Event.touchUpInside)
+        loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         loginBtn?.added(into: view)
         loginBtn?.snp.makeConstraints({ (make) in
             make.width.equalTo(130)
@@ -141,7 +141,7 @@ class LoginRegsVC: UIViewController {
         registerBtn = UIButton("注册", UIColor.white, UIFont.PFMedium(16))
         registerBtn?.cornerRadius = 4.0
         registerBtn?.backgroundColor = UIColor.hex(0x0099F1)
-        registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: UIControl.Event.touchUpInside)
+        registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: .touchUpInside)
         registerBtn?.added(into: view)
         registerBtn?.snp.makeConstraints({ (make) in
             make.width.equalTo(130)
