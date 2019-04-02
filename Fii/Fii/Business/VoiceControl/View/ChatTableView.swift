@@ -146,8 +146,12 @@ extension ChatTableView:UITableViewDelegate, UITableViewDataSource{
             let data = section[indexPath.row - 1]
             
             let item =  data as! MessageItem
-            let height  = item.insets.top + max(item.view.frame.size.height , 52) + item.insets.bottom
-            print("height:\(height)")
+            var iconH = CGFloat(0)
+            if item.view.frame.size.height > 30 {
+                iconH =  40
+            }
+            let height  = item.insets.top + max(item.view.frame.size.height , 52) + item.insets.bottom + iconH
+//            print("height:\(height)")
             return height
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let Top_HIGHT = UIDevice.current.isIphoneXMore() ? 20 : 0
+let Top_HIGHT = CGFloat(UIDevice.current.isIphoneXMore() ? 20 : 0)
 
 let kNavigationBar :CGFloat = CGFloat(44)
 

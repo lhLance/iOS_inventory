@@ -25,7 +25,9 @@
 		34905B61224F1746006D46CA /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B60224F1746006D46CA /* MessageItem.swift */; };
 		34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */; };
 		34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B64224F17C9006D46CA /* ChatTableViewCell.swift */; };
-		34905B67224F6691006D46CA /* VoiceCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B66224F6691006D46CA /* VoiceCurveView.swift */; };
+		34905B67224F6691006D46CA /* VoiceCurveSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */; };
+		349BE9292251F15700674B61 /* loopMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 349BE9282251F15600674B61 /* loopMode.gif */; };
+		349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349BE92A2253076900674B61 /* VoiceCurveView.m */; };
 		34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */; };
 		34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */; };
 		34F38D40224C536E0059E19A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F38D3C224C536E0059E19A /* OpenEars.framework */; };
@@ -155,7 +157,10 @@
 		34905B60224F1746006D46CA /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableHeaderViewCell.swift; sourceTree = "<group>"; };
 		34905B64224F17C9006D46CA /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
-		34905B66224F6691006D46CA /* VoiceCurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCurveView.swift; sourceTree = "<group>"; };
+		34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCurveSwiftView.swift; sourceTree = "<group>"; };
+		349BE9282251F15600674B61 /* loopMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loopMode.gif; sourceTree = "<group>"; };
+		349BE92A2253076900674B61 /* VoiceCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceCurveView.m; sourceTree = "<group>"; };
+		349BE92B2253076A00674B61 /* VoiceCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceCurveView.h; sourceTree = "<group>"; };
 		34F38D3A224C536E0059E19A /* AcousticModelChinese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelChinese.bundle; sourceTree = "<group>"; };
 		34F38D3B224C536E0059E19A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		34F38D3C224C536E0059E19A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -335,7 +340,9 @@
 				34905B5A224F15F9006D46CA /* ChatTableView.swift */,
 				34905B64224F17C9006D46CA /* ChatTableViewCell.swift */,
 				34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */,
-				34905B66224F6691006D46CA /* VoiceCurveView.swift */,
+				34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */,
+				349BE92B2253076A00674B61 /* VoiceCurveView.h */,
+				349BE92A2253076900674B61 /* VoiceCurveView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 		34F38D4C224C9B730059E19A /* Gif */ = {
 			isa = PBXGroup;
 			children = (
+				349BE9282251F15600674B61 /* loopMode.gif */,
 				34F38D4D224C9B730059E19A /* AGV.gif */,
 				34F38D4E224C9B730059E19A /* ATM.gif */,
 				34F38D4F224C9B730059E19A /* FANUC.gif */,
@@ -1026,6 +1034,7 @@
 				04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */,
 				34F38D87224CAE210059E19A /* RealTimeCollectionCell.xib in Resources */,
 				04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */,
+				349BE9292251F15700674B61 /* loopMode.gif in Resources */,
 				CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */,
 				CF5C075D2248C40400070FCA /* Localizable.strings in Resources */,
 				043C3800225257830069647F /* aaa.mp4 in Resources */,
@@ -1213,9 +1222,10 @@
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
+				349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */,
 				34F38D81224CABD10059E19A /* Common.swift in Sources */,
 				CF7CCEF82242202E00BBA836 /* FAQTableViewCell.swift in Sources */,
-				34905B67224F6691006D46CA /* VoiceCurveView.swift in Sources */,
+				34905B67224F6691006D46CA /* VoiceCurveSwiftView.swift in Sources */,
 				CF7CA0642223D872005CE8A3 /* Alert.swift in Sources */,
 				CF7CA0422223CE4A005CE8A3 /* UIScreen+Extension.swift in Sources */,
 				34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */,
@@ -1392,18 +1402,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = YU7A6VBY22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
 				);
 				INFOPLIST_FILE = Fii/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
+				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii.YE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -1418,7 +1429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = YU7A6VBY22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",
@@ -1428,12 +1439,13 @@
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
 				);
 				INFOPLIST_FILE = Fii/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii;
+				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii.YE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

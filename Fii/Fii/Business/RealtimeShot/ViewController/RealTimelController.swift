@@ -12,15 +12,16 @@
 import UIKit
 
 let kRealTimeItemMargin: CGFloat = 20
-let kRealTimeItemW = (UIScreen.width - 3 * kRealTimeItemMargin)/2
-let kRealTimeNomalItemH = kRealTimeItemW * 3/4
+let kRealTimeItemW = (UIScreen.width - 2 * kRealTimeItemMargin)
+let kRealTimeNomalItemH = CGFloat(100)
 
 private let reuseIdentifier = "Cell"
 
 class RealTimelController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     private let titleAry: NSArray = ["孤岛模式","巡航模式","参观模式","顺序模式","分布式模式"]
-    
+    let gifManager = SwiftyGifManager(memoryLimit:100)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +41,7 @@ extension RealTimelController{
     private func  setupCell(){
 
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.lightText
         collectionView.register(UINib(nibName: "RealTimeCollectionCell", bundle: nil),
                                 forCellWithReuseIdentifier: reuseIdentifier)
     }
@@ -59,12 +60,9 @@ extension RealTimelController{
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RealTimeCollectionCell
 
-        if (indexPath.row + 1) % 2 == 0 {
-            cell.backgroundColor = UIColor.red
-            
-        }else{
-            cell.backgroundColor = UIColor.green
-        }
+
+        let gifImage = UIImage(gifName: "loopMode.gif")
+        cell.iconImg.setGifImage(gifImage, manager: gifManager, loopCount: -1)
         cell.titleLab.text = (titleAry[indexPath.row] as! String)
         return cell
     }

@@ -13,6 +13,6 @@
 #import <OpenEars/OELanguageModelGenerator.h>
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEPocketsphinxController.h>
-
+#import "VoiceCurveView.h"
 
 #endif /* Fii_Home_Bridging_Header_h */
