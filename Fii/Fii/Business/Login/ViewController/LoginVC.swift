@@ -156,7 +156,7 @@ class LoginVC: UIViewController {
                                  password: /*passwordTf.text ?? */"gw8888@") { [unowned self] (model) in
                                     if model.appkey == nil || model.infokey == nil {
                                         let v = AlertView()
-                                        v.titleOne = "登录失败"//管理员
+                                        v.titleOne = "登录失败"
                                         v.titleTwo = "账号或密码错误, 请重新输入"
                                         v.added(into: self.view)
                                         v.snp.makeConstraints({ (make) in

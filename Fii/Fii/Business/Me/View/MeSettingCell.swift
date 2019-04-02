@@ -19,10 +19,10 @@ class MeSettingCell: UIView {
     }
     var bottomLine = UIView()
     
-    let icon = UIImageView.init()
-    let titleLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .left, font: UIFont.PFRegular(14))
-    let arrow = UIImageView.init("return")
-    let detailLbl = UILabel.init("", color: UIColor.hex(0x414141), align: .right, font: UIFont.PFRegular(14))
+    let icon = UIImageView()
+    let titleLbl = UILabel("", color: UIColor.hex(0x414141), align: .left, font: UIFont.PFRegular(14))
+    let arrow = UIImageView("return")
+    let detailLbl = UILabel("", color: UIColor.hex(0x414141), align: .right, font: UIFont.PFRegular(14))
     
     let tap = UITapGestureRecognizer.init()
     
@@ -78,7 +78,7 @@ class MeSettingCell: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize.init(width: UIScreen.width, height: 46)
+        return CGSize(width: UIScreen.width, height: 46)
     }
     
 }

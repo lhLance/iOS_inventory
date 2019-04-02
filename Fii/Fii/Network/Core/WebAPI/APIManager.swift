@@ -55,8 +55,8 @@ class APIManager {
 
 extension APIManager {
     enum BaseURL: String {
-        case dev = "http://10.143.62.150:8088"
-        case product = "https://10.143.62.150:8088"
+        case dev = "http://10.143.62.150:8089"
+        case product = "https://10.143.62.150:8089"
     }
 }
 

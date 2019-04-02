@@ -257,7 +257,7 @@ class Cell: UIView {
         arrowImgV.ImageName("arrow")
         arrowImgV.added(into: self)
         arrowImgV.snp.makeConstraints { (make) in
-            make.width.height.equalTo(20)
+            make.right.equalTo(-14)
             make.centerY.equalToSuperview()
             make.right.equalTo(-10)
         }
