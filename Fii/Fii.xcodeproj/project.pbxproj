@@ -17,6 +17,7 @@
 		04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */; };
 		04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */; };
 		04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */; };
+		04F39150225391320014604B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3914F225391320014604B /* UserInfoVC.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
 		34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5A224F15F9006D46CA /* ChatTableView.swift */; };
@@ -149,6 +150,7 @@
 		04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Medium.ttf; sourceTree = "<group>"; };
 		04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_ExtraLight.ttf; sourceTree = "<group>"; };
 		04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Bold.ttf; sourceTree = "<group>"; };
+		04F3914F225391320014604B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		34905B5A224F15F9006D46CA /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
@@ -822,6 +824,7 @@
 				CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */,
 				CF8EF53C2245DA5B006BAFD1 /* SettingsVC.swift */,
 				04265366224A36B9007ACD55 /* LanguageVC.swift */,
+				04F3914F225391320014604B /* UserInfoVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
+				04F39150225391320014604B /* UserInfoVC.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,

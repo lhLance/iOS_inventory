@@ -52,7 +52,8 @@ class PageTitleView: UIView {
     
 }
 
-extension PageTitleView{
+extension PageTitleView {
+    
     private func setupUI()
     {
         addSubview(scrollView)
@@ -155,7 +156,6 @@ extension PageTitleView{
         let targetLabel = titleLables[targetIndex]
         
         // 处理滑块的逻辑
-        
         let moveTotalX = targetLabel.frame.origin.x -  sourceLabel.frame.origin.x
         let moveX = moveTotalX * progress
         scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX

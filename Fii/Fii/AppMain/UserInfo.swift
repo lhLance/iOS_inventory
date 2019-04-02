@@ -18,7 +18,7 @@ class UserInfo {
     var alarmCenterVersion = ""
     var authName = ""
     
-    var avatar = UIImage("avatar")
+    var avatar = "avatar"
     var userName = "null"
     var userEmail = "null"
 }

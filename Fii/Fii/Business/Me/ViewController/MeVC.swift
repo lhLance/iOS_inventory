@@ -87,16 +87,17 @@ class MeVC: UIViewController {
                 make.height.equalTo(150)
             })
             
-            let avatar = UIImageView().then({ (imgV) in
-                imgV.added(into: v)
-                imgV.backgroundColor = UIColor.white
-                imgV.cornerRadius = 30
-                imgV.snp.makeConstraints({ (make) in
+            let avatar = UIButton().then({ (btn) in
+                btn.added(into: v)
+                btn.backgroundColor = UIColor.white
+                btn.cornerRadius = 30
+                btn.snp.makeConstraints({ (make) in
                     make.width.height.equalTo(60)
                     make.centerY.equalToSuperview()
                     make.left.equalTo(30)
                 })
-                imgV.image = UserInfo.shared.avatar
+                btn.setBackgroundImage(UIImage("\(UserInfo.shared.avatar)"), for: .normal)
+                btn.addTarget(self, action: #selector(avatarBtnTapped), for: .touchUpInside)
             })
             
             _ = UILabel().then({ (lbl) in
@@ -193,6 +194,14 @@ class MeVC: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func avatarBtnTapped() {
+        print("avatar image tapped...")
+        
+        let vc = UserInfoVC()
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func quitBtnTapped() {
