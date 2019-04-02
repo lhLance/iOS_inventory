@@ -67,6 +67,23 @@ class LoginRegsVC: UIViewController {
         avPlayerController.player?.play()
         view.addSubview(avPlayerController.view)
         addChild(avPlayerController)
+=======
+        player = AVPlayer(playerItem: playerItem)
+        if #available(iOS 10.0, *) {
+            player?.automaticallyWaitsToMinimizeStalling = false
+        } else {
+            // Fallback on earlier versions
+        }
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
+        playerLayer?.contentsScale = UIScreen.main.scale
+        playerView.playerLayer = self.playerLayer
+        playerView.layer.insertSublayer(playerLayer!, at: 0)
+        
+        playerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: VIDEO_HEIGHT)
+        playerView.added(into: view)
+        playerView.backgroundColor = UIColor.white
+>>>>>>> Stashed changes
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playToEndTime),

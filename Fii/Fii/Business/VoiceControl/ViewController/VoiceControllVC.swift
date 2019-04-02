@@ -22,11 +22,12 @@ class VoiceControllVC: UIViewController {
     var errString:String! = ""
     var speechLab:UILabel!
     
+    var sayStr:String?;
+    
     var Chats:NSMutableArray!
     var tableView:ChatTableView!
     var me:ChatUserInfo!
     var you:ChatUserInfo!
-    var txtMsg:UITextField!
     
     var longPressGesture : UILongPressGestureRecognizer!;
     
@@ -37,10 +38,7 @@ class VoiceControllVC: UIViewController {
         setUpPressend();
         setUpUI()
         
-        
-        
-        
-//        setupChatTable()
+        setupChatTable()
 //        setupSendPanel()
         
     }
@@ -66,18 +64,13 @@ extension VoiceControllVC:OEEventsObserverDelegate{
                 if recognizer.state == UIGestureRecognizer.State.began
                 {
                     print("长按开始-----监听中... \(#function)")
-                    self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
-                    try? self.pocketsphinx.setActive(true)
-                    self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
-                                                                      dictionaryAtPath: self.chineseDicPath,
-                                                                      acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
-                                                                      languageModelIsJSGF: false)
+                    startListen()
+
                 }
                 
                 if recognizer.state == UIGestureRecognizer.State.ended{
                     print("长按结束-----\(tabbar)  \(#function) + \(#file)")
-                    self.startBtn.setTitle("开始", for: UIControl.State.normal)
-                    self.pocketsphinx.stopListening()
+                    stopListen()
                 }
             }
         }
@@ -92,21 +85,21 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         //        self.speechLab.backgroundColor = UIColor.yellow
         //        self.speechLab.textAlignment = NSTextAlignment.center
         //        self.view.addSubview(self.speechLab)
-        
-        self.startBtn = YHRippleButton(frame: CGRect(x: 0,
-                                                     y: 0,
-                                                     width: 200,
-                                                     height: 200),
+//
+        self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 150)/2,
+                                                     y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
+                                                     width: 150,
+                                                     height: 150),
                                        rippleColor: .blue)
         self.startBtn.setTitle("开始", for: .normal)
         self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
-        self.startBtn.center = view.center
+//        self.startBtn.center = view.center
         view.addSubview(self.startBtn)
         
         /*命令词*/
         self.lmGenerator = OELanguageModelGenerator.init()
         self.pocketsphinx = OEPocketsphinxController.sharedInstance()
-        self.chineseWords = ["左边", "上边", "向下移动", "右边","四分之三","在中国","向左移动"]
+        self.chineseWords = ["向左移动", "向右移动", "向下移动", "向上移动","开始","停止"]
         self.openEarsEventsObserver = OEEventsObserver.init()
         self.openEarsEventsObserver.delegate = self
         
@@ -120,30 +113,66 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     @objc func startVoiceBtnCkick(btn:UIButton)
     {
-//        if !self.startBtn.isSelected
-//        {
-//            print("\(#function)+ \(#file)")
-//
-//            self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
-//            try? self.pocketsphinx.setActive(true)
-//            self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
-//                                                              dictionaryAtPath: self.chineseDicPath,
-//                                                              acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
-//                                                              languageModelIsJSGF: false)
-//        }
-//        else{
-//
-//            print("\(#function) + \(#file)")
-//            self.startBtn.setTitle("开始", for: UIControl.State.normal)
-//            self.pocketsphinx.stopListening()
-//        }
-//        self.startBtn.isSelected = !self.startBtn.isSelected
+
+
+        
+        if !self.startBtn.isSelected
+        {
+            print("\(#function)+ \(#file)")
+
+            self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
+            try? self.pocketsphinx.setActive(true)
+            self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
+                                                              dictionaryAtPath: self.chineseDicPath,
+                                                              acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
+                                                              languageModelIsJSGF: false)
+        }
+        else{
+
+            print("\(#function) + \(#file)")
+            self.startBtn.setTitle("开始", for: UIControl.State.normal)
+            self.pocketsphinx.stopListening()
+            sendMessage();
+
+            
+        }
+        self.startBtn.isSelected = !self.startBtn.isSelected
     }
     
+    private func startListen(){
+        try? self.pocketsphinx.setActive(true)
+        self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
+                                                          dictionaryAtPath: self.chineseDicPath,
+                                                          acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
+                                                          languageModelIsJSGF: false)
+        
+//        if let soundURL = Bundle.main.url(forResource: "record", withExtension: "mp3") {
+//            var mySound: SystemSoundID = 0
+//            AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
+//            // Play
+//            AudioServicesPlaySystemSound(mySound);
+//        }
+//        let contentH = self.view.frame.size.height
+//        let frame = CGRect(x: CGFloat(0), y: 0 , width:self.view.frame.size.width , height: contentH)
+//        let voiceCurveView = VoiceCurveView(frame: frame, superView: self.view)
+//        voiceCurveView?.tag = 100
+//        voiceCurveView!.present();
+
+    }
+    private func stopListen(){
+//        let voiceCurveView:VoiceCurveView = self.view.viewWithTag(100) as! VoiceCurveView
+//        voiceCurveView.dismiss();
+        self.pocketsphinx.stopListening()
+
+    }
     
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")
-        self.speechLab.text = hypothesis
+//        self.speechLab.text = hypothesis
+
+        sayStr = hypothesis;
+        
+
         
     }
     
@@ -161,6 +190,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     func pocketsphinxDidStopListening() {
         print("\(#function)已经停止监听")
+        sayStr = nil;
     }
     
     func pocketsphinxDidSuspendRecognition() {
@@ -194,29 +224,24 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
     func setupChatTable()
     {
         tableView = ChatTableView(frame: CGRect(x: 0,
-                                                y: 20,
+                                                y: kStatusBarH + kNavigationBar,
                                                 width: view.width,
-                                                height:view.height ),
+                                                height:view.height - 200 - SafeAreaBottomHeight - kTabBottomH ),
                                   style: .plain)
+        tableView.backgroundColor = UIColor.white;
         //创建一个重用的单元格
         tableView!.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatCell")
         me = ChatUserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
         you  = ChatUserInfo(name:"Xiaohua", logo:("xiaohua.png"))
         
-        let zero =  MessageItem(body:"最近去哪玩了？", user:you,  date:Date(timeIntervalSinceNow:-90096400), mtype:.someone)
-        
-        let zero1 =  MessageItem(body:"去了趟苏州，明天发照片给你哈？", user:me,  date:Date(timeIntervalSinceNow:-90086400), mtype:.mine)
-        
-        let first =  MessageItem(body:"你看这风景怎么样，我周末去苏州拍的！", user:me,  date:Date(timeIntervalSinceNow:-90000600), mtype:.mine)
-        
-        let third =  MessageItem(body:"太赞了，我也想去那看看呢！",user:you, date:Date(timeIntervalSinceNow:-90000060), mtype:.someone)
-        
-        let fouth =  MessageItem(body:"嗯，下次我们一起去吧！",user:me, date:Date(timeIntervalSinceNow:-90000020), mtype:.mine)
-        
-        let fifth =  MessageItem(body:"三年了，我终究没能看到这个风景",user:you, date:Date(timeIntervalSinceNow:0), mtype:.someone)
+        let zero =  MessageItem(body:"欢迎使用语言控制", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
+
+        let zero1 =  MessageItem(body:"你可以说:\n向下移动,向上移动,向左移动,向右移动,开始,停止", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
+//        let fouth =  MessageItem(body:"嗯，下次我们一起去吧！",user:me, date:Date(timeIntervalSinceNow:-90000020), mtype:.mine)
         
         Chats = NSMutableArray()
-        Chats.addObjects(from: [first, third, fouth, fifth, zero, zero1])
+//        Chats.addObjects(from: [first, third, fouth, fifth, zero, zero1])
+        Chats.addObjects(from: [zero,zero1])
         tableView.chatDataSource = self
         tableView.reloadData()
         tableView.added(into: view);
@@ -232,67 +257,25 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
         return Chats[row] as! MessageItem
     }
     
-    /////////
-    
-    func setupSendPanel()
-    {
-        let screenWidth = UIScreen.main.bounds.width
-        let sendView = UIView(frame:CGRect(x: 0,
-                                           y: self.view.frame.size.height - 156,
-                                           width: screenWidth,
-                                           height: 56))
-        
-        sendView.backgroundColor=UIColor.lightGray
-        sendView.alpha=0.9
-        
-        txtMsg = UITextField(frame:CGRect(x: 7,
-                                          y: 10,
-                                          width: screenWidth - 95,
-                                          height: 36))
-        txtMsg.backgroundColor = UIColor.white
-        txtMsg.textColor=UIColor.black
-        txtMsg.font=UIFont.boldSystemFont(ofSize: 12)
-        txtMsg.layer.cornerRadius = 10.0
-        txtMsg.returnKeyType = UIReturnKeyType.send
-        
-        //Set the delegate so you can respond to user input
-        txtMsg.delegate=self
-        sendView.addSubview(txtMsg)
-        self.view.addSubview(sendView)
-        
-        let sendButton = UIButton(frame:CGRect(x: screenWidth - 80,
-                                               y: 10,
-                                               width: 72,
-                                               height: 36))
-        sendButton.backgroundColor=UIColor(red: 0x37/255, green: 0xba/255, blue: 0x46/255, alpha: 1)
-        sendButton.addTarget(self, action:#selector(sendMessage) ,
-                             for:UIControl.Event.touchUpInside)
-        sendButton.layer.cornerRadius=6.0
-        sendButton.setTitle("发送", for:UIControl.State())
-        sendView.addSubview(sendButton)
-    }
-    
-    func textFieldShouldReturn(_ textField:UITextField) -> Bool
-    {
-        sendMessage()
-        return true
-    }
-    
     @objc func sendMessage()
     {
-        //composing=false
-        let sender = txtMsg
-        let thisChat =  MessageItem(body:sender!.text! as NSString, user:me, date:Date(), mtype:ChatType.mine)
-        let thatChat =  MessageItem(body:"你说的是：\(sender!.text!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
-        
-        Chats.add(thisChat)
-        Chats.add(thatChat)
-
+        var senderStr = sayStr
+        if (senderStr == nil)
+        {
+            senderStr = "我没有听清楚,你可以尝试再说一次:\n向下移动,向上移动,向左移动,向右移动,开始,停止"
+            let thatChat =  MessageItem(body:"\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
+            Chats.add(thatChat)
+        }
+        else
+        {
+            let thisChat =  MessageItem(body:senderStr! as NSString, user:me, date:Date(), mtype:ChatType.mine)
+            let thatChat =  MessageItem(body:"你说的是:\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
+            Chats.add(thisChat)
+            Chats.add(thatChat)
+        }
         self.tableView.chatDataSource = self
         self.tableView.reloadData()
-        //self.showTableView()
-        sender?.resignFirstResponder()
-        sender?.text = ""
+
     }
     
     
