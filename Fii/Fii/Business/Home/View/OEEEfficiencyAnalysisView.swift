@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Charts
 
+// OEE = 可用率 X 表现性 X 质量指数
+// 可用率 = 操作时间 / 计划工作时间
+// 表现性 = 理想周期时间 /（操作时间 / 总产量）= 总产量 /（操作时间 X 理论生产速率）
+// 质量指数 = 良品 / 总产量
+
 class OEEEfficiencyAnalysisView: UIView {
 
     var title: UILabel?

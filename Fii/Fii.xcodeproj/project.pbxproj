@@ -117,6 +117,7 @@
 		CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D2055223F3EB500CEF14C /* AlertView.swift */; };
 		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
+		CFB0487D2254A041004F2C6E /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB0487C2254A041004F2C6E /* BalloonMarker.swift */; };
 		CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3DD502244D15C006CB9E7 /* APP.swift */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +285,7 @@
 		CF9D2055223F3EB500CEF14C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CFB0487C2254A041004F2C6E /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		CFE3DD502244D15C006CB9E7 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -783,6 +785,7 @@
 		CF93DF97224B0B9C00B26509 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CFB0487C2254A041004F2C6E /* BalloonMarker.swift */,
 				CF93DF99224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift */,
 				CF93DF9B224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift */,
 				CF93DF9D224B0D5400B26509 /* NumberOfPartsView.swift */,
@@ -1173,6 +1176,7 @@
 				CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */,
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
 				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
+				CFB0487D2254A041004F2C6E /* BalloonMarker.swift in Sources */,
 				34F38D7B224CA3CB0059E19A /* PageTitleView.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,

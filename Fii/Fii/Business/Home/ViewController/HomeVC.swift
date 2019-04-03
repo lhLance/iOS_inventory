@@ -44,7 +44,6 @@ class HomeVC: UIViewController {
             })
             
             timeView = TimeEfficiencyAnalysisView().then({ (t) in
-                t.backgroundColor = UIColor.cyan
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.left.right.equalToSuperview()
@@ -63,7 +62,6 @@ class HomeVC: UIViewController {
             })
             
             numOfPartsView = NumberOfPartsView().then({ (t) in
-                t.backgroundColor = UIColor.green
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(oeeeView?.snp.bottom ?? 0)
