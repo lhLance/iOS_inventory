@@ -14,16 +14,16 @@ import Then
 
 class UserInfoVC: UIViewController {
     
-    fileprivate let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-    fileprivate let nickNameLabel = UILabel()
-    fileprivate let phoneNumLabel = UILabel()
-    fileprivate let genderLabel = UILabel()
-    fileprivate let cityLabel = UILabel()
-    fileprivate let briefLabel = UILabel()
+    private let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+    private let nickNameLabel = UILabel()
+    private let phoneNumLabel = UILabel()
+    private let genderLabel = UILabel()
+    private let cityLabel = UILabel()
+    private let briefLabel = UILabel()
     
-    fileprivate var avatarImageView = UIImageView()
-    fileprivate var labelArr = [UILabel()]
-    fileprivate var bag = DisposeBag()
+    private var avatarImageView = UIImageView()
+    private var labelArr = [UILabel()]
+    private var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class UserInfoVC: UIViewController {
         let avatarCell = UIView.init()
         avatarCell.setup { (v) in
             v.becomeSubviewIn(self.view).snp.makeConstraints {
-                $0.top.equalTo(0)
+                $0.top.equalTo(UIScreen.navBarHeight)
                 $0.left.right.equalTo(0)
                 $0.height.equalTo(89)
             }
@@ -66,7 +66,7 @@ class UserInfoVC: UIViewController {
                 }
             })
             avatarImageView = UIImageView.init().setup({ (img) in
-                img.loadImage(path: UserInfo.shared.avatar, placeImage: UIImage("avatar"))
+                img.loadImage(path: nil, placeImage: UIImage("avatar"))
                 img.becomeSubviewIn(v).snp.makeConstraints {
                     $0.right.equalTo(-14)
                     $0.centerY.equalToSuperview()
@@ -111,9 +111,6 @@ class UserInfoVC: UIViewController {
                         $0.left.equalTo(14)
                         $0.centerY.equalToSuperview()
                     }
-                    if i == 4 {
-                        title.setContentHuggingPriority(.required, for: .horizontal)
-                    }
                 })
                 
                 labelArr[i].setup({ (value) in
@@ -131,18 +128,15 @@ class UserInfoVC: UIViewController {
                     }
                 })
                 
-                if i != 4 {
-                    _ = UIView().setup({ (line) in
-                        line.backgroundColor = UIColor.hex(0xE3E6F4)
-                        line.becomeSubviewIn(cell).snp.makeConstraints {
-                            $0.bottom.equalToSuperview()
-                            $0.left.equalTo(14)
-                            $0.right.equalTo(13)
-                            $0.height.equalTo(1)
-                        }
-                    })
-                    
-                }
+                _ = UIView.init().setup({ (line) in
+                    line.backgroundColor = UIColor.hex(0xE3E6F4)
+                    line.becomeSubviewIn(cell).snp.makeConstraints {
+                        $0.bottom.equalToSuperview()
+                        $0.left.equalTo(14)
+                        $0.right.equalTo(13)
+                        $0.height.equalTo(1)
+                    }
+                })
             })
         }
     }
@@ -152,6 +146,7 @@ class UserInfoVC: UIViewController {
     }
     
     @objc private func resetAvatar() {
+        print("reset avatar")
 //        let vc = MeSelectPhotoVC()
 //        vc.showOnVC(self)
 //        vc.onDidSelectImage = { img in
