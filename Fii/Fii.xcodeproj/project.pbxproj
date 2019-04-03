@@ -11,6 +11,7 @@
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265366224A36B9007ACD55 /* LanguageVC.swift */; };
 		043C3800225257830069647F /* aaa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 043C37FF225257830069647F /* aaa.mp4 */; };
+		049629812254E031004C2D1D /* FiiCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049629802254E031004C2D1D /* FiiCircleView.swift */; };
 		04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */; };
 		04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */; };
 		04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */; };
@@ -145,6 +146,7 @@
 		04265368224A3C4C007ACD55 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		043C37FF225257830069647F /* aaa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aaa.mp4; sourceTree = "<group>"; };
 		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
+		049629802254E031004C2D1D /* FiiCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiCircleView.swift; sourceTree = "<group>"; };
 		04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Light.ttf; sourceTree = "<group>"; };
 		04A8C971224BA0EC001D6987 /* PingFang_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Regular.ttf; sourceTree = "<group>"; };
 		04A8C972224BA0ED001D6987 /* PingFang_Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Heavy.ttf; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				34F38D72224CA3CB0059E19A /* ScrollPageView */,
 				CF7CA05B2223D7C6005CE8A3 /* DashLine.swift */,
 				CF7CA05A2223D7C6005CE8A3 /* MaqueeView.swift */,
+				049629802254E031004C2D1D /* FiiCircleView.swift */,
 				CF7CA05C2223D7C7005CE8A3 /* PenetrateView.swift */,
 				CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */,
 			);
@@ -1209,6 +1212,7 @@
 				34F38D86224CAE210059E19A /* RealTimeCollectionCell.swift in Sources */,
 				CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
+				049629812254E031004C2D1D /* FiiCircleView.swift in Sources */,
 				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
 				34F38D6B224CA3380059E19A /* MobilePhoneFrameController.swift in Sources */,
 				34F38D7E224CA3CB0059E19A /* UIImageView+SwiftyGif.swift in Sources */,

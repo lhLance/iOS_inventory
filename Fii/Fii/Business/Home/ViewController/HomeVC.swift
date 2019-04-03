@@ -52,7 +52,6 @@ class HomeVC: UIViewController {
             })
             
             oeeeView = OEEEfficiencyAnalysisView().then({ (t) in
-                t.backgroundColor = UIColor.red
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(timeView?.snp.bottom ?? 0)
@@ -71,7 +70,6 @@ class HomeVC: UIViewController {
             })
             
             bootStaticView = BootStatisticsView().then({ (t) in
-                t.backgroundColor = UIColor.blue
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(numOfPartsView?.snp.bottom ?? 0)

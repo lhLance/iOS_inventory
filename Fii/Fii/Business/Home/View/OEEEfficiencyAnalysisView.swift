@@ -18,6 +18,7 @@ import Charts
 class OEEEfficiencyAnalysisView: UIView {
 
     var title: UILabel?
+    var circleView: FiiCircleView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,5 +42,19 @@ class OEEEfficiencyAnalysisView: UIView {
             make.centerX.equalToSuperview()
         })
         title?.Text("OEE效率分析").Font(UIFont.PFRegular(16))
+        
+        circleView = FiiCircleView()
+        circleView?.added(into: self)
+        circleView?.snp.makeConstraints({ (make) in
+            make.width.equalTo(120)
+            make.height.equalTo(120)
+            make.center.equalToSuperview()
+        })
+        circleView?.strokeColor = UIColor.hex(0xE94444)
+        circleView?.backColor = UIColor.hex(0xCECECE)
+        circleView?.progress = Float(50) / 100
     }
+    
+    
+    
 }
