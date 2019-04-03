@@ -174,8 +174,6 @@ extension PageTitleView{
                                               green: kNormalColor.1 + colorDelta.1*progress,
                                               blue: kNormalColor.2 + colorDelta.2*progress, alpha: 1.0)
         currentIndex = targetIndex
-        print("haha----")
-        
     }
     
 }

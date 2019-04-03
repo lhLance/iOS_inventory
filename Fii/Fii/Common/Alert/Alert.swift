@@ -2,7 +2,7 @@
 //  Alert.swift
 //  MVVMDemo
 //
-//  Created by mac on 2018/12/2.
+//  Created by Liu Tao on 2018/12/2.
 //  Copyright © 2018 Liu Tao. All rights reserved.
 //
 

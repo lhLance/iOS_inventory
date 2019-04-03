@@ -2,7 +2,7 @@
 //  MaqueeView.swift
 //  MVVMDemo
 //
-//  Created by mac on 2018/12/3.
+//  Created by Liu Tao on 2018/12/3.
 //  Copyright © 2018 Liu Tao. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ class MaqueeView: UIView {
     
     var content = "" {
         didSet {
-            //移除之前所有的动画
+            // 移除之前所有的动画
             labelll.layer.removeAllAnimations()
             
             labelll.text = content

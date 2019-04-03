@@ -2,7 +2,7 @@
 //  UserInfoVC.swift
 //  Fii
 //
-//  Created by mac on 2019/4/2.
+//  Created by Liu Tao on 2019/4/2.
 //  Copyright © 2019 Liu Tao. All rights reserved.
 //
 
