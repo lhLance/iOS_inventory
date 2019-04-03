@@ -1406,7 +1406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YU7A6VBY22;
+				DEVELOPMENT_TEAM = LPF3349M6Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
@@ -1418,7 +1418,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii.YE;
+				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -1433,7 +1433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YU7A6VBY22;
+				DEVELOPMENT_TEAM = LPF3349M6Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",
@@ -1449,7 +1449,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD.Fii.YE;
+				PRODUCT_BUNDLE_IDENTIFIER = ThomasLTD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Fii/AppMain/Fii_Home-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
