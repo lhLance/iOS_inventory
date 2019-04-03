@@ -128,6 +128,10 @@ extension PageTitleView
         guard let currentLab = tapGes.view as? UILabel else {
             return
         }
+        if currentLab.tag == currentIndex{
+            return
+        }
+        
         let oldLabel = titleLables[currentIndex]
         currentIndex = currentLab.tag
         //切换文字颜色
