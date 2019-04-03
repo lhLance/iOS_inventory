@@ -37,9 +37,7 @@ class VoiceControllVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         setUpPressend();
         setUpUI()
-        
         setupChatTable()
-//        setupSendPanel()
         
     }
     
@@ -78,14 +76,6 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     private func setUpUI(){
         
-        //        self.speechLab = UILabel(frame: CGRect(x:100,
-        //                                               y: 100,
-        //                                               width: 200,
-        //                                               height: 50))
-        //        self.speechLab.backgroundColor = UIColor.yellow
-        //        self.speechLab.textAlignment = NSTextAlignment.center
-        //        self.view.addSubview(self.speechLab)
-//
         self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 150)/2,
                                                      y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
                                                      width: 150,
@@ -145,31 +135,13 @@ extension VoiceControllVC:OEEventsObserverDelegate{
                                                           dictionaryAtPath: self.chineseDicPath,
                                                           acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"),
                                                           languageModelIsJSGF: false)
-        
-//        if let soundURL = Bundle.main.url(forResource: "record", withExtension: "mp3") {
-//            var mySound: SystemSoundID = 0
-//            AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
-//            // Play
-//            AudioServicesPlaySystemSound(mySound);
-//        }
-//        let contentH = self.view.frame.size.height
-//        let frame = CGRect(x: CGFloat(0), y: 0 , width:self.view.frame.size.width , height: contentH)
-//        let voiceCurveView = VoiceCurveView(frame: frame, superView: self.view)
-//        voiceCurveView?.tag = 100
-//        voiceCurveView!.present();
-
     }
     private func stopListen(){
-//        let voiceCurveView:VoiceCurveView = self.view.viewWithTag(100) as! VoiceCurveView
-//        voiceCurveView.dismiss();
         self.pocketsphinx.stopListening()
-
     }
     
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")
-//        self.speechLab.text = hypothesis
-
         sayStr = hypothesis;
         
 
