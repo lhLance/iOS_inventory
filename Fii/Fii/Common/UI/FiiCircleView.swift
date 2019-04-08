@@ -28,6 +28,13 @@ class FiiCircleView: UIView {
         }
     }
     
+    var lineWidth = CGFloat(6.0) {
+        didSet {
+            backgroundLayer.lineWidth = lineWidth
+            progressLayer.lineWidth = lineWidth
+        }
+    }
+    
     private let progressLayer = CAShapeLayer()
     private let backgroundLayer = CAShapeLayer()
     

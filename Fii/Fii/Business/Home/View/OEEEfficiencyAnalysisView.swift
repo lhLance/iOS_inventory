@@ -19,6 +19,9 @@ class OEEEfficiencyAnalysisView: UIView {
 
     var title: UILabel?
     var circleView: FiiCircleView?
+    var oeeLabel: UILabel?
+    
+    let oeeValue = 40
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,13 +49,24 @@ class OEEEfficiencyAnalysisView: UIView {
         circleView = FiiCircleView()
         circleView?.added(into: self)
         circleView?.snp.makeConstraints({ (make) in
+            make.top.equalTo(title?.snp.bottom ?? 0)
             make.width.equalTo(120)
             make.height.equalTo(120)
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
         })
         circleView?.strokeColor = UIColor.hex(0xE94444)
         circleView?.backColor = UIColor.hex(0xCECECE)
-        circleView?.progress = Float(50) / 100
+        circleView?.progress = Float(oeeValue) / 100
+        circleView?.lineWidth = 10.0
+        
+        oeeLabel = UILabel()
+        oeeLabel?.Text("\(oeeValue) %").Font(.PFRegular(18)).TextAlignment(.center)
+        oeeLabel?.added(into: self)
+        oeeLabel?.snp.makeConstraints({ (make) in
+            make.center.equalTo(circleView?.snp.center ?? 0)
+            make.width.equalTo(60)
+            make.height.equalTo(100)
+        })
     }
     
     

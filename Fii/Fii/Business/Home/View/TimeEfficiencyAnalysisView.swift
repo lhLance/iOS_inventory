@@ -18,13 +18,18 @@ class TimeEfficiencyAnalysisView: UIView {
     var spectrumMapView: UIView?
     var chartView: PieChartView?
     
-    let parties = ["待机", "断开", "通电", "报警", "运行"]
-    let IEEtimeArr = [[0 , 1],
+    let partiesTitleArr = ["待机", "断开", "通电", "报警", "运行"]
+    let partiesArr = [1, 2, 4.5, 2, 0.5]
+    let OEEtimeArr = [[0 , 2],
                       [2, 4],
-                      [4, 6],
-                      [6, 14],
-                      [14, 24]]
-    let IEETimeColorArr = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.cyan]
+                      [4, 9],
+                      [10, 18],
+                      [18, 24]]
+    let OEEtimeColorArr = [UIColor.red,
+                           UIColor.blue,
+                           UIColor.green,
+                           UIColor.yellow,
+                           UIColor.cyan]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,30 +54,32 @@ class TimeEfficiencyAnalysisView: UIView {
         title = UILabel()
         title?.added(into: self)
         title?.snp.makeConstraints({ (make) in
-            make.top.equalTo(0)
-            make.height.equalTo(20)
+            make.top.equalTo(10)
+            make.height.equalTo(30)
             make.centerX.equalToSuperview()
         })
-        title?.Text("时间效率分析").Font(UIFont.PFRegular(16))
+        title?.Text("时间效率分析").Font(.PFRegular(16))
         
         spectrumMapView = UIView().then({ (s) in
             s.added(into: self)
             s.snp.makeConstraints({ (make) in
                 make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
-                make.left.equalTo(26)
-                make.right.equalTo(-50)
-                make.height.equalTo(140)
+                make.left.right.equalToSuperview()
+                make.height.equalTo(120)
             })
             
-            for (index, item) in IEEtimeArr.enumerated() {
+            for (index, item) in OEEtimeArr.enumerated() {
                 let l = CALayer()
-                l.frame = CGRect(26 + (CGFloat(item[0]) / 24) * UIScreen.width, 0, CGFloat(item[1] - item[0]) / 24 * UIScreen.width, 110)
+                l.frame = CGRect(28 + (CGFloat(item[0]) / 24) * (UIScreen.width - 52),
+                                 40,
+                                 CGFloat(item[1] - item[0]) / 24 * (UIScreen.width - 52),
+                                 70)
                 s.layer.addSublayer(l)
-                l.backgroundColor = IEETimeColorArr[index].cgColor
+                l.backgroundColor = OEEtimeColorArr[index].cgColor
             }
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(26, 110, UIScreen.width - 76, 1)
+                l.frame = CGRect(26, 110, UIScreen.width - 48, 1)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
@@ -84,67 +91,67 @@ class TimeEfficiencyAnalysisView: UIView {
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("0:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + (UIScreen.width - 56) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + (UIScreen.width - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + (UIScreen.width - 56) / 5, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16 + (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("5:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 2 * (UIScreen.width - 56) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 2 * (UIScreen.width - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 2 * (UIScreen.width - 56) / 5, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16 + 2 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("10:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 3 * (UIScreen.width - 56) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 3 * (UIScreen.width - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 3 * (UIScreen.width - 56) / 5, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16 + 3 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("15:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 4 * (UIScreen.width - 56) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 4 * (UIScreen.width - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 4 * (UIScreen.width - 56) / 5, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16 + 4 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("20:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 5 * (UIScreen.width - 56) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 5 * (UIScreen.width - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 5 * (UIScreen.width - 56) / 5, 113, (UIScreen.width - 56) / 5, 15)
+                l.frame = CGRect(16 + 5 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("24:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
@@ -159,7 +166,7 @@ class TimeEfficiencyAnalysisView: UIView {
             })
             
             let startLbl = UILabel().then({ (l) in
-                l.Text("开机").Font(UIFont.PFRegular(14))
+                l.Text("开机").Font(.PFRegular(14))
                 l.added(into: v)
                 l.snp.makeConstraints({ (make) in
                     make.center.equalToSuperview()
@@ -179,7 +186,7 @@ class TimeEfficiencyAnalysisView: UIView {
             })
             
             let awaitLbl = UILabel().then({ (l) in
-                l.Text("待机").Font(UIFont.PFRegular(14))
+                l.Text("待机").Font(.PFRegular(14))
                 l.added(into: v)
                 l.snp.makeConstraints({ (make) in
                     make.right.equalTo(awaitIcon.snp.left).offset(-3)
@@ -310,8 +317,8 @@ class TimeEfficiencyAnalysisView: UIView {
         let entries = (0..<count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets),
             // since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-                                     label: parties[i % parties.count])
+            return PieChartDataEntry(value: Double(partiesArr[i]),
+                                     label: partiesTitleArr[i % partiesTitleArr.count])
         }
         
         let set = PieChartDataSet(values: entries, label: "")
