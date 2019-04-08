@@ -45,7 +45,7 @@ class NumberOfPartsView: UIView {
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
             make.height.equalToSuperview()
-            make.width.equalTo(300)
+            make.width.equalToSuperview()
             make.center.equalToSuperview()
         }
         chartView.delegate = self as? ChartViewDelegate

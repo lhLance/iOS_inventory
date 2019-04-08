@@ -47,7 +47,7 @@ class BootStatisticsView: UIView {
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalToSuperview()
             make.center.equalToSuperview()
         }
         chartView.chartDescription?.enabled = false
