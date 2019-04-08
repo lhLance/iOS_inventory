@@ -65,7 +65,7 @@ class HomeVC: UIViewController {
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(oeeeView?.snp.bottom ?? 0)
                     make.left.right.equalToSuperview()
-                    make.height.equalTo(200)
+                    make.height.equalTo(260)
                 })
             })
             
@@ -74,7 +74,7 @@ class HomeVC: UIViewController {
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(numOfPartsView?.snp.bottom ?? 0)
                     make.left.right.equalToSuperview()
-                    make.height.equalTo(200)
+                    make.height.equalTo(260)
                     make.bottom.equalTo(0)
                 })
             })

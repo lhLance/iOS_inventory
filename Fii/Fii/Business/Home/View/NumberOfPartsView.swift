@@ -44,9 +44,10 @@ class NumberOfPartsView: UIView {
         
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
-            make.height.equalToSuperview()
+            make.height.equalTo(200)
             make.width.equalToSuperview()
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
         }
         chartView.delegate = self as? ChartViewDelegate
         chartView.drawBarShadowEnabled = false
@@ -64,8 +65,8 @@ class NumberOfPartsView: UIView {
         let leftAxisFormatter = NumberFormatter()
         leftAxisFormatter.minimumFractionDigits = 0
         leftAxisFormatter.maximumFractionDigits = 1
-        leftAxisFormatter.negativeSuffix = " $"
-        leftAxisFormatter.positiveSuffix = " $"
+        leftAxisFormatter.negativeSuffix = " 件"
+        leftAxisFormatter.positiveSuffix = " 件"
         
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = .systemFont(ofSize: 10)
@@ -76,12 +77,7 @@ class NumberOfPartsView: UIView {
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
         
         let rightAxis = chartView.rightAxis
-        rightAxis.enabled = true
-        rightAxis.labelFont = .systemFont(ofSize: 10)
-        rightAxis.labelCount = 8
-        rightAxis.valueFormatter = leftAxis.valueFormatter
-        rightAxis.spaceTop = 0.15
-        rightAxis.axisMinimum = 0
+        rightAxis.enabled = false
         
         let l = chartView.legend
         l.horizontalAlignment = .left
@@ -90,7 +86,7 @@ class NumberOfPartsView: UIView {
         l.drawInside = false
         l.form = .circle
         l.formSize = 9
-        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+        l.font = .PFRegular(11)
         l.xEntrySpace = 4
         
         let marker = XYMarkerView(color: UIColor(white: 180/250.0, alpha: 1),
@@ -102,7 +98,7 @@ class NumberOfPartsView: UIView {
         marker.minimumSize = CGSize(width: 80, height: 40)
         chartView.marker = marker
         
-        self.setDataCount(9 + 1, range: 40)
+        setDataCount(9 + 1, range: 40)
     }
     
     func setDataCount(_ count: Int, range: UInt32) {

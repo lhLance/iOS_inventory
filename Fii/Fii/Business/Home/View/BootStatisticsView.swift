@@ -36,7 +36,7 @@ class BootStatisticsView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("开机统计").Font(UIFont.PFRegular(16))
+        title?.Text("开机统计").Font(.PFRegular(16))
         
         setupChartView()
     }
@@ -47,8 +47,9 @@ class BootStatisticsView: UIView {
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
-            make.height.equalToSuperview()
-            make.center.equalToSuperview()
+            make.height.equalTo(200)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
         }
         chartView.chartDescription?.enabled = false
         chartView.leftAxis.enabled = false
@@ -73,11 +74,10 @@ class BootStatisticsView: UIView {
             let val = Double(arc4random_uniform(range) + 3)
             return ChartDataEntry(x: Double(i), y: val)
         }
-        let dataSets = (0..<3).map { i -> LineChartDataSet in
+        let dataSets = (0..<2).map { i -> LineChartDataSet in
             let yVals = (0..<count).map(block)
             let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
             set.lineWidth = 1
-//            set.circleRadius = 4
             set.drawFilledEnabled = true
             set.drawCirclesEnabled = false
             let color = colors[i % colors.count]
