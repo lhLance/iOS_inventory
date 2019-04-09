@@ -72,6 +72,7 @@ extension PageTitleView {
             label.text = title
             label.tag = index
             label.font = UIFont.systemFont(ofSize: 16)
+            label.backgroundColor = UIColor.random
             label.textColor = colorWithRGBA(red: kNormalColor.0,
                                             green: kNormalColor.1,
                                             blue: kNormalColor.2, alpha: 1.0)
@@ -82,8 +83,8 @@ extension PageTitleView {
                                  width: labelW,
                                  height: labelH)
             
-            scrollView.addSubview(label)
-            titleLables.append(label)
+            self.scrollView.addSubview(label)
+            self.titleLables.append(label)
             
             //添加手势
             label.isUserInteractionEnabled = true
@@ -109,8 +110,8 @@ extension PageTitleView {
                                            green: kSelectColor.1,
                                            blue: kSelectColor.2, alpha: 1.0)
         
-        scrollView.addSubview(scrollLine)
-        scrollLine.frame = CGRect(x: firstLab.frame.origin.x,
+        self.scrollView.addSubview(self.scrollLine)
+        self.scrollLine.frame = CGRect(x: firstLab.frame.origin.x,
                                   y: self.frame.height - kscroolLineH * 3,
                                   width: firstLab.frame.width,
                                   height: kscroolLineH)
