@@ -10,6 +10,7 @@
 		0415600322240306001E68CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600222240306001E68CD /* APIManager.swift */; };
 		0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415600422240A9D001E68CD /* APIManager+HTTP.swift */; };
 		04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265366224A36B9007ACD55 /* LanguageVC.swift */; };
+		042EE59D225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042EE59C225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift */; };
 		043C3800225257830069647F /* aaa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 043C37FF225257830069647F /* aaa.mp4 */; };
 		049629812254E031004C2D1D /* FiiCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049629802254E031004C2D1D /* FiiCircleView.swift */; };
 		04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C970224BA0EC001D6987 /* PingFang_Light.ttf */; };
@@ -151,6 +152,7 @@
 		0415600422240A9D001E68CD /* APIManager+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+HTTP.swift"; sourceTree = "<group>"; };
 		04265366224A36B9007ACD55 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		04265368224A3C4C007ACD55 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		042EE59C225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentWorkRatioAnalysisView.swift; sourceTree = "<group>"; };
 		043C37FF225257830069647F /* aaa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aaa.mp4; sourceTree = "<group>"; };
 		04532D2A2243C83400DBF7E5 /* Fii_Home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fii_Home-Bridging-Header.h"; sourceTree = "<group>"; };
 		049629802254E031004C2D1D /* FiiCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiCircleView.swift; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 			children = (
 				CFB0487C2254A041004F2C6E /* BalloonMarker.swift */,
 				CF93DF99224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift */,
+				042EE59C225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift */,
 				CF93DF9B224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift */,
 				CF93DF9D224B0D5400B26509 /* NumberOfPartsView.swift */,
 				CF93DF9F224B0D7400B26509 /* BootStatisticsView.swift */,
@@ -1216,6 +1219,7 @@
 				34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
+				042EE59D225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift in Sources */,
 				CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */,
 				34F38D7C224CA3CB0059E19A /* SwiftyGifManager.swift in Sources */,
 				CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */,
@@ -1442,7 +1446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YU7A6VBY22;
+				DEVELOPMENT_TEAM = LPF3349M6Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
@@ -1469,7 +1473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YU7A6VBY22;
+				DEVELOPMENT_TEAM = LPF3349M6Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",

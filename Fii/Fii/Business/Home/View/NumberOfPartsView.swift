@@ -121,12 +121,12 @@ class NumberOfPartsView: UIView {
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         } else {
-            set1 = BarChartDataSet(values: yVals, label: "The year 2017")
+            set1 = BarChartDataSet(values: yVals, label: "")
             set1.colors = ChartColorTemplates.material()
             set1.drawValuesEnabled = false
             
             let data = BarChartData(dataSet: set1)
-            data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
+            data.setValueFont(.PFRegular(10))
             data.barWidth = 0.9
             chartView.data = data
         }

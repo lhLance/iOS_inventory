@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     var scrollView: UIScrollView?
     var containerView: UIView?
     var timeView: TimeEfficiencyAnalysisView?
+    var equipmentRatioView: EquipmentWorkRatioAnalysisView?
     var oeeeView: OEEEfficiencyAnalysisView?
     var numOfPartsView: NumberOfPartsView?
     var bootStaticView: BootStatisticsView?
@@ -47,8 +48,20 @@ class HomeVC: UIViewController {
             timeView = TimeEfficiencyAnalysisView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.height.equalTo(460)
+                    make.height.equalTo(205)
                     make.top.equalTo(20)
+                    make.left.equalTo(10)
+                    make.right.equalTo(-10)
+                })
+                t.cornerRadius = 6.0
+                t.backgroundColor = UIColor.white
+            })
+            
+            equipmentRatioView = EquipmentWorkRatioAnalysisView().then({ (t) in
+                t.added(into: c)
+                t.snp.makeConstraints({ (make) in
+                    make.height.equalTo(220)
+                    make.top.equalTo(timeView?.snp.bottom ?? 0).offset(15)
                     make.left.equalTo(10)
                     make.right.equalTo(-10)
                 })
@@ -59,7 +72,7 @@ class HomeVC: UIViewController {
             oeeeView = OEEEfficiencyAnalysisView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.equalTo(timeView?.snp.bottom ?? 0).offset(15)
+                    make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
                     make.left.equalTo(10)
                     make.right.equalTo(-10)
                     make.height.equalTo(200)
