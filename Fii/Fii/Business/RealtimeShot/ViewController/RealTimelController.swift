@@ -19,7 +19,11 @@ private let reuseIdentifier = "Cell"
 
 class RealTimelController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    private let titleAry: NSArray = ["孤岛模式","巡航模式","参观模式","顺序模式","分布式模式"]
+    private let titleAry: NSArray = [("孤岛模式","IslandMode.gif"),("巡航模式","loopMode.gif"),("参观模式","VisitMode.gif"),("顺序模式","SequentialMode.gif"),("分布式模式","DistributionalMode.gif")]
+    
+    
+    
+    
     let gifManager = SwiftyGifManager(memoryLimit:100)
 
     override func viewDidLoad() {
@@ -60,10 +64,11 @@ extension RealTimelController{
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RealTimeCollectionCell
 
+        let modeltTuple:(String,String) = titleAry[indexPath.row] as! (String, String);
 
-        let gifImage = UIImage(gifName: "loopMode.gif")
+        cell.titleLab.text = modeltTuple.0
+        let gifImage = UIImage(gifName: modeltTuple.1)
         cell.iconImg.setGifImage(gifImage, manager: gifManager, loopCount: -1)
-        cell.titleLab.text = (titleAry[indexPath.row] as! String)
         return cell
     }
     

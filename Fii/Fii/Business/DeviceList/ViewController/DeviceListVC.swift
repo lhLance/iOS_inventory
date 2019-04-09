@@ -36,11 +36,16 @@ class DeviceListVC: UIViewController {
         let toolingLineVc = ToolingLineController()
         childVcs.append(toolingLineVc)
         
-        for _ in 0..<1{
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.random
-            childVcs.append(vc)
-        }
+        let  videoMonitorC = VideoMonitorController()
+        childVcs.append(videoMonitorC)
+
+        
+        
+//        for _ in 0..<1{
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor.random
+//            childVcs.append(vc)
+//        }
         
         let contentView = PageContenvView(frame: titleFrame, childVcs:childVcs
             , parentViewController: self)

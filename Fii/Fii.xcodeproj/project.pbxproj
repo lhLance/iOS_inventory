@@ -21,6 +21,13 @@
 		04F39150225391320014604B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3914F225391320014604B /* UserInfoVC.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
+		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
+		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
+		34787718225C787A00B2689E /* MonitorShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787717225C787A00B2689E /* MonitorShapeButton.swift */; };
+		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
+		3478771E225C8AA600B2689E /* IslandMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771A225C8AA500B2689E /* IslandMode.gif */; };
+		3478771F225C8AA600B2689E /* VisitMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771B225C8AA600B2689E /* VisitMode.gif */; };
+		34787720225C8AA600B2689E /* SequentialMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771C225C8AA600B2689E /* SequentialMode.gif */; };
 		34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5A224F15F9006D46CA /* ChatTableView.swift */; };
 		34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5C224F16C5006D46CA /* ChatDataSource.swift */; };
 		34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5E224F171F006D46CA /* ChatUserInfo.swift */; };
@@ -156,6 +163,13 @@
 		04F3914F225391320014604B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
+		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
+		34787717225C787A00B2689E /* MonitorShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorShapeButton.swift; sourceTree = "<group>"; };
+		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
+		3478771A225C8AA500B2689E /* IslandMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IslandMode.gif; sourceTree = "<group>"; };
+		3478771B225C8AA600B2689E /* VisitMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VisitMode.gif; sourceTree = "<group>"; };
+		3478771C225C8AA600B2689E /* SequentialMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SequentialMode.gif; sourceTree = "<group>"; };
 		34905B5A224F15F9006D46CA /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
 		34905B5C224F16C5006D46CA /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		34905B5E224F171F006D46CA /* ChatUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserInfo.swift; sourceTree = "<group>"; };
@@ -367,6 +381,10 @@
 			isa = PBXGroup;
 			children = (
 				349BE9282251F15600674B61 /* loopMode.gif */,
+				34787719225C8AA400B2689E /* DistributionalMode.gif */,
+				3478771A225C8AA500B2689E /* IslandMode.gif */,
+				3478771C225C8AA600B2689E /* SequentialMode.gif */,
+				3478771B225C8AA600B2689E /* VisitMode.gif */,
 				34F38D4D224C9B730059E19A /* AGV.gif */,
 				34F38D4E224C9B730059E19A /* ATM.gif */,
 				34F38D4F224C9B730059E19A /* FANUC.gif */,
@@ -386,6 +404,7 @@
 				34F38D64224CA3380059E19A /* CollectionNomalCell.swift */,
 				34F38D65224CA3380059E19A /* CollectionNomalCell.xib */,
 				34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */,
+				34787717225C787A00B2689E /* MonitorShapeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -843,6 +862,8 @@
 				34F38D5E224CA3370059E19A /* DeviceDetailController.swift */,
 				34F38D5F224CA3370059E19A /* MobilePhoneFrameController.swift */,
 				34F38D60224CA3370059E19A /* ToolingLineController.swift */,
+				34787713225C6CEA00B2689E /* VideoMonitorController.swift */,
+				34787714225C6CEA00B2689E /* VideoMonitorController.xib */,
 				CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */,
 			);
 			path = ViewController;
@@ -1039,6 +1060,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F38D58224C9B730059E19A /* FOXBOT_DJ.gif in Resources */,
+				3478771E225C8AA600B2689E /* IslandMode.gif in Resources */,
 				04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */,
 				04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */,
 				34F38D87224CAE210059E19A /* RealTimeCollectionCell.xib in Resources */,
@@ -1048,13 +1070,17 @@
 				CF5C075D2248C40400070FCA /* Localizable.strings in Resources */,
 				043C3800225257830069647F /* aaa.mp4 in Resources */,
 				04A8C978224BA0EE001D6987 /* PingFang_Heavy.ttf in Resources */,
+				3478771F225C8AA600B2689E /* VisitMode.gif in Resources */,
 				34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */,
+				34787720225C8AA600B2689E /* SequentialMode.gif in Resources */,
 				34F38D59224C9B730059E19A /* FOXNUM.gif in Resources */,
+				3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */,
 				04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */,
 				04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */,
 				34F38D6E224CA3380059E19A /* CollectionHeadView.xib in Resources */,
 				34F38D54224C9B730059E19A /* AGV.gif in Resources */,
 				34F38D56224C9B730059E19A /* FANUC.gif in Resources */,
+				34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */,
 				34F38D5A224C9B730059E19A /* Super-TG.gif in Resources */,
 				34F38D70224CA3380059E19A /* CollectionNomalCell.xib in Resources */,
 				34F38D55224C9B730059E19A /* ATM.gif in Resources */,
@@ -1162,6 +1188,7 @@
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */,
+				34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */,
 				34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
@@ -1194,6 +1221,7 @@
 				CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */,
 				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				34F38D6D224CA3380059E19A /* CollectionHeadView.swift in Sources */,
+				34787718225C787A00B2689E /* MonitorShapeButton.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */,
 				34F38D83224CADB50059E19A /* RealTimelController.swift in Sources */,
@@ -1414,7 +1442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = YU7A6VBY22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
@@ -1441,7 +1469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = YU7A6VBY22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",

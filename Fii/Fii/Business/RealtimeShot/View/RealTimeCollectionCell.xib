@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="134" height="98"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="0uW-jf-4ql">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uW-jf-4ql">
                         <rect key="frame" x="5" y="5" width="124" height="88"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -29,23 +29,23 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-Zo-0Ex">
-                        <rect key="frame" x="27" y="39" width="80" height="20"/>
+                        <rect key="frame" x="49" y="10" width="80" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="8na-xj-m0o"/>
                             <constraint firstAttribute="height" constant="20" id="fsg-rj-5d9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="nbm-Zo-0Ex" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4Fx-AA-8Jl"/>
+                <constraint firstItem="nbm-Zo-0Ex" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="3UM-Ox-eGX"/>
+                <constraint firstAttribute="trailing" secondItem="nbm-Zo-0Ex" secondAttribute="trailing" constant="5" id="6M1-3d-0bW"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="BTL-Lj-Ysm"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="H4O-f3-Y6v"/>
-                <constraint firstItem="nbm-Zo-0Ex" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="QO4-vV-uwo"/>
                 <constraint firstAttribute="trailing" secondItem="0uW-jf-4ql" secondAttribute="trailing" constant="5" id="c69-gp-YOf"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eGc-Rd-1Qo"/>
                 <constraint firstAttribute="bottom" secondItem="0uW-jf-4ql" secondAttribute="bottom" constant="5" id="f7y-vc-xgo"/>
@@ -68,7 +68,4 @@
             <point key="canvasLocation" x="153.59999999999999" y="72.863568215892059"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="settings" width="28" height="28"/>
-    </resources>
 </document>
