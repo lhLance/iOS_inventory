@@ -63,10 +63,26 @@ extension DeviceListVC
     private func setupUI()
     {
         //不需要调整uiscrollview的内边距
-        automaticallyAdjustsScrollViewInsets = false//必不可少,否则真机显示异常
-        pageTitleView.added(into: view)
-        pageContentView.added(into: view)
+        //        automaticallyAdjustsScrollViewInsets = false
+        //        setupNavigationBar()
+        self.view.addSubview(pageTitleView)
+        self.view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.orange
+        
     }
+    
+    //    private func setupNavigationBar()
+    //    {
+    //        let btn = UIButton()
+    //        btn .setImage(UIImage(named: "cm_logo_capture"), for: UIControl.State.normal)
+    //        btn.sizeToFit()
+    //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+    //        let size = CGSize(width: 40, height: 40)
+    //        let historyItem = UIBarButtonItem(imageName: "cm_nav_history_white_HL", highImageName: "cm_nav_history_white_HL", size: size)
+    //        let searchBtnItem = UIBarButtonItem(imageName: "cm_nav_search_inner", highImageName: "cm_nav_search_inner", size: size)
+    //        let scanItem = UIBarButtonItem(imageName: "cm_nav_richscan", highImageName: "cm_nav_richscan", size: size)
+    //        navigationItem.rightBarButtonItems = [historyItem,searchBtnItem,scanItem]
+    //    }
 }
 //遵守pageTitleViewDelegate协议
 extension DeviceListVC:pageTitleViewDelegate
@@ -75,7 +91,8 @@ extension DeviceListVC:pageTitleViewDelegate
         print(index)
         pageContentView.setCurrentIndex(currentIndex: index)
     }
-    }
+    
+}
 
 extension DeviceListVC:PageContentViewDelegate
 {
