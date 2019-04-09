@@ -52,31 +52,39 @@ class BootStatisticsView: UIView {
             make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
         }
         chartView.chartDescription?.enabled = false
-        chartView.leftAxis.enabled = false
+        chartView.leftAxis.enabled = true
+        let leftAxisFormatter = NumberFormatter()
+        leftAxisFormatter.minimumFractionDigits = 0
+        leftAxisFormatter.maximumFractionDigits = 1
+        leftAxisFormatter.negativeSuffix = " 分钟"
+        leftAxisFormatter.positiveSuffix = " 分钟"
+        
+        chartView.leftAxis.labelFont = .systemFont(ofSize: 10)
+        chartView.leftAxis.labelCount = 8
+        chartView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
+        chartView.rightAxis.enabled = false
         chartView.rightAxis.drawAxisLineEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
+        chartView.xAxis.labelPosition = .bottom
         chartView.drawBordersEnabled = false
         chartView.setScaleEnabled(true)
-        
-        let l = chartView.legend
-        l.horizontalAlignment = .right
-        l.verticalAlignment = .top
-        l.orientation = .vertical
-        l.drawInside = false
-        
-        setDataCount(20, range: 60)
+
+        setDataCount(xRange: 16, yRange: 75)
     }
     
-    func setDataCount(_ count: Int, range: UInt32) {
+    func setDataCount(xRange: Int, yRange: UInt32) {
+        
         let colors = ChartColorTemplates.vordiplom()[0...2]
+        let titleArr = ["开机时间", "工作时间"]
         
         let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 3)
+            let val = Double(arc4random_uniform(yRange) + 3)
             return ChartDataEntry(x: Double(i), y: val)
         }
+        
         let dataSets = (0..<2).map { i -> LineChartDataSet in
-            let yVals = (0..<count).map(block)
-            let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
+            let yVals = (0..<xRange).map(block)
+            let set = LineChartDataSet(values: yVals, label: titleArr[i])
             set.lineWidth = 1
             set.drawFilledEnabled = true
             set.drawCirclesEnabled = false

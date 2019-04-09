@@ -35,7 +35,7 @@ class NumberOfPartsView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("每小时加工件数").Font(UIFont.PFRegular(16))
+        title?.Text("每小时加工件数").Font(.PFRegular(16))
         
         setupChartView()
     }
