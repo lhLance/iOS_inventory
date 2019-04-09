@@ -52,8 +52,8 @@ class NumberOfPartsView: UIView {
         chartView.delegate = self as? ChartViewDelegate
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = false
-        
         chartView.maxVisibleCount = 60
+        chartView.setScaleEnabled(false)
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom

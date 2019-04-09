@@ -67,7 +67,8 @@ class BootStatisticsView: UIView {
         chartView.xAxis.drawAxisLineEnabled = false
         chartView.xAxis.labelPosition = .bottom
         chartView.drawBordersEnabled = false
-        chartView.setScaleEnabled(true)
+        chartView.setScaleEnabled(false)
+        
 
         setDataCount(xRange: 16, yRange: 75)
     }
@@ -91,6 +92,11 @@ class BootStatisticsView: UIView {
             let color = colors[i % colors.count]
             set.setColor(color)
             set.setCircleColor(color)
+            if i == 0 {
+                set.fillColor = UIColor.cyan
+            } else {
+                set.fillColor = UIColor.yellow
+            }
             
             return set
         }

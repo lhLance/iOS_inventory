@@ -25,11 +25,11 @@ class TimeEfficiencyAnalysisView: UIView {
                       [4, 9],
                       [10, 18],
                       [18, 24]]
-    let OEEtimeColorArr = [UIColor.red,
-                           UIColor.blue,
-                           UIColor.green,
-                           UIColor.yellow,
-                           UIColor.cyan]
+    let OEEtimeColorArr = [UIColor.red.alpha(0.6),
+                           UIColor.blue.alpha(0.6),
+                           UIColor.green.alpha(0.6),
+                           UIColor.yellow.alpha(0.6),
+                           UIColor.cyan.alpha(0.6)]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,23 +63,23 @@ class TimeEfficiencyAnalysisView: UIView {
         spectrumMapView = UIView().then({ (s) in
             s.added(into: self)
             s.snp.makeConstraints({ (make) in
-                make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
+                make.top.equalTo(title?.snp.bottom ?? 0)
                 make.left.right.equalToSuperview()
                 make.height.equalTo(120)
             })
             
             for (index, item) in OEEtimeArr.enumerated() {
                 let l = CALayer()
-                l.frame = CGRect(28 + (CGFloat(item[0]) / 24) * (UIScreen.width - 52),
+                l.frame = CGRect(28 + (CGFloat(item[0]) / 24) * (UIScreen.width - 20 - 52),
                                  40,
-                                 CGFloat(item[1] - item[0]) / 24 * (UIScreen.width - 52),
+                                 CGFloat(item[1] - item[0]) / 24 * (UIScreen.width - 20 - 52),
                                  70)
                 s.layer.addSublayer(l)
                 l.backgroundColor = OEEtimeColorArr[index].cgColor
             }
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(26, 110, UIScreen.width - 48, 1)
+                l.frame = CGRect(26, 110, UIScreen.width - 20 - 48, 1)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
@@ -91,67 +91,67 @@ class TimeEfficiencyAnalysisView: UIView {
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("0:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + (UIScreen.width - 52) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + (UIScreen.width - 20 - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16 + (UIScreen.width - 20 - 52) / 5, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("5:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 2 * (UIScreen.width - 52) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 2 * (UIScreen.width - 20 - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 2 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16 + 2 * (UIScreen.width - 20 - 52) / 5, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("10:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 3 * (UIScreen.width - 52) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 3 * (UIScreen.width - 20 - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 3 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16 + 3 * (UIScreen.width - 20 - 52) / 5, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("15:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 4 * (UIScreen.width - 52) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 4 * (UIScreen.width - 20 - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 4 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16 + 4 * (UIScreen.width - 20 - 52) / 5, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("20:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })
             
             _ = CALayer().then({ (l) in
-                l.frame = CGRect(28 + 5 * (UIScreen.width - 52) / 5, 110, 1, 5)
+                l.frame = CGRect(28 + 5 * (UIScreen.width - 20 - 52) / 5, 110, 1, 5)
                 l.backgroundColor = UIColor.gray.cgColor
                 s.layer.addSublayer(l)
             })
             
             _ = UILabel().then({ (l) in
-                l.frame = CGRect(16 + 5 * (UIScreen.width - 52) / 5, 113, (UIScreen.width - 52) / 5, 15)
+                l.frame = CGRect(16 + 5 * (UIScreen.width - 20 - 52) / 5, 113, (UIScreen.width - 20 - 52) / 5, 15)
                 l.added(into: s)
                 l.Text("24:00").Font(UIFont.PFRegular(12)).TextColor(UIColor.gray)
             })

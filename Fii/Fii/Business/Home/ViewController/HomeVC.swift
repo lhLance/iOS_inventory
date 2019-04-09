@@ -27,7 +27,7 @@ class HomeVC: UIViewController {
     
     func setupView() {
         
-        scrollView = UIScrollView.init().then({ (s) in
+        scrollView = UIScrollView().then({ (s) in
             s.alwaysBounceVertical = true
             s.showsVerticalScrollIndicator = false
             s.added(into: view)
@@ -42,41 +42,55 @@ class HomeVC: UIViewController {
                 make.width.equalToSuperview()
                 make.edges.equalToSuperview()
             })
+            c.backgroundColor = UIColor.groupTableViewBackground
             
             timeView = TimeEfficiencyAnalysisView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.left.right.equalToSuperview()
                     make.height.equalTo(460)
+                    make.top.equalTo(20)
+                    make.left.equalTo(10)
+                    make.right.equalTo(-10)
                 })
+                t.cornerRadius = 6.0
+                t.backgroundColor = UIColor.white
             })
             
             oeeeView = OEEEfficiencyAnalysisView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.equalTo(timeView?.snp.bottom ?? 0)
-                    make.left.right.equalToSuperview()
+                    make.top.equalTo(timeView?.snp.bottom ?? 0).offset(15)
+                    make.left.equalTo(10)
+                    make.right.equalTo(-10)
                     make.height.equalTo(200)
                 })
+                t.cornerRadius = 6.0
+                t.backgroundColor = UIColor.white
             })
             
             numOfPartsView = NumberOfPartsView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.equalTo(oeeeView?.snp.bottom ?? 0)
-                    make.left.right.equalToSuperview()
+                    make.top.equalTo(oeeeView?.snp.bottom ?? 0).offset(15)
+                    make.left.equalTo(10)
+                    make.right.equalTo(-10)
                     make.height.equalTo(260)
                 })
+                t.cornerRadius = 6.0
+                t.backgroundColor = UIColor.white
             })
             
             bootStaticView = BootStatisticsView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.equalTo(numOfPartsView?.snp.bottom ?? 0)
-                    make.left.right.equalToSuperview()
+                    make.top.equalTo(numOfPartsView?.snp.bottom ?? 0).offset(15)
+                    make.left.equalTo(10)
+                    make.right.equalTo(-10)
                     make.height.equalTo(260)
-                    make.bottom.equalTo(0)
+                    make.bottom.equalTo(-20)
                 })
+                t.cornerRadius = 6.0
+                t.backgroundColor = UIColor.white
             })
         })
     }
