@@ -15,6 +15,9 @@ class BootStatisticsView: UIView {
     var title: UILabel?
     var chartView: LineChartView!
     
+    let timeArr: [[Double]] = [[29, 29, 29, 29, 29, 77, 55, 39, 67, 90, 75, 30, 23, 3, 9],
+                               [37, 35, 60, 12, 56, 44, 63, 27, 19, 20, 36, 36, 36, 36, 36]]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -69,8 +72,7 @@ class BootStatisticsView: UIView {
         chartView.drawBordersEnabled = false
         chartView.setScaleEnabled(false)
         
-
-        setDataCount(xRange: 16, yRange: 75)
+        setDataCount(xRange: 15, yRange: 75)
     }
     
     func setDataCount(xRange: Int, yRange: UInt32) {
@@ -78,14 +80,16 @@ class BootStatisticsView: UIView {
         let colors = ChartColorTemplates.vordiplom()[0...2]
         let titleArr = ["开机时间", "工作时间"]
         
-        let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(yRange) + 3)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        
         let dataSets = (0..<2).map { i -> LineChartDataSet in
-            let yVals = (0..<xRange).map(block)
-            let set = LineChartDataSet(values: yVals, label: titleArr[i])
+            
+            var yVals: [ChartDataEntry] = []
+            
+            for j in 0..<xRange {
+                yVals.append(ChartDataEntry.init(x: Double(j + 1), y: timeArr[i][j]))
+            }
+            
+            let set = LineChartDataSet(values: yVals,
+                                       label: titleArr[i])
             set.lineWidth = 1
             set.drawFilledEnabled = true
             set.drawCirclesEnabled = false

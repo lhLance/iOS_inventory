@@ -14,6 +14,8 @@ class NumberOfPartsView: UIView {
     var chartView = BarChartView()
     var title: UILabel?
     
+    let valueArr: [Double] = [10, 8, 4, 12, 15, 9, 7, 9, 10, 17, 19, 20, 20, 21, 22, 24, 18, 9, 16, 25, 20, 23, 15, 13]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -60,7 +62,6 @@ class NumberOfPartsView: UIView {
         xAxis.labelFont = .systemFont(ofSize: 10)
         xAxis.granularity = 1
         xAxis.labelCount = 7
-        xAxis.valueFormatter = DayAxisValueFormatter(chart: chartView)
         
         let leftAxisFormatter = NumberFormatter()
         leftAxisFormatter.minimumFractionDigits = 0
@@ -98,20 +99,13 @@ class NumberOfPartsView: UIView {
         marker.minimumSize = CGSize(width: 80, height: 40)
         chartView.marker = marker
         
-        setDataCount(9 + 1, range: 40)
+        setDataCount(24, range: 25)
     }
     
     func setDataCount(_ count: Int, range: UInt32) {
-        let start = 1
         
-        let yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(mult))
-            if arc4random_uniform(100) < 25 {
-                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
-            } else {
-                return BarChartDataEntry(x: Double(i), y: val)
-            }
+        let yVals = (0..<count).map { (i) -> BarChartDataEntry in
+            return BarChartDataEntry(x: Double(i), y: valueArr[i])
         }
         
         var set1: BarChartDataSet! = nil
@@ -121,7 +115,7 @@ class NumberOfPartsView: UIView {
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         } else {
-            set1 = BarChartDataSet(values: yVals, label: "")
+            set1 = BarChartDataSet(values: yVals, label: "当天加工件数")
             set1.colors = ChartColorTemplates.material()
             set1.drawValuesEnabled = false
             
@@ -133,114 +127,16 @@ class NumberOfPartsView: UIView {
         
         // chartView.setNeedsDisplay()
     }
-    
-}
-
-public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
-    weak var chart: BarLineChartViewBase?
-    let months = ["Jan", "Feb", "Mar",
-                  "Apr", "May", "Jun",
-                  "Jul", "Aug", "Sep",
-                  "Oct", "Nov", "Dec"]
-    
-    init(chart: BarLineChartViewBase) {
-        self.chart = chart
-    }
-    
-    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let days = Int(value)
-        let year = determineYear(forDays: days)
-        let month = determineMonth(forDayOfYear: days)
-        
-        let monthName = months[month % months.count]
-        let yearName = "\(year)"
-        
-        if let chart = chart,
-            chart.visibleXRange > 30 * 6 {
-            return monthName + yearName
-        } else {
-            let dayOfMonth = determineDayOfMonth(forDays: days, month: month + 12 * (year - 2016))
-            var appendix: String
-            
-            switch dayOfMonth {
-            case 1, 21, 31: appendix = "st"
-            case 2, 22: appendix = "nd"
-            case 3, 23: appendix = "rd"
-            default: appendix = "th"
-            }
-            
-            return dayOfMonth == 0 ? "" : String(format: "%d\(appendix) \(monthName)", dayOfMonth)
-        }
-    }
-    
-    private func days(forMonth month: Int, year: Int) -> Int {
-        // month is 0-based
-        switch month {
-        case 1:
-            var is29Feb = false
-            if year < 1582 {
-                is29Feb = (year < 1 ? year + 1 : year) % 4 == 0
-            } else if year > 1582 {
-                is29Feb = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
-            }
-            
-            return is29Feb ? 29 : 28
-            
-        case 3, 5, 8, 10:
-            return 30
-            
-        default:
-            return 31
-        }
-    }
-    
-    private func determineMonth(forDayOfYear dayOfYear: Int) -> Int {
-        var month = -1
-        var days = 0
-        
-        while days < dayOfYear {
-            month += 1
-            if month >= 12 {
-                month = 0
-            }
-            
-            let year = determineYear(forDays: days)
-            days += self.days(forMonth: month, year: year)
-        }
-        
-        return max(month, 0)
-    }
-    
-    private func determineDayOfMonth(forDays days: Int, month: Int) -> Int {
-        var count = 0
-        var daysForMonth = 0
-        
-        while count < month {
-            let year = determineYear(forDays: days)
-            daysForMonth += self.days(forMonth: count % 12, year: year)
-            count += 1
-        }
-        
-        return days - daysForMonth
-    }
-    
-    private func determineYear(forDays days: Int) -> Int {
-        switch days {
-        case ...366: return 2016
-        case 367...730: return 2017
-        case 731...1094: return 2018
-        case 1095...1458: return 2019
-        default: return 2020
-        }
-    }
 }
 
 public class XYMarkerView: BalloonMarker {
+    
     public var xAxisValueFormatter: IAxisValueFormatter
     fileprivate var yFormatter = NumberFormatter()
     
     public init(color: UIColor, font: UIFont, textColor: UIColor, insets: UIEdgeInsets,
                 xAxisValueFormatter: IAxisValueFormatter) {
+        
         self.xAxisValueFormatter = xAxisValueFormatter
         yFormatter.minimumFractionDigits = 1
         yFormatter.maximumFractionDigits = 1
@@ -248,6 +144,7 @@ public class XYMarkerView: BalloonMarker {
     }
     
     public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+        
         let string = "x: "
             + xAxisValueFormatter.stringForValue(entry.x, axis: XAxis())
             + ", y: "
