@@ -71,19 +71,7 @@ class HomeVC: UIViewController {
                 t.backgroundColor = UIColor.white
             })
             
-//            oeeeView = OEEEfficiencyAnalysisView().then({ (t) in
-//                t.added(into: c)
-//                t.snp.makeConstraints({ (make) in
-//                    make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
-//                    make.left.equalTo(10)
-//                    make.right.equalTo(-10)
-//                    make.height.equalTo(200)
-//                })
-//                t.cornerRadius = 6.0
-//                t.backgroundColor = UIColor.white
-//            })
-            
-            oeeeView2 = FiiDashBoardView().then({ (t) in
+            oeeeView = OEEEfficiencyAnalysisView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
@@ -93,14 +81,26 @@ class HomeVC: UIViewController {
                 })
                 t.cornerRadius = 6.0
                 t.backgroundColor = UIColor.white
-                
-                t.setNeedsDisplay()
             })
+            
+//            oeeeView2 = FiiDashBoardView().then({ (t) in
+//                t.added(into: c)
+//                t.snp.makeConstraints({ (make) in
+//                    make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
+//                    make.left.equalTo(10)
+//                    make.right.equalTo(-10)
+//                    make.height.equalTo(200)
+//                })
+//                t.cornerRadius = 6.0
+//                t.backgroundColor = UIColor.white
+//
+//                t.setNeedsDisplay()
+//            })
             
             numOfPartsView = NumberOfPartsView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
-                    make.top.equalTo(oeeeView2?.snp.bottom ?? 0).offset(15)
+                    make.top.equalTo(oeeeView?.snp.bottom ?? 0).offset(15)
                     make.left.equalTo(10)
                     make.right.equalTo(-10)
                     make.height.equalTo(260)

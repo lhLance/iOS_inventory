@@ -65,7 +65,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.top.equalTo(title?.snp.bottom ?? 0)
                 make.height.equalTo(15)
             })
-            l.Text("0").TextColor(UIColor.gray).Font(UIFont.PFRegular(15))
+            l.Text("0").TextColor(UIColor.gray).Font(.PFRegular(15))
         })
         
         let workLbl = UILabel().then { (l) in
@@ -76,7 +76,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("工作").TextColor(UIColor.hex(0x000000)).Font(UIFont.PFRegular(12))
+            l.Text("工作").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView = FiiLineView()
@@ -97,7 +97,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(lineView.snp.centerY).offset(-3)
                 make.left.equalTo(lineView.snp.right).offset(8)
             })
-            l.Text("\(OEEtimeArr[0])").TextColor(UIColor.gray).Font(UIFont.PFRegular(12))
+            l.Text("\(OEEtimeArr[0])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
         endTlbl = UILabel().then({ (l) in
@@ -106,7 +106,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.right.equalTo(lineView.snp.right)
                 make.centerY.equalTo(startTlbl?.snp.centerY ?? 0)
             })
-            l.Text("24h").TextColor(UIColor.gray).Font(UIFont.PFRegular(15))
+            l.Text("24h").TextColor(UIColor.gray).Font(.PFRegular(15))
         })
         
         let waitLbl = UILabel().then { (l) in
@@ -117,7 +117,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("待机").TextColor(UIColor.hex(0x000000)).Font(UIFont.PFRegular(12))
+            l.Text("待机").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView2 = FiiLineView()
@@ -138,7 +138,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(lineView2.snp.centerY).offset(-3)
                 make.left.equalTo(lineView2.snp.right).offset(8)
             })
-            l.Text("\(OEEtimeArr[1])").TextColor(UIColor.gray).Font(UIFont.PFRegular(12))
+            l.Text("\(OEEtimeArr[1])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
         let bootLbl = UILabel().then { (l) in
@@ -149,7 +149,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("开机").TextColor(UIColor.hex(0x000000)).Font(UIFont.PFRegular(12))
+            l.Text("开机").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView3 = FiiLineView()
@@ -170,7 +170,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(lineView3.snp.centerY).offset(-3)
                 make.left.equalTo(lineView3.snp.right).offset(8)
             })
-            l.Text("\(OEEtimeArr[2])").TextColor(UIColor.gray).Font(UIFont.PFRegular(12))
+            l.Text("\(OEEtimeArr[2])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
         let offlineLbl = UILabel().then { (l) in
@@ -181,7 +181,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("离线").TextColor(UIColor.hex(0x000000)).Font(UIFont.PFRegular(12))
+            l.Text("离线").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView4 = FiiLineView()
@@ -202,7 +202,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(lineView4.snp.centerY).offset(-3)
                 make.left.equalTo(lineView4.snp.right).offset(8)
             })
-            l.Text("\(OEEtimeArr[3])").TextColor(UIColor.gray).Font(UIFont.PFRegular(12))
+            l.Text("\(OEEtimeArr[3])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
         let alarmLbl = UILabel().then { (l) in
@@ -213,7 +213,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("报警").TextColor(UIColor.hex(0x000000)).Font(UIFont.PFRegular(12))
+            l.Text("报警").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView5 = FiiLineView()
@@ -234,7 +234,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(lineView5.snp.centerY).offset(-3)
                 make.left.equalTo(lineView5.snp.right).offset(8)
             })
-            l.Text("\(OEEtimeArr[4])").TextColor(UIColor.gray).Font(UIFont.PFRegular(12))
+            l.Text("\(OEEtimeArr[4])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
     }
 

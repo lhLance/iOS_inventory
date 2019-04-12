@@ -55,7 +55,8 @@ class OEEEfficiencyAnalysisView: UIView {
             make.centerX.equalToSuperview()
         })
         circleView?.progress = 0.5
-        circleView?.lineWidth = 10
+        circleView?.lineWidth = 15
+        circleView?.backColor = UIColor.hex(0xf4f4f4)
         
         oeeLabel = UILabel()
         oeeLabel?.Text("\(oeeValue) %").Font(.PFRegular(18)).TextAlignment(.center)

@@ -38,7 +38,7 @@ class EquipmentWorkRatioAnalysisView: UIView {
     func setupPieChartView() {
         
         title2 = UILabel().then({ (l) in
-            l.Text("设备工作时间占比分析").Font(UIFont.PFRegular(16))
+            l.Text("设备工作时间占比分析").Font(.PFRegular(16))
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
