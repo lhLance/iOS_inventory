@@ -14,7 +14,8 @@ class NumberOfPartsView: UIView {
     var chartView = BarChartView()
     var title: UILabel?
     
-    let valueArr: [Double] = [10, 8, 4, 12, 15, 9, 7, 9, 10, 17, 19, 20, 20, 21, 22, 24, 18, 9, 16, 25, 20, 23, 15, 13]
+    let valueArr: [Double] = [10, 8, 4, 12, 15, 9, 7, 9, 10, 17, 19, 20,
+                              20, 21, 22, 24, 18, 9, 16, 25, 20, 23, 15, 13]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +47,7 @@ class NumberOfPartsView: UIView {
         
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
-            make.height.equalTo(200)
+            make.height.equalTo(190)
             make.width.equalToSuperview()
             make.centerX.equalToSuperview()
             make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
@@ -54,14 +55,28 @@ class NumberOfPartsView: UIView {
         chartView.delegate = self as? ChartViewDelegate
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.drawBordersEnabled = false
         chartView.maxVisibleCount = 60
         chartView.setScaleEnabled(false)
+        
+        _ = UILabel().then { (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.width.equalTo(25)
+                make.height.equalTo(15)
+                make.right.equalTo(-6)
+                make.bottom.equalTo(-6)
+            })
+            l.Text("小时").TextColor(UIColor.black).Font(UIFont.PFRegular(10))
+        }
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.labelFont = .systemFont(ofSize: 10)
         xAxis.granularity = 1
         xAxis.labelCount = 7
+        xAxis.drawGridLinesEnabled = false
         
         let leftAxisFormatter = NumberFormatter()
         leftAxisFormatter.minimumFractionDigits = 0
@@ -76,6 +91,7 @@ class NumberOfPartsView: UIView {
         leftAxis.labelPosition = .outsideChart
         leftAxis.spaceTop = 0.15
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
+        leftAxis.drawGridLinesEnabled = true
         
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
@@ -98,6 +114,7 @@ class NumberOfPartsView: UIView {
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: 80, height: 40)
         chartView.marker = marker
+        chartView.legend.enabled = false
         
         setDataCount(24, range: 25)
     }
@@ -111,12 +128,11 @@ class NumberOfPartsView: UIView {
         var set1: BarChartDataSet! = nil
         if let set = chartView.data?.dataSets.first as? BarChartDataSet {
             set1 = set
-            // set1.replaceEntries(yVals)
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         } else {
-            set1 = BarChartDataSet(values: yVals, label: "当天加工件数")
-            set1.colors = ChartColorTemplates.material()
+            set1 = BarChartDataSet(values: yVals, label: "")
+            set1.colors = [NSUIColor.hex(0xC3EAC2), NSUIColor.hex(0xE8B8DF), NSUIColor.hex(0xEBDEA4), NSUIColor.hex(0x84dce1)]
             set1.drawValuesEnabled = false
             
             let data = BarChartData(dataSet: set1)
@@ -124,8 +140,6 @@ class NumberOfPartsView: UIView {
             data.barWidth = 0.9
             chartView.data = data
         }
-        
-        // chartView.setNeedsDisplay()
     }
 }
 

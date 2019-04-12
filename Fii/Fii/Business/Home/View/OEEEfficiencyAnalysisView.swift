@@ -21,6 +21,13 @@ class OEEEfficiencyAnalysisView: UIView {
     var circleView: FiiCircleView?
     var oeeLabel: UILabel?
     
+    var useRateLbl: UILabel?
+    var presentLbl: UILabel?
+    var GIndexLbl: UILabel?
+    var useRateValueLbl: UILabel?
+    var presentValueLbl: UILabel?
+    var GIndexValueLbl: UILabel?
+    
     let oeeValue = 40
     
     override init(frame: CGRect) {
@@ -49,14 +56,15 @@ class OEEEfficiencyAnalysisView: UIView {
         circleView = FiiCircleView()
         circleView?.added(into: self)
         circleView?.snp.makeConstraints({ (make) in
-            make.top.equalTo(title?.snp.bottom ?? 0)
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(title?.snp.bottom ?? 0).offset(10)
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+            make.centerX.equalToSuperview().offset(-50)
         })
         circleView?.progress = 0.5
         circleView?.lineWidth = 15
         circleView?.backColor = UIColor.hex(0xf4f4f4)
+        circleView?.strokeColor = UIColor.hex(0x84dce1)
         
         oeeLabel = UILabel()
         oeeLabel?.Text("\(oeeValue) %").Font(.PFRegular(18)).TextAlignment(.center)
@@ -65,6 +73,60 @@ class OEEEfficiencyAnalysisView: UIView {
             make.center.equalTo(circleView?.snp.center ?? 0)
             make.width.equalTo(60)
             make.height.equalTo(100)
+        })
+        
+        useRateLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.top.equalTo(circleView?.snp.top ?? 0)
+                make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
+            })
+            l.Text("可用率:").TextColor(UIColor.gray).Font(.PFRegular(14))
+        })
+        
+        useRateValueLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerY.equalTo(useRateLbl?.snp.centerY ?? 0)
+                make.left.equalTo(useRateLbl?.snp.right ?? 0).offset(3)
+            })
+            l.Text("30 %").TextColor(UIColor.gray).Font(.PFRegular(14))
+        })
+        
+        presentLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerY.equalTo(circleView?.snp.centerY ?? 0)
+                make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
+            })
+            l.Text("表现性:").TextColor(UIColor.gray).Font(.PFRegular(14))
+        })
+        
+        presentValueLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerY.equalTo(presentLbl?.snp.centerY ?? 0)
+                make.left.equalTo(presentLbl?.snp.right ?? 0).offset(3)
+            })
+            l.Text("0.5").TextColor(UIColor.gray).Font(.PFRegular(14))
+        })
+        
+        GIndexLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.bottom.equalTo(circleView?.snp.bottom ?? 0)
+                make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
+            })
+            l.Text("质量指数:").TextColor(UIColor.gray).Font(.PFRegular(14))
+        })
+        
+        GIndexValueLbl = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerY.equalTo(GIndexLbl?.snp.centerY ?? 0)
+                make.left.equalTo(GIndexLbl?.snp.right ?? 0).offset(3)
+            })
+            l.Text("3").TextColor(UIColor.gray).Font(.PFRegular(14))
         })
     }
 }

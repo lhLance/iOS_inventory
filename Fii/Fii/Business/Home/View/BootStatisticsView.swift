@@ -50,7 +50,7 @@ class BootStatisticsView: UIView {
         chartView.added(into: self)
         chartView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(180)
             make.centerX.equalToSuperview()
             make.top.equalTo(title?.snp.bottom ?? 0).offset(5)
         }
@@ -71,6 +71,58 @@ class BootStatisticsView: UIView {
         chartView.xAxis.labelPosition = .bottom
         chartView.drawBordersEnabled = false
         chartView.setScaleEnabled(false)
+        chartView.legend.enabled = false
+        
+        _ = UILabel().then { (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.width.equalTo(15)
+                make.height.equalTo(15)
+                make.right.equalTo(-3)
+                make.bottom.equalTo(-17)
+            })
+            l.Text("天").TextColor(UIColor.black).Font(UIFont.PFRegular(10))
+        }
+        
+        let startTime = UILabel().then { (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerX.equalTo(self.snp.centerX).offset(-40)
+                make.top.equalTo(chartView.snp.bottom)
+                make.height.equalTo(20)
+            })
+            l.Text("开机时间").Font(UIFont.PFRegular(10))
+        }
+        
+        _ = UIView().then({ (v) in
+            v.added(into: self)
+            v.snp.makeConstraints({ (make) in
+                make.width.height.equalTo(8)
+                make.right.equalTo(startTime.snp.left).offset(-3)
+                make.centerY.equalTo(startTime.snp.centerY)
+            })
+            v.backgroundColor = UIColor.cyan
+        })
+        
+        let endTime = UILabel().then({ (l) in
+            l.added(into: self)
+            l.snp.makeConstraints({ (make) in
+                make.centerX.equalTo(self.snp.centerX).offset(40)
+                make.top.equalTo(chartView.snp.bottom)
+                make.height.equalTo(20)
+            })
+            l.Text("工作时间").Font(UIFont.PFRegular(10))
+        })
+        
+        _ = UIView().then({ (v) in
+            v.added(into: self)
+            v.snp.makeConstraints({ (make) in
+                make.width.height.equalTo(8)
+                make.right.equalTo(endTime.snp.left).offset(-3)
+                make.centerY.equalTo(endTime.snp.centerY)
+            })
+            v.backgroundColor = UIColor.yellow
+        })
         
         setDataCount(xRange: 15, yRange: 75)
     }
@@ -78,7 +130,6 @@ class BootStatisticsView: UIView {
     func setDataCount(xRange: Int, yRange: UInt32) {
         
         let colors = ChartColorTemplates.vordiplom()[0...2]
-        let titleArr = ["开机时间", "工作时间"]
         
         let dataSets = (0..<2).map { i -> LineChartDataSet in
             
@@ -89,7 +140,7 @@ class BootStatisticsView: UIView {
             }
             
             let set = LineChartDataSet(values: yVals,
-                                       label: titleArr[i])
+                                       label: "")
             set.lineWidth = 1
             set.drawFilledEnabled = true
             set.drawCirclesEnabled = false

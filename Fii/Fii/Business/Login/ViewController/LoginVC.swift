@@ -154,27 +154,30 @@ class LoginVC: UIViewController {
         
         AlarmCenterAPI.GetAPPKey(userName: /*userNameTf.text ?? */"管理员",
                                  password: /*passwordTf.text ?? */"gw8888@") { [unowned self] (model) in
-                                    if model.appkey == nil || model.infokey == nil {
-                                        let v = AlertView()
-                                        v.titleOne = "登录失败"
-                                        v.titleTwo = "账号或密码错误, 请重新输入"
-                                        v.added(into: self.view)
-                                        v.snp.makeConstraints({ (make) in
-                                            make.edges.equalToSuperview()
-                                        })
-                                        v.confirmBtnTap = {
-                                            v.removeFromSuperview()
-                                        }
-                                        APP.isLogin = false
-                                    } else {
-                                        UserInfo.shared.appKey = model.appkey ?? ""
-                                        UserInfo.shared.infoKey = model.infokey ?? ""
-                                        
-                                        // Toast.show(message: "登录成功")
-                                        
-                                        APP.isLogin = true
-                                        self.dismiss(animated: true, completion: nil)
-                                    }
+//                                    if model.appkey == nil || model.infokey == nil {
+//                                        let v = AlertView()
+//                                        v.titleOne = "登录失败"
+//                                        v.titleTwo = "账号或密码错误, 请重新输入"
+//                                        v.added(into: self.view)
+//                                        v.snp.makeConstraints({ (make) in
+//                                            make.edges.equalToSuperview()
+//                                        })
+//                                        v.confirmBtnTap = {
+//                                            v.removeFromSuperview()
+//                                        }
+//                                        APP.isLogin = false
+//                                    } else {
+//                                        UserInfo.shared.appKey = model.appkey ?? ""
+//                                        UserInfo.shared.infoKey = model.infokey ?? ""
+//
+//                                        // Toast.show(message: "登录成功")
+//
+//                                        APP.isLogin = true
+//                                        self.dismiss(animated: true, completion: nil)
+//                                    }
+                                    
+                                    APP.isLogin = true
+                                    self.dismiss(animated: true, completion: nil)
                                     
                                     self.LoginBtnState(activityIndicator: activityIndicator)
         }

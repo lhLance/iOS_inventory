@@ -52,8 +52,8 @@ class HomeVC: UIViewController {
                 t.snp.makeConstraints({ (make) in
                     make.height.equalTo(205)
                     make.top.equalTo(20)
-                    make.left.equalTo(10)
-                    make.right.equalTo(-10)
+                    make.left.equalTo(20)
+                    make.right.equalTo(-20)
                 })
                 t.cornerRadius = 6.0
                 t.backgroundColor = UIColor.white
@@ -64,8 +64,8 @@ class HomeVC: UIViewController {
                 t.snp.makeConstraints({ (make) in
                     make.height.equalTo(220)
                     make.top.equalTo(timeView?.snp.bottom ?? 0).offset(15)
-                    make.left.equalTo(10)
-                    make.right.equalTo(-10)
+                    make.left.equalTo(20)
+                    make.right.equalTo(-20)
                 })
                 t.cornerRadius = 6.0
                 t.backgroundColor = UIColor.white
@@ -75,8 +75,8 @@ class HomeVC: UIViewController {
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
-                    make.left.equalTo(10)
-                    make.right.equalTo(-10)
+                    make.left.equalTo(20)
+                    make.right.equalTo(-20)
                     make.height.equalTo(200)
                 })
                 t.cornerRadius = 6.0
@@ -101,8 +101,8 @@ class HomeVC: UIViewController {
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(oeeeView?.snp.bottom ?? 0).offset(15)
-                    make.left.equalTo(10)
-                    make.right.equalTo(-10)
+                    make.left.equalTo(20)
+                    make.right.equalTo(-20)
                     make.height.equalTo(260)
                 })
                 t.cornerRadius = 6.0
@@ -113,8 +113,8 @@ class HomeVC: UIViewController {
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
                     make.top.equalTo(numOfPartsView?.snp.bottom ?? 0).offset(15)
-                    make.left.equalTo(10)
-                    make.right.equalTo(-10)
+                    make.left.equalTo(20)
+                    make.right.equalTo(-20)
                     make.height.equalTo(260)
                     make.bottom.equalTo(-20)
                 })
