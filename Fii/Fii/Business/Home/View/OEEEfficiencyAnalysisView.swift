@@ -54,10 +54,8 @@ class OEEEfficiencyAnalysisView: UIView {
             make.height.equalTo(120)
             make.centerX.equalToSuperview()
         })
-        circleView?.strokeColor = UIColor.hex(0xE94444)
-        circleView?.backColor = UIColor.hex(0xCECECE)
-        circleView?.progress = Float(oeeValue) / 100
-        circleView?.lineWidth = 10.0
+        circleView?.progress = 0.5
+        circleView?.lineWidth = 10
         
         oeeLabel = UILabel()
         oeeLabel?.Text("\(oeeValue) %").Font(.PFRegular(18)).TextAlignment(.center)
@@ -68,7 +66,4 @@ class OEEEfficiencyAnalysisView: UIView {
             make.height.equalTo(100)
         })
     }
-    
-    
-    
 }

@@ -76,6 +76,7 @@
 		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
 		CF5C075D2248C40400070FCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF5C075F2248C40400070FCA /* Localizable.strings */; };
 		CF63E728224339AB00D94D1E /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E727224339AB00D94D1E /* SDK.swift */; };
+		CF656629225F0C76009C6B03 /* FiiDashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF656628225F0C76009C6B03 /* FiiDashBoardView.swift */; };
 		CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76EEEC2238D56400182867 /* OpenScreenView.swift */; };
 		CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */; };
 		CF7CA00722239600005CE8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CA00622239600005CE8A3 /* Assets.xcassets */; };
@@ -247,6 +248,7 @@
 		CF63E78D2243854D00D94D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF63E78F2243855300D94D1E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		CF63E7912243855D00D94D1E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CF656628225F0C76009C6B03 /* FiiDashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiDashBoardView.swift; sourceTree = "<group>"; };
 		CF76EEEC2238D56400182867 /* OpenScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreenView.swift; sourceTree = "<group>"; };
 		CF7C9FFC222395FF005CE8A3 /* Fii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C9FFF222395FF005CE8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				CF7CA05B2223D7C6005CE8A3 /* DashLine.swift */,
 				CF7CA05A2223D7C6005CE8A3 /* MaqueeView.swift */,
 				049629802254E031004C2D1D /* FiiCircleView.swift */,
+				CF656628225F0C76009C6B03 /* FiiDashBoardView.swift */,
 				CF7CA05C2223D7C7005CE8A3 /* PenetrateView.swift */,
 				CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */,
 			);
@@ -1264,6 +1267,7 @@
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
 				34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */,
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
+				CF656629225F0C76009C6B03 /* FiiDashBoardView.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */,
