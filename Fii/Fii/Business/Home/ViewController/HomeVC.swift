@@ -19,8 +19,7 @@ class HomeVC: UIViewController {
     var oeeeView: OEEEfficiencyAnalysisView?
     var numOfPartsView: NumberOfPartsView?
     var bootStaticView: BootStatisticsView?
-    
-    var oeeeView2: FiiDashBoardView?
+    var refreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +36,11 @@ class HomeVC: UIViewController {
             s.snp.makeConstraints({ (make) in
                 make.edges.equalToSuperview()
             })
+        })
+        
+        refreshControl = UIRefreshControl().then({ (r) in
+            r.added(into: scrollView ?? UIView())
+            r.addTarget(self, action: #selector(loadData(_:)), for: .valueChanged)
         })
         
         containerView = UIView().then({ (c) in
@@ -83,20 +87,6 @@ class HomeVC: UIViewController {
                 t.backgroundColor = UIColor.white
             })
             
-//            oeeeView2 = FiiDashBoardView().then({ (t) in
-//                t.added(into: c)
-//                t.snp.makeConstraints({ (make) in
-//                    make.top.equalTo(equipmentRatioView?.snp.bottom ?? 0).offset(15)
-//                    make.left.equalTo(10)
-//                    make.right.equalTo(-10)
-//                    make.height.equalTo(200)
-//                })
-//                t.cornerRadius = 6.0
-//                t.backgroundColor = UIColor.white
-//
-//                t.setNeedsDisplay()
-//            })
-            
             numOfPartsView = NumberOfPartsView().then({ (t) in
                 t.added(into: c)
                 t.snp.makeConstraints({ (make) in
@@ -122,6 +112,16 @@ class HomeVC: UIViewController {
                 t.backgroundColor = UIColor.white
             })
         })
+    }
+    
+    @objc func loadData(_ refreshControl: UIRefreshControl) {
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            refreshControl.endRefreshing()
+            print("end refreshing...")
+        }
+        
+        print("loadData...")
     }
 
 }

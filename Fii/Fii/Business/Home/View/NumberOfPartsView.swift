@@ -13,6 +13,8 @@ class NumberOfPartsView: UIView {
 
     var chartView = BarChartView()
     var title: UILabel?
+    var timeLbl: UILabel?
+    var leftAxisFormatter: NumberFormatter?
     
     let valueArr: [Double] = [10, 8, 4, 12, 15, 9, 7, 9, 10, 17, 19, 20,
                               20, 21, 22, 24, 18, 9, 16, 25, 20, 23, 15, 13]
@@ -29,7 +31,16 @@ class NumberOfPartsView: UIView {
         setupView()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setupView() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
         
         title = UILabel()
         title?.added(into: self)
@@ -38,11 +49,19 @@ class NumberOfPartsView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("每小时加工件数").Font(.PFRegular(16))
+        title?.Text(LanguageHelper.getString(key: "home_num_of_parts_title")).Font(.PFRegular(16))
         
         setupChartView()
     }
 
+    @objc func reloadData() {
+        
+        title?.Text(LanguageHelper.getString(key: "home_num_of_parts_title"))
+        timeLbl?.Text(LanguageHelper.getString(key: "home_num_of_parts_hour"))
+        leftAxisFormatter?.negativeSuffix = " " + LanguageHelper.getString(key: "home_num_of_parts_part")
+        leftAxisFormatter?.positiveSuffix = " " + LanguageHelper.getString(key: "home_num_of_parts_part")
+    }
+    
     func setupChartView() {
         
         chartView.added(into: self)
@@ -60,7 +79,7 @@ class NumberOfPartsView: UIView {
         chartView.maxVisibleCount = 60
         chartView.setScaleEnabled(false)
         
-        _ = UILabel().then { (l) in
+        timeLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.width.equalTo(25)
@@ -68,7 +87,7 @@ class NumberOfPartsView: UIView {
                 make.right.equalTo(-6)
                 make.bottom.equalTo(-6)
             })
-            l.Text("小时").TextColor(UIColor.black).Font(UIFont.PFRegular(10))
+            l.Text(LanguageHelper.getString(key: "home_num_of_parts_hour")).TextColor(UIColor.black).Font(UIFont.PFRegular(10))
         }
         
         let xAxis = chartView.xAxis
@@ -78,16 +97,16 @@ class NumberOfPartsView: UIView {
         xAxis.labelCount = 7
         xAxis.drawGridLinesEnabled = false
         
-        let leftAxisFormatter = NumberFormatter()
-        leftAxisFormatter.minimumFractionDigits = 0
-        leftAxisFormatter.maximumFractionDigits = 1
-        leftAxisFormatter.negativeSuffix = " 件"
-        leftAxisFormatter.positiveSuffix = " 件"
+        leftAxisFormatter = NumberFormatter()
+        leftAxisFormatter?.minimumFractionDigits = 0
+        leftAxisFormatter?.maximumFractionDigits = 1
+        leftAxisFormatter?.negativeSuffix = " " + LanguageHelper.getString(key: "home_num_of_parts_part")
+        leftAxisFormatter?.positiveSuffix = " " + LanguageHelper.getString(key: "home_num_of_parts_part")
         
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = .systemFont(ofSize: 10)
         leftAxis.labelCount = 8
-        leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
+        leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter ?? NumberFormatter())
         leftAxis.labelPosition = .outsideChart
         leftAxis.spaceTop = 0.15
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES

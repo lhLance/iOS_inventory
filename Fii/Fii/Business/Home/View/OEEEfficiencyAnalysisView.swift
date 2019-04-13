@@ -40,6 +40,23 @@ class OEEEfficiencyAnalysisView: UIView {
         super.init(coder: aDecoder)
         
         setupView()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reloadData() {
+        
+        title?.Text(LanguageHelper.getString(key: "home_oee_efficenct_analyse_title"))
+        useRateLbl?.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_userate") + ":")
+        presentLbl?.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_presence") + ":")
+        GIndexLbl?.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_Gindex") + ":")
     }
     
     func setupView() {
@@ -51,7 +68,7 @@ class OEEEfficiencyAnalysisView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("OEE效率分析").Font(.PFRegular(16))
+        title?.Text(LanguageHelper.getString(key: "home_oee_efficenct_analyse_title")).Font(.PFRegular(16))
         
         circleView = FiiCircleView()
         circleView?.added(into: self)
@@ -81,7 +98,7 @@ class OEEEfficiencyAnalysisView: UIView {
                 make.top.equalTo(circleView?.snp.top ?? 0)
                 make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
             })
-            l.Text("可用率:").TextColor(UIColor.gray).Font(.PFRegular(14))
+            l.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_userate") + ":").TextColor(UIColor.gray).Font(.PFRegular(14))
         })
         
         useRateValueLbl = UILabel().then({ (l) in
@@ -99,7 +116,7 @@ class OEEEfficiencyAnalysisView: UIView {
                 make.centerY.equalTo(circleView?.snp.centerY ?? 0)
                 make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
             })
-            l.Text("表现性:").TextColor(UIColor.gray).Font(.PFRegular(14))
+            l.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_presence") + ":").TextColor(UIColor.gray).Font(.PFRegular(14))
         })
         
         presentValueLbl = UILabel().then({ (l) in
@@ -117,7 +134,7 @@ class OEEEfficiencyAnalysisView: UIView {
                 make.bottom.equalTo(circleView?.snp.bottom ?? 0)
                 make.left.equalTo(circleView?.snp.right ?? 0).offset(40)
             })
-            l.Text("质量指数:").TextColor(UIColor.gray).Font(.PFRegular(14))
+            l.Text(LanguageHelper.getString(key: "home_oee_efficent_analyse_Gindex") + ":").TextColor(UIColor.gray).Font(.PFRegular(14))
         })
         
         GIndexValueLbl = UILabel().then({ (l) in

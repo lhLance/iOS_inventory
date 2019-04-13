@@ -7,13 +7,45 @@
 */
 
 "home_title" = "Home";
+"home_time_efficency_analyse_title" = "Time efficiency analysis";
+"home_time_efficency_analyse_work" = "working";
+"home_time_efficency_analyse_wait" = "standby";
+"home_time_efficency_analyse_start" = "boot";
+"home_time_efficency_analyse_offline" = "offline";
+"home_time_efficency_analyse_alarm" = "alarm";
+"home_time_efficency_analyse_good" = "excellent";
+"home_time_efficency_analyse_decent" = "good";
+"home_time_efficency_analyse_middle" = "medium";
+"home_time_efficency_analyse_bad" = "poor";
+
+"home_device_efficency_analyse_title" = "Analysis of equipment work time";
+"home_device_efficency_analyse_wait" = "standby";
+"home_device_efficency_analyse_offline" = "disconnect";
+"home_device_efficency_analyse_charge" = "power ups";
+"home_device_efficency_analyse_alarm" = "alarm";
+"home_device_efficency_analyse_operate" = "operate";
+
+"home_oee_efficenct_analyse_title" = "OEE efficiency analysis";
+"home_oee_efficent_analyse_userate" = "availability";
+"home_oee_efficent_analyse_presence" = "performance";
+"home_oee_efficent_analyse_Gindex" = "quality Index";
+"home_num_of_parts_title" = "Number of parts per hour";
+"home_num_of_parts_hour" = "hour";
+"home_num_of_parts_part" = "piece";
+
+"home_start_statistic_title" = "Boot statistics";
+"home_start_statistic_min" = "min";
+"home_start_statistic_day" = "day";
+"home_start_statistic_start_time" = "boot time";
+"home_start_statistic_work_time" = "operating hours";
+
 "real_time_shot_title" = "Shot";
 "voice_title" = "Voice";
 "device_list_title" = "Device";
-"me_title" = "Me";
 
+"me_title" = "Me";
 "me_set_clearCache" = "Clear cache";
-"me_set_cache_size" = "cache size";
+"me_set_cache_size" = "Cache size";
 "me_set_checkUpdate" = "Check update";
 "me_set_language" = "Language";
 

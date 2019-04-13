@@ -15,7 +15,11 @@ class EquipmentWorkRatioAnalysisView: UIView {
     var title2: UILabel?
     var chartView: PieChartView?
     
-    let partiesTitleArr = ["待机", "断开", "通电", "报警", "运行"]
+    let partiesTitleArr = [LanguageHelper.getString(key: "home_device_efficency_analyse_wait"),
+                           LanguageHelper.getString(key: "home_device_efficency_analyse_offline"),
+                           LanguageHelper.getString(key: "home_device_efficency_analyse_charge"),
+                           LanguageHelper.getString(key: "home_device_efficency_analyse_alarm"),
+                           LanguageHelper.getString(key: "home_device_efficency_analyse_operate")]
     let partiesArr = [1, 2, 4.5, 2, 0.5]
     
     override init(frame: CGRect) {
@@ -30,7 +34,16 @@ class EquipmentWorkRatioAnalysisView: UIView {
         setupView()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setupView() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
         
         setupPieChartView()
     }
@@ -38,7 +51,7 @@ class EquipmentWorkRatioAnalysisView: UIView {
     func setupPieChartView() {
         
         title2 = UILabel().then({ (l) in
-            l.Text("设备工作时间占比分析").Font(.PFRegular(16))
+            l.Text(LanguageHelper.getString(key: "home_device_efficency_analyse_title")).Font(.PFRegular(16))
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
@@ -83,8 +96,6 @@ class EquipmentWorkRatioAnalysisView: UIView {
     func setDataCount(_ count: Int, range: UInt32) {
         
         let entries = (0..<count).map { (i) -> PieChartDataEntry in
-            // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets),
-            // since no values can be drawn above each other.
             return PieChartDataEntry(value: Double(partiesArr[i]),
                                      label: partiesTitleArr[i % partiesTitleArr.count])
         }
@@ -118,5 +129,10 @@ class EquipmentWorkRatioAnalysisView: UIView {
         
         chartView?.data = data
         chartView?.highlightValues(nil)
+    }
+    
+    @objc func reloadData() {
+        
+        setDataCount(5, range: 99)
     }
 }

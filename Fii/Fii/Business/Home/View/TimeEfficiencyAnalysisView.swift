@@ -19,8 +19,15 @@ class TimeEfficiencyAnalysisView: UIView {
     var chartView: PieChartView?
     var OEEStateLbl: UILabel?
     
-    let OEEState = ["优", "良", "中", "差"]
-    let OEENameArr = ["工作", "待机", "开机", "离线", "报警"]
+    let OEEState = [LanguageHelper.getString(key: "home_time_efficency_analyse_good"),
+                    LanguageHelper.getString(key: "home_time_efficency_analyse_decent"),
+                    LanguageHelper.getString(key: "home_time_efficency_analyse_middle"),
+                    LanguageHelper.getString(key: "home_time_efficency_analyse_bad")]
+    let OEENameArr = [LanguageHelper.getString(key: "home_time_efficency_analyse_work"),
+                      LanguageHelper.getString(key: "home_time_efficency_analyse_wait"),
+                      LanguageHelper.getString(key: "home_time_efficency_analyse_start"),
+                      LanguageHelper.getString(key: "home_time_efficency_analyse_offline"),
+                      LanguageHelper.getString(key: "home_time_efficency_analyse_alarm")]
     let OEEtimeArr = [8, 6, 5, 2, 3]
     let OEEtimeColorArr = [UIColor.hex(0xb7da73),
                            UIColor.hex(0xebdea4),
@@ -28,6 +35,12 @@ class TimeEfficiencyAnalysisView: UIView {
                            UIColor.hex(0xb0b0b0),
                            UIColor.hex(0xda7373)]
     
+    
+    var workLbl: UILabel?
+    var waitLbl: UILabel?
+    var bootLbl: UILabel?
+    var offlineLbl: UILabel?
+    var alarmLbl: UILabel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,8 +56,17 @@ class TimeEfficiencyAnalysisView: UIView {
     
     func setupView() {
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+        
         setupTimeEView()
         setupPieChartView()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setupTimeEView() {
@@ -56,7 +78,7 @@ class TimeEfficiencyAnalysisView: UIView {
             make.height.equalTo(30)
             make.centerX.equalToSuperview()
         })
-        title?.Text("时间效率分析").Font(.PFRegular(16))
+        title?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_title")).Font(.PFRegular(16))
         
         startTlbl = UILabel().then({ (l) in
             l.added(into: self)
@@ -68,7 +90,7 @@ class TimeEfficiencyAnalysisView: UIView {
             l.Text("0").TextColor(UIColor.gray).Font(.PFRegular(15))
         })
         
-        let workLbl = UILabel().then { (l) in
+        workLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.left.equalTo(15)
@@ -76,7 +98,7 @@ class TimeEfficiencyAnalysisView: UIView {
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("工作").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_work")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView = FiiLineView()
@@ -84,8 +106,8 @@ class TimeEfficiencyAnalysisView: UIView {
         lineView.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.width * 0.4)
             make.height.equalTo(6)
-            make.centerY.equalTo(workLbl.snp.centerY).offset(3)
-            make.left.equalTo(workLbl.snp.right).offset(10)
+            make.centerY.equalTo(workLbl?.snp.centerY ?? 0).offset(3)
+            make.left.equalTo(workLbl?.snp.right ?? 0).offset(10)
         }
         lineView.progress = Float(OEEtimeArr[0]) * 0.1
         lineView.strokeColor = UIColor.hex(0xb7da73)
@@ -109,15 +131,15 @@ class TimeEfficiencyAnalysisView: UIView {
             l.Text("24h").TextColor(UIColor.gray).Font(.PFRegular(15))
         })
         
-        let waitLbl = UILabel().then { (l) in
+        waitLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.left.equalTo(15)
-                make.top.equalTo(workLbl.snp.bottom).offset(10)
+                make.top.equalTo(workLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("待机").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_wait")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView2 = FiiLineView()
@@ -125,8 +147,8 @@ class TimeEfficiencyAnalysisView: UIView {
         lineView2.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.width * 0.4)
             make.height.equalTo(6)
-            make.centerY.equalTo(waitLbl.snp.centerY).offset(3)
-            make.left.equalTo(waitLbl.snp.right).offset(10)
+            make.centerY.equalTo(waitLbl?.snp.centerY ?? 0).offset(3)
+            make.left.equalTo(waitLbl?.snp.right ?? 0).offset(10)
         }
         lineView2.progress = Float(OEEtimeArr[1]) * 0.1
         lineView2.strokeColor = UIColor.hex(0xebdea4)
@@ -141,15 +163,15 @@ class TimeEfficiencyAnalysisView: UIView {
             l.Text("\(OEEtimeArr[1])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
-        let bootLbl = UILabel().then { (l) in
+        bootLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.left.equalTo(15)
-                make.top.equalTo(waitLbl.snp.bottom).offset(10)
+                make.top.equalTo(waitLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("开机").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_start")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView3 = FiiLineView()
@@ -157,8 +179,8 @@ class TimeEfficiencyAnalysisView: UIView {
         lineView3.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.width * 0.4)
             make.height.equalTo(6)
-            make.centerY.equalTo(bootLbl.snp.centerY).offset(3)
-            make.left.equalTo(bootLbl.snp.right).offset(10)
+            make.centerY.equalTo(bootLbl?.snp.centerY ?? 0).offset(3)
+            make.left.equalTo(bootLbl?.snp.right ?? 0).offset(10)
         }
         lineView3.progress = Float(OEEtimeArr[2]) * 0.1
         lineView3.strokeColor = UIColor.hex(0x84dce1)
@@ -173,15 +195,15 @@ class TimeEfficiencyAnalysisView: UIView {
             l.Text("\(OEEtimeArr[2])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
-        let offlineLbl = UILabel().then { (l) in
+        offlineLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.left.equalTo(15)
-                make.top.equalTo(bootLbl.snp.bottom).offset(10)
+                make.top.equalTo(bootLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("离线").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_offline")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView4 = FiiLineView()
@@ -189,8 +211,8 @@ class TimeEfficiencyAnalysisView: UIView {
         lineView4.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.width * 0.4)
             make.height.equalTo(6)
-            make.centerY.equalTo(offlineLbl.snp.centerY).offset(3)
-            make.left.equalTo(offlineLbl.snp.right).offset(10)
+            make.centerY.equalTo(offlineLbl?.snp.centerY ?? 0).offset(3)
+            make.left.equalTo(offlineLbl?.snp.right ?? 0).offset(10)
         }
         lineView4.progress = Float(OEEtimeArr[3]) * 0.1
         lineView4.strokeColor = UIColor.hex(0xb0b0b0)
@@ -205,15 +227,15 @@ class TimeEfficiencyAnalysisView: UIView {
             l.Text("\(OEEtimeArr[3])").TextColor(UIColor.gray).Font(.PFRegular(12))
         }
         
-        let alarmLbl = UILabel().then { (l) in
+        alarmLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.left.equalTo(15)
-                make.top.equalTo(offlineLbl.snp.bottom).offset(10)
+                make.top.equalTo(offlineLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
                 make.width.equalTo(25)
             })
-            l.Text("报警").TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_alarm")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
         }
         
         let lineView5 = FiiLineView()
@@ -221,8 +243,8 @@ class TimeEfficiencyAnalysisView: UIView {
         lineView5.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.width * 0.4)
             make.height.equalTo(6)
-            make.centerY.equalTo(alarmLbl.snp.centerY).offset(3)
-            make.left.equalTo(alarmLbl.snp.right).offset(10)
+            make.centerY.equalTo(alarmLbl?.snp.centerY ?? 0).offset(3)
+            make.left.equalTo(alarmLbl?.snp.right ?? 0).offset(10)
         }
         lineView5.progress = Float(OEEtimeArr[4]) * 0.1
         lineView5.strokeColor = UIColor.hex(0xda7373)
@@ -265,7 +287,6 @@ class TimeEfficiencyAnalysisView: UIView {
         chartView?.legend.enabled = false
         
         setDataCount(5, range: 99)
-        
         
         OEEStateLbl = UILabel().then({ (l) in
             l.added(into: chartView ?? UIView())
@@ -312,5 +333,15 @@ class TimeEfficiencyAnalysisView: UIView {
         
         chartView?.data = data
         chartView?.highlightValues(nil)
+    }
+    
+    @objc func reloadData() {
+        
+        title?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_title"))
+        workLbl?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_work"))
+        waitLbl?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_wait"))
+        bootLbl?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_start"))
+        offlineLbl?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_offline"))
+        alarmLbl?.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_alarm"))
     }
 }

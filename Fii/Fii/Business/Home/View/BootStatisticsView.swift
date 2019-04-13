@@ -14,6 +14,10 @@ class BootStatisticsView: UIView {
 
     var title: UILabel?
     var chartView: LineChartView!
+    var leftAxisFormatter: NumberFormatter?
+    var dayLbl: UILabel?
+    var startTime: UILabel?
+    var endTime: UILabel?
     
     let timeArr: [[Double]] = [[29, 29, 29, 29, 29, 77, 55, 39, 67, 90, 75, 30, 23, 3, 9],
                                [37, 35, 60, 12, 56, 44, 63, 27, 19, 20, 36, 36, 36, 36, 36]]
@@ -30,7 +34,16 @@ class BootStatisticsView: UIView {
         setupView()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setupView() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
         
         title = UILabel()
         title?.added(into: self)
@@ -39,9 +52,19 @@ class BootStatisticsView: UIView {
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
         })
-        title?.Text("开机统计").Font(.PFRegular(16))
+        title?.Text(LanguageHelper.getString(key: "home_start_statistic_title")).Font(.PFRegular(16))
         
         setupChartView()
+    }
+    
+    @objc func reloadData() {
+        
+        title?.Text(LanguageHelper.getString(key: "home_start_statistic_title"))
+        leftAxisFormatter?.negativeSuffix = " " + LanguageHelper.getString(key: "home_start_statistic_min")
+        leftAxisFormatter?.positiveSuffix = " " + LanguageHelper.getString(key: "home_start_statistic_min")
+        dayLbl?.Text(LanguageHelper.getString(key: "home_start_statistic_day"))
+        startTime?.Text(LanguageHelper.getString(key: "home_start_statistic_start_time"))
+        endTime?.Text(LanguageHelper.getString(key: "home_start_statistic_work_time"))
     }
     
     func setupChartView() {
@@ -56,15 +79,15 @@ class BootStatisticsView: UIView {
         }
         chartView.chartDescription?.enabled = false
         chartView.leftAxis.enabled = true
-        let leftAxisFormatter = NumberFormatter()
-        leftAxisFormatter.minimumFractionDigits = 0
-        leftAxisFormatter.maximumFractionDigits = 1
-        leftAxisFormatter.negativeSuffix = " 分钟"
-        leftAxisFormatter.positiveSuffix = " 分钟"
+        leftAxisFormatter = NumberFormatter()
+        leftAxisFormatter?.minimumFractionDigits = 0
+        leftAxisFormatter?.maximumFractionDigits = 1
+        leftAxisFormatter?.negativeSuffix = " " + LanguageHelper.getString(key: "home_start_statistic_min")
+        leftAxisFormatter?.positiveSuffix = " " + LanguageHelper.getString(key: "home_start_statistic_min")
         
         chartView.leftAxis.labelFont = .systemFont(ofSize: 10)
         chartView.leftAxis.labelCount = 8
-        chartView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
+        chartView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter ?? NumberFormatter())
         chartView.rightAxis.enabled = false
         chartView.rightAxis.drawAxisLineEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
@@ -73,7 +96,7 @@ class BootStatisticsView: UIView {
         chartView.setScaleEnabled(false)
         chartView.legend.enabled = false
         
-        _ = UILabel().then { (l) in
+        dayLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.width.equalTo(15)
@@ -81,45 +104,45 @@ class BootStatisticsView: UIView {
                 make.right.equalTo(-3)
                 make.bottom.equalTo(-17)
             })
-            l.Text("天").TextColor(UIColor.black).Font(UIFont.PFRegular(10))
+            l.Text(LanguageHelper.getString(key: "home_start_statistic_day")).TextColor(UIColor.black).Font(UIFont.PFRegular(10))
         }
         
-        let startTime = UILabel().then { (l) in
+        startTime = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.centerX.equalTo(self.snp.centerX).offset(-40)
                 make.top.equalTo(chartView.snp.bottom)
                 make.height.equalTo(20)
             })
-            l.Text("开机时间").Font(UIFont.PFRegular(10))
+            l.Text(LanguageHelper.getString(key: "home_start_statistic_start_time")).Font(UIFont.PFRegular(10))
         }
         
         _ = UIView().then({ (v) in
             v.added(into: self)
             v.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(8)
-                make.right.equalTo(startTime.snp.left).offset(-3)
-                make.centerY.equalTo(startTime.snp.centerY)
+                make.right.equalTo(startTime?.snp.left ?? 0).offset(-3)
+                make.centerY.equalTo(startTime?.snp.centerY ?? 0)
             })
             v.backgroundColor = UIColor.cyan
         })
         
-        let endTime = UILabel().then({ (l) in
+        endTime = UILabel().then({ (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
                 make.centerX.equalTo(self.snp.centerX).offset(40)
                 make.top.equalTo(chartView.snp.bottom)
                 make.height.equalTo(20)
             })
-            l.Text("工作时间").Font(UIFont.PFRegular(10))
+            l.Text(LanguageHelper.getString(key: "home_start_statistic_work_time")).Font(UIFont.PFRegular(10))
         })
         
         _ = UIView().then({ (v) in
             v.added(into: self)
             v.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(8)
-                make.right.equalTo(endTime.snp.left).offset(-3)
-                make.centerY.equalTo(endTime.snp.centerY)
+                make.right.equalTo(endTime?.snp.left ?? 0).offset(-3)
+                make.centerY.equalTo(endTime?.snp.centerY ?? 0)
             })
             v.backgroundColor = UIColor.yellow
         })

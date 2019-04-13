@@ -7,11 +7,43 @@
 */
 
 "home_title" = "首页";
+"home_time_efficency_analyse_title" = "时间效率分析";
+"home_time_efficency_analyse_work" = "工作";
+"home_time_efficency_analyse_wait" = "待机";
+"home_time_efficency_analyse_start" = "开机";
+"home_time_efficency_analyse_offline" = "离线";
+"home_time_efficency_analyse_alarm" = "报警";
+"home_time_efficency_analyse_good" = "优";
+"home_time_efficency_analyse_decent" = "良";
+"home_time_efficency_analyse_middle" = "中";
+"home_time_efficency_analyse_bad" = "差";
+
+"home_device_efficency_analyse_title" = "设备工作占比时间分析";
+"home_device_efficency_analyse_wait" = "待机";
+"home_device_efficency_analyse_offline" = "断开";
+"home_device_efficency_analyse_charge" = "通电";
+"home_device_efficency_analyse_alarm" = "报警";
+"home_device_efficency_analyse_operate" = "运行";
+
+"home_oee_efficenct_analyse_title" = "OEE效率分析";
+"home_oee_efficent_analyse_userate" = "可用率";
+"home_oee_efficent_analyse_presence" = "表现性";
+"home_oee_efficent_analyse_Gindex" = "质量指数";
+"home_num_of_parts_title" = "每小时加工件数";
+"home_num_of_parts_hour" = "小时";
+"home_num_of_parts_part" = "件";
+
+"home_start_statistic_title" = "开机统计";
+"home_start_statistic_min" = "分钟";
+"home_start_statistic_day" = "天";
+"home_start_statistic_start_time" = "开机时间";
+"home_start_statistic_work_time" = "工作时间";
+
 "real_time_shot_title" = "实时快照";
 "voice_title" = "语音";
 "device_list_title" = "设备数据";
-"me_title" = "我的";
 
+"me_title" = "我的";
 "me_set_clearCache" = "清理缓存";
 "me_set_cache_size" = "缓存大小";
 "me_set_checkUpdate" = "检查更新";
