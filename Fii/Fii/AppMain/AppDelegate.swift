@@ -111,14 +111,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      tag: tag)
         item.selectedImage = selectImage.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem = item
+        vc.title = title
         
-        let navCon = FiiNavgationController.init(rootViewController: vc)
-        
+        let navCon = FiiNavgationController(rootViewController: vc)
+        if vc.isKind(of: RealTimeVC.self) {
+            navCon.setNavBarColor(UIColor.hex(0x242426))
+            navCon.setTextColor(UIColor.white)
+        }
         return navCon
-    }
-    
-    @objc func leftBtnTapped() {
-        
     }
     
     func setupOpenScreenView(vc: UIViewController) {

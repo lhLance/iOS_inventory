@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Then
 import Charts
 
 class TimeEfficiencyAnalysisView: UIView {
@@ -93,18 +94,21 @@ class TimeEfficiencyAnalysisView: UIView {
         workLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.left.equalTo(15)
+                make.left.equalTo(5)
                 make.top.equalTo(startTlbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
-                make.width.equalTo(25)
+                make.width.equalTo(33)
             })
-            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_work")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_work"))
+                .TextColor(UIColor.hex(0x000000))
+                .Font(.PFRegular(12))
+                .TextAlignment(.center)
         }
         
         let lineView = FiiLineView()
         lineView.added(into: self)
         lineView.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.width * 0.4)
+            make.width.equalTo(UIScreen.width * 0.36)
             make.height.equalTo(6)
             make.centerY.equalTo(workLbl?.snp.centerY ?? 0).offset(3)
             make.left.equalTo(workLbl?.snp.right ?? 0).offset(10)
@@ -134,18 +138,21 @@ class TimeEfficiencyAnalysisView: UIView {
         waitLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.left.equalTo(15)
+                make.left.equalTo(5)
                 make.top.equalTo(workLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
-                make.width.equalTo(25)
+                make.width.equalTo(33)
             })
-            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_wait")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_wait"))
+                .TextColor(UIColor.hex(0x000000))
+                .Font(.PFRegular(12))
+                .TextAlignment(.center)
         }
         
         let lineView2 = FiiLineView()
         lineView2.added(into: self)
         lineView2.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.width * 0.4)
+            make.width.equalTo(UIScreen.width * 0.36)
             make.height.equalTo(6)
             make.centerY.equalTo(waitLbl?.snp.centerY ?? 0).offset(3)
             make.left.equalTo(waitLbl?.snp.right ?? 0).offset(10)
@@ -166,18 +173,21 @@ class TimeEfficiencyAnalysisView: UIView {
         bootLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.left.equalTo(15)
+                make.left.equalTo(5)
                 make.top.equalTo(waitLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
-                make.width.equalTo(25)
+                make.width.equalTo(33)
             })
-            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_start")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_start"))
+                .TextColor(UIColor.hex(0x000000))
+                .Font(.PFRegular(12))
+                .TextAlignment(.center)
         }
         
         let lineView3 = FiiLineView()
         lineView3.added(into: self)
         lineView3.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.width * 0.4)
+            make.width.equalTo(UIScreen.width * 0.36)
             make.height.equalTo(6)
             make.centerY.equalTo(bootLbl?.snp.centerY ?? 0).offset(3)
             make.left.equalTo(bootLbl?.snp.right ?? 0).offset(10)
@@ -198,18 +208,21 @@ class TimeEfficiencyAnalysisView: UIView {
         offlineLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.left.equalTo(15)
+                make.left.equalTo(5)
                 make.top.equalTo(bootLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
-                make.width.equalTo(25)
+                make.width.equalTo(33)
             })
-            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_offline")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_offline"))
+                .TextColor(UIColor.hex(0x000000))
+                .Font(.PFRegular(12))
+                .TextAlignment(.center)
         }
         
         let lineView4 = FiiLineView()
         lineView4.added(into: self)
         lineView4.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.width * 0.4)
+            make.width.equalTo(UIScreen.width * 0.36)
             make.height.equalTo(6)
             make.centerY.equalTo(offlineLbl?.snp.centerY ?? 0).offset(3)
             make.left.equalTo(offlineLbl?.snp.right ?? 0).offset(10)
@@ -230,18 +243,21 @@ class TimeEfficiencyAnalysisView: UIView {
         alarmLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.left.equalTo(15)
+                make.left.equalTo(5)
                 make.top.equalTo(offlineLbl?.snp.bottom ?? 0).offset(10)
                 make.height.equalTo(15)
-                make.width.equalTo(25)
+                make.width.equalTo(33)
             })
-            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_alarm")).TextColor(UIColor.hex(0x000000)).Font(.PFRegular(12))
+            l.Text(LanguageHelper.getString(key: "home_time_efficency_analyse_alarm"))
+                .TextColor(UIColor.hex(0x000000))
+                .Font(.PFRegular(12))
+                .TextAlignment(.center)
         }
         
         let lineView5 = FiiLineView()
         lineView5.added(into: self)
         lineView5.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.width * 0.4)
+            make.width.equalTo(UIScreen.width * 0.36)
             make.height.equalTo(6)
             make.centerY.equalTo(alarmLbl?.snp.centerY ?? 0).offset(3)
             make.left.equalTo(alarmLbl?.snp.right ?? 0).offset(10)

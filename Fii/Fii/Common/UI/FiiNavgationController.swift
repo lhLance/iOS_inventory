@@ -34,7 +34,15 @@ class FiiNavgationController: UINavigationController {
     
     func setNavBarColor(_ color: UIColor) {
         
-        navigationBar.isTranslucent = UIColor.clear == color
+        // navigationBar.isTranslucent = UIColor.clear == color
         navigationBar.barTintColor = color
+    }
+    
+    func setTextColor(_ color: UIColor) {
+        
+        navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.PFRegular(18)
+        ]
     }
 }
