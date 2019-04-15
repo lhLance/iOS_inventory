@@ -108,6 +108,4 @@ extension CloumnCategoryDetailController{
         print("传回索引是  \(section) + \(row)")
     }
     
-
-    
 }

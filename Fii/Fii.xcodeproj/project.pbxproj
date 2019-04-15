@@ -23,9 +23,9 @@
 		04F39150225391320014604B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3914F225391320014604B /* UserInfoVC.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
+		3400A38B225F1FD200784F77 /* MonitorShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3400A38A225F1FD200784F77 /* MonitorShapeButton.m */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
-		34787718225C787A00B2689E /* MonitorShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787717225C787A00B2689E /* MonitorShapeButton.swift */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
 		3478771E225C8AA600B2689E /* IslandMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771A225C8AA500B2689E /* IslandMode.gif */; };
 		3478771F225C8AA600B2689E /* VisitMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771B225C8AA600B2689E /* VisitMode.gif */; };
@@ -168,9 +168,10 @@
 		04F3914F225391320014604B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		3400A389225F1FD200784F77 /* MonitorShapeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorShapeButton.h; sourceTree = "<group>"; };
+		3400A38A225F1FD200784F77 /* MonitorShapeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorShapeButton.m; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
-		34787717225C787A00B2689E /* MonitorShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorShapeButton.swift; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
 		3478771A225C8AA500B2689E /* IslandMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IslandMode.gif; sourceTree = "<group>"; };
 		3478771B225C8AA600B2689E /* VisitMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VisitMode.gif; sourceTree = "<group>"; };
@@ -410,7 +411,8 @@
 				34F38D64224CA3380059E19A /* CollectionNomalCell.swift */,
 				34F38D65224CA3380059E19A /* CollectionNomalCell.xib */,
 				34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */,
-				34787717225C787A00B2689E /* MonitorShapeButton.swift */,
+				3400A389225F1FD200784F77 /* MonitorShapeButton.h */,
+				3400A38A225F1FD200784F77 /* MonitorShapeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1206,6 +1208,7 @@
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
+				3400A38B225F1FD200784F77 /* MonitorShapeButton.m in Sources */,
 				34F38D69224CA3380059E19A /* CloumnCategoryMenuTableController.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				34F38D68224CA3380059E19A /* CloumnCategoryDetailController.swift in Sources */,
@@ -1231,7 +1234,6 @@
 				CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */,
 				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				34F38D6D224CA3380059E19A /* CollectionHeadView.swift in Sources */,
-				34787718225C787A00B2689E /* MonitorShapeButton.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */,
 				34F38D83224CADB50059E19A /* RealTimelController.swift in Sources */,

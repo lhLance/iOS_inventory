@@ -37,6 +37,7 @@ class DeviceListVC: UIViewController {
         childVcs.append(toolingLineVc)
         
         let  videoMonitorC = VideoMonitorController()
+        videoMonitorC.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
         childVcs.append(videoMonitorC)
 
         
