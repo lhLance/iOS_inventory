@@ -25,7 +25,7 @@ extension UIScreen {
     static let safeAreaBottomHeight = 49.cgFloat
 }
 
-let kStatusX_H = UIDevice.current.isIphoneXMore() ? 20 : 0
+let kStatusX_H = UIDevice.isPhoneXorMore ? 20 : 0
 let kStatusBarH: CGFloat = CGFloat(20 + kStatusX_H)
 let kNavigationBarH: CGFloat = CGFloat(44)
 let kTabBottomH = CGFloat(49)

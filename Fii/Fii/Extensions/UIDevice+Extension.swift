@@ -27,15 +27,5 @@ extension UIDevice {
         return UIScreen.main.bounds.size.height == 568
     }
     
-    /*判断是否是刘海屏*/
-    public func isIphoneXMore() -> Bool
-    {
-        var isMore: Bool = false
-        if #available(iOS 11.0, *) {
-            isMore = CGFloat((UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!) > CGFloat(0)
-        }
-        return isMore
-    }
-    
     static let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
 }

@@ -129,6 +129,7 @@
 		CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */; };
 		CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA83706223CBEB60054F311 /* UserInfo.swift */; };
 		CFB0487D2254A041004F2C6E /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB0487C2254A041004F2C6E /* BalloonMarker.swift */; };
+		CFB5FD15226428D100E37EE6 /* FiiNavgationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5FD14226428D100E37EE6 /* FiiNavgationController.swift */; };
 		CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3DD502244D15C006CB9E7 /* APP.swift */; };
 /* End PBXBuildFile section */
 
@@ -308,6 +309,7 @@
 		CFA4D43522432A7000AC586A /* CustomerServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceVC.swift; sourceTree = "<group>"; };
 		CFA83706223CBEB60054F311 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CFB0487C2254A041004F2C6E /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		CFB5FD14226428D100E37EE6 /* FiiNavgationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiNavgationController.swift; sourceTree = "<group>"; };
 		CFE3DD502244D15C006CB9E7 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		DE0A8E7197E2EA533245643F /* Pods-Fii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.release.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -639,6 +641,7 @@
 				046F9123225F65F1008EB2B6 /* FiiLineView.swift */,
 				CF7CA05C2223D7C7005CE8A3 /* PenetrateView.swift */,
 				CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */,
+				CFB5FD14226428D100E37EE6 /* FiiNavgationController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1200,6 +1203,7 @@
 				34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */,
 				34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
+				CFB5FD15226428D100E37EE6 /* FiiNavgationController.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
 				04F39150225391320014604B /* UserInfoVC.swift in Sources */,
