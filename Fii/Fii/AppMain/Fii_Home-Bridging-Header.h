@@ -14,5 +14,7 @@
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEPocketsphinxController.h>
 #import "VoiceCurveView.h"
+#import "MonitorShapeButton.h"
+
 
 #endif /* Fii_Home_Bridging_Header_h */
