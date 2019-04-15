@@ -19,7 +19,11 @@ private let reuseIdentifier = "Cell"
 
 class RealTimelController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    private let titleAry: NSArray = [("孤岛模式","IslandMode.gif"),("巡航模式","loopMode.gif"),("参观模式","VisitMode.gif"),("顺序模式","SequentialMode.gif"),("分布式模式","DistributionalMode.gif")]
+    
+    
+//    LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.red).Font(.PFRegular(16)
+    
+    private let titleAry: NSArray = [(LanguageHelper.getString(key: "realTime_Island"),"IslandMode.gif"),(LanguageHelper.getString(key: "realTime_loop"),"loopMode.gif"),(LanguageHelper.getString(key: "realTime_Visit"),"VisitMode.gif"),(LanguageHelper.getString(key: "realTime_Sequential"),"SequentialMode.gif"),(LanguageHelper.getString(key: "realTime_Distributional"),"DistributionalMode.gif")]
     
     
     

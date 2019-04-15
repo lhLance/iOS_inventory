@@ -77,3 +77,8 @@
 "me_settings" = "Settings";
 "me_log_out" = "Log out";
 
+"realTime_Island" = "孤岛模式";
+"realTime_loop" = "巡航模式";
+"realTime_Distributional" = "分布式模式";
+"realTime_Sequential" = "顺序模式";
+"realTime_Visit" = "参观模式";

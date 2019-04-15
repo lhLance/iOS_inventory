@@ -76,3 +76,9 @@
 "me_like_not" = "該功能暫未開啟";
 "me_settings" = "設置";
 "me_log_out" = "退出登錄";
+
+"realTime_Island" = "孤島模式";
+"realTime_loop" = "巡航模式";
+"realTime_Distributional" = "分佈式模式";
+"realTime_Sequential" = "順序模式";
+"realTime_Visit" = "參觀模式";
