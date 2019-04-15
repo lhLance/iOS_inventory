@@ -113,15 +113,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc.tabBarItem = item
         
         let navCon = FiiNavgationController.init(rootViewController: vc)
-        navCon.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.PFRegular(18)
-        ]
-//        // 筛选
-//        let leftBtn = UIButton.init("返回", UIColor.hex(0xf6f6f6), UIFont.PFMedium(13))
-//        leftBtn.addTarget(self, action: #selector(leftBtnTapped), for: .touchUpInside)
-//        leftBtn.sizeToFit()
-//        navCon.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBtn)
         
         return navCon
     }
