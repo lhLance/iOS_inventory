@@ -154,7 +154,7 @@ class MeVC: UIViewController {
             } else {
                 cell.snp.makeConstraints { (make) in
                     make.left.right.equalToSuperview()
-                    make.top.equalTo(topView.snp.bottom)
+                    make.top.equalTo(topView.snp.bottom).offset(10)
                     make.height.equalTo(50)
                 }
             }
@@ -250,7 +250,7 @@ class Cell: UIView {
         
         backgroundColor = UIColor.white
         
-        let tapGesture = UITapGestureRecognizer.init()
+        let tapGesture = UITapGestureRecognizer()
         tapGesture.numberOfTapsRequired = 1
         tapGesture.addTarget(self, action: #selector(tapGestureBtnTapped))
         
