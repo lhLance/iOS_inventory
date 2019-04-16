@@ -164,6 +164,7 @@ extension PageTitleView{
         let moveX = moveTotalX * progress
         scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
         
+        
         // 颜色的转变
         let colorDelta = (kSelectColor.0 - kNormalColor.0,kSelectColor.1 - kNormalColor.1,kSelectColor.2 - kNormalColor.2)
         

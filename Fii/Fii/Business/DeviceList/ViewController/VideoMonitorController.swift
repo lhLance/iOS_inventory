@@ -15,6 +15,17 @@ class VideoMonitorController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.frame = UIScreen.main.bounds   // 增加这一句 即可
 
+        let gradientLayer0 = CAGradientLayer()
+        gradientLayer0.cornerRadius = 10
+        gradientLayer0.frame = self.view.bounds
+        gradientLayer0.colors = [
+            UIColor(red: 51.0 / 255.0, green: 87.0 / 255.0, blue: 171.0 / 255.0, alpha: 1.0).cgColor,
+            UIColor(red: 212.0 / 255.0, green: 22.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0).cgColor]
+        gradientLayer0.locations = [0, 1]
+        gradientLayer0.startPoint = CGPoint(x: 0, y: 1)
+        gradientLayer0.endPoint = CGPoint(x: 1, y: 1)
+        self.view.layer.addSublayer(gradientLayer0)
+        
         setupUI()
     }
 
