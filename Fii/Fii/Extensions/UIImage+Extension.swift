@@ -31,6 +31,27 @@ extension UIImage {
         return img
     }
     
+    static func drawLeftToRightImg(colorLeft: UIColor, colorRight: UIColor ,size:CGSize) -> UIImage {
+        
+        let height: CGFloat = UIDevice.isPhoneXorMore ? 88 : 64
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
+        let ctx = UIGraphicsGetCurrentContext()!
+        let colorSpace = CGColorSpace.init(name: CGColorSpace.sRGB)
+        let colors = [colorLeft.cgColor,
+                      colorRight.cgColor]
+        let gradient = CGGradient.init(colorsSpace: colorSpace, colors: colors as CFArray, locations: nil)
+        ctx.drawLinearGradient(gradient!,
+                               start: CGPoint.init(x: 0, y: 0),
+                               end: CGPoint.init(x: size.width, y: size.height),
+                               options: .drawsAfterEndLocation)
+        let img = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return img
+    }
+    
+    
     /// 根据颜色生成图片
     static func createImgForColor(_ color: UIColor, rect: CGRect = CGRect.init(x: 0, y: 0, width: 1, height: 1)) -> UIImage {
         let rect = rect

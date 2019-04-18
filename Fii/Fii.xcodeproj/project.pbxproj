@@ -26,6 +26,7 @@
 		3400A38B225F1FD200784F77 /* MonitorShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3400A38A225F1FD200784F77 /* MonitorShapeButton.m */; };
 		3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37A2265C9C600EEE390 /* YTPageStyle.swift */; };
 		3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37C2265CE0900EEE390 /* YTPageView.swift */; };
+		3404A3812268557900EEE390 /* YTProgressLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A3802268557900EEE390 /* YTProgressLineView.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
@@ -73,6 +74,7 @@
 		34F38D86224CAE210059E19A /* RealTimeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D84224CAE210059E19A /* RealTimeCollectionCell.swift */; };
 		34F38D87224CAE210059E19A /* RealTimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D85224CAE210059E19A /* RealTimeCollectionCell.xib */; };
 		34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */; };
+		34F6502E2268A2CA009DD72E /* YTSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F6502D2268A2C9009DD72E /* YTSegmentControl.swift */; };
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
@@ -175,6 +177,7 @@
 		3400A38A225F1FD200784F77 /* MonitorShapeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorShapeButton.m; sourceTree = "<group>"; };
 		3404A37A2265C9C600EEE390 /* YTPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStyle.swift; sourceTree = "<group>"; };
 		3404A37C2265CE0900EEE390 /* YTPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageView.swift; sourceTree = "<group>"; };
+		3404A3802268557900EEE390 /* YTProgressLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTProgressLineView.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		34F38D84224CAE210059E19A /* RealTimeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeCollectionCell.swift; sourceTree = "<group>"; };
 		34F38D85224CAE210059E19A /* RealTimeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealTimeCollectionCell.xib; sourceTree = "<group>"; };
 		34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnFirstCategorTableViewCell.swift; sourceTree = "<group>"; };
+		34F6502D2268A2C9009DD72E /* YTSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSegmentControl.swift; sourceTree = "<group>"; };
 		37B21BF90204BBECB6465515 /* Pods-Fii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fii.debug.xcconfig"; path = "Target Support Files/Pods-Fii/Pods-Fii.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
@@ -374,6 +378,8 @@
 				34905B64224F17C9006D46CA /* ChatTableViewCell.swift */,
 				34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */,
 				34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */,
+				3404A3802268557900EEE390 /* YTProgressLineView.swift */,
+				34F6502D2268A2C9009DD72E /* YTSegmentControl.swift */,
 				349BE92B2253076A00674B61 /* VoiceCurveView.h */,
 				349BE92A2253076900674B61 /* VoiceCurveView.m */,
 			);
@@ -1219,6 +1225,7 @@
 				CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */,
 				CF7CA05F2223D7C7005CE8A3 /* PenetrateView.swift in Sources */,
 				3400A38B225F1FD200784F77 /* MonitorShapeButton.m in Sources */,
+				34F6502E2268A2CA009DD72E /* YTSegmentControl.swift in Sources */,
 				34F38D69224CA3380059E19A /* CloumnCategoryMenuTableController.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				34F38D68224CA3380059E19A /* CloumnCategoryDetailController.swift in Sources */,
@@ -1284,6 +1291,7 @@
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
 				34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */,
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
+				3404A3812268557900EEE390 /* YTProgressLineView.swift in Sources */,
 				CF656629225F0C76009C6B03 /* FiiDashBoardView.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */,

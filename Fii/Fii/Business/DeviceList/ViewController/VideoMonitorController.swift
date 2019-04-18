@@ -8,23 +8,20 @@
 
 import UIKit
 
+private let margin_x:CGFloat = 10.0
+private let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
+
 class VideoMonitorController: UIViewController {
+//    var progressV:YTProgressLineView!
+    let dataArray:[String]! = ["1","2","3","4","5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.frame = UIScreen.main.bounds   // 增加这一句 即可
+        self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
+        
 
-        let gradientLayer0 = CAGradientLayer()
-        gradientLayer0.cornerRadius = 10
-        gradientLayer0.frame = self.view.bounds
-        gradientLayer0.colors = [
-            UIColor(red: 51.0 / 255.0, green: 87.0 / 255.0, blue: 171.0 / 255.0, alpha: 1.0).cgColor,
-            UIColor(red: 212.0 / 255.0, green: 22.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0).cgColor]
-        gradientLayer0.locations = [0, 1]
-        gradientLayer0.startPoint = CGPoint(x: 0, y: 1)
-        gradientLayer0.endPoint = CGPoint(x: 1, y: 1)
-        self.view.layer.addSublayer(gradientLayer0)
         
         setupUI()
     }
@@ -38,44 +35,10 @@ extension VideoMonitorController{
     func setupUI()
     {
 
-        var height: CGFloat = 64 + 20
-        var titleArray = ["倍速调整","关闭光圈","焦点调整"]
-        for i in 0..<titleArray.count {
-            //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
-            let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50), buttonType: ButtonTypeVPlusAndMin)
-            buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickTypeTouchUpInside)
-            buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickTypeLongPress)
-            view.addSubview(buttonView)
-            
-            var center = CGPoint.zero
-            var image: UIImage?
-            switch i {
-            case 0:
-                //  圆形五个按钮 上下左右 中心
-                center = CGPoint(x: view.frame.midX - 100, y:  buttonView.frame.height / 2 + height)
-            case 1:
-                //  单个圆形按钮  只响应 SelectButtonPosition_Center
-                center = CGPoint(x: view.frame.midX , y:  buttonView.frame.height / 2 + height)
-            case 2:
-                // 圆角按钮 只响应 SelectButtonPosition_Center
-                center = CGPoint(x: view.frame.midX + 100, y:  buttonView.frame.height / 2 + height)
-            default: break
-                
-            }
-            if image != nil {
-                
-                buttonView.image = image
-            }
-            buttonView.setTitle(titleArray[i])
-            buttonView.center = center
-            buttonView.tag = i
-            if i == titleArray.count - 1{
-                height = buttonView.frame.maxY + 30
-            }
-        }
-
+        var height: CGFloat = 264 + 20
+        progressView()
         
-        titleArray = ["OK"]
+        var titleArray  = ["OK"]
         for i in 0..<1 {
             //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
             let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50), buttonType: ButtonType(rawValue: UInt32(i)))
@@ -102,6 +65,9 @@ extension VideoMonitorController{
         }
         
     }
+    
+
+    
     
     @objc func buttonClick(_ button: MonitorShapeButton?) {
         
@@ -176,10 +142,130 @@ extension VideoMonitorController{
     }
 }
 
+extension VideoMonitorController:YTSegmentControlDelegate{
+    
+    func progressView(){
+
+        
+        let btn_height:CGFloat = 50
+        var titleAry:[String] = ["光圈","倍速","焦点"]
+        let margin_x:CGFloat = 5
+        let buttonW:CGFloat = 33
+        let progressOrigit_h:CGFloat = 100.0
+
+        for i in 0..<titleAry.count
+        {
+            let progressOrigitH = progressOrigit_h + btn_height * CGFloat(i)
+            let label = UILabel()
+            label.frame = CGRect(x:margin_x + 10.0, y: progressOrigitH, width: 40, height: 33)
+            label.text = titleAry[i]
+            label.FontColor(UIFont.PFRegular(14), titleColor).TextAlignment(.center)
+            label.added(into: view)
+            
+            if i == 0
+            {
+                let itles  = [" ", " "]
+                let selegmentV = YTSegmentControl(frame: CGRect(x: label.frame.maxX + margin_x, y: progressOrigitH, width: self.view.frame.size.width - label.frame.maxX - 20 - margin_x*2, height: 33), titles: itles)
+                selegmentV.delegate = self as YTSegmentControlDelegate
+                selegmentV.added(into: view)
+            }
+            else
+            {
+                let progressV = YTProgressLineView.init(frame: CGRect.init(x: label.frame.maxX + margin_x, y: progressOrigitH, width: self.view.frame.size.width - label.frame.maxX*2 - buttonW*2, height: 33), dataArr: dataArray)
+                progressV.tag = 100+i
+                self.view.addSubview(progressV)
+            
+                let preStepBtn = UIButton()
+                preStepBtn.tag = 200+i
+                preStepBtn.setBackgroundImage(UIImage(named: "virtual_btn_jian"), for: UIControl.State.normal)
+                preStepBtn.frame = CGRect(x: progressV.frame.maxX + 15, y: progressOrigitH, width: buttonW, height: 33)
+                preStepBtn.addTarget(self, action: #selector(preStep), for: .touchUpInside);
+                self.view.addSubview(preStepBtn)
+
+                let nextStepBtn = UIButton()
+                nextStepBtn.tag = 300+i
+                nextStepBtn.setBackgroundImage(UIImage(named: "virtual_btn_yinliangjia"), for: UIControl.State.normal)
+                nextStepBtn.frame = CGRect(x: preStepBtn.frame.maxX + 10, y: progressOrigitH, width: buttonW, height: 33)
+                nextStepBtn.addTarget(self, action: #selector(nextStep), for: .touchUpInside);
+                self.view.addSubview(nextStepBtn)
+            }
+        }
+        
+
+    }
+    
+
+    
+    //1、没有标签的进度条 上一步
+    @objc func preStep(_ sender: UIButton) {
+        
+        let tag = sender.tag - 100;
+        let progressV:YTProgressLineView = view.TagView(tag)  as! YTProgressLineView
+        guard progressV.index! >  0  else {
+            return
+        }
+        progressV.index = progressV.index - 1
+    }
+    
+    //1、没有标签的进度条 下一步
+    @objc func nextStep(_ sender: UIButton)
+    {
+        let tag = sender.tag - 200;
+        let progressV:YTProgressLineView = view.TagView(tag)  as! YTProgressLineView
+        guard  progressV.index! < self.dataArray.count else {
+            return
+        }
+        progressV.index = progressV.index + 1
+    }
+    
+//    func setUpYtSelegement(){
+//        let itles  = [" ", " "]
+//        let test = YTSegmentControl(frame: CGRect(x: 5, y: 150, width: view.frame.size.width - 5, height: 30), titles: itles)
+//        test.delegate = self as YTSegmentControlDelegate
+//        view.addSubview(test)
+//    }
+    
+    func ytsegmentedControl(_ control: YTSegmentControl?, didSeletRow row: Int) {
+        print("点击是:\(row)")
+    }
+    
+}
+
 
 /*
 extension VideoMonitorController{
-    
+ 
+ 
+ func setAdd(){
+ //        let buttonView = MonitorShapeButton(frame: CGRect(x: progressV.frame.maxX, y: 100, width: 100, height: 50), buttonType: ButtonType(rawValue: UInt32(4)))
+ //        buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickTypeTouchUpInside)
+ //        buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickTypeLongPress)
+ //        view.addSubview(buttonView)
+ //        var image: UIImage?
+ //        if image != nil {
+ //            buttonView.image = image
+ //        }
+ //        buttonView.setTitle("")
+ //        buttonView.tag = 4
+ 
+ 
+ //        let label = UILabel().then({ (lab) in
+ //            lab.FontColor(UIFont.PFRegular(14), titleColor).TextAlignment(.center)
+ //            lab.added(into: view)
+ //            lab.snp.makeConstraints({ (make) in
+ //                make.left.equalTo(view.snp_leftMargin).offset(5)
+ //                make.centerY.equalTo(progressV.centerY)
+ //                make.width.equalTo(40)
+ //                make.height.equalTo(30)
+ //            })
+ //        })
+ 
+ 
+ let img =  UIImage.drawLeftToRightImg(colorLeft: UIColor(red: 51.0 / 255.0, green: 87.0 / 255.0, blue: 171.0 / 255.0, alpha: 1.0), colorRight: UIColor(red: 212.0 / 255.0, green: 22.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0), size: CGSize(width: 40, height: 40))
+ 
+ }
+ 
+ 
     func setupUI()
     {
 

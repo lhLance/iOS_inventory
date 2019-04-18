@@ -14,11 +14,11 @@ class YTPageStyle {
     var titleViewHeight: CGFloat = 40.0
     //title文字颜色
     //上传github后的版本测试。。。
-//    var normalColor: UIColor = colorWithRGBA(red: 121, green: 121, blue: 121, alpha: 1.0)
-//    var selectColor: UIColor = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+    var normalColor: UIColor = colorWithRGBA(red: 121, green: 121, blue: 121, alpha: 1.0)
+    var selectColor: UIColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
     
-    var normalColor: UIColor = colorWithRGBA(red: 255, green: 0, blue: 255, alpha: 1.0)
-    var selectColor: UIColor = colorWithRGBA(red: 0, green: 255, blue: 255, alpha: 1.0)
+//    var normalColor: UIColor = colorWithRGBA(red: 255, green: 0, blue: 255, alpha: 1.0)
+//    var selectColor: UIColor = colorWithRGBA(red: 0, green: 255, blue: 255, alpha: 1.0)
 
     var titleFont : UIFont = UIFont.boldSystemFont(ofSize: 17)
     var isScrollEnabel: Bool = true    //默认不能滚动

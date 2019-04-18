@@ -186,6 +186,7 @@ extension YTPageTitleView{
         let sourceLabel = titleLabels[currentIndex];
         sourceLabel.textColor = style.normalColor;
         targetLabel.textColor = style.selectColor;
+        
         //3.赋值新的currentIndex
         currentIndex = targetLabel.tag;
         //4.调整label位置点击居中
