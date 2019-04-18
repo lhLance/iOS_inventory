@@ -32,15 +32,32 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: NSNotification.Name("LanguageChanged"),
+                                               object: self)
         setupView()
         bindUI()
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reloadData() {
+        
+        logInLbl.Text(LanguageHelper.getString(key: "Account_login"))
+        loginBtn.Text(LanguageHelper.getString(key: "Account_login"))
+        userNameTf.placeholder = LanguageHelper.getString(key: "Account_account_placeholder")
+        passwordTf.placeholder = LanguageHelper.getString(key: "Account_password_placeholder")
+        regisBtn.Text(LanguageHelper.getString(key: "Account_register_new_account"))
+    }
+    
     func setupView() {
         
         view.backgroundColor = UIColor.white
         
-        logInLbl.TextColor(UIColor.black).TextFont("登录", .PFMedium(16))
+        logInLbl.TextColor(UIColor.black).TextFont(LanguageHelper.getString(key: "Account_login"), .PFMedium(16))
         logInLbl.added(into: view)
         logInLbl.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -51,7 +68,7 @@ class LoginVC: UIViewController {
         
         userNameTf.borderStyle = .none
         userNameTf.keyboardType = .asciiCapable
-        userNameTf.attributedPlaceholder = NSAttributedString(string: "请输入账号",
+        userNameTf.attributedPlaceholder = NSAttributedString(string: LanguageHelper.getString(key: "Account_account_placeholder"),
                                                               attributes: [NSAttributedString.Key.font : UIFont.PFMedium(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         userNameTf.added(into: view)
         userNameTf.snp.makeConstraints { (make) in
@@ -85,7 +102,7 @@ class LoginVC: UIViewController {
         passwordTf.isSecureTextEntry = true
         passwordTf.borderStyle = .none
         passwordTf.keyboardType = .asciiCapable
-        passwordTf.attributedPlaceholder = NSAttributedString(string: "请输入密码",
+        passwordTf.attributedPlaceholder = NSAttributedString(string: LanguageHelper.getString(key: "Account_password_placeholder"),
                                                               attributes: [NSAttributedString.Key.font : UIFont.PFMedium(14), NSAttributedString.Key.foregroundColor: UIColor.hex(0x9a9a9a)])
         passwordTf.added(into: view)
         passwordTf.snp.makeConstraints { (make) in
@@ -119,7 +136,7 @@ class LoginVC: UIViewController {
         
         loginBtn.cornerRadius = 5
         loginBtn.backgroundColor = UIColor.hex(0x9DCCFF)
-        loginBtn.Text("登录").Font(.PFMedium(16)).TitleColor(UIColor.white)
+        loginBtn.Text(LanguageHelper.getString(key: "Account_login")).Font(.PFMedium(16)).TitleColor(UIColor.white)
         loginBtn.added(into: view)
         loginBtn.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -129,7 +146,7 @@ class LoginVC: UIViewController {
         }
         loginBtn.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
         
-        regisBtn.Text("注册新账号").TitleColor(UIColor.hex(0x2C7CFD)).Font(.PFMedium(14))
+        regisBtn.Text(LanguageHelper.getString(key: "Account_register_new_account")).TitleColor(UIColor.hex(0x2C7CFD)).Font(.PFMedium(14))
         regisBtn.added(into: view)
         regisBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -190,7 +207,7 @@ class LoginVC: UIViewController {
     
     func LoginBtnState(activityIndicator: UIActivityIndicatorView) {
         
-        loginBtn.Text("登录")
+        loginBtn.Text(LanguageHelper.getString(key: "Account_login"))
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
         
@@ -218,7 +235,7 @@ class LoginVC: UIViewController {
             activityIndicator.startAnimating()
             
             _ = UILabel().then({ (lbl) in
-                lbl.Font(UIFont.PFRegular(16)).Text("登录").TextAlignment(.center).TextColor(UIColor.white)
+                lbl.Font(UIFont.PFRegular(16)).Text(LanguageHelper.getString(key: "Account_login")).TextAlignment(.center).TextColor(UIColor.white)
                 lbl.added(into: v)
                 lbl.snp.makeConstraints({ (make) in
                     make.height.equalTo(25)
@@ -228,8 +245,6 @@ class LoginVC: UIViewController {
                 })
             })
         })
-        
-
     }
     
     func bindUI() {

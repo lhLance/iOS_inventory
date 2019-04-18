@@ -78,7 +78,7 @@ class MeSettingCell: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIScreen.width, height: 46)
+        return CGSize(width: UIScreen.width, height: 50)
     }
     
 }

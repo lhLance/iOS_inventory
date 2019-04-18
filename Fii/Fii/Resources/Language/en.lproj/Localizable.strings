@@ -6,6 +6,12 @@
   Copyright © 2019年 Liu Tao. All rights reserved.
 */
 
+"Account_login" = "Login";
+"Account_register" = "Register";
+"Account_account_placeholder" = "Please input account number";
+"Account_password_placeholder" = "Please input password";
+"Account_register_new_account" = "Register new account";
+
 "home_title" = "Home";
 "home_time_efficency_analyse_title" = "Time efficiency analysis";
 "home_time_efficency_analyse_work" = "working";
