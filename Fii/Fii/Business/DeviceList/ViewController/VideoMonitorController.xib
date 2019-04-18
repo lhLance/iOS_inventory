@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoMonitorController" customModule="Fii" customModuleProvider="target">
             <connections>
+                <outlet property="monitorControlBtn" destination="usK-PW-ymy" id="rvh-Wj-fqO"/>
+                <outlet property="navControlBtn" destination="IYO-Ge-pWx" id="0X2-bt-2eU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +32,9 @@
                                 <constraint firstAttribute="height" constant="40" id="zOy-6g-AdZ"/>
                             </constraints>
                             <state key="normal" title="监控控制台"/>
+                            <connections>
+                                <action selector="monitorControlBtnPressend:" destination="-1" eventType="touchUpInside" id="fY9-fb-4H9"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-Ge-pWx">
                             <rect key="frame" x="0.0" y="0.0" width="177.5" height="40"/>
@@ -38,6 +43,9 @@
                                 <constraint firstAttribute="height" constant="40" id="yWc-zE-RFG"/>
                             </constraints>
                             <state key="normal" title="导航控制台"/>
+                            <connections>
+                                <action selector="navControlBtnPressend:" destination="-1" eventType="touchUpInside" id="cTq-Xc-7E0"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

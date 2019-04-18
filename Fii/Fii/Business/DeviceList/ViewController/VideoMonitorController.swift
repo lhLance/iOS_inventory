@@ -10,32 +10,82 @@ import UIKit
 
 private let margin_x:CGFloat = 10.0
 private let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
+/**
+ 选中label的背景颜色（默认灰色）
+ */
+private let  selectedViewColor: UIColor? = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
+/**
+ 未选中label的背景颜色（默认白色）
+ */
+private let normalLabelColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+
+/**
+ 未选中label字体颜色（默认白色）
+ */
+private let normalLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+/**
+ 未选中label字体颜色（默认白色）
+ */
+private let selectedLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+
 
 class VideoMonitorController: UIViewController {
 //    var progressV:YTProgressLineView!
     let dataArray:[String]! = ["1","2","3","4","5"]
-
+    @IBOutlet weak var navControlBtn: UIButton!
+    @IBOutlet weak var monitorControlBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.frame = UIScreen.main.bounds   // 增加这一句 即可
         self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
         
-
-        
+        setUpNavAndMonitorUI()
         setupUI()
     }
 
-
+    func setUpNavAndMonitorUI()
+    {
+        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+    }
+    
+    
+    @IBAction func navControlBtnPressend(_ sender: UIButton)
+    {
+        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+    }
+    @IBAction func monitorControlBtnPressend(_ sender: UIButton) {
+        monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+    }
+    
 
 }
+
+
+extension VideoMonitorController{
+    
+    
+    
+    
+}
+
 
 extension VideoMonitorController{
     
     func setupUI()
     {
 
-        var height: CGFloat = 264 + 20
+        let height: CGFloat = 264 + 20
         progressView()
         
         var titleArray  = ["OK"]
