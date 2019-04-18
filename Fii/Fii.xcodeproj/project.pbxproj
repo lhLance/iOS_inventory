@@ -24,6 +24,8 @@
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
 		3400A38B225F1FD200784F77 /* MonitorShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3400A38A225F1FD200784F77 /* MonitorShapeButton.m */; };
+		3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37A2265C9C600EEE390 /* YTPageStyle.swift */; };
+		3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37C2265CE0900EEE390 /* YTPageView.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
@@ -61,8 +63,8 @@
 		34F38D6F224CA3380059E19A /* CollectionNomalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D64224CA3380059E19A /* CollectionNomalCell.swift */; };
 		34F38D70224CA3380059E19A /* CollectionNomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D65224CA3380059E19A /* CollectionNomalCell.xib */; };
 		34F38D71224CA3380059E19A /* UIImageView-SquareBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D66224CA3380059E19A /* UIImageView-SquareBorder.swift */; };
-		34F38D7A224CA3CB0059E19A /* PageContenvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D73224CA3CB0059E19A /* PageContenvView.swift */; };
-		34F38D7B224CA3CB0059E19A /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D74224CA3CB0059E19A /* PageTitleView.swift */; };
+		34F38D7A224CA3CB0059E19A /* YTPageContenvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D73224CA3CB0059E19A /* YTPageContenvView.swift */; };
+		34F38D7B224CA3CB0059E19A /* YTPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D74224CA3CB0059E19A /* YTPageTitleView.swift */; };
 		34F38D7C224CA3CB0059E19A /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D77224CA3CB0059E19A /* SwiftyGifManager.swift */; };
 		34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D78224CA3CB0059E19A /* UIImage+SwiftyGif.swift */; };
 		34F38D7E224CA3CB0059E19A /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D79224CA3CB0059E19A /* UIImageView+SwiftyGif.swift */; };
@@ -171,6 +173,8 @@
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		3400A389225F1FD200784F77 /* MonitorShapeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorShapeButton.h; sourceTree = "<group>"; };
 		3400A38A225F1FD200784F77 /* MonitorShapeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorShapeButton.m; sourceTree = "<group>"; };
+		3404A37A2265C9C600EEE390 /* YTPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStyle.swift; sourceTree = "<group>"; };
+		3404A37C2265CE0900EEE390 /* YTPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageView.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
@@ -209,8 +213,8 @@
 		34F38D64224CA3380059E19A /* CollectionNomalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNomalCell.swift; sourceTree = "<group>"; };
 		34F38D65224CA3380059E19A /* CollectionNomalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionNomalCell.xib; sourceTree = "<group>"; };
 		34F38D66224CA3380059E19A /* UIImageView-SquareBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView-SquareBorder.swift"; sourceTree = "<group>"; };
-		34F38D73224CA3CB0059E19A /* PageContenvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContenvView.swift; sourceTree = "<group>"; };
-		34F38D74224CA3CB0059E19A /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		34F38D73224CA3CB0059E19A /* YTPageContenvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTPageContenvView.swift; sourceTree = "<group>"; };
+		34F38D74224CA3CB0059E19A /* YTPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTPageTitleView.swift; sourceTree = "<group>"; };
 		34F38D76224CA3CB0059E19A /* SwiftyGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyGif.h; sourceTree = "<group>"; };
 		34F38D77224CA3CB0059E19A /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		34F38D78224CA3CB0059E19A /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
@@ -429,8 +433,10 @@
 		34F38D72224CA3CB0059E19A /* ScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
-				34F38D73224CA3CB0059E19A /* PageContenvView.swift */,
-				34F38D74224CA3CB0059E19A /* PageTitleView.swift */,
+				34F38D73224CA3CB0059E19A /* YTPageContenvView.swift */,
+				34F38D74224CA3CB0059E19A /* YTPageTitleView.swift */,
+				3404A37A2265C9C600EEE390 /* YTPageStyle.swift */,
+				3404A37C2265CE0900EEE390 /* YTPageView.swift */,
 			);
 			path = ScrollPageView;
 			sourceTree = "<group>";
@@ -1031,7 +1037,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Liu Tao";
+				ORGANIZATIONNAME = "Ye Tao";
 				TargetAttributes = {
 					CF7C9FFB222395FF005CE8A3 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1223,7 +1229,7 @@
 				CF7CA000222395FF005CE8A3 /* AppDelegate.swift in Sources */,
 				CF8C0EEB223655CF00DF0D99 /* VoiceControllVC.swift in Sources */,
 				CFB0487D2254A041004F2C6E /* BalloonMarker.swift in Sources */,
-				34F38D7B224CA3CB0059E19A /* PageTitleView.swift in Sources */,
+				34F38D7B224CA3CB0059E19A /* YTPageTitleView.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
 				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
@@ -1252,7 +1258,7 @@
 				CF7CA0502223D376005CE8A3 /* GCD+Extension.swift in Sources */,
 				CF7CA04C2223D376005CE8A3 /* UIImage+Extension.swift in Sources */,
 				CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */,
-				34F38D7A224CA3CB0059E19A /* PageContenvView.swift in Sources */,
+				34F38D7A224CA3CB0059E19A /* YTPageContenvView.swift in Sources */,
 				34F38D86224CAE210059E19A /* RealTimeCollectionCell.swift in Sources */,
 				CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */,
 				046F9124225F65F1008EB2B6 /* FiiLineView.swift in Sources */,
@@ -1267,6 +1273,7 @@
 				34F38D6A224CA3380059E19A /* DeviceDetailController.swift in Sources */,
 				34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */,
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
+				3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
 				34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */,
@@ -1279,6 +1286,7 @@
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
 				CF656629225F0C76009C6B03 /* FiiDashBoardView.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
+				3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */,
 				34F38D81224CABD10059E19A /* Common.swift in Sources */,
@@ -1460,7 +1468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/OpenEars",
@@ -1487,7 +1495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LPF3349M6Q;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fii/SDK/Rong_Cloud_iOS_IMLib_CallLib_SDK_v2_9_12_Dev/CallLib",

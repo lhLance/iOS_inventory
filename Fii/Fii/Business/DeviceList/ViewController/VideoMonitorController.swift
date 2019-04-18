@@ -48,7 +48,6 @@ extension VideoMonitorController{
             view.addSubview(buttonView)
             
             var center = CGPoint.zero
-//            let image: UIImage? = UIImage(named: "sat_btn_pindao")
             var image: UIImage?
             switch i {
             case 0:

@@ -11,9 +11,9 @@
 
 import UIKit
 
-let kRealTimeItemMargin: CGFloat = 20
+let kRealTimeItemMargin: CGFloat = 23
 let kRealTimeItemW = (UIScreen.width - 2 * kRealTimeItemMargin)
-let kRealTimeNomalItemH = CGFloat(100)
+let kRealTimeNomalItemH = CGFloat(117)
 
 private let reuseIdentifier = "Cell"
 
@@ -48,6 +48,12 @@ extension RealTimelController{
     
     private func  setupCell(){
 
+//         layout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin)
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        //水平间隔
+        layout.minimumInteritemSpacing = 0
+        //垂直行间距
+        layout.minimumLineSpacing = 5.0
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = UIColor.lightText
         collectionView.register(UINib(nibName: "RealTimeCollectionCell", bundle: nil),
@@ -76,12 +82,18 @@ extension RealTimelController{
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         return CGSize(width: kRealTimeItemW, height: kRealTimeNomalItemH)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
     }
     
     private func initNoticeData(){

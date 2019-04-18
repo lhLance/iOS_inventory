@@ -7,90 +7,86 @@
 //
 
 import UIKit
-private let kTitleViewH:CGFloat = 40.0
+//private let kTitleViewH:CGFloat = 40.0
 
 class DeviceListVC: UIViewController {
-    
-    //    let  cloumnCategoryMenuTableVc = CloumnCategoryMenuTableController()
-    //    var cloumnCategoryDetailCellVc:CloumnCategoryDetailController?
-    
-    //MARK 懒加载
-    private lazy var pageTitleView:PageTitleView = { [weak self]in
-        let titleFrame = CGRect(x: CGFloat(0), y: kNavigationBar + kStatusBarH, width: UIScreen.width, height: CGFloat(kTitleViewH))
-        let titles = ["手机中框","刀具加工线","视频监控"]
-        let titleView = PageTitleView(frame: titleFrame, titles: titles)
-        titleView.delegate = self
-        return titleView
-        }()
-    
-    
-    private lazy var pageContentView:PageContenvView = { [weak self] in
-        let contentH = UIScreen.height - kStatusBarH - kNavigationBar - kTitleViewH - kTabBarH - SafeAreaBottomHeight
-        let titleFrame = CGRect(x: CGFloat(0), y: kStatusBarH + kNavigationBar+kTitleViewH, width:UIScreen.width , height: contentH)
-        var childVcs = [UIViewController]()
-        
-        let recommendVc  = MobilePhoneFrameController()
-        childVcs.append(recommendVc)
-        
-        
-        let toolingLineVc = ToolingLineController()
-        childVcs.append(toolingLineVc)
-        
-        let  videoMonitorC = VideoMonitorController()
-        videoMonitorC.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
-        childVcs.append(videoMonitorC)
-
-        
-        
-//        for _ in 0..<1{
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = UIColor.random
-//            childVcs.append(vc)
-//        }
-        
-        let contentView = PageContenvView(frame: titleFrame, childVcs:childVcs
-            , parentViewController: self)
-        contentView.delegate = self
-        return contentView
-        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         // Do any additional setup after loading the view.
     }
-    
 }
 
 
 extension DeviceListVC
 {
-    // mark
-    private func setupUI()
-    {
-        //不需要调整uiscrollview的内边距
-        automaticallyAdjustsScrollViewInsets = false
-        pageTitleView.added(into:view)
-        pageContentView.added(into: view)
+    func setupUI() {
+        //你所需要的视图控制器title
+        let titleStyle = YTPageStyle()
+        //*************设置可根据你项目的实际情况进行修改******************
+        //设置titleView（标题栏是否可以滚动，根据你的titles的个数来决定）
+        titleStyle.isScrollEnabel = false
+        //是否显示遮盖
+        titleStyle.isShowCoverView = true
+        //切换标题的时候，是否有动画
+        titleStyle.isAnimate = true
+        //是否显示下划线
+        titleStyle.isShowBottomLine = true
+        //是否需要缩放字体
+        titleStyle.isNeedScale = false
+        //*************设置可根据你项目的实际情况进行修改******************
+        
+        let titles = ["手机中框","刀具加工线","视频监控"]
+        let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight - titleStyle.titleViewHeight
+        let titleFrame = CGRect(x: 0,
+                                y: 0,
+                                width: UIScreen.width,
+                                height: contentH)
+        
+        //创建控制器的数组，有几个title，就对应创建几个viewController
+        var childVCs = [UIViewController]()
+        
+        let recommendVc  = MobilePhoneFrameController()
+        recommendVc.view.frame = titleFrame
+        childVCs.append(recommendVc)
+        
+        let toolingLineVc = ToolingLineController()
+        toolingLineVc.view.frame = titleFrame
+        childVCs.append(toolingLineVc)
+        
+        let  videoMonitorC = VideoMonitorController()
+        videoMonitorC.view.frame = titleFrame
+        childVCs.append(videoMonitorC)
+
+        //初始化你的整个pageView（包括标题栏（titleView）和内容View（contentView））
+        let pageView = YTPageView.init(frame: view.bounds,
+                                       titles: titles,
+                                       childVCs: childVCs,
+                                       parentVC: self,
+                                       titleStyle: titleStyle)
+        //添加你的pageView到主视图上
+        view.addSubview(pageView)
+        
     }
+    
 }
 //遵守pageTitleViewDelegate协议
-extension DeviceListVC:pageTitleViewDelegate
+extension DeviceListVC:YTPageTitleViewDelegate
 {
-    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
-        print(index)
-        pageContentView.setCurrentIndex(currentIndex: index)
+    func titleView(_ titleView: YTPageTitleView, targetIndex: Int) {
+        
     }
-    
 }
 
-extension DeviceListVC:PageContentViewDelegate
+extension DeviceListVC:YTPageContenvViewDelegate
 {
-    func pageContentView(contentView: PageContenvView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex) 
+    func contentView(_ contentView: YTPageContenvView, didEndScroll inIndex: Int) {
+        
     }
     
-    
-    
+    func contentView(_ contentView: YTPageContenvView, sourceIndex: Int, targetIndex: Int, progress: CGFloat) {
+        
+    }
 }
 
