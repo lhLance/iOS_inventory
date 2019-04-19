@@ -26,7 +26,7 @@ private let normalLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 255,
 /**
  未选中label字体颜色（默认白色）
  */
-private let selectedLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+private let selectedLabelTextColor: UIColor? = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
 
 
 class VideoMonitorController: UIViewController {
