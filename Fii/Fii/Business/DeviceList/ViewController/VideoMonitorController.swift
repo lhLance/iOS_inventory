@@ -87,9 +87,9 @@ extension VideoMonitorController{
         let height: CGFloat = 264 + 20
         progressView()
         
-        var titleArray  = ["OK"]
+        var titleArray  = [" "]
         for i in 0..<1 {
-            //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
+//            1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
             let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50), buttonType: ButtonType(rawValue: UInt32(i)))
             buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickTypeTouchUpInside)
             buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickTypeLongPress)
