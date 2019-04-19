@@ -294,7 +294,7 @@ class Cell: UIView {
             make.right.equalTo(-10)
         }
         
-        titleLbl.FontColor(.PFMedium(16), UIColor.gray)
+        titleLbl.FontColor(.PFMedium(14), UIColor.gray)
         titleLbl.added(into: self)
         titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(imageV.snp.right).offset(10)
