@@ -28,6 +28,7 @@ class YHRippleButton: UIButton {
                                  height: frame.width/2)
         backLayer.cornerRadius = frame.width/4
         backLayer.backgroundColor = rippleColor.cgColor
+        
         layer.addSublayer(backLayer)
     }
     

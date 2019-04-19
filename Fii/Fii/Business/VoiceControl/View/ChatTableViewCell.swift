@@ -99,7 +99,7 @@ class ChatTableViewCell:UITableViewCell {
         if (type == ChatType.someone)
         {
             self.bubbleImage.image = UIImage(named:("yoububble.png"))!
-                .stretchableImage(withLeftCapWidth: 21,topCapHeight:14)
+                .stretchableImage(withLeftCapWidth: 30,topCapHeight:40)
             
         }
         else {

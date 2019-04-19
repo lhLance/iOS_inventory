@@ -79,9 +79,10 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 150)/2,
                                                      y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
                                                      width: 150,
-                                                     height: 150),
+                                                     height: 50),
                                        rippleColor: .blue)
         self.startBtn.setTitle("开始", for: .normal)
+        self.startBtn.setImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
         self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
 //        self.startBtn.center = view.center
         view.addSubview(self.startBtn)
