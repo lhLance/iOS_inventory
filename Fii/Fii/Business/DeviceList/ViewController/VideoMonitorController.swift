@@ -50,7 +50,7 @@ class VideoMonitorController: UIViewController {
         navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
         monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
         navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        monitorControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
     }
     
     
@@ -59,16 +59,15 @@ class VideoMonitorController: UIViewController {
         navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
         monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
         navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        monitorControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
     }
     @IBAction func monitorControlBtnPressend(_ sender: UIButton) {
         monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
         navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
         monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        navControlBtn.setTitleColor(normalLabelColor, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
     }
     
-
 }
 
 
