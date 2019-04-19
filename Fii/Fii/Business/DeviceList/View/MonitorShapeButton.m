@@ -11,7 +11,7 @@
 #define PathKey @"path"
 #define PositionKey @"position"
 #define PathDic(path,position) [NSDictionary dictionaryWithObjectsAndKeys:path,@"path",position,@"position", nil]
-#define OffSet 2.5
+#define OffSet 22.5
 @interface MonitorShapeButton()
 
 @property (nonatomic) NSMutableArray *pathArray;
