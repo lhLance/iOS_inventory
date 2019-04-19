@@ -46,9 +46,8 @@ class YTPageTitleView: UIView {
         return bottomLine
     }()
     //遮盖
-    fileprivate lazy var coverView : UIButton = {
-        let coverView = UIButton()
-        coverView.backgroundColor = self.style.coverViewColor
+    fileprivate lazy var coverView : UIView = {
+        let coverView = UIView()
         coverView.alpha = self.style.coverViewAlpha
         return coverView
     }()
@@ -72,6 +71,7 @@ class YTPageTitleView: UIView {
 //MARK:-  设置ui界面
 extension YTPageTitleView{
     fileprivate func setupUI(){
+
         //1.添加scrollview
         addSubview(scrollview)
         //2.初始化所有label
@@ -84,6 +84,8 @@ extension YTPageTitleView{
         if style.isShowCoverView {
             addCoverView()
         }
+        
+        
     }
     
     private func addCoverView(){
@@ -98,7 +100,13 @@ extension YTPageTitleView{
             coverView.frame.origin.x -= style.coverMargin
         }
         coverView.layer.cornerRadius = style.coverViewCoradius
-
+        /*设置渐变色*/
+        coverView.ac_shadeView(withColorList: [colorWithRGBA(red: 51, green: 87, blue: 171, alpha: 1.0),
+                                               colorWithRGBA(red: 212, green: 22, blue: 62, alpha: 1.0)],
+                               direction: UIView.ACShadeDirection.leftToRight)
+        
+        scrollview.sendSubviewToBack(self.coverView)
+        
     }
     
     private func setupBottomLine(){

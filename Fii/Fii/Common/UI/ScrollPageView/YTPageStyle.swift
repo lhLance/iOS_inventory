@@ -15,7 +15,7 @@ class YTPageStyle {
     //title文字颜色
     //上传github后的版本测试。。。
     var normalColor: UIColor = colorWithRGBA(red: 121, green: 121, blue: 121, alpha: 1.0)
-    var selectColor: UIColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
+    var selectColor: UIColor = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
     
 //    var normalColor: UIColor = colorWithRGBA(red: 255, green: 0, blue: 255, alpha: 1.0)
 //    var selectColor: UIColor = colorWithRGBA(red: 0, green: 255, blue: 255, alpha: 1.0)
@@ -32,7 +32,7 @@ class YTPageStyle {
     var bottomLineHeight: CGFloat = 2
     
     var coverViewColor: UIColor = UIColor.gray   //遮盖的颜色
-    var coverViewAlpha: CGFloat = 0.5              //遮盖透明度
+    var coverViewAlpha: CGFloat = 1.0              //遮盖透明度
     var coverViewHeight: CGFloat = 40              //遮盖高度
     var coverViewCoradius: CGFloat = 0           //遮盖圆角
     var coverMargin: CGFloat = 5.0                 //间距
