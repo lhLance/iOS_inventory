@@ -96,7 +96,7 @@ extension VideoMonitorController{
             view.addSubview(buttonView)
             
             var center = CGPoint.zero
-            let image: UIImage?
+            var image: UIImage?
             switch i {
             case 0:
                 //  圆形五个按钮 上下左右 中心
