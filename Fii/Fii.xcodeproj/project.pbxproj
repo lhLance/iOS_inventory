@@ -27,6 +27,8 @@
 		3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37A2265C9C600EEE390 /* YTPageStyle.swift */; };
 		3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37C2265CE0900EEE390 /* YTPageView.swift */; };
 		3404A3812268557900EEE390 /* YTProgressLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A3802268557900EEE390 /* YTProgressLineView.swift */; };
+		3416539A226D4E98008E271C /* NavControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34165399226D4E98008E271C /* NavControlView.swift */; };
+		3416539C226D62C6008E271C /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416539B226D62C5008E271C /* VideoControlView.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
@@ -179,6 +181,8 @@
 		3404A37A2265C9C600EEE390 /* YTPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStyle.swift; sourceTree = "<group>"; };
 		3404A37C2265CE0900EEE390 /* YTPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageView.swift; sourceTree = "<group>"; };
 		3404A3802268557900EEE390 /* YTProgressLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTProgressLineView.swift; sourceTree = "<group>"; };
+		34165399226D4E98008E271C /* NavControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControlView.swift; sourceTree = "<group>"; };
+		3416539B226D62C5008E271C /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
@@ -427,6 +431,8 @@
 				34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */,
 				3400A389225F1FD200784F77 /* MonitorShapeButton.h */,
 				3400A38A225F1FD200784F77 /* MonitorShapeButton.m */,
+				34165399226D4E98008E271C /* NavControlView.swift */,
+				3416539B226D62C5008E271C /* VideoControlView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1222,6 +1228,7 @@
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CFB5FD15226428D100E37EE6 /* FiiNavgationController.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
+				3416539A226D4E98008E271C /* NavControlView.swift in Sources */,
 				CF93DF9C224B0D1C00B26509 /* OEEEfficiencyAnalysisView.swift in Sources */,
 				04F39150225391320014604B /* UserInfoVC.swift in Sources */,
 				CF7CA0612223D85C005CE8A3 /* Toast.swift in Sources */,
@@ -1241,6 +1248,7 @@
 				CFB0487D2254A041004F2C6E /* BalloonMarker.swift in Sources */,
 				34F38D7B224CA3CB0059E19A /* YTPageTitleView.swift in Sources */,
 				CF7CA05D2223D7C7005CE8A3 /* MaqueeView.swift in Sources */,
+				3416539C226D62C6008E271C /* VideoControlView.swift in Sources */,
 				CF7CA0792223E29C005CE8A3 /* DataParse.swift in Sources */,
 				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
