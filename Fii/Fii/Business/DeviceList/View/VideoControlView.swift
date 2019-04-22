@@ -56,7 +56,7 @@ extension VideoControlView{
             btn.layer.cornerRadius = 10.0
             btn.layer.borderWidth = 0.5
             btn.tag = 500+i
-            btn.addTarget(self, action: #selector(nextStep), for: .touchUpInside);
+            btn.addTarget(self, action: #selector(presendBtnPressend(_:)), for: .touchUpInside);
             btn.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
             btn.frame = CGRect(x: lab.frame.maxX  + CGFloat(i * 95), y: buttonY, width: 87, height: 33)
             btn.added(into: self)
