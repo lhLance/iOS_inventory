@@ -49,7 +49,7 @@ class MeSettingCell: UIView {
             $0.width.height.equalTo(15)
         }
         titleLbl.becomeSubviewIn(self).snp.makeConstraints {
-            $0.left.equalTo(46)
+            $0.left.equalTo(icon.snp.right).offset(15)
             $0.centerY.equalToSuperview()
         }
         arrow.becomeSubviewIn(self)

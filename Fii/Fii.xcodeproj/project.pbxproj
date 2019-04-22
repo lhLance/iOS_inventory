@@ -78,6 +78,7 @@
 		9A8BC00F9ECDA3FAD869FD28 /* Pods_Fii.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */; };
 		CF265EB72224C2B700CE67C5 /* AlarmCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */; };
 		CF265EBA2224DD3E00CE67C5 /* FIIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */; };
+		CF3AA687226D5CE90063C0F6 /* MeLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3AA686226D5CE90063C0F6 /* MeLanguageCell.swift */; };
 		CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */; };
 		CF5C075D2248C40400070FCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF5C075F2248C40400070FCA /* Localizable.strings */; };
 		CF63E728224339AB00D94D1E /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63E727224339AB00D94D1E /* SDK.swift */; };
@@ -232,6 +233,7 @@
 		4E4C1C8981EC13663C1A69D3 /* Pods_Fii.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fii.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF265EB62224C2B700CE67C5 /* AlarmCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCenterAPI.swift; sourceTree = "<group>"; };
 		CF265EB92224DD3E00CE67C5 /* FIIServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIIServiceModel.swift; sourceTree = "<group>"; };
+		CF3AA686226D5CE90063C0F6 /* MeLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLanguageCell.swift; sourceTree = "<group>"; };
 		CF4B70A1223683FF00F3260F /* FiiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiTabBarController.swift; sourceTree = "<group>"; };
 		CF5C075E2248C40400070FCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF5C07602248C44100070FCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -741,6 +743,7 @@
 			children = (
 				CF7CCEF72242202E00BBA836 /* FAQTableViewCell.swift */,
 				CF8EF5492245E04C006BAFD1 /* MeSettingCell.swift */,
+				CF3AA686226D5CE90063C0F6 /* MeLanguageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				CF8EF53D2245DA5B006BAFD1 /* SettingsVC.swift in Sources */,
 				046F9124225F65F1008EB2B6 /* FiiLineView.swift in Sources */,
 				CF7CA03E2223CCF1005CE8A3 /* UIFont+Extension.swift in Sources */,
+				CF3AA687226D5CE90063C0F6 /* MeLanguageCell.swift in Sources */,
 				049629812254E031004C2D1D /* FiiCircleView.swift in Sources */,
 				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
 				34F38D6B224CA3380059E19A /* MobilePhoneFrameController.swift in Sources */,
