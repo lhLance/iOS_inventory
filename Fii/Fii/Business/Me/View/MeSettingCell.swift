@@ -20,9 +20,9 @@ class MeSettingCell: UIView {
     var bottomLine = UIView()
     
     let icon = UIImageView()
-    let titleLbl = UILabel("", color: UIColor.hex(0x414141), align: .left, font: UIFont.PFRegular(14))
+    let titleLbl = UILabel("", color: UIColor.hex(0x414141), align: .left, font: UIFont.PFMedium(14))
     let arrow = UIImageView("return")
-    let detailLbl = UILabel("", color: UIColor.hex(0x414141), align: .right, font: UIFont.PFRegular(14))
+    let detailLbl = UILabel("", color: UIColor.hex(0x414141), align: .right, font: UIFont.PFMedium(14))
     
     let tap = UITapGestureRecognizer.init()
     
@@ -40,11 +40,13 @@ class MeSettingCell: UIView {
     }
     
     func snpLayout() {
-        self.addGestureRecognizer(tap)
         
+        self.addGestureRecognizer(tap)
+
         icon.becomeSubviewIn(self).snp.makeConstraints {
-            $0.left.equalTo(14)
+            $0.left.equalTo(15)
             $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(15)
         }
         titleLbl.becomeSubviewIn(self).snp.makeConstraints {
             $0.left.equalTo(46)
@@ -61,7 +63,7 @@ class MeSettingCell: UIView {
             $0.right.equalTo(-14)
             $0.centerY.equalToSuperview()
         }
-        bottomLine = UIView.init().setup({ (line) in
+        bottomLine = UIView().setup({ (line) in
             line.backgroundColor = UIColor.hex(0xE3E6F4)
             line.becomeSubviewIn(self)
             line.snp.makeConstraints {
