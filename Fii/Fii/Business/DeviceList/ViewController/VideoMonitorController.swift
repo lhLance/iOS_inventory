@@ -31,47 +31,121 @@ private let selectedLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 25
 
 class VideoMonitorController: UIViewController {
 //    var progressV:YTProgressLineView!
-    @IBOutlet weak var navControlBtn: UIButton!
-    @IBOutlet weak var monitorControlBtn: UIButton!
-    @IBOutlet weak var controlV: UIView!
-    var videoCV:VideoControlView? = nil
-    var navCV:NavControlView? = nil
+    lazy var navControlBtn: UIButton! = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(navControlBtnPressend), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    lazy var monitorControlBtn: UIButton! = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.green
+        btn.addTarget(self, action: #selector(monitorControlBtnPressend), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    lazy var controlV: UIView = {
+        let controlV = UIView()
+        controlV.backgroundColor = UIColor.white
+        controlV.layer.masksToBounds = true
+        controlV.layer.cornerRadius = 10.0
+        return controlV
+    }()
+   lazy var videoCV:VideoControlView? = {
+    let videoCV = VideoControlView(frame: CGRect.zero , dataAry: dataArray)
+//    videoCV.backgroundColor = UIColor.magenta
+    return videoCV
+    }()
+   lazy var navCV:NavControlView? = {
+        let navCV = NavControlView(frame: CGRect.zero, dataAry: dataArray)
+//        navCV.backgroundColor = UIColor.orange
+        return navCV
+    }()
     let dataArray:[String]! = ["1","2","3","4","5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.frame = UIScreen.main.bounds   // 增加这一句 即可
         self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
-        
+        setBackVUpUI()
         setUpNavAndMonitorUI()
-//        setupUI()
         
-//
 
         
     }
 
+ 
+    
+
+}
+
+
+extension VideoMonitorController{
+
+    func setBackVUpUI(){
+        controlV.added(into: view)
+        controlV.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.top.equalTo(11)
+            make.bottom.equalTo(-11)
+        }
+
+        navControlBtn.added(into: controlV)
+        navControlBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.height.equalTo(40)
+            make.top.equalTo(0)
+            make.width.equalToSuperview().dividedBy(2)/*视图宽度为父视图的一半*/
+        }
+            
+        monitorControlBtn.added(into: controlV)
+        monitorControlBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.height.equalTo(navControlBtn)
+            make.width.equalTo(navControlBtn)
+
+        }
+            
+    }
+    
     func setUpNavAndMonitorUI()
     {
-        navCV = NavControlView(frame: CGRect(x: 0, y: navControlBtn.frame.maxY, width: controlV.width  , height: controlV.height - navControlBtn.frame.maxY), dataAry: dataArray)
-        navCV!.backgroundColor = UIColor.magenta
         navCV!.added(into: controlV)
+        navCV?.snp.makeConstraints({ (make) in
+            make.top.equalTo(navControlBtn.snp.bottom).offset(0)
+            make.right.equalTo(0)
+            make.left.equalTo(0)
+            make.bottom.equalTo(0)
+        })
         
+        videoCV?.added(into: controlV)
+        videoCV?.snp.makeConstraints({ (make) in
+            
+//        make.e
+            
+            make.top.equalTo(navControlBtn.snp.bottom).offset(0)
+            make.right.equalTo(0)
+            make.left.equalTo(0)
+            make.bottom.equalTo(0)
+        })
+        
+        navCV?.isHidden = false
+        videoCV?.isHidden = true
+
+        navControlBtn.setTitle("导航控制器", for: UIControl.State.normal)
+        monitorControlBtn.setTitle("监控控制器", for: UIControl.State.normal)
+
         navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
         monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
         navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
         monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
         
-        navCV?.isHidden = false
     }
     
     
-    @IBAction func navControlBtnPressend(_ sender: UIButton)
+    @objc func navControlBtnPressend(_ sender: UIButton)
     {
-        if navCV == nil{
-            
-        }
         navCV?.isHidden = false
         videoCV?.isHidden = true
         
@@ -80,13 +154,9 @@ class VideoMonitorController: UIViewController {
         navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
         monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
     }
-    @IBAction func monitorControlBtnPressend(_ sender: UIButton) {
-        
-        if videoCV == nil{
-            videoCV = VideoControlView(frame: CGRect(x: 0, y: navControlBtn.frame.maxY, width: controlV.width  , height: controlV.height - navControlBtn.frame.maxY), dataAry: dataArray)
-            videoCV!.backgroundColor = UIColor.magenta
-            videoCV!.added(into: controlV)
-        }
+    @objc func monitorControlBtnPressend(_ sender: UIButton)
+    {
+
         videoCV?.isHidden = false
         navCV?.isHidden = true
         
@@ -96,14 +166,7 @@ class VideoMonitorController: UIViewController {
         navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
     }
     
-}
 
-
-extension VideoMonitorController{
-    
-    
-    
-    
 }
 
 

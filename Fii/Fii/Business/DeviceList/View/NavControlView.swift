@@ -8,7 +8,6 @@
 
 
 private let margin_x:CGFloat = 10.0
-private let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
 
 import UIKit
 
@@ -16,8 +15,12 @@ class NavControlView: UIView {
 
     var  dataArray:[String]! = ["1","2","3","4","5"]
     var myframe:CGRect = CGRect.zero
+    public let btn_height:CGFloat = 66
+    public let progressOrigit_h:CGFloat = 33
+    let margin_x:CGFloat = 5
+    let buttonW:CGFloat = 33
+    public let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
 
-    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -31,7 +34,7 @@ class NavControlView: UIView {
         super.init(frame: frame)
         self.dataArray = dataAry
         
-        setupUI()
+//        setupUI()
         
     }
     
@@ -39,18 +42,18 @@ class NavControlView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    override func layoutSubviews() {
+            setupUI()
+    }
+    
 }
 
 
 extension NavControlView{
     
-   public func setupUI()
+   @objc public func setupUI()
     {
-        
-//        let height: CGFloat = self.frame.height + 16
         progressView()
-        
         var titleArray  = [" "]
         for i in 0..<1 {
             //            1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
@@ -111,7 +114,7 @@ extension NavControlView{
     
     @objc func longPressButtonClick(_ button: MonitorShapeButton?) {
         
-        print("单击事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
+        print("\(#file) ----\(#function) 单击事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
 
 //        var string: String? = nil
 //        if let tag = button?.tag {
@@ -162,11 +165,8 @@ extension NavControlView:YTSegmentControlDelegate{
     func progressView(){
         
         
-        let btn_height:CGFloat = 66
         var titleAry:[String] = ["光圈","倍速","焦点"]
-        let margin_x:CGFloat = 5
-        let buttonW:CGFloat = 33
-        let progressOrigit_h:CGFloat = 33
+
         
         for i in 0..<titleAry.count
         {

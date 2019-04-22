@@ -30,7 +30,6 @@
 		3416539A226D4E98008E271C /* NavControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34165399226D4E98008E271C /* NavControlView.swift */; };
 		3416539C226D62C6008E271C /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416539B226D62C5008E271C /* VideoControlView.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
-		34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34787714225C6CEA00B2689E /* VideoMonitorController.xib */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
 		3478771E225C8AA600B2689E /* IslandMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771A225C8AA500B2689E /* IslandMode.gif */; };
 		3478771F225C8AA600B2689E /* VisitMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771B225C8AA600B2689E /* VisitMode.gif */; };
@@ -184,7 +183,6 @@
 		34165399226D4E98008E271C /* NavControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControlView.swift; sourceTree = "<group>"; };
 		3416539B226D62C5008E271C /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
-		34787714225C6CEA00B2689E /* VideoMonitorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoMonitorController.xib; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
 		3478771A225C8AA500B2689E /* IslandMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IslandMode.gif; sourceTree = "<group>"; };
 		3478771B225C8AA600B2689E /* VisitMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VisitMode.gif; sourceTree = "<group>"; };
@@ -898,7 +896,6 @@
 				34F38D5F224CA3370059E19A /* MobilePhoneFrameController.swift */,
 				34F38D60224CA3370059E19A /* ToolingLineController.swift */,
 				34787713225C6CEA00B2689E /* VideoMonitorController.swift */,
-				34787714225C6CEA00B2689E /* VideoMonitorController.xib */,
 				CF8C0EE22236492B00DF0D99 /* DeviceListVC.swift */,
 			);
 			path = ViewController;
@@ -1115,7 +1112,6 @@
 				34F38D6E224CA3380059E19A /* CollectionHeadView.xib in Resources */,
 				34F38D54224C9B730059E19A /* AGV.gif in Resources */,
 				34F38D56224C9B730059E19A /* FANUC.gif in Resources */,
-				34787716225C6CEA00B2689E /* VideoMonitorController.xib in Resources */,
 				34F38D5A224C9B730059E19A /* Super-TG.gif in Resources */,
 				34F38D70224CA3380059E19A /* CollectionNomalCell.xib in Resources */,
 				34F38D55224C9B730059E19A /* ATM.gif in Resources */,
