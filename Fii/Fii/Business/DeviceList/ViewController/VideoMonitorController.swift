@@ -13,7 +13,7 @@ private let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0
 /**
  选中label的背景颜色（默认灰色）
  */
-private let  selectedViewColor: UIColor? = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
+private let  selectedViewColor: UIColor? = colorWithRGBA(red: 194, green: 194, blue: 200, alpha: 1.0)
 /**
  未选中label的背景颜色（默认白色）
  */
@@ -48,16 +48,16 @@ class VideoMonitorController: UIViewController {
         controlV.backgroundColor = UIColor.white
         controlV.layer.masksToBounds = true
         controlV.layer.cornerRadius = 10.0
+        controlV.layer.borderWidth = 0.5
+        controlV.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
         return controlV
     }()
    lazy var videoCV:VideoControlView? = {
     let videoCV = VideoControlView(frame: CGRect.zero , dataAry: dataArray)
-//    videoCV.backgroundColor = UIColor.magenta
     return videoCV
     }()
    lazy var navCV:NavControlView? = {
         let navCV = NavControlView(frame: CGRect.zero, dataAry: dataArray)
-//        navCV.backgroundColor = UIColor.orange
         return navCV
     }()
     let dataArray:[String]! = ["1","2","3","4","5"]
@@ -106,7 +106,17 @@ extension VideoMonitorController{
             make.width.equalTo(navControlBtn)
 
         }
-            
+        
+        let lineV = UIView()
+        lineV.backgroundColor = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
+        lineV.added(into: controlV)
+        lineV.snp.makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(monitorControlBtn.snp.bottom).offset(-1)
+            make.height.equalTo(1)
+            make.left.equalTo(0)
+        }
+        
     }
     
     func setUpNavAndMonitorUI()
@@ -121,9 +131,6 @@ extension VideoMonitorController{
         
         videoCV?.added(into: controlV)
         videoCV?.snp.makeConstraints({ (make) in
-            
-//        make.e
-            
             make.top.equalTo(navControlBtn.snp.bottom).offset(0)
             make.right.equalTo(0)
             make.left.equalTo(0)

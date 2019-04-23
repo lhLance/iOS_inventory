@@ -21,7 +21,7 @@ class YTSegmentControl: UIView {
     /**
      选中label的颜色（默认灰色）
      */
-    var normalLabelColor: UIColor? = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
+    var normalLabelColor: UIColor? = colorWithRGBA(red: 194, green: 194, blue: 200, alpha: 1.0)
     /**
      未选中label的背景颜色（默认白色）
      */

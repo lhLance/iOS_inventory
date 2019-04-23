@@ -27,6 +27,7 @@
 		3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37A2265C9C600EEE390 /* YTPageStyle.swift */; };
 		3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A37C2265CE0900EEE390 /* YTPageView.swift */; };
 		3404A3812268557900EEE390 /* YTProgressLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404A3802268557900EEE390 /* YTProgressLineView.swift */; };
+		34069FD4226EDA1B00E245F4 /* MachineStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34069FD3226EDA1A00E245F4 /* MachineStateView.swift */; };
 		3416539A226D4E98008E271C /* NavControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34165399226D4E98008E271C /* NavControlView.swift */; };
 		3416539C226D62C6008E271C /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416539B226D62C5008E271C /* VideoControlView.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
@@ -180,6 +181,7 @@
 		3404A37A2265C9C600EEE390 /* YTPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStyle.swift; sourceTree = "<group>"; };
 		3404A37C2265CE0900EEE390 /* YTPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageView.swift; sourceTree = "<group>"; };
 		3404A3802268557900EEE390 /* YTProgressLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTProgressLineView.swift; sourceTree = "<group>"; };
+		34069FD3226EDA1A00E245F4 /* MachineStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStateView.swift; sourceTree = "<group>"; };
 		34165399226D4E98008E271C /* NavControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControlView.swift; sourceTree = "<group>"; };
 		3416539B226D62C5008E271C /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				3400A38A225F1FD200784F77 /* MonitorShapeButton.m */,
 				34165399226D4E98008E271C /* NavControlView.swift */,
 				3416539B226D62C5008E271C /* VideoControlView.swift */,
+				34069FD3226EDA1A00E245F4 /* MachineStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
+				34069FD4226EDA1B00E245F4 /* MachineStateView.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
 				34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */,
 				CF7CA05E2223D7C7005CE8A3 /* DashLine.swift in Sources */,

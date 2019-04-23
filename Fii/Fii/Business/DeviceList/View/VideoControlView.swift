@@ -8,21 +8,7 @@
 
 import UIKit
 
-//@objc protocol VideoControlView {
-//    func setupUI()
-//}
-
-
 class VideoControlView: NavControlView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -30,8 +16,6 @@ class VideoControlView: NavControlView {
     }
     
 
-    
-    
 }
 
 extension VideoControlView{
@@ -42,7 +26,10 @@ extension VideoControlView{
         let buttonY:CGFloat = progressOrigit_h + btn_height * 3
         
         let lab = UILabel()
-        lab.frame = CGRect(x:margin_x + 10.0, y: buttonY, width: 40, height: 33)
+        lab.frame = CGRect(x:margin_x + 10.0,
+                           y: buttonY,
+                           width: 40,
+                           height: 33)
         lab.backgroundColor = UIColor.clear
         lab.text = "预设"
         lab.FontColor(UIFont.PFRegular(14), titleColor).TextAlignment(.center)
@@ -57,8 +44,12 @@ extension VideoControlView{
             btn.layer.borderWidth = 0.5
             btn.tag = 500+i
             btn.addTarget(self, action: #selector(presendBtnPressend(_:)), for: .touchUpInside);
-            btn.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
-            btn.frame = CGRect(x: lab.frame.maxX  + CGFloat(i * 95), y: buttonY, width: 87, height: 33)
+            btn.layer.borderColor = colorWithRGBA(red: 196,
+                                                  green: 196,
+                                                  blue: 196,
+                                                  alpha: 1.0).cgColor
+            btn.frame = CGRect(x: lab.frame.maxX + margin_x + CGFloat(i * 96),
+                               y: buttonY, width: 87, height: 33)
             btn.added(into: self)
         }
     }

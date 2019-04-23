@@ -32,7 +32,7 @@ extension DeviceListVC
         //切换标题的时候，是否有动画
         titleStyle.isAnimate = true
         //是否显示下划线
-        titleStyle.isShowBottomLine = true
+        titleStyle.isShowBottomLine = false
         //是否需要缩放字体
         titleStyle.isNeedScale = false
         //*************设置可根据你项目的实际情况进行修改******************
