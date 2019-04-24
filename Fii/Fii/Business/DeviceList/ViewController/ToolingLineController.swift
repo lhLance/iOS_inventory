@@ -25,6 +25,8 @@ class ToolingLineController: UIViewController {
 
     
     private var titleAry:[(String,String)] = []
+    private var gifImgAry:[(String)] = []
+
     private lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNomalItemH)
@@ -69,12 +71,17 @@ extension ToolingLineController{
     private func setInitData(){
     
     titleAry = [(LanguageHelper.getString(key: "machine_SuperTG"),"devList_tg.png"),
-                (LanguageHelper.getString(key: "deivce_Defect_detector"),"devList_feeder.png"),
+                (LanguageHelper.getString(key: "deivce_Feeder"),"devList_feeder.png"),
                 (LanguageHelper.getString(key: "foxbot1"),"devList_Foxbot6.png"),
                 (LanguageHelper.getString(key: "agv1"),"devList_agv2"),
                 (LanguageHelper.getString(key: "atm"),"devList_atm.png"),
                 (LanguageHelper.getString(key: "foxbot2"),"devList_Foxbot5.png")]
+        
+        gifImgAry = ["super-TG","ATM","FOXBOT","AGV","ATM","FOXBOT_DJ"]
     }
+    
+    
+    
     
     private func setupUI(){
         self.view.addSubview(collectionView)
@@ -105,7 +112,8 @@ extension ToolingLineController:UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = DeviceDetailController()
-        detailController.gifName = titleAry[indexPath.row].0
+        detailController.gifName = gifImgAry[indexPath.row]
+        detailController.titleName = titleAry[indexPath.row].0
         self.navigationController?.pushViewController(detailController, animated: false)
     }
 }

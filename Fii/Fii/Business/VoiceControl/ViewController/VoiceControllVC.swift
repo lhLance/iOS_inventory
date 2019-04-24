@@ -81,7 +81,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
                                                      width: 150,
                                                      height: 150),
                                        rippleColor: .blue)
-        self.startBtn.setTitle("开始", for: .normal)
+        self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
 //        self.startBtn.setImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
         self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
 //        self.startBtn.center = view.center

@@ -21,6 +21,8 @@ class DeviceDetailController: UIViewController {
     var rewindTimer: Timer?
     var forwardTimer: Timer?
     var gifName: String?
+    var titleName: String?
+
     
     var centerPoint:CGPoint = CGPoint(x: UIScreen.width/2.0, y: UIScreen.height/2.0)
     
@@ -124,7 +126,7 @@ class DeviceDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        self.title = titleName
         
         setInitData()
         setUpUI()

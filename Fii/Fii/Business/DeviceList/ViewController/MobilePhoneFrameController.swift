@@ -22,6 +22,8 @@ class MobilePhoneFrameController: UIViewController {
 
     
     private var titleAry:[(String,String)] = []
+    private var gifImgAry:[(String)] = []
+
     private lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNomalItemH)
@@ -64,6 +66,9 @@ extension MobilePhoneFrameController{
                 (LanguageHelper.getString(key: "foxbot2"),"devList_foxbot2.png"),
                 (LanguageHelper.getString(key: "agv1"),"devList_agv2"),
                 (LanguageHelper.getString(key: "deivce_Feeder"),"devList_defect_detection.png")]
+        
+        gifImgAry = ["ATM","FANUC","FOXBOT","FANUC","FOXBOT_DJ","AGV","ATM"]
+
     }
     
     private func setupUI(){
@@ -95,7 +100,8 @@ extension MobilePhoneFrameController:UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = DeviceDetailController()
-        detailController.gifName = titleAry[indexPath.row].0
+        detailController.gifName = gifImgAry[indexPath.row]
+        detailController.titleName = titleAry[indexPath.row].0        
         self.navigationController?.pushViewController(detailController, animated: false)
     }
     

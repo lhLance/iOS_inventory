@@ -127,11 +127,12 @@ extension YTPageTitleView{
             titleLabel.textAlignment = .center
             titleLabel.textColor =  (i == 0) ? style.selectColor : style.normalColor
             titleLabel.font = style.titleFont
+            titleLabel.numberOfLines = 2
             titleLabel.isUserInteractionEnabled = true
             titleLabel.adjustsFontSizeToFitWidth = true//大小自适应
             //3.将label加到scrollview上去
             scrollview.addSubview(titleLabel)
-            
+
             //4.监听label的点击
             let tapGes = UITapGestureRecognizer(target:self, action: #selector(titleLabelClick(_:)))
             titleLabel.addGestureRecognizer(tapGes)
