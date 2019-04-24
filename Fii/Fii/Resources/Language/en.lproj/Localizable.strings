@@ -83,8 +83,53 @@
 "me_settings" = "Settings";
 "me_log_out" = "Log out";
 
-"realTime_Island" = "孤岛模式";
-"realTime_loop" = "巡航模式";
-"realTime_Distributional" = "分布式模式";
-"realTime_Sequential" = "顺序模式";
-"realTime_Visit" = "参观模式";
+"realTime_Island" = "Island Mode";//孤岛模式
+"realTime_loop" = "Patrol Mode";//巡逻模式
+"realTime_Distributional" = "Distribution Mode";//分布模式
+"realTime_Sequential" = "Sequential Mode";//顺序模式
+"realTime_Visit" = "Visit Mode";//巡逻模式
+
+"voice_tips_welocome" = "Welcome to intelligent voice control";
+"voice_tips_word" = "You can try to say:";
+"voice_tips_word_again" = "I didn't hear it clearly, you can try to say it again:";
+"voice_tips_Key_Word" = "move down, move up, move to the left, move to the right, start, stop";
+"voice_listening" = "Listening...";
+"voice_clilc_talk" = "Click to talk";
+
+"deivce_Screw_machine" = "Screw Machine";//螺丝机
+"deivce_Feeder" = "Feeder";//缺陷检测器
+"deivce_Defect_detector" = "Defect detector";//送料机
+"deivce_Mobile_phone_frame" = "Mobile phone frame";//手机中框
+"deivce_Tool_processing_line" = "Tool processing line";//刀具加工线
+"deivce_Video_Surveillance" = "Video Surveillance";//视频监控
+
+"machine_Operating_status" = "Operating status";//运行状态
+"machine_PLC_status" = "PLC status";//PLC状态
+"machine_Drive_status" = "Drive status";//驱动器状态
+"machine_Machine_status" = "Machine status";//机床状态
+
+"machine_alarm" = "alarm";//报警
+"machine_boot" = "boot";//开机
+"machine_File_recording_time" = "File recording time";//档案记录时间
+
+"machine_CNC1_Harbin_open_five_axis" = "CNC1 Harbin Institute of Technology open five-axis";//CNC1哈工大开放式五轴
+"machine_cnc2foxnum_three-axis" = "CNC2FOXNUM three-axis";//CNC2FOXNUM三轴
+"machine_cnc2fanuc_three-axis" = "CNC2FANUC three-axis";//CNC2FANUC三轴
+"machine_Googoltech1" = "Googoltech 1";//固高1
+"machine_Googoltech2" = "Googoltech 2";//固高2
+"machine_SuperTG" = "Super-TG";//
+"agv1" = "AGV1";//
+"atm" = "ATM";//
+"foxbot1" = "FOXBOT1";//
+"foxbot2" = "FOXBOT2";//
+"machine_Navigation_console" = "Navigation console";//导航控制台
+"machine_Monitoring_console" = "Monitoring console";//监控控制台
+"aperture" = "aperture";//光圈
+"speed" = "speed";//倍速
+"focus" = "focus";//焦点
+"preset" = "preset";//预设
+"start" = "开始";//开始
+"machine_track_camera" = "track camera";//轨道摄像机
+"machine_ball_machine" = "ball machine";//球机
+"X_axis" = "x axis";//x轴
+"Y_axis" = "y axis";//y轴

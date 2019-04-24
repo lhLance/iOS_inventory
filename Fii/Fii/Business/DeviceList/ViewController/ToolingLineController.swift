@@ -68,12 +68,12 @@ class ToolingLineController: UIViewController {
 extension ToolingLineController{
     private func setInitData(){
     
-    titleAry = [("Super-TG","devList_tg.png"),
-                ("送料机","devList_feeder.png"),
-                ("FOXBOT","devList_Foxbot6.png"),
-                ("AGV2","devList_agv2"),
-                ("ATM","devList_atm.png"),
-                ("FOXBOT_DJ","devList_Foxbot5.png")]
+    titleAry = [(LanguageHelper.getString(key: "machine_SuperTG"),"devList_tg.png"),
+                (LanguageHelper.getString(key: "deivce_Defect_detector"),"devList_feeder.png"),
+                (LanguageHelper.getString(key: "foxbot1"),"devList_Foxbot6.png"),
+                (LanguageHelper.getString(key: "agv1"),"devList_agv2"),
+                (LanguageHelper.getString(key: "atm"),"devList_atm.png"),
+                (LanguageHelper.getString(key: "foxbot2"),"devList_Foxbot5.png")]
     }
     
     private func setupUI(){
@@ -86,7 +86,6 @@ extension ToolingLineController:UICollectionViewDataSource
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        var cell:UICollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomalCellID, for: indexPath) as! CollectionNomalCell
             cell.backgroundColor = UIColor.clear
         cell.titleLab.text = titleAry[indexPath.row].0
@@ -109,7 +108,6 @@ extension ToolingLineController:UICollectionViewDataSource
         detailController.gifName = titleAry[indexPath.row].0
         self.navigationController?.pushViewController(detailController, animated: false)
     }
-    
 }
 extension ToolingLineController:UICollectionViewDelegateFlowLayout
 {

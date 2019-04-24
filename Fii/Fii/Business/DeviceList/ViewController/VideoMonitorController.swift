@@ -140,8 +140,8 @@ extension VideoMonitorController{
         navCV?.isHidden = false
         videoCV?.isHidden = true
 
-        navControlBtn.setTitle("导航控制器", for: UIControl.State.normal)
-        monitorControlBtn.setTitle("监控控制器", for: UIControl.State.normal)
+        navControlBtn.setTitle(LanguageHelper.getString(key: "machine_Navigation_console"), for: UIControl.State.normal)
+        monitorControlBtn.setTitle(LanguageHelper.getString(key: "machine_Monitoring_console"), for: UIControl.State.normal)
 
         navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
         monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)

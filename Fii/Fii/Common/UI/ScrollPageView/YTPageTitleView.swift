@@ -128,6 +128,7 @@ extension YTPageTitleView{
             titleLabel.textColor =  (i == 0) ? style.selectColor : style.normalColor
             titleLabel.font = style.titleFont
             titleLabel.isUserInteractionEnabled = true
+            titleLabel.adjustsFontSizeToFitWidth = true//大小自适应
             //3.将label加到scrollview上去
             scrollview.addSubview(titleLabel)
             

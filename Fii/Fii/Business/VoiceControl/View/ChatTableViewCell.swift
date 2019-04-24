@@ -97,10 +97,8 @@ class ChatTableViewCell:UITableViewCell {
         
         //如果是别人的消息，在左边，如果是我输入的消息，在右边
         if (type == ChatType.someone)
-        {
-            self.bubbleImage.image = UIImage(named:("yoububble.png"))!
-                .stretchableImage(withLeftCapWidth: 21,topCapHeight:14)
-            
+        {            
+            self.bubbleImage.image = UIImage(named:("yoububble.png"))!.stretchableImage(withLeftCapWidth: 20,topCapHeight:37)
         }
         else {
             self.bubbleImage.image = UIImage(named:"mebubble.png")!

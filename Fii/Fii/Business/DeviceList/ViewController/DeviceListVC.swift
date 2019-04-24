@@ -37,7 +37,7 @@ extension DeviceListVC
         titleStyle.isNeedScale = false
         //*************设置可根据你项目的实际情况进行修改******************
         
-        let titles = ["手机中框","刀具加工线","视频监控"]
+        let titles = [LanguageHelper.getString(key: "deivce_Mobile_phone_frame"),LanguageHelper.getString(key: "deivce_Tool_processing_line"),LanguageHelper.getString(key: "deivce_Video_Surveillance")]
         let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight - titleStyle.titleViewHeight
         let titleFrame = CGRect(x: 0,
                                 y: 0,

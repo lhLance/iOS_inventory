@@ -57,15 +57,13 @@ class MobilePhoneFrameController: UIViewController {
 extension MobilePhoneFrameController{
     private func setInitData(){
     
-    titleAry = [("螺丝机","devList_screw_machine.png"),
-                ("CNC1","devList_cnc1.png"),
-                ("FOXBOT","devList_foxbot1.png"),
-                ("CNC2","devList_cnc2.png"),
-                ("FOXBOT2","devList_foxbot2.png"),
-                ("FOXBOT_DJ","devList_Foxbot3.png"),
-                ("AGV","devList_agv2"),
-                ("缺陷检测器","devList_defect_detection.png"),
-                ("FOXBOT5","devList_Foxbot5")]
+    titleAry = [(LanguageHelper.getString(key: "deivce_Screw_machine"),"devList_screw_machine.png"),
+                (LanguageHelper.getString(key: "machine_CNC1_Harbin_open_five_axis"),"devList_cnc1.png"),
+                (LanguageHelper.getString(key: "foxbot1"),"devList_foxbot1.png"),
+                (LanguageHelper.getString(key: "machine_cnc2fanuc_three-axis"),"devList_cnc2.png"),
+                (LanguageHelper.getString(key: "foxbot2"),"devList_foxbot2.png"),
+                (LanguageHelper.getString(key: "agv1"),"devList_agv2"),
+                (LanguageHelper.getString(key: "deivce_Feeder"),"devList_defect_detection.png")]
     }
     
     private func setupUI(){

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "yoububble.png",
+      "filename" : "msg_other_bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "yoububble@2x.png",
+      "filename" : "msg_other_bg@2x.png",
       "scale" : "2x"
     },
     {

@@ -114,7 +114,7 @@ extension NavControlView:YTSegmentControlDelegate{
     func progressView(){
         
         
-        var titleAry:[String] = ["光圈","倍速","焦点"]
+        var titleAry:[String] = [LanguageHelper.getString(key: "aperture"),LanguageHelper.getString(key: "speed"),LanguageHelper.getString(key: "preset")]
 
         
         for i in 0..<titleAry.count

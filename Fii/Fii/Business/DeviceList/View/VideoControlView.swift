@@ -31,7 +31,7 @@ extension VideoControlView{
                            width: 40,
                            height: 33)
         lab.backgroundColor = UIColor.clear
-        lab.text = "预设"
+        lab.text = LanguageHelper.getString(key: "start")
         lab.FontColor(UIFont.PFRegular(14), titleColor).TextAlignment(.center)
         lab.added(into: self)
         

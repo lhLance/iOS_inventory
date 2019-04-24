@@ -111,7 +111,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         {
             print("\(#function)+ \(#file)")
 
-            self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
+            self.startBtn.setTitle(LanguageHelper.getString(key: "voice_listening"), for: UIControl.State.normal)
             try? self.pocketsphinx.setActive(true)
             self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
                                                               dictionaryAtPath: self.chineseDicPath,
@@ -207,9 +207,9 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
         me = ChatUserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
         you  = ChatUserInfo(name:"Xiaohua", logo:("xiaohua.png"))
         
-        let zero =  MessageItem(body:"欢迎使用语言控制", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-
-        let zero1 =  MessageItem(body:"你可以说:\n向下移动,向上移动,向左移动,向右移动,开始,停止", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
+        let zero =  MessageItem(body:LanguageHelper.getString(key: "voice_tips_welocome") as NSString, user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
+        let tipStr:NSString = NSString(format: "%@ \n %@", LanguageHelper.getString(key: "voice_tips_word") as NSString,LanguageHelper.getString(key: "voice_tips_Key_Word") as NSString)
+        let zero1 =  MessageItem(body:tipStr, user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
 //        let fouth =  MessageItem(body:"嗯，下次我们一起去吧！",user:me, date:Date(timeIntervalSinceNow:-90000020), mtype:.mine)
         
         Chats = NSMutableArray()
@@ -235,7 +235,7 @@ extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
         var senderStr = sayStr
         if (senderStr == nil)
         {
-            senderStr = "我没有听清楚,你可以尝试再说一次:\n向下移动,向上移动,向左移动,向右移动,开始,停止"
+            senderStr = LanguageHelper.getString(key: "voice_tips_word_again") + "\n" + LanguageHelper.getString(key: "voice_tips_Key_Word")
             let thatChat =  MessageItem(body:"\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
             Chats.add(thatChat)
         }

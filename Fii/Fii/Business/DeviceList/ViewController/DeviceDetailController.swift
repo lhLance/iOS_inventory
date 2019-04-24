@@ -47,7 +47,14 @@ class DeviceDetailController: UIViewController {
     }()
     
     lazy var machineV: MachineStateView = {
-        let stateAry:NSMutableArray = [("任务状态","已完成"),("运行状态","MtRunning"),("连接状态","已连接"),("异常状态","无")]
+//        let stateAry:NSMutableArray = [("任务状态","已完成"),("运行状态","MtRunning"),("连接状态","已连接"),("异常状态","无")]
+        let stateAry:NSMutableArray = [
+            (LanguageHelper.getString(key: "machine_Operating_status"),"已完成"),
+            (LanguageHelper.getString(key: "machine_PLC_status"),"MtRunning"),
+             (LanguageHelper.getString(key: "machine_Drive_status"),"已连接"),
+             (LanguageHelper.getString(key: "machine_Machine_status"),"无")]
+
+        
         let machineV:MachineStateView = MachineStateView(frame: CGRect.zero, statesAry: stateAry)
         machineV.backgroundColor = UIColor.white
         machineV.layer.masksToBounds = true
