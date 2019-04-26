@@ -78,8 +78,6 @@ extension MobilePhoneFrameController{
 }
 extension MobilePhoneFrameController:UICollectionViewDataSource
 {
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomalCellID, for: indexPath) as! CollectionNomalCell
             cell.backgroundColor = UIColor.clear
