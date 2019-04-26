@@ -30,17 +30,17 @@
 		34069FD4226EDA1B00E245F4 /* MachineStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34069FD3226EDA1A00E245F4 /* MachineStateView.swift */; };
 		3416539A226D4E98008E271C /* NavControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34165399226D4E98008E271C /* NavControlView.swift */; };
 		3416539C226D62C6008E271C /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416539B226D62C5008E271C /* VideoControlView.swift */; };
+		342B9AE42272B4CE003F3AB1 /* YTChageEmotionStrTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9ADE2272B4CE003F3AB1 /* YTChageEmotionStrTool.swift */; };
+		342B9AE52272B4CE003F3AB1 /* YTChatCellFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9ADF2272B4CE003F3AB1 /* YTChatCellFrame.swift */; };
+		342B9AE62272B4CE003F3AB1 /* YTChatDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE02272B4CE003F3AB1 /* YTChatDefines.swift */; };
+		342B9AE72272B4CE003F3AB1 /* YTChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE12272B4CE003F3AB1 /* YTChatMessage.swift */; };
+		342B9AE82272B4CE003F3AB1 /* YTChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE22272B4CE003F3AB1 /* YTChatMessageCell.swift */; };
+		342B9AE92272B4CE003F3AB1 /* YTTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE32272B4CE003F3AB1 /* YTTextAttachment.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
 		3478771E225C8AA600B2689E /* IslandMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771A225C8AA500B2689E /* IslandMode.gif */; };
 		3478771F225C8AA600B2689E /* VisitMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771B225C8AA600B2689E /* VisitMode.gif */; };
 		34787720225C8AA600B2689E /* SequentialMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771C225C8AA600B2689E /* SequentialMode.gif */; };
-		34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5A224F15F9006D46CA /* ChatTableView.swift */; };
-		34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5C224F16C5006D46CA /* ChatDataSource.swift */; };
-		34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B5E224F171F006D46CA /* ChatUserInfo.swift */; };
-		34905B61224F1746006D46CA /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B60224F1746006D46CA /* MessageItem.swift */; };
-		34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */; };
-		34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B64224F17C9006D46CA /* ChatTableViewCell.swift */; };
 		34905B67224F6691006D46CA /* VoiceCurveSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */; };
 		349BE9292251F15700674B61 /* loopMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 349BE9282251F15600674B61 /* loopMode.gif */; };
 		349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349BE92A2253076900674B61 /* VoiceCurveView.m */; };
@@ -184,17 +184,17 @@
 		34069FD3226EDA1A00E245F4 /* MachineStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStateView.swift; sourceTree = "<group>"; };
 		34165399226D4E98008E271C /* NavControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControlView.swift; sourceTree = "<group>"; };
 		3416539B226D62C5008E271C /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
+		342B9ADE2272B4CE003F3AB1 /* YTChageEmotionStrTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChageEmotionStrTool.swift; sourceTree = "<group>"; };
+		342B9ADF2272B4CE003F3AB1 /* YTChatCellFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatCellFrame.swift; sourceTree = "<group>"; };
+		342B9AE02272B4CE003F3AB1 /* YTChatDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatDefines.swift; sourceTree = "<group>"; };
+		342B9AE12272B4CE003F3AB1 /* YTChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessage.swift; sourceTree = "<group>"; };
+		342B9AE22272B4CE003F3AB1 /* YTChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessageCell.swift; sourceTree = "<group>"; };
+		342B9AE32272B4CE003F3AB1 /* YTTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTextAttachment.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
 		3478771A225C8AA500B2689E /* IslandMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IslandMode.gif; sourceTree = "<group>"; };
 		3478771B225C8AA600B2689E /* VisitMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VisitMode.gif; sourceTree = "<group>"; };
 		3478771C225C8AA600B2689E /* SequentialMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SequentialMode.gif; sourceTree = "<group>"; };
-		34905B5A224F15F9006D46CA /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
-		34905B5C224F16C5006D46CA /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
-		34905B5E224F171F006D46CA /* ChatUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserInfo.swift; sourceTree = "<group>"; };
-		34905B60224F1746006D46CA /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
-		34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableHeaderViewCell.swift; sourceTree = "<group>"; };
-		34905B64224F17C9006D46CA /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCurveSwiftView.swift; sourceTree = "<group>"; };
 		349BE9282251F15600674B61 /* loopMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loopMode.gif; sourceTree = "<group>"; };
 		349BE92A2253076900674B61 /* VoiceCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceCurveView.m; sourceTree = "<group>"; };
@@ -365,6 +365,19 @@
 			path = Language;
 			sourceTree = "<group>";
 		};
+		342B9ADD2272B4CE003F3AB1 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				342B9ADE2272B4CE003F3AB1 /* YTChageEmotionStrTool.swift */,
+				342B9ADF2272B4CE003F3AB1 /* YTChatCellFrame.swift */,
+				342B9AE02272B4CE003F3AB1 /* YTChatDefines.swift */,
+				342B9AE12272B4CE003F3AB1 /* YTChatMessage.swift */,
+				342B9AE22272B4CE003F3AB1 /* YTChatMessageCell.swift */,
+				342B9AE32272B4CE003F3AB1 /* YTTextAttachment.swift */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
 		34F38D39224C536E0059E19A /* OpenEars */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,9 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				34F38D49224C5B0F0059E19A /* YHRippleButton.swift */,
-				34905B5A224F15F9006D46CA /* ChatTableView.swift */,
-				34905B64224F17C9006D46CA /* ChatTableViewCell.swift */,
-				34905B62224F178D006D46CA /* ChatTableHeaderViewCell.swift */,
 				34905B66224F6691006D46CA /* VoiceCurveSwiftView.swift */,
 				3404A3802268557900EEE390 /* YTProgressLineView.swift */,
 				34F6502D2268A2C9009DD72E /* YTSegmentControl.swift */,
@@ -395,9 +405,6 @@
 		34F38D4A224C5B0F0059E19A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				34905B5C224F16C5006D46CA /* ChatDataSource.swift */,
-				34905B5E224F171F006D46CA /* ChatUserInfo.swift */,
-				34905B60224F1746006D46CA /* MessageItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -656,6 +663,7 @@
 		CF7CA0572223D7A1005CE8A3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				342B9ADD2272B4CE003F3AB1 /* ChatViews */,
 				34F38D72224CA3CB0059E19A /* ScrollPageView */,
 				CF7CA05B2223D7C6005CE8A3 /* DashLine.swift */,
 				CF7CA05A2223D7C6005CE8A3 /* MaqueeView.swift */,
@@ -1223,7 +1231,6 @@
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */,
 				34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */,
-				34905B65224F17C9006D46CA /* ChatTableViewCell.swift in Sources */,
 				CF8595282240E4EE00B9F60C /* AboutVC.swift in Sources */,
 				CFB5FD15226428D100E37EE6 /* FiiNavgationController.swift in Sources */,
 				CF93DFA0224B0D7400B26509 /* BootStatisticsView.swift in Sources */,
@@ -1238,7 +1245,6 @@
 				34F38D69224CA3380059E19A /* CloumnCategoryMenuTableController.swift in Sources */,
 				CF7CA0752223DC6D005CE8A3 /* APIError.swift in Sources */,
 				34F38D68224CA3380059E19A /* CloumnCategoryDetailController.swift in Sources */,
-				34905B61224F1746006D46CA /* MessageItem.swift in Sources */,
 				CF7CA0772223E1B6005CE8A3 /* APIResult.swift in Sources */,
 				04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */,
 				CF8C0EE32236492B00DF0D99 /* DeviceListVC.swift in Sources */,
@@ -1252,12 +1258,12 @@
 				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				34F38D71224CA3380059E19A /* UIImageView-SquareBorder.swift in Sources */,
-				34905B63224F178D006D46CA /* ChatTableHeaderViewCell.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
 				042EE59D225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift in Sources */,
 				CF9D2056223F3EB500CEF14C /* AlertView.swift in Sources */,
 				34F38D7C224CA3CB0059E19A /* SwiftyGifManager.swift in Sources */,
+				342B9AE82272B4CE003F3AB1 /* YTChatMessageCell.swift in Sources */,
 				CF8EF5482245DFF6006BAFD1 /* FileCache.swift in Sources */,
 				CFA83707223CBEB60054F311 /* UserInfo.swift in Sources */,
 				34F38D6D224CA3380059E19A /* CollectionHeadView.swift in Sources */,
@@ -1283,30 +1289,33 @@
 				CF3AA687226D5CE90063C0F6 /* MeLanguageCell.swift in Sources */,
 				049629812254E031004C2D1D /* FiiCircleView.swift in Sources */,
 				CFA4D43622432A7000AC586A /* CustomerServiceVC.swift in Sources */,
+				342B9AE42272B4CE003F3AB1 /* YTChageEmotionStrTool.swift in Sources */,
 				34F38D6B224CA3380059E19A /* MobilePhoneFrameController.swift in Sources */,
 				34F38D7E224CA3CB0059E19A /* UIImageView+SwiftyGif.swift in Sources */,
+				342B9AE72272B4CE003F3AB1 /* YTChatMessage.swift in Sources */,
 				CFE3DD512244D15C006CB9E7 /* APP.swift in Sources */,
 				CF7CA04D2223D376005CE8A3 /* UIView+Frame.swift in Sources */,
 				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				34F38D6A224CA3380059E19A /* DeviceDetailController.swift in Sources */,
+				342B9AE52272B4CE003F3AB1 /* YTChatCellFrame.swift in Sources */,
 				34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */,
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */,
 				CF7CA0682223D899005CE8A3 /* BlockConfig.swift in Sources */,
 				34069FD4226EDA1B00E245F4 /* MachineStateView.swift in Sources */,
 				CF7CA0672223D899005CE8A3 /* GCDTimer.swift in Sources */,
-				34905B5D224F16C5006D46CA /* ChatDataSource.swift in Sources */,
 				CF7CA05E2223D7C7005CE8A3 /* DashLine.swift in Sources */,
 				CF7CA0402223CD2B005CE8A3 /* UIDevice+Extension.swift in Sources */,
 				CF7CA06A2223D8D8005CE8A3 /* UIColor+Extension.swift in Sources */,
+				342B9AE92272B4CE003F3AB1 /* YTTextAttachment.swift in Sources */,
 				CF7CA0522223D376005CE8A3 /* UILabel+Extension.swift in Sources */,
 				CF7CA03C2223C3C1005CE8A3 /* Foundation+Extension.swift in Sources */,
-				34905B5B224F15F9006D46CA /* ChatTableView.swift in Sources */,
 				04265367224A36B9007ACD55 /* LanguageVC.swift in Sources */,
 				3404A3812268557900EEE390 /* YTProgressLineView.swift in Sources */,
 				CF656629225F0C76009C6B03 /* FiiDashBoardView.swift in Sources */,
 				04F9C016223A785C00C1859C /* LoginVC.swift in Sources */,
 				3404A37B2265C9C600EEE390 /* YTPageStyle.swift in Sources */,
+				342B9AE62272B4CE003F3AB1 /* YTChatDefines.swift in Sources */,
 				CF7CA04E2223D376005CE8A3 /* String+Extension.swift in Sources */,
 				349BE92C2253076A00674B61 /* VoiceCurveView.m in Sources */,
 				34F38D81224CABD10059E19A /* Common.swift in Sources */,
@@ -1314,7 +1323,6 @@
 				34905B67224F6691006D46CA /* VoiceCurveSwiftView.swift in Sources */,
 				CF7CA0642223D872005CE8A3 /* Alert.swift in Sources */,
 				CF7CA0422223CE4A005CE8A3 /* UIScreen+Extension.swift in Sources */,
-				34905B5F224F171F006D46CA /* ChatUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,29 +21,37 @@ class VoiceControllVC: UIViewController {
     var chineseDicPath:String = ""
     var errString:String! = ""
     var speechLab:UILabel!
-    
+    var longPressGesture : UILongPressGestureRecognizer!;
     var sayStr:String?;
     
-    var Chats:NSMutableArray!
-    var tableView:ChatTableView!
-    var me:ChatUserInfo!
-    var you:ChatUserInfo!
     
-    var longPressGesture : UILongPressGestureRecognizer!;
+    var dataSource:NSMutableArray = NSMutableArray()
+    var tableView:UITableView = UITableView()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createTipsData()
+        initSomething()
+        initChatTableView()
         setUpPressend();
         setUpUI()
-        setupChatTable()
         
     }
     
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        ScrollTableViewToBottom()
+    }
 }
+
+
+
+
 
 
 extension VoiceControllVC:OEEventsObserverDelegate{
@@ -76,15 +84,18 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     private func setUpUI(){
         
-        self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 150)/2,
+        self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 118)/2,
                                                      y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
-                                                     width: 150,
-                                                     height: 150),
+                                                     width: 118,
+                                                     height: 79),
                                        rippleColor: .blue)
-        self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
 //        self.startBtn.setImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
+        self.startBtn.setBackgroundImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
+        self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
+        self.startBtn.setTitleColor(UIColor.white,for: .normal)
         self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
-//        self.startBtn.center = view.center
+        self.startBtn.contentMode = UIView.ContentMode.scaleAspectFill
+        
         view.addSubview(self.startBtn)
         
         /*命令词*/
@@ -110,7 +121,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         if !self.startBtn.isSelected
         {
             print("\(#function)+ \(#file)")
-
+            sayStr = ""
             self.startBtn.setTitle(LanguageHelper.getString(key: "voice_listening"), for: UIControl.State.normal)
             try? self.pocketsphinx.setActive(true)
             self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
@@ -123,6 +134,8 @@ extension VoiceControllVC:OEEventsObserverDelegate{
             print("\(#function) + \(#file)")
             self.startBtn.setTitle("开始", for: UIControl.State.normal)
             self.pocketsphinx.stopListening()
+//            sayStr =  "在村里，Lz辈分比较大，在我还是小屁孩的时候就有大人喊我叔了，这不算糗[委屈]。 成年之后，鼓起勇气向村花二丫深情表白了(当然是没有血缘关系的)[害羞]，结果她一脸淡定的回绝了:“二叔！别闹……”[尴尬]"
+            
             sendMessage();
 
             
@@ -190,69 +203,144 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
 }
 
-
-extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
+extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
     
+    func createTipsData() {
+        for i: Int in 0..<2 {
+            let chatCellFrame:YTChatCellFrame = YTChatCellFrame()
+            let message:YTChatMessage = YTChatMessage()
+            var messageText = String()
+            if i == 0 {
+                message.currentUserType = userType.me
+                message.userName = " "
+                message.messageType = 0
+                messageText = LanguageHelper.getString(key: "voice_tips_welocome")
+            }else if i == 1 {
+                let tipStr = "\(LanguageHelper.getString(key: "voice_tips_word"))  \n \(LanguageHelper.getString(key: "voice_tips_Key_Word"))"
+                message.currentUserType = userType.me
+                message.userName = " "
+                message.messageType = 0;
+                messageText = tipStr
+            }
+            message.message = messageText
+            
+            chatCellFrame.message = message
+            
+            dataSource.add(chatCellFrame)
+        }
+    }
     
-    func setupChatTable()
-    {
-        tableView = ChatTableView(frame: CGRect(x: 0,
-                                                y: kStatusBarH + kNavigationBar,
-                                                width: view.width,
-                                                height:view.height - 200 - SafeAreaBottomHeight - kTabBottomH ),
-                                  style: .plain)
-        tableView.backgroundColor = UIColor.white;
-        //创建一个重用的单元格
-        tableView!.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatCell")
-        me = ChatUserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
-        you  = ChatUserInfo(name:"Xiaohua", logo:("xiaohua.png"))
+    // 初始化一些数据
+    func initSomething() {
         
-        let zero =  MessageItem(body:LanguageHelper.getString(key: "voice_tips_welocome") as NSString, user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-        let tipStr:NSString = NSString(format: "%@ \n %@", LanguageHelper.getString(key: "voice_tips_word") as NSString,LanguageHelper.getString(key: "voice_tips_Key_Word") as NSString)
-        let zero1 =  MessageItem(body:tipStr, user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-//        let fouth =  MessageItem(body:"嗯，下次我们一起去吧！",user:me, date:Date(timeIntervalSinceNow:-90000020), mtype:.mine)
+        self.view.backgroundColor = BACKGROUND_Color
         
-        Chats = NSMutableArray()
-//        Chats.addObjects(from: [first, third, fouth, fifth, zero, zero1])
-        Chats.addObjects(from: [zero,zero1])
-        tableView.chatDataSource = self
-        tableView.reloadData()
-        tableView.added(into: view);
+        if #available(iOS 11.0, *) {
+            
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+        self.title = LanguageHelper.getString(key: "voice")
+        
     }
     
-    func rowsForChatTable(_ tableView:ChatTableView) -> Int
-    {
-        return self.Chats.count
+    //创建tabbleView
+    func initChatTableView() {
+        let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight
+        tableView = UITableView.init(frame: CGRect.init(x: 0, y: kStatusBarH  + kNavigationBarH, width: screenW, height: contentH))
+        tableView.backgroundColor = BACKGROUND_Color
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(YTChatMessageCell.self, forCellReuseIdentifier: "YTChatMessageCell")
+        self.view.addSubview(tableView)
+        
     }
     
-    func chatTableView(_ tableView:ChatTableView, dataForRow row:Int) -> MessageItem
-    {
-        return Chats[row] as! MessageItem
+    
+    //tableview
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return dataSource.count
     }
     
-    @objc func sendMessage()
-    {
-        var senderStr = sayStr
-        if (senderStr == nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = YTChatMessageCell.cellWithTableView(tableView: tableView)
+        
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        let chatCellFrame:YTChatCellFrame = dataSource.object(at: indexPath.row) as! YTChatCellFrame
+        
+        cell.chatCellFrame = chatCellFrame
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let chatCellFrame:YTChatCellFrame = dataSource.object(at: indexPath.row) as! YTChatCellFrame
+        
+        return chatCellFrame.cellHeight;
+    }
+    
+    //重设tabbleview的frame并根据是否在底部来执行滚动到底部的动画（不在底部就不执行，在底部才执行）
+    func resetChatList() {
+        
+        let offSetY:CGFloat = tableView.contentSize.height - tableView.height;
+        //判断是否滚动到底部，会有一个误差值
+        if tableView.contentOffset.y > offSetY - 5 || tableView.contentOffset.y > offSetY + 5 {
+            ScrollTableViewToBottom()
+        }
+    }
+    
+    //滚动到底部
+    func ScrollTableViewToBottom() {
+        
+        let indexPath:NSIndexPath = NSIndexPath.init(row: self.dataSource.count - 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: false)
+    }
+    @objc func sendMessage() {
+        
+        let message:YTChatMessage = YTChatMessage()
+        var messageText = sayStr
+        if (messageText?.count == 0)
         {
-            senderStr = LanguageHelper.getString(key: "voice_tips_word_again") + "\n" + LanguageHelper.getString(key: "voice_tips_Key_Word")
-            let thatChat =  MessageItem(body:"\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
-            Chats.add(thatChat)
+            messageText = LanguageHelper.getString(key: "voice_tips_word_again") + "\n" + LanguageHelper.getString(key: "voice_tips_Key_Word")
+            message.currentUserType = userType.me
+            message.userName = " "
+            message.messageType = 0;
         }
         else
         {
-            let thisChat =  MessageItem(body:senderStr! as NSString, user:me, date:Date(), mtype:ChatType.mine)
-            let thatChat =  MessageItem(body:"你说的是:\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
-            Chats.add(thisChat)
-            Chats.add(thatChat)
+            message.currentUserType = userType.other
+            message.userName = " "
+            message.messageType = 0
         }
-        self.tableView.chatDataSource = self
-        self.tableView.reloadData()
-
+        message.message = messageText!
+        createDataSource(message: message)
+        refreshChatList()
     }
     
+    //创建一条数据
+    func createDataSource(message:YTChatMessage) {
+        let cellFrame = YTChatCellFrame()
+        cellFrame.message = message
+        dataSource.add(cellFrame)
+        
+    }
     
-    
+    //刷新UI
+    func refreshChatList() {
+        let indexPath:NSIndexPath = NSIndexPath.init(row: dataSource.count - 1, section: 0)
+        tableView.insertRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.none)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+    }
     
 }
 
