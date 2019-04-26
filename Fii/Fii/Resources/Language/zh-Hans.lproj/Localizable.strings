@@ -133,4 +133,5 @@
 "machine_ball_machine" = "球机";//球机
 "X_axis" = "x轴";//x轴
 "Y_axis" = "y轴";//y轴
+"voice" = "语音";//语音
 

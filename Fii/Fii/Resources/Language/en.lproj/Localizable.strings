@@ -128,8 +128,9 @@
 "speed" = "speed";//倍速
 "focus" = "focus";//焦点
 "preset" = "preset";//预设
-"start" = "开始";//开始
+"start" = "start";//开始
 "machine_track_camera" = "track camera";//轨道摄像机
 "machine_ball_machine" = "ball machine";//球机
 "X_axis" = "x axis";//x轴
 "Y_axis" = "y axis";//y轴
+"voice" = "voice";//语音
