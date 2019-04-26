@@ -54,6 +54,10 @@
 "me_set_cache_size" = "Cache size";
 "me_set_checkUpdate" = "Check update";
 "me_set_language" = "Language";
+"me_set_click_clear_cache" = "click to clear";
+"me_set_cache_size" = "cache size";
+"me_set_newest_version" = "Currently the latest version";
+"me_set_update_version" = "Current version is lower, please update";
 
 "me_about" = "About";
 "me_about_us" = "About us";

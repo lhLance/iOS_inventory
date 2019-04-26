@@ -54,6 +54,10 @@
 "me_set_cache_size" = "緩存大小";
 "me_set_checkUpdate" = "檢查更新";
 "me_set_language" = "語言";
+"me_set_click_clear_cache" = "點擊清除";
+"me_set_cache_size" = "緩存大小";
+"me_set_newest_version" = "當前已是最新版本";
+"me_set_update_version" = "版本太低，請及時更新";
 
 "me_about" = "關於";
 "me_about_us" = "關於我们";

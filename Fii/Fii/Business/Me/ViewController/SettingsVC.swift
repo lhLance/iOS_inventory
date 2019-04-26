@@ -108,25 +108,26 @@ extension SettingsVC {
     }
     
     @objc func handleUserAction(_ ges: UITapGestureRecognizer) {
+        
     let action = UserAction(rawValue: ges.view!.tag)!
         switch action {
         case .cleanCache:
-            Alert.show(title: "点击清除", message: nil) {
+            Alert.show(title: LanguageHelper.getString(key: "me_set_click_clear_cache"), message: nil) {
                 FileCache.clearCache()
                 let size = FileCache.fileSizeOfCache()
-                self.cellArr[0].detailText = "缓存大小: \(size)MB"
+                self.cellArr[0].detailText = "\(LanguageHelper.getString(key: "me_set_cache_size")): \(size)MB"
             }
         case .checkVersion:
             // 本地版本 vs 服务器版本
             if APP.version >= 1 {
-                Alert.show(title: "当前已是最新版本")
+                Alert.show(title: LanguageHelper.getString(key: "me_set_newest_version"))
             } else {
-                Alert.show(title: "版本较低，请更新")
+                Alert.show(title: LanguageHelper.getString(key: "me_set_update_version"))
             }
         case .language:
             
             let vc = LanguageVC()
-            vc.title = "语言"
+            vc.title = LanguageHelper.getString(key: "me_set_language")
             navigationController?.pushViewController(vc, animated: true)
         }
     }
