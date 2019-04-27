@@ -36,6 +36,16 @@
 		342B9AE72272B4CE003F3AB1 /* YTChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE12272B4CE003F3AB1 /* YTChatMessage.swift */; };
 		342B9AE82272B4CE003F3AB1 /* YTChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE22272B4CE003F3AB1 /* YTChatMessageCell.swift */; };
 		342B9AE92272B4CE003F3AB1 /* YTTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AE32272B4CE003F3AB1 /* YTTextAttachment.swift */; };
+		342B9AF42273EA6D003F3AB1 /* ic_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AEB2273EA6D003F3AB1 /* ic_record.png */; };
+		342B9AF52273EA6D003F3AB1 /* ic_record_ripple-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AEC2273EA6D003F3AB1 /* ic_record_ripple-1.png */; };
+		342B9AF62273EA6D003F3AB1 /* ic_record_ripple-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AED2273EA6D003F3AB1 /* ic_record_ripple-2.png */; };
+		342B9AF72273EA6D003F3AB1 /* ic_record_ripple-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AEE2273EA6D003F3AB1 /* ic_record_ripple-3.png */; };
+		342B9AF82273EA6D003F3AB1 /* ic_record_ripple-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AEF2273EA6D003F3AB1 /* ic_record_ripple-4.png */; };
+		342B9AF92273EA6D003F3AB1 /* ic_record_ripple-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AF02273EA6D003F3AB1 /* ic_record_ripple-5.png */; };
+		342B9AFA2273EA6D003F3AB1 /* ic_record_ripple-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AF12273EA6D003F3AB1 /* ic_record_ripple-6.png */; };
+		342B9AFB2273EA6D003F3AB1 /* ic_record_ripple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AF22273EA6D003F3AB1 /* ic_record_ripple-7.png */; };
+		342B9AFC2273EA6D003F3AB1 /* ic_record_ripple-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 342B9AF32273EA6D003F3AB1 /* ic_record_ripple-8.png */; };
+		342B9AFE2273EE29003F3AB1 /* VoiceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B9AFD2273EE29003F3AB1 /* VoiceDialog.swift */; };
 		34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34787713225C6CEA00B2689E /* VideoMonitorController.swift */; };
 		3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 34787719225C8AA400B2689E /* DistributionalMode.gif */; };
 		3478771E225C8AA600B2689E /* IslandMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3478771A225C8AA500B2689E /* IslandMode.gif */; };
@@ -190,6 +200,16 @@
 		342B9AE12272B4CE003F3AB1 /* YTChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessage.swift; sourceTree = "<group>"; };
 		342B9AE22272B4CE003F3AB1 /* YTChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessageCell.swift; sourceTree = "<group>"; };
 		342B9AE32272B4CE003F3AB1 /* YTTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTextAttachment.swift; sourceTree = "<group>"; };
+		342B9AEB2273EA6D003F3AB1 /* ic_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_record.png; sourceTree = "<group>"; };
+		342B9AEC2273EA6D003F3AB1 /* ic_record_ripple-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-1.png"; sourceTree = "<group>"; };
+		342B9AED2273EA6D003F3AB1 /* ic_record_ripple-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-2.png"; sourceTree = "<group>"; };
+		342B9AEE2273EA6D003F3AB1 /* ic_record_ripple-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-3.png"; sourceTree = "<group>"; };
+		342B9AEF2273EA6D003F3AB1 /* ic_record_ripple-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-4.png"; sourceTree = "<group>"; };
+		342B9AF02273EA6D003F3AB1 /* ic_record_ripple-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-5.png"; sourceTree = "<group>"; };
+		342B9AF12273EA6D003F3AB1 /* ic_record_ripple-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-6.png"; sourceTree = "<group>"; };
+		342B9AF22273EA6D003F3AB1 /* ic_record_ripple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-7.png"; sourceTree = "<group>"; };
+		342B9AF32273EA6D003F3AB1 /* ic_record_ripple-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_ripple-8.png"; sourceTree = "<group>"; };
+		342B9AFD2273EE29003F3AB1 /* VoiceDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceDialog.swift; sourceTree = "<group>"; };
 		34787713225C6CEA00B2689E /* VideoMonitorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMonitorController.swift; sourceTree = "<group>"; };
 		34787719225C8AA400B2689E /* DistributionalMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DistributionalMode.gif; sourceTree = "<group>"; };
 		3478771A225C8AA500B2689E /* IslandMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IslandMode.gif; sourceTree = "<group>"; };
@@ -378,6 +398,22 @@
 			path = ChatViews;
 			sourceTree = "<group>";
 		};
+		342B9AEA2273EA6D003F3AB1 /* voiceImg */ = {
+			isa = PBXGroup;
+			children = (
+				342B9AEB2273EA6D003F3AB1 /* ic_record.png */,
+				342B9AEC2273EA6D003F3AB1 /* ic_record_ripple-1.png */,
+				342B9AED2273EA6D003F3AB1 /* ic_record_ripple-2.png */,
+				342B9AEE2273EA6D003F3AB1 /* ic_record_ripple-3.png */,
+				342B9AEF2273EA6D003F3AB1 /* ic_record_ripple-4.png */,
+				342B9AF02273EA6D003F3AB1 /* ic_record_ripple-5.png */,
+				342B9AF12273EA6D003F3AB1 /* ic_record_ripple-6.png */,
+				342B9AF22273EA6D003F3AB1 /* ic_record_ripple-7.png */,
+				342B9AF32273EA6D003F3AB1 /* ic_record_ripple-8.png */,
+			);
+			path = voiceImg;
+			sourceTree = "<group>";
+		};
 		34F38D39224C536E0059E19A /* OpenEars */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +434,7 @@
 				34F6502D2268A2C9009DD72E /* YTSegmentControl.swift */,
 				349BE92B2253076A00674B61 /* VoiceCurveView.h */,
 				349BE92A2253076900674B61 /* VoiceCurveView.m */,
+				342B9AFD2273EE29003F3AB1 /* VoiceDialog.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -581,6 +618,7 @@
 		CF7CA02D22239744005CE8A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				342B9AEA2273EA6D003F3AB1 /* voiceImg */,
 				34F38D4C224C9B730059E19A /* Gif */,
 				04A8C97C224BA828001D6987 /* Language */,
 				CFAEC1E122378D5B00F38B82 /* Videos */,
@@ -1102,10 +1140,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342B9AFB2273EA6D003F3AB1 /* ic_record_ripple-7.png in Resources */,
+				342B9AF92273EA6D003F3AB1 /* ic_record_ripple-5.png in Resources */,
 				34F38D58224C9B730059E19A /* FOXBOT_DJ.gif in Resources */,
 				3478771E225C8AA600B2689E /* IslandMode.gif in Resources */,
 				04A8C976224BA0EE001D6987 /* PingFang_Light.ttf in Resources */,
 				04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */,
+				342B9AFA2273EA6D003F3AB1 /* ic_record_ripple-6.png in Resources */,
 				34F38D87224CAE210059E19A /* RealTimeCollectionCell.xib in Resources */,
 				04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */,
 				349BE9292251F15700674B61 /* loopMode.gif in Resources */,
@@ -1116,18 +1157,24 @@
 				3478771F225C8AA600B2689E /* VisitMode.gif in Resources */,
 				34F38D3E224C536E0059E19A /* AcousticModelChinese.bundle in Resources */,
 				34787720225C8AA600B2689E /* SequentialMode.gif in Resources */,
+				342B9AF72273EA6D003F3AB1 /* ic_record_ripple-3.png in Resources */,
 				34F38D59224C9B730059E19A /* FOXNUM.gif in Resources */,
 				3478771D225C8AA600B2689E /* DistributionalMode.gif in Resources */,
+				342B9AF62273EA6D003F3AB1 /* ic_record_ripple-2.png in Resources */,
+				342B9AF82273EA6D003F3AB1 /* ic_record_ripple-4.png in Resources */,
 				04A8C977224BA0EE001D6987 /* PingFang_Regular.ttf in Resources */,
 				04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */,
 				34F38D6E224CA3380059E19A /* CollectionHeadView.xib in Resources */,
 				34F38D54224C9B730059E19A /* AGV.gif in Resources */,
+				342B9AF52273EA6D003F3AB1 /* ic_record_ripple-1.png in Resources */,
 				34F38D56224C9B730059E19A /* FANUC.gif in Resources */,
 				34F38D5A224C9B730059E19A /* Super-TG.gif in Resources */,
+				342B9AF42273EA6D003F3AB1 /* ic_record.png in Resources */,
 				34F38D70224CA3380059E19A /* CollectionNomalCell.xib in Resources */,
 				34F38D55224C9B730059E19A /* ATM.gif in Resources */,
 				34F38D57224C9B730059E19A /* FOXBOT.gif in Resources */,
 				34F38D3F224C536E0059E19A /* AcousticModelEnglish.bundle in Resources */,
+				342B9AFC2273EA6D003F3AB1 /* ic_record_ripple-8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,6 +1275,7 @@
 				CF852516224A14D100F1B389 /* LanguageHelper.swift in Sources */,
 				0415600322240306001E68CD /* APIManager.swift in Sources */,
 				0415600522240A9D001E68CD /* APIManager+HTTP.swift in Sources */,
+				342B9AFE2273EE29003F3AB1 /* VoiceDialog.swift in Sources */,
 				CF93DF9A224B0CE600B26509 /* TimeEfficiencyAnalysisView.swift in Sources */,
 				34F38D4B224C5B0F0059E19A /* YHRippleButton.swift in Sources */,
 				34787715225C6CEA00B2689E /* VideoMonitorController.swift in Sources */,

@@ -80,6 +80,7 @@ class YTChatMessageCell: UITableViewCell {
                 //消息内容
                 messageLabel.setAttributedTitle(chatCellFrame?.message?.attMessage, for: UIControl.State.normal)
                 messageLabel.frame = (chatCellFrame?.textFrame)!
+                messageLabel.TitleColor(UIColor.white)
                 let messageImageName:String = type ? "yoububble" : "chat_send_nor"
                 let messageImageNameP:String = type ? "chat_receive_p" : "chat_send_p"
                 messageLabel.setBackgroundImage(UIImage.resizebleImage(imageName: messageImageName), for: UIControl.State.normal)

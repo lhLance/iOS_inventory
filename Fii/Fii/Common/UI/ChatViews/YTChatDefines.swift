@@ -14,7 +14,7 @@ public let screenH = UIScreen.main.bounds.size.height
 
 public let BLUE_Color            = UIColor(red: 22.0 / 255.0, green: 128.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
 
-public let BACKGROUND_Color      = UIColor(red: 235.0 / 255.0, green: 235.0 / 255.0, blue: 235.0 / 255.0, alpha: 1.0)
+public let BACKGROUND_Color      = UIColor(red: 237.0 / 255.0, green: 237.0 / 255.0, blue: 242.0 / 255.0, alpha: 1.0)
 
 public let navColor              = UIColor.init(red: 57 / 255, green: 56 / 255, blue: 54 / 255, alpha: 1.0)
 

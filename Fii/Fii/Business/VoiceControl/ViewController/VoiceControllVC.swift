@@ -8,6 +8,9 @@
 
 import UIKit
 private let ChineseModel = "LanguageModelFilesOfChinese"
+private let btnWidth:CGFloat = 118
+private let btnHeight:CGFloat = 79
+
 
 class VoiceControllVC: UIViewController {
 
@@ -27,8 +30,6 @@ class VoiceControllVC: UIViewController {
     
     var dataSource:NSMutableArray = NSMutableArray()
     var tableView:UITableView = UITableView()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,32 +85,32 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     private func setUpUI(){
         
-        self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 118)/2,
-                                                     y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
-                                                     width: 118,
-                                                     height: 79),
-                                       rippleColor: .blue)
-//        self.startBtn.setImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
-        self.startBtn.setBackgroundImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
-        self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
-        self.startBtn.setTitleColor(UIColor.white,for: .normal)
-        self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
-        self.startBtn.contentMode = UIView.ContentMode.scaleAspectFill
-        
-        view.addSubview(self.startBtn)
+
+        let wigW:CGFloat = CGFloat((self.view.width) - btnWidth)/2;
+        let wigH:CGFloat = CGFloat((self.view.height - btnHeight - 5 - SafeAreaBottomHeight - kTabBarH));
+        startBtn = UIButton(frame: CGRect(x: wigW,
+                                               y: wigH,
+                                               width: btnWidth,
+                                               height: btnHeight))
+        startBtn.setBackgroundImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
+        startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
+        startBtn.setTitleColor(UIColor.white,for: .normal)
+        startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
+        startBtn.contentMode = UIView.ContentMode.scaleAspectFill
+        startBtn.added(into: view)
         
         /*命令词*/
-        self.lmGenerator = OELanguageModelGenerator.init()
-        self.pocketsphinx = OEPocketsphinxController.sharedInstance()
-        self.chineseWords = ["向左移动", "向右移动", "向下移动", "向上移动","开始","停止"]
-        self.openEarsEventsObserver = OEEventsObserver.init()
-        self.openEarsEventsObserver.delegate = self
+        lmGenerator = OELanguageModelGenerator.init()
+        pocketsphinx = OEPocketsphinxController.sharedInstance()
+        chineseWords = ["向左移动", "向右移动", "向下移动", "向上移动","开始","停止"]
+        openEarsEventsObserver = OEEventsObserver.init()
+        openEarsEventsObserver.delegate = self
         
-        self.errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
+        errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
                                                                 withFilesNamed: ChineseModel,
                                                                 forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String
-        self.chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel)
-        self.chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
+        chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel)
+        chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
         
     }
     
@@ -118,8 +119,11 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 
 
         
-        if !self.startBtn.isSelected
+        if !startBtn.isSelected
         {
+            checkVoiceAllow()
+            VoiceDialog.show(vc: self)
+
             print("\(#function)+ \(#file)")
             sayStr = ""
             self.startBtn.setTitle(LanguageHelper.getString(key: "voice_listening"), for: UIControl.State.normal)
@@ -131,13 +135,12 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         }
         else{
 
-            print("\(#function) + \(#file)")
-            self.startBtn.setTitle("开始", for: UIControl.State.normal)
-            self.pocketsphinx.stopListening()
-//            sayStr =  "在村里，Lz辈分比较大，在我还是小屁孩的时候就有大人喊我叔了，这不算糗[委屈]。 成年之后，鼓起勇气向村花二丫深情表白了(当然是没有血缘关系的)[害羞]，结果她一脸淡定的回绝了:“二叔！别闹……”[尴尬]"
-            
-            sendMessage();
+            VoiceDialog.dissmiss()
 
+            print("\(#function) + \(#file)")
+            self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: UIControl.State.normal)
+            self.pocketsphinx.stopListening()
+            sendMessage();
             
         }
         self.startBtn.isSelected = !self.startBtn.isSelected
@@ -161,6 +164,30 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 
         
     }
+    
+    func checkVoiceAllow()
+    {
+        var allow = false
+        let audioSession = AVAudioSession.sharedInstance()
+        //首先要判断是否允许访问麦克风
+        audioSession.requestRecordPermission { (allowed) in
+            if !allowed{
+                let alert = UIAlertController(title: "无法访问您的麦克风", message: "请到设置 -> 隐私 -> 麦克风 ，打开访问权限", preferredStyle: UIAlertController.Style.alert)
+                let btnOK = UIAlertAction(title: "好的", style: .default, handler: nil)
+                alert.addAction(btnOK)
+                self.present(alert, animated: true, completion: nil)
+                
+                allow = false
+            }else{
+                allow = true
+            }
+        }
+        if allow == false {
+            return
+        }
+    }
+    
+    
     
     func pocketsphinxDidStartListening() {
         print("\(#function)已经开始接听")
@@ -246,7 +273,7 @@ extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
     
     //创建tabbleView
     func initChatTableView() {
-        let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight
+        let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight - btnHeight - 5
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: kStatusBarH  + kNavigationBarH, width: screenW, height: contentH))
         tableView.backgroundColor = BACKGROUND_Color
         tableView.showsVerticalScrollIndicator = false
