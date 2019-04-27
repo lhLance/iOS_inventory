@@ -80,12 +80,11 @@ class YTChatMessageCell: UITableViewCell {
                 //消息内容
                 messageLabel.setAttributedTitle(chatCellFrame?.message?.attMessage, for: UIControl.State.normal)
                 messageLabel.frame = (chatCellFrame?.textFrame)!
-                messageLabel.TitleColor(UIColor.white)
                 let messageImageName:String = type ? "yoububble" : "chat_send_nor"
                 let messageImageNameP:String = type ? "chat_receive_p" : "chat_send_p"
                 messageLabel.setBackgroundImage(UIImage.resizebleImage(imageName: messageImageName), for: UIControl.State.normal)
                 messageLabel.setBackgroundImage(UIImage.resizebleImage(imageName: messageImageNameP), for: UIControl.State.highlighted)
-                messageLabel.titleEdgeInsets = type ? UIEdgeInsets(top: 7, left: 13, bottom: 5, right: 5) : UIEdgeInsets(top: 5, left: 7, bottom: 5, right: 13)
+                messageLabel.titleEdgeInsets = type ? UIEdgeInsets(top: 7, left: 13, bottom: 5, right: 5) : UIEdgeInsets(top: 5, left: 7, bottom: 5, right: 13)                
                 gifimageView.frame = CGRect()
                 
             }

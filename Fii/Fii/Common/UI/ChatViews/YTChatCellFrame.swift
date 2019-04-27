@@ -49,7 +49,7 @@ class YTChatCellFrame: NSObject {
           
             //message
             let str:String = (message?.message)!
-            let textAtt = YTChageEmotionStrTool.changeStr(string: str, font: UIFont.systemFont(ofSize: 17.0), textColor: UIColor.black)
+            let textAtt = YTChageEmotionStrTool.changeStr(string: str, font: UIFont.systemFont(ofSize: 17.0), textColor: UIColor.white)
             message?.attMessage = textAtt
             let maxsize:CGSize = CGSize.init(width: Int(screenW - (iconFrameW + padding * 3) * 2), height: 1000)
             let textSize:CGSize = textAtt.boundingRect(with: maxsize, options: .usesLineFragmentOrigin, context: nil).size
