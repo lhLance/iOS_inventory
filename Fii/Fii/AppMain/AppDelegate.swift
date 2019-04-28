@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 开屏图停留
         _ = Thread.sleep(forTimeInterval: 0.0)
         
-        // rsetupOpenScreenView(vc: rootVC ?? FiiTabBarController())
+// setupOpenScreenView(vc: rootVC ?? FiiTabBarController())
     }
     
     func createTabbarChildVC(vc: UIViewController,

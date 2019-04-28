@@ -8,10 +8,10 @@
 
 import UIKit
 
-private let kItemMargin:CGFloat = 10
-private let kItemW = (UIScreen.width - 3*kItemMargin)/2
-private let kNomalItemH = kItemW*4/3
-
+private let kItemMargin:CGFloat = 16
+private let kItemW = 166
+private let kNomalItemH = 141
+private let titleColor = colorWithRGBA(red: 71, green: 71, blue: 71, alpha: 1.0)
 private let kPrettyItemH = kItemW*4/3
 
 private let kHeaderViewH = CGFloat(50)
@@ -25,18 +25,20 @@ class ToolingLineController: UIViewController {
 
     
     private var titleAry:[(String,String)] = []
+    private var gifImgAry:[(String)] = []
+
     private lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNomalItemH)
         layout.minimumLineSpacing = kItemMargin
-        layout.minimumInteritemSpacing = kItemMargin
+        layout.minimumInteritemSpacing = 11/*水平间隔*/
         layout.sectionInset = UIEdgeInsets(top: kItemMargin,
                                            left: kItemMargin,
                                            bottom: kItemMargin,
                                            right: kItemMargin)
         
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = colorWithRGBA(red: 57, green: 61, blue: 79, alpha: 1.0)
+        collectionView.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight] /*随父控件大小而拉升*/
@@ -68,13 +70,18 @@ class ToolingLineController: UIViewController {
 extension ToolingLineController{
     private func setInitData(){
     
-    titleAry = [("Super-TG","devList_tg.png"),
-                ("送料机","devList_feeder.png"),
-                ("FOXBOT","devList_Foxbot6.png"),
-                ("AGV2","devList_agv2"),
-                ("ATM","devList_atm.png"),
-                ("FOXBOT_DJ","devList_Foxbot5.png")]
+    titleAry = [(LanguageHelper.getString(key: "machine_SuperTG"),"devList_tg.png"),
+                (LanguageHelper.getString(key: "deivce_Feeder"),"devList_feeder.png"),
+                (LanguageHelper.getString(key: "foxbot1"),"devList_Foxbot6.png"),
+                (LanguageHelper.getString(key: "agv1"),"devList_agv2"),
+                (LanguageHelper.getString(key: "atm"),"devList_atm.png"),
+                (LanguageHelper.getString(key: "foxbot2"),"devList_Foxbot5.png")]
+        
+        gifImgAry = ["super-TG","ATM","FOXBOT","AGV","ATM","FOXBOT_DJ"]
     }
+    
+    
+    
     
     private func setupUI(){
         self.view.addSubview(collectionView)
@@ -86,10 +93,10 @@ extension ToolingLineController:UICollectionViewDataSource
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        var cell:UICollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomalCellID, for: indexPath) as! CollectionNomalCell
             cell.backgroundColor = UIColor.clear
         cell.titleLab.text = titleAry[indexPath.row].0
+        cell.titleLab.Font(UIFont.PFRegular(14)).TextAlignment(.center).TextColor(titleColor)
         cell.ImageV.image = UIImage(named: titleAry[indexPath.row].1)
         return cell
     }
@@ -105,10 +112,10 @@ extension ToolingLineController:UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = DeviceDetailController()
-        detailController.gifName = titleAry[indexPath.row].0
+        detailController.gifName = gifImgAry[indexPath.row]
+        detailController.titleName = titleAry[indexPath.row].0
         self.navigationController?.pushViewController(detailController, animated: false)
     }
-    
 }
 extension ToolingLineController:UICollectionViewDelegateFlowLayout
 {

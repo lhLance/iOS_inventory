@@ -30,7 +30,7 @@ class LanguageVC: UIViewController {
         })
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "CELL")
+        tableView?.register(MeLanguageCell.self, forCellReuseIdentifier: MeLanguageCell.identifier)
         tableView?.separatorStyle = .none
         tableView?.backgroundColor = UIColor.groupTableViewBackground
     }
@@ -56,12 +56,14 @@ extension LanguageVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
+        guard let temp = tableView.dequeueReusableCell(withIdentifier: MeLanguageCell.identifier),
+            let cell = temp as? MeLanguageCell else {
+                return UITableViewCell()
+        }
         
-        cell?.textLabel?.text = dataArr?[indexPath.row]
-        cell?.textLabel?.font = UIFont.PFRegular(16)
+        cell.title = dataArr?[indexPath.row]
         
-        return cell ?? UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

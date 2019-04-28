@@ -8,272 +8,172 @@
 
 import UIKit
 
+private let margin_x:CGFloat = 10.0
+private let titleColor = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
+/**
+ 选中label的背景颜色（默认灰色）
+ */
+private let  selectedViewColor: UIColor? = colorWithRGBA(red: 194, green: 194, blue: 200, alpha: 1.0)
+/**
+ 未选中label的背景颜色（默认白色）
+ */
+private let normalLabelColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+
+/**
+ 未选中label字体颜色（默认白色）
+ */
+private let normalLabelTextColor: UIColor? = colorWithRGBA(red: 55, green: 86, blue: 169, alpha: 1.0)
+/**
+ 未选中label字体颜色（默认白色）
+ */
+private let selectedLabelTextColor: UIColor? = colorWithRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
+
+
 class VideoMonitorController: UIViewController {
+//    var progressV:YTProgressLineView!
+    lazy var navControlBtn: UIButton! = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(navControlBtnPressend), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    lazy var monitorControlBtn: UIButton! = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.green
+        btn.addTarget(self, action: #selector(monitorControlBtnPressend), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    lazy var controlV: UIView = {
+        let controlV = UIView()
+        controlV.backgroundColor = UIColor.white
+        controlV.layer.masksToBounds = true
+        controlV.layer.cornerRadius = 10.0
+        controlV.layer.borderWidth = 0.5
+        controlV.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
+        return controlV
+    }()
+   lazy var videoCV:VideoControlView? = {
+    let videoCV = VideoControlView(frame: CGRect.zero , dataAry: dataArray)
+    return videoCV
+    }()
+   lazy var navCV:NavControlView? = {
+        let navCV = NavControlView(frame: CGRect.zero, dataAry: dataArray)
+        return navCV
+    }()
+    let dataArray:[String]! = ["1","2","3","4","5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.frame = UIScreen.main.bounds   // 增加这一句 即可
-
-        let gradientLayer0 = CAGradientLayer()
-        gradientLayer0.cornerRadius = 10
-        gradientLayer0.frame = self.view.bounds
-        gradientLayer0.colors = [
-            UIColor(red: 51.0 / 255.0, green: 87.0 / 255.0, blue: 171.0 / 255.0, alpha: 1.0).cgColor,
-            UIColor(red: 212.0 / 255.0, green: 22.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0).cgColor]
-        gradientLayer0.locations = [0, 1]
-        gradientLayer0.startPoint = CGPoint(x: 0, y: 1)
-        gradientLayer0.endPoint = CGPoint(x: 1, y: 1)
-        self.view.layer.addSublayer(gradientLayer0)
+        self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
+        setBackVUpUI()
+        setUpNavAndMonitorUI()
         
-        setupUI()
+
+        
     }
 
-
+ 
+    
 
 }
+
 
 extension VideoMonitorController{
+
+    func setBackVUpUI(){
+        controlV.added(into: view)
+        controlV.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.top.equalTo(11)
+            make.bottom.equalTo(-11)
+        }
+
+        navControlBtn.added(into: controlV)
+        navControlBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.height.equalTo(40)
+            make.top.equalTo(0)
+            make.width.equalToSuperview().dividedBy(2)/*视图宽度为父视图的一半*/
+        }
+            
+        monitorControlBtn.added(into: controlV)
+        monitorControlBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.height.equalTo(navControlBtn)
+            make.width.equalTo(navControlBtn)
+
+        }
+        
+        let lineV = UIView()
+        lineV.backgroundColor = colorWithRGBA(red: 235, green: 235, blue: 235, alpha: 1.0)
+        lineV.added(into: controlV)
+        lineV.snp.makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(monitorControlBtn.snp.bottom).offset(-1)
+            make.height.equalTo(1)
+            make.left.equalTo(0)
+        }
+        
+    }
     
-    func setupUI()
+    func setUpNavAndMonitorUI()
+    {
+        navCV!.added(into: controlV)
+        navCV?.snp.makeConstraints({ (make) in
+            make.top.equalTo(navControlBtn.snp.bottom).offset(0)
+            make.right.equalTo(0)
+            make.left.equalTo(0)
+            make.bottom.equalTo(0)
+        })
+        
+        videoCV?.added(into: controlV)
+        videoCV?.snp.makeConstraints({ (make) in
+            make.top.equalTo(navControlBtn.snp.bottom).offset(0)
+            make.right.equalTo(0)
+            make.left.equalTo(0)
+            make.bottom.equalTo(0)
+        })
+        
+        navCV?.isHidden = false
+        videoCV?.isHidden = true
+
+        navControlBtn.setTitle(LanguageHelper.getString(key: "machine_Navigation_console"), for: UIControl.State.normal)
+        monitorControlBtn.setTitle(LanguageHelper.getString(key: "machine_Monitoring_console"), for: UIControl.State.normal)
+
+        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        
+    }
+    
+    
+    @objc func navControlBtnPressend(_ sender: UIButton)
+    {
+        navCV?.isHidden = false
+        videoCV?.isHidden = true
+        
+        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+    }
+    @objc func monitorControlBtnPressend(_ sender: UIButton)
     {
 
-        var height: CGFloat = 64 + 20
-        var titleArray = ["倍速调整","关闭光圈","焦点调整"]
-        for i in 0..<titleArray.count {
-            //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
-            let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50), buttonType: ButtonTypeVPlusAndMin)
-            buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickTypeTouchUpInside)
-            buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickTypeLongPress)
-            view.addSubview(buttonView)
-            
-            var center = CGPoint.zero
-//            let image: UIImage? = UIImage(named: "sat_btn_pindao")
-            var image: UIImage?
-            switch i {
-            case 0:
-                //  圆形五个按钮 上下左右 中心
-                center = CGPoint(x: view.frame.midX - 100, y:  buttonView.frame.height / 2 + height)
-            case 1:
-                //  单个圆形按钮  只响应 SelectButtonPosition_Center
-                center = CGPoint(x: view.frame.midX , y:  buttonView.frame.height / 2 + height)
-            case 2:
-                // 圆角按钮 只响应 SelectButtonPosition_Center
-                center = CGPoint(x: view.frame.midX + 100, y:  buttonView.frame.height / 2 + height)
-            default: break
-                
-            }
-            if image != nil {
-                
-                buttonView.image = image
-            }
-            buttonView.setTitle(titleArray[i])
-            buttonView.center = center
-            buttonView.tag = i
-            if i == titleArray.count - 1{
-                height = buttonView.frame.maxY + 30
-            }
-        }
+        videoCV?.isHidden = false
+        navCV?.isHidden = true
+        
+        monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+    }
+    
 
-        
-        titleArray = ["OK"]
-        for i in 0..<1 {
-            //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
-            let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50), buttonType: ButtonType(rawValue: UInt32(i)))
-            buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickTypeTouchUpInside)
-            buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickTypeLongPress)
-            view.addSubview(buttonView)
-            
-            var center = CGPoint.zero
-            var image: UIImage?
-            switch i {
-            case 0:
-                //  圆形五个按钮 上下左右 中心
-                center = CGPoint(x: view.frame.midX, y: height + buttonView.frame.height / 2)
-            default: break
-                
-            }
-            if image != nil {
-                
-                buttonView.image = image
-            }
-            buttonView.setTitle(titleArray[i])
-            buttonView.center = center
-            buttonView.tag = i
-        }
-        
-    }
-    
-    @objc func buttonClick(_ button: MonitorShapeButton?) {
-        
-        
-        var string: String? = nil
-        if let tag = button?.tag {
-            string = String(format: "单击事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
-        }
-        // 建立一個提示框
-        let alertController = UIAlertController(
-            title: "提示",
-            message: string!,
-            preferredStyle: .alert)
-        // 建立[確認]按鈕
-        let okAction = UIAlertAction(
-            title: "确定",
-            style: .default,
-            handler: {
-                (action: UIAlertAction!) -> Void in
-                
-        })
-        alertController.addAction(okAction)
-        // 顯示提示框
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    @objc func longPressButtonClick(_ button: MonitorShapeButton?) {
-        
-        
-        var string: String? = nil
-        if let tag = button?.tag {
-            string = String(format: "长按事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
-        }
-        // 建立一個提示框
-        let alertController = UIAlertController(
-            title: "提示",
-            message: string!,
-            preferredStyle: .alert)
-        // 建立[確認]按鈕
-        let okAction = UIAlertAction(
-            title: "确定",
-            style: .default,
-            handler: {
-                (action: UIAlertAction!) -> Void in
-                
-        })
-        alertController.addAction(okAction)
-        // 顯示提示框
-        self.present(alertController, animated: true, completion: nil)
-        
-        
-    }
-    
-    func getSelectPartString(withButtonView button: MonitorShapeButton?) -> String? {
-        var partString: String = ""
-        switch button?.selectButtonPosition {
-        case SelectButtonPositionTop?:
-            partString = "上"
-        case SelectButtonPositionButtom?:
-            partString = "下"
-        case SelectButtonPositionCenter?:
-            partString = "中"
-        case SelectButtonPositionLeft?:
-            partString = "左"
-        case SelectButtonPositionRight?:
-            partString = "右"
-        default:
-            break
-        }
-        return partString
-    }
 }
 
-
-/*
-extension VideoMonitorController{
-    
-    func setupUI()
-    {
-
-        var titleArray = ["OK", "", "", "音量", "音量"]
-        var height: CGFloat = 64 + 20
-        
-        for i in 0..<5 {
-            //1-5分别为 圆形五个按钮，单个圆形按钮，圆角按钮，竖加减，横加减
-            let buttonView = MonitorShapeButton(frame: CGRect(x: 0, y: 150, width: 50, height: 50), buttonType: ButtonType(rawValue: UInt32(i)))
-            buttonView.addTarget(self, action: #selector(self.buttonClick(_:)), forResponseState: ButtonClickType.touchUpInside)
-            buttonView.addTarget(self, action: #selector(self.longPressButtonClick(_:)), forResponseState: ButtonClickType.longPress)
-            view.addSubview(buttonView)
-            
-            var center = CGPoint.zero
-            var image: UIImage?
-            switch i {
-            case 0:
-                //  圆形五个按钮 上下左右 中心
-                center = CGPoint(x: view.frame.midX, y: height + buttonView.frame.height / 2)
-            case 1:
-                //  单个圆形按钮  只响应 SelectButtonPosition_Center
-                image = UIImage(named: "virtual_control_switch")
-                center = CGPoint(x: view.frame.midX / 2.0, y: height + image!.size.width / 2)
-            case 2:
-                // 圆角按钮 只响应 SelectButtonPosition_Center
-                image = UIImage(named: "virtual_control_number")
-                center = CGPoint(x: view.frame.midX / 2.0, y: height + image!.size.height / 2)
-            case 3:
-                // 竖加减  只响应 SelectButtonPosition_Buttom  SelectButtonPosition_Top，
-                center = CGPoint(x: view.frame.midX / 2.0 * 3, y: height - buttonView.frame.height / 2 - 30)
-            case 4:
-                // 横加减   只响应 SelectButtonPosition_Right  SelectButtonPosition_Left，
-                center = CGPoint(x: view.frame.midX, y: height + buttonView.frame.height / 2)
-                
-            default: break
-                
-            }
-            if image != nil {
-                
-                buttonView.image = image
-            }
-            buttonView.titleLabel.text = titleArray[i]
-            buttonView.center = center
-            buttonView.tag = i
-            height = buttonView.frame.maxY + 30
-        }
-    }
-    
-    @objc func buttonClick(_ button: MonitorShapeButton?) {
-        
-        
-        var string: String? = nil
-        if let tag = button?.tag {
-            string = String(format: "单击事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
-        }
-        let alert = UIAlertView(title: "提示", message: string!, delegate: nil, cancelButtonTitle: "确定", otherButtonTitles: "")
-        alert.show()
-        
-        
-    }
-    
-    @objc func longPressButtonClick(_ button: MonitorShapeButton?) {
-        
-        
-        var string: String? = nil
-        if let tag = button?.tag {
-            string = String(format: "长按事件,按钮 tag 值 ‘%zd’  点击位置 ‘%@’", tag, getSelectPartString(withButtonView: button)!)
-        }
-        let alert = UIAlertView(title: "提示", message: string!, delegate: nil, cancelButtonTitle: "确定", otherButtonTitles: "")
-        alert.show()
-        
-        
-    }
-    
-    func getSelectPartString(withButtonView button: MonitorShapeButton?) -> String? {
-        var partString: String = ""
-        switch button?.selectButtonPosition{
-        case .top?:
-            partString = "上"
-        case .buttom?:
-            partString = "下"
-        case .center?:
-            partString = "中"
-        case .left?:
-            partString = "左"
-        case .right?:
-            partString = "右"
-        default:
-            break
-        }
-        return partString
-    }
-    
-}
-*/
 

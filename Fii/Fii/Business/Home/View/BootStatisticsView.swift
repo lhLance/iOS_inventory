@@ -99,7 +99,7 @@ class BootStatisticsView: UIView {
         dayLbl = UILabel().then { (l) in
             l.added(into: self)
             l.snp.makeConstraints({ (make) in
-                make.width.equalTo(15)
+                make.width.equalTo(20)
                 make.height.equalTo(15)
                 make.right.equalTo(-3)
                 make.bottom.equalTo(-17)

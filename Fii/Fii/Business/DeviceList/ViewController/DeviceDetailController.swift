@@ -21,6 +21,8 @@ class DeviceDetailController: UIViewController {
     var rewindTimer: Timer?
     var forwardTimer: Timer?
     var gifName: String?
+    var titleName: String?
+
     
     var centerPoint:CGPoint = CGPoint(x: UIScreen.width/2.0, y: UIScreen.height/2.0)
     
@@ -29,14 +31,44 @@ class DeviceDetailController: UIViewController {
     var topRightCenter:CGPoint=CGPoint.zero
     var bottomRightCenter:CGPoint=CGPoint.zero
 
+    lazy var controlV: UIImageView = {
+        let controlV = UIImageView()
+        controlV.ImageName("machine_bg")
+        controlV.backgroundColor = UIColor.white
+        controlV.layer.masksToBounds = true
+        controlV.layer.cornerRadius = 10.0
+        controlV.layer.borderWidth = 0.5
+        controlV.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
+        return controlV
+    }()
     
+    lazy var bottomImageV: UIImageView = {
+        let bottomImageV = UIImageView()
+        bottomImageV.ImageName("machine_bg_bottom")
+        return bottomImageV
+    }()
+    
+    lazy var machineV: MachineStateView = {
+//        let stateAry:NSMutableArray = [("任务状态","已完成"),("运行状态","MtRunning"),("连接状态","已连接"),("异常状态","无")]
+        let stateAry:NSMutableArray = [
+            (LanguageHelper.getString(key: "machine_Operating_status"),"已完成"),
+            (LanguageHelper.getString(key: "machine_PLC_status"),"MtRunning"),
+             (LanguageHelper.getString(key: "machine_Drive_status"),"已连接"),
+             (LanguageHelper.getString(key: "machine_Machine_status"),"无")]
+
+        
+        let machineV:MachineStateView = MachineStateView(frame: CGRect.zero, statesAry: stateAry)
+        machineV.backgroundColor = UIColor.white
+        machineV.layer.masksToBounds = true
+        machineV.layer.cornerRadius = 10.0
+        machineV.layer.borderWidth = 0.5
+        machineV.layer.borderColor = colorWithRGBA(red: 196, green: 196, blue: 196, alpha: 1.0).cgColor
+        return machineV
+    }()
     
     private lazy var imageView:UIImageView = { [weak self] in /*弱引用*/
-        let imageView =  UIImageView(frame: CGRect(x: 0,
-                                                   y: 0,
-                                                   width: kImageW,
-                                                   height: kImageH))
-        imageView.center = centerPoint
+        let imageView =  UIImageView()
+        
         return imageView
         }()
     
@@ -94,7 +126,7 @@ class DeviceDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        self.title = titleName
         
         setInitData()
         setUpUI()
@@ -108,9 +140,7 @@ class DeviceDetailController: UIViewController {
 extension DeviceDetailController{
     
     private func setInitData(){
-        self.view.backgroundColor = colorWithRGBA(red: 10, green: 33, blue: 44, alpha: 1.0)
-//        self.imageView.backgroundColor = UIColor.clear
-//        self.imageView.backgroundColor = colorWithRGBA(red: 8, green: 24, blue: 32, alpha: 1.0)
+        self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
         self.topLeftCenter = CGPoint(x: self.centerPoint.x - kImageW/2.0 - kSquareMargin + kSquareSize/2.0,
                                      y: self.centerPoint.y - kImageH/2.0 - kSquareMargin + kSquareSize/2.0)
         self.bottomLeftCenter = CGPoint(x: self.centerPoint.x - kImageW/2.0 - kSquareMargin + kSquareSize/2.0,
@@ -123,16 +153,50 @@ extension DeviceDetailController{
     
     private func setUpUI(){
         
-        addGrid(self.view)
-        imageView.added(into: view)
-        leftTopimageView.added(into: view)
-        leftBottomimageView.added(into: view)
-        rightTopimageView.added(into: view)
-        rightBottomimageView.added(into: view)
+        controlV.added(into: view)
+        controlV.snp.makeConstraints { (make) in
+            make.top.equalTo(kStatusBarH + kNavigationBarH + 11)
+            make.right.equalTo(-10)
+            make.left.equalTo(10)
+            make.height.equalTo(428)
+        }
         
-        let stateAry:NSArray = [("任务状态","已完成"),("运行状态","MtRunning"),("连接状态","已连接"),("异常状态","无")]
+        imageView.added(into: controlV)
         
-        equipmentOperating(statesAry: stateAry)
+        imageView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.equalTo(246)
+            make.height.equalTo(276)
+        }
+        
+        bottomImageV.added(into: view)
+        bottomImageV.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(controlV.snp.bottom).offset(-10)
+            make.width.equalTo(60)
+            make.height.equalTo(60)
+        }
+        
+        
+        
+//        leftTopimageView.added(into: view)
+//        leftBottomimageView.added(into: view)
+//        rightTopimageView.added(into: view)
+//        rightBottomimageView.added(into: view)
+        
+
+        machineV.added(into: self.view)
+        machineV.snp.makeConstraints { (make) in
+            make.top.equalTo(controlV.snp.bottom).offset(11)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.height.equalTo(92)
+        }
+        
+        
+        
+        
         
         if let imgName = gifName{
             let gifImage = UIImage(gifName: imgName)
@@ -147,76 +211,33 @@ extension DeviceDetailController{
         imageView.addGestureRecognizer(tapGesture)
         
     }
-    /*绘制网格*/
-    private func addGrid(_ view: UIView?) {
-        let widthView: CGFloat? = view?.frame.size.width
-        let heightView: CGFloat? = view?.frame.size.height
-        let size: CGFloat = 8
-        
-        let addLineWidthRect: ((_ rect: CGRect) -> Void)? = { rect in
-            let layer = CALayer()
-            view?.layer.addSublayer(layer)
-            layer.frame = rect
-            layer.backgroundColor = colorWithRGBA(red: 20, green: 43, blue: 54, alpha: 1.0).cgColor
-        }
-        
-        var i = 0
-        while i < Int((widthView ?? 0.0))
-        {
-            addLineWidthRect?(CGRect(x: i, y: 0, width: 1, height: Int(heightView ?? 0.0)))
-            i = i + Int(size)
-        }
-        var j = 0
-        while j < Int((heightView ?? 0.0)) {
-            addLineWidthRect?(CGRect(x: 0, y: j, width: Int(widthView ?? 0.0), height: 1))
-            j = j + Int(size)
-        }
-    }
-    
-    
-    
-    
-    func equipmentOperating(statesAry:NSArray){
-        
+//    /*绘制网格*/
+//    private func addGrid(_ view: UIView?) {
+//        let widthView: CGFloat? = view?.frame.size.width
+//        let heightView: CGFloat? = view?.frame.size.height
+//        let size: CGFloat = 8
+//
+//        let addLineWidthRect: ((_ rect: CGRect) -> Void)? = { rect in
+//            let layer = CALayer()
+//            view?.layer.addSublayer(layer)
+//            layer.frame = rect
+//            layer.backgroundColor = colorWithRGBA(red: 20, green: 43, blue: 54, alpha: 1.0).cgColor
+//        }
+//
+//        var i = 0
+//        while i < Int((widthView ?? 0.0))
+//        {
+//            addLineWidthRect?(CGRect(x: i, y: 0, width: 1, height: Int(heightView ?? 0.0)))
+//            i = i + Int(size)
+//        }
+//        var j = 0
+//        while j < Int((heightView ?? 0.0)) {
+//            addLineWidthRect?(CGRect(x: 0, y: j, width: Int(widthView ?? 0.0), height: 1))
+//            j = j + Int(size)
+//        }
+//    }
+//
 
-        if statesAry.count < 1 {
-            return
-        }
-        
-        let marginV:CGFloat = 10
-        let marginH:CGFloat = 15
-
-        let labWidth:CGFloat = (UIScreen.width - (marginV * CGFloat(statesAry.count + 1))) / CGFloat(statesAry.count)
-        let labHight:CGFloat = 20
-        let origitH:CGFloat = UIScreen.height - 160
-        
-//        let tuple:(String,String) = ("","")
-        
-        for (index,tuple) in statesAry.enumerated()
-        {
-            let value:(String,String) = tuple as! (String,String)
-
-            let titleLab = UILabel();
-            titleLab.frame = CGRect(x: marginV + (labWidth + marginV) * CGFloat(index) , y: 0 + origitH, width: labWidth, height: labHight)
-            titleLab.backgroundColor = UIColor.clear
-            titleLab.textAlignment = NSTextAlignment.center
-            titleLab.text = value.0
-            titleLab.FontColor(.PFRegular(14), colorWithRGBA(red: 128, green: 155, blue: 185, alpha: 1.0))
-            titleLab.added(into: self.view)
- 
-
-            let stateLab = UILabel()
-            stateLab.frame = CGRect(x: marginV + (labWidth + marginV) * CGFloat(index) , y: labHight + marginH + origitH , width: labWidth, height: labHight)
-            stateLab.backgroundColor = UIColor.clear
-            stateLab.text = value.1
-            stateLab.FontColor(.PFRegular(11), colorWithRGBA(red: 155, green: 189, blue: 146, alpha: 1.0))
-            stateLab.textAlignment = NSTextAlignment.center
-            stateLab.added(into: self.view)
-            
-        }
-    }
-    
-    
     
     @objc func panGesture(sender:UIPanGestureRecognizer){
         

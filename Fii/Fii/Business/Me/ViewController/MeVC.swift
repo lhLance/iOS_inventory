@@ -44,10 +44,10 @@ class MeVC: UIViewController {
     @objc func reloadData() {
         
        dataArr = [(img: UIImage("about"), name: LanguageHelper.getString(key: "me_about")),
-         (img: UIImage("help"), name: LanguageHelper.getString(key: "me_help")),
-         (img: UIImage("customer_service"), name: LanguageHelper.getString(key: "me_customer_service")),
-         (img: UIImage("like"), name: LanguageHelper.getString(key: "me_like")),
-         (img: UIImage("settings"), name: LanguageHelper.getString(key: "me_settings"))]
+                  (img: UIImage("like"), name: LanguageHelper.getString(key: "me_like")),
+                  (img: UIImage("settings"), name: LanguageHelper.getString(key: "me_settings")),
+                  (img: UIImage("customer_service"), name: LanguageHelper.getString(key: "me_customer_service")),
+                  (img: UIImage("help"), name: LanguageHelper.getString(key: "me_help"))]
         
         quitView?.Text(LanguageHelper.getString(key: "me_log_out"))
     }
@@ -80,14 +80,18 @@ class MeVC: UIViewController {
         
         let topView = UIImageView().then({ (v) in
             v.ImageName("me_back")
+            v.backgroundColor = UIColor.white
             v.isUserInteractionEnabled = true
             v.added(into: scrollView)
             v.snp.makeConstraints({ (make) in
                 make.left.right.top.equalToSuperview()
-                make.height.equalTo(150)
+                make.height.equalTo(140)
             })
+            v.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(avatarBtnTapped))
+            v.addGestureRecognizer(tapGes)
             
-            let avatar = UIButton().then({ (btn) in
+            let avatar = UIImageView().then({ (btn) in
                 btn.added(into: v)
                 btn.backgroundColor = UIColor.white
                 btn.cornerRadius = 30
@@ -96,8 +100,7 @@ class MeVC: UIViewController {
                     make.centerY.equalToSuperview()
                     make.left.equalTo(30)
                 })
-                btn.setBackgroundImage(UIImage("\(UserInfo.shared.avatar)"), for: .normal)
-                btn.addTarget(self, action: #selector(avatarBtnTapped), for: .touchUpInside)
+                btn.ImageName(UserInfo.shared.avatar)
             })
             
             _ = UILabel().then({ (lbl) in
@@ -108,7 +111,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.top.equalTo(avatar.snp.top).offset(8)
                 })
-                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.white).Font(UIFont.PFRegular(15))
+                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.black).Font(UIFont.PFRegular(15))
             })
 
             _ = UILabel().then({ (lbl) in
@@ -119,19 +122,28 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.bottom.equalTo(avatar.snp.bottom).offset(-8)
                 })
-                lbl.Text(UserInfo.shared.userEmail).TextColor(UIColor.white).Font(UIFont.PFRegular(14))
+                lbl.Text(UserInfo.shared.userEmail).TextColor(UIColor.gray).Font(UIFont.PFRegular(14))
+            })
+            
+            _ = UIImageView().then({ (arrow) in
+                arrow.added(into: v)
+                arrow.snp.makeConstraints({ (make) in
+                    make.right.equalTo(-14)
+                    make.centerY.equalToSuperview()
+                })
+                arrow.ImageName("arrow")
             })
         })
         
         quitView = UIButton().then { (v) in
-            v.backgroundColor = UIColor.white
+            v.backgroundColor = UIColor.hex(0xE95D5D)
             v.added(into: scrollView)
             v.snp.makeConstraints({ (make) in
                 make.left.right.equalToSuperview()
                 make.height.equalTo(50)
             })
             
-            v.Text(LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.red).Font(.PFRegular(16))
+            v.Text(LanguageHelper.getString(key: "me_log_out")).TitleColor(UIColor.white).Font(UIFont.PFMedium(14))
             v.addTarget(self, action: #selector(quitBtnTapped), for: .touchUpInside)
         }
         
@@ -146,15 +158,27 @@ class MeVC: UIViewController {
                 cell.snp.makeConstraints { (make) in
                     make.left.right.equalToSuperview()
                     make.height.equalTo(50)
-                    make.top.equalTo(prevCell.snp.bottom).offset(1)
                     if index == dataArr.count - 1 {
-                        make.bottom.equalTo(quitView?.snp.top ?? 0).offset(-15)
+                        _ = UIView().then({ (v) in
+                            v.added(into: scrollView)
+                            v.snp.makeConstraints({ (make) in
+                                make.left.equalToSuperview()
+                                make.height.equalTo(1)
+                                make.width.equalTo(46)
+                                make.top.equalTo(prevCell.snp.bottom)
+                            })
+                            v.backgroundColor = UIColor.white
+                        })
+                        make.top.equalTo(prevCell.snp.bottom).offset(1)
+                        make.bottom.equalTo(quitView?.snp.top ?? 0).offset(-20)
+                    } else {
+                        make.top.equalTo(prevCell.snp.bottom).offset(10)
                     }
                 }
             } else {
                 cell.snp.makeConstraints { (make) in
                     make.left.right.equalToSuperview()
-                    make.top.equalTo(topView.snp.bottom)
+                    make.top.equalTo(topView.snp.bottom).offset(10)
                     make.height.equalTo(50)
                 }
             }
@@ -170,22 +194,22 @@ class MeVC: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
                 case 1:
-                    let vc = HelpVC()
-                    vc.title = LanguageHelper.getString(key: "me_help_title")
+                    Alert.show(title: LanguageHelper.getString(key: "me_like_not"))
+                case 2:
+                    let vc = SettingsVC()
+                    vc.title = LanguageHelper.getString(key: "me_settings")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
-                case 2:
+                case 3:
                     let vc = CustomerServiceVC()
                     vc.title = LanguageHelper.getString(key: "me_customer_service")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
-                case 3:
-                    Alert.show(title: LanguageHelper.getString(key: "me_like_not"))
                 case 4:
-                    let vc = SettingsVC()
-                    vc.title = LanguageHelper.getString(key: "me_settings")
+                    let vc = HelpVC()
+                    vc.title = LanguageHelper.getString(key: "me_help_title")
                     self.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.hidesBottomBarWhenPushed = false
@@ -201,7 +225,6 @@ class MeVC: UIViewController {
         
         let vc = UserInfoVC()
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     @objc func quitBtnTapped() {
@@ -250,7 +273,7 @@ class Cell: UIView {
         
         backgroundColor = UIColor.white
         
-        let tapGesture = UITapGestureRecognizer.init()
+        let tapGesture = UITapGestureRecognizer()
         tapGesture.numberOfTapsRequired = 1
         tapGesture.addTarget(self, action: #selector(tapGestureBtnTapped))
         
@@ -258,7 +281,7 @@ class Cell: UIView {
         
         imageV.added(into: self)
         imageV.snp.makeConstraints { (make) in
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(25)
             make.left.equalTo(15)
             make.centerY.equalToSuperview()
         }
@@ -271,7 +294,7 @@ class Cell: UIView {
             make.right.equalTo(-10)
         }
         
-        titleLbl.FontColor(.PFMedium(16), UIColor.gray)
+        titleLbl.FontColor(.PFMedium(14), UIColor.hex(0x414141))
         titleLbl.added(into: self)
         titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(imageV.snp.right).offset(10)

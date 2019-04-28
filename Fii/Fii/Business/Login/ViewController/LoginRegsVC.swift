@@ -42,8 +42,18 @@ class LoginRegsVC: UIViewController {
     
     func setupView() {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: "LanguageChanged"),
+                                               object: nil)
+        
         setupPlayerView()
         setupButtons()
+    }
+    
+    @objc func reloadData() {
+        
+        loginBtn?.Text(LanguageHelper.getString(key: "Account_login"))
+        registerBtn?.Text(LanguageHelper.getString(key: "Account_register"))
     }
     
     func setupPlayerView() {
@@ -122,11 +132,13 @@ class LoginRegsVC: UIViewController {
     deinit {
         playerItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
         playerItem?.removeObserver(self, forKeyPath: "status")
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setupButtons() {
         
-        loginBtn = UIButton("登录", UIColor.white, UIFont.PFMedium(16))
+        loginBtn = UIButton(LanguageHelper.getString(key: "Account_login"), UIColor.white, UIFont.PFMedium(16))
         loginBtn?.cornerRadius = 4.0
         loginBtn?.backgroundColor = UIColor.hex(0x0099F1)
         loginBtn?.addTarget(self, action: #selector(loginBtnTapped), for: .touchUpInside)
@@ -138,7 +150,7 @@ class LoginRegsVC: UIViewController {
             make.right.equalTo(-40)
         })
         
-        registerBtn = UIButton("注册", UIColor.white, UIFont.PFMedium(16))
+        registerBtn = UIButton(LanguageHelper.getString(key: "Account_register"), UIColor.white, UIFont.PFMedium(16))
         registerBtn?.cornerRadius = 4.0
         registerBtn?.backgroundColor = UIColor.hex(0x0099F1)
         registerBtn?.addTarget(self, action: #selector(registerBtnTapped), for: .touchUpInside)

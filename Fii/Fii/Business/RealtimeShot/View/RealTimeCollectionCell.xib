@@ -20,19 +20,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uW-jf-4ql">
-                        <rect key="frame" x="5" y="5" width="124" height="88"/>
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="98"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
+                                <integer key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-Zo-0Ex">
-                        <rect key="frame" x="27" y="10" width="80" height="20"/>
+                        <rect key="frame" x="-8" y="10" width="150" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="8na-xj-m0o"/>
+                            <constraint firstAttribute="width" constant="150" id="8na-xj-m0o"/>
                             <constraint firstAttribute="height" constant="20" id="fsg-rj-5d9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -44,14 +44,12 @@
             <constraints>
                 <constraint firstItem="nbm-Zo-0Ex" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="3UM-Ox-eGX"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="BTL-Lj-Ysm"/>
-                <constraint firstItem="0uW-jf-4ql" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="H4O-f3-Y6v"/>
-                <constraint firstAttribute="trailing" secondItem="0uW-jf-4ql" secondAttribute="trailing" constant="5" id="c69-gp-YOf"/>
+                <constraint firstItem="0uW-jf-4ql" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H4O-f3-Y6v"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eGc-Rd-1Qo"/>
-                <constraint firstAttribute="bottom" secondItem="0uW-jf-4ql" secondAttribute="bottom" constant="5" id="f7y-vc-xgo"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="fQQ-kI-Gtx"/>
                 <constraint firstItem="0uW-jf-4ql" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lRG-In-Np8"/>
                 <constraint firstItem="nbm-Zo-0Ex" firstAttribute="centerX" secondItem="0uW-jf-4ql" secondAttribute="centerX" id="mgg-1x-TYN"/>
-                <constraint firstItem="0uW-jf-4ql" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="vvE-cM-aSW"/>
+                <constraint firstItem="0uW-jf-4ql" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vvE-cM-aSW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="134" height="98"/>

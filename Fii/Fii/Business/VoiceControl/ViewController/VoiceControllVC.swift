@@ -8,6 +8,9 @@
 
 import UIKit
 private let ChineseModel = "LanguageModelFilesOfChinese"
+private let btnWidth:CGFloat = 118
+private let btnHeight:CGFloat = 79
+
 
 class VoiceControllVC: UIViewController {
 
@@ -21,29 +24,35 @@ class VoiceControllVC: UIViewController {
     var chineseDicPath:String = ""
     var errString:String! = ""
     var speechLab:UILabel!
-    
+    var longPressGesture : UILongPressGestureRecognizer!;
     var sayStr:String?;
     
-    var Chats:NSMutableArray!
-    var tableView:ChatTableView!
-    var me:ChatUserInfo!
-    var you:ChatUserInfo!
     
-    var longPressGesture : UILongPressGestureRecognizer!;
-    
+    var dataSource:NSMutableArray = NSMutableArray()
+    var tableView:UITableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createTipsData()
+        initSomething()
+        initChatTableView()
         setUpPressend();
         setUpUI()
-        setupChatTable()
         
     }
     
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        ScrollTableViewToBottom()
+    }
 }
+
+
+
+
 
 
 extension VoiceControllVC:OEEventsObserverDelegate{
@@ -76,28 +85,32 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     private func setUpUI(){
         
-        self.startBtn = YHRippleButton(frame: CGRect(x: (self.view.size.width - 150)/2,
-                                                     y: self.view.size.height - 150 - SafeAreaBottomHeight - kTabBarH,
-                                                     width: 150,
-                                                     height: 150),
-                                       rippleColor: .blue)
-        self.startBtn.setTitle("开始", for: .normal)
-        self.startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
-//        self.startBtn.center = view.center
-        view.addSubview(self.startBtn)
+
+        let wigW:CGFloat = CGFloat((self.view.width) - btnWidth)/2;
+        let wigH:CGFloat = CGFloat((self.view.height - btnHeight - 5 - SafeAreaBottomHeight - kTabBarH));
+        startBtn = UIButton(frame: CGRect(x: wigW,
+                                               y: wigH,
+                                               width: btnWidth,
+                                               height: btnHeight))
+        startBtn.setBackgroundImage(UIImage(named: "msg_voice"), for: UIControl.State.normal)
+        startBtn.setTitle(LanguageHelper.getString(key: "start"), for: .normal)
+        startBtn.setTitleColor(UIColor.white,for: .normal)
+        startBtn.addTarget(self, action: #selector(startVoiceBtnCkick(btn:)), for: .touchUpInside)
+        startBtn.contentMode = UIView.ContentMode.scaleAspectFill
+        startBtn.added(into: view)
         
         /*命令词*/
-        self.lmGenerator = OELanguageModelGenerator.init()
-        self.pocketsphinx = OEPocketsphinxController.sharedInstance()
-        self.chineseWords = ["向左移动", "向右移动", "向下移动", "向上移动","开始","停止"]
-        self.openEarsEventsObserver = OEEventsObserver.init()
-        self.openEarsEventsObserver.delegate = self
+        lmGenerator = OELanguageModelGenerator.init()
+        pocketsphinx = OEPocketsphinxController.sharedInstance()
+        chineseWords = ["向左移动", "向右移动", "向下移动", "向上移动","开始","停止"]
+        openEarsEventsObserver = OEEventsObserver.init()
+        openEarsEventsObserver.delegate = self
         
-        self.errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
+        errString = self.lmGenerator.generateLanguageModel(from: self.chineseWords as? [Any],
                                                                 withFilesNamed: ChineseModel,
                                                                 forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelChinese"))as?String
-        self.chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel)
-        self.chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
+        chineseLmPath = self.lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: ChineseModel)
+        chineseDicPath = self.lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: ChineseModel)
         
     }
     
@@ -106,11 +119,14 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 
 
         
-        if !self.startBtn.isSelected
+        if !startBtn.isSelected
         {
-            print("\(#function)+ \(#file)")
+            checkVoiceAllow()
+            VoiceDialog.show(vc: self)
 
-            self.startBtn.setTitle("监听中...", for: UIControl.State.normal)
+            print("\(#function)+ \(#file)")
+            sayStr = ""
+            self.startBtn.setTitle(LanguageHelper.getString(key: "voice_listening"), for: UIControl.State.normal)
             try? self.pocketsphinx.setActive(true)
             self.pocketsphinx.startListeningWithLanguageModel(atPath: self.chineseLmPath,
                                                               dictionaryAtPath: self.chineseDicPath,
@@ -119,11 +135,12 @@ extension VoiceControllVC:OEEventsObserverDelegate{
         }
         else{
 
+            VoiceDialog.dissmiss()
+
             print("\(#function) + \(#file)")
-            self.startBtn.setTitle("开始", for: UIControl.State.normal)
+            self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: UIControl.State.normal)
             self.pocketsphinx.stopListening()
             sendMessage();
-
             
         }
         self.startBtn.isSelected = !self.startBtn.isSelected
@@ -147,6 +164,30 @@ extension VoiceControllVC:OEEventsObserverDelegate{
 
         
     }
+    
+    func checkVoiceAllow()
+    {
+        var allow = false
+        let audioSession = AVAudioSession.sharedInstance()
+        //首先要判断是否允许访问麦克风
+        audioSession.requestRecordPermission { (allowed) in
+            if !allowed{
+                let alert = UIAlertController(title: "无法访问您的麦克风", message: "请到设置 -> 隐私 -> 麦克风 ，打开访问权限", preferredStyle: UIAlertController.Style.alert)
+                let btnOK = UIAlertAction(title: "好的", style: .default, handler: nil)
+                alert.addAction(btnOK)
+                self.present(alert, animated: true, completion: nil)
+                
+                allow = false
+            }else{
+                allow = true
+            }
+        }
+        if allow == false {
+            return
+        }
+    }
+    
+    
     
     func pocketsphinxDidStartListening() {
         print("\(#function)已经开始接听")
@@ -189,69 +230,144 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
 }
 
-
-extension VoiceControllVC:ChatDataSource,UITextFieldDelegate{
+extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
     
+    func createTipsData() {
+        for i: Int in 0..<2 {
+            let chatCellFrame:YTChatCellFrame = YTChatCellFrame()
+            let message:YTChatMessage = YTChatMessage()
+            var messageText = String()
+            if i == 0 {
+                message.currentUserType = userType.me
+                message.userName = " "
+                message.messageType = 0
+                messageText = LanguageHelper.getString(key: "voice_tips_welocome")
+            }else if i == 1 {
+                let tipStr = "\(LanguageHelper.getString(key: "voice_tips_word"))  \n \(LanguageHelper.getString(key: "voice_tips_Key_Word"))"
+                message.currentUserType = userType.me
+                message.userName = " "
+                message.messageType = 0;
+                messageText = tipStr
+            }
+            message.message = messageText
+            
+            chatCellFrame.message = message
+            
+            dataSource.add(chatCellFrame)
+        }
+    }
     
-    func setupChatTable()
-    {
-        tableView = ChatTableView(frame: CGRect(x: 0,
-                                                y: kStatusBarH + kNavigationBar,
-                                                width: view.width,
-                                                height:view.height - 200 - SafeAreaBottomHeight - kTabBottomH ),
-                                  style: .plain)
-        tableView.backgroundColor = UIColor.white;
-        //创建一个重用的单元格
-        tableView!.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatCell")
-        me = ChatUserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
-        you  = ChatUserInfo(name:"Xiaohua", logo:("xiaohua.png"))
+    // 初始化一些数据
+    func initSomething() {
         
-        let zero =  MessageItem(body:"欢迎使用语言控制", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-
-        let zero1 =  MessageItem(body:"你可以说:\n向下移动,向上移动,向左移动,向右移动,开始,停止", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-//        let fouth =  MessageItem(body:"嗯，下次我们一起去吧！",user:me, date:Date(timeIntervalSinceNow:-90000020), mtype:.mine)
+        self.view.backgroundColor = BACKGROUND_Color
         
-        Chats = NSMutableArray()
-//        Chats.addObjects(from: [first, third, fouth, fifth, zero, zero1])
-        Chats.addObjects(from: [zero,zero1])
-        tableView.chatDataSource = self
-        tableView.reloadData()
-        tableView.added(into: view);
+        if #available(iOS 11.0, *) {
+            
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+        self.title = LanguageHelper.getString(key: "voice")
+        
     }
     
-    func rowsForChatTable(_ tableView:ChatTableView) -> Int
-    {
-        return self.Chats.count
+    //创建tabbleView
+    func initChatTableView() {
+        let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight - btnHeight - 5
+        tableView = UITableView.init(frame: CGRect.init(x: 0, y: kStatusBarH  + kNavigationBarH, width: screenW, height: contentH))
+        tableView.backgroundColor = BACKGROUND_Color
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(YTChatMessageCell.self, forCellReuseIdentifier: "YTChatMessageCell")
+        self.view.addSubview(tableView)
+        
     }
     
-    func chatTableView(_ tableView:ChatTableView, dataForRow row:Int) -> MessageItem
-    {
-        return Chats[row] as! MessageItem
+    
+    //tableview
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return dataSource.count
     }
     
-    @objc func sendMessage()
-    {
-        var senderStr = sayStr
-        if (senderStr == nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = YTChatMessageCell.cellWithTableView(tableView: tableView)
+        
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        let chatCellFrame:YTChatCellFrame = dataSource.object(at: indexPath.row) as! YTChatCellFrame
+        
+        cell.chatCellFrame = chatCellFrame
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let chatCellFrame:YTChatCellFrame = dataSource.object(at: indexPath.row) as! YTChatCellFrame
+        
+        return chatCellFrame.cellHeight;
+    }
+    
+    //重设tabbleview的frame并根据是否在底部来执行滚动到底部的动画（不在底部就不执行，在底部才执行）
+    func resetChatList() {
+        
+        let offSetY:CGFloat = tableView.contentSize.height - tableView.height;
+        //判断是否滚动到底部，会有一个误差值
+        if tableView.contentOffset.y > offSetY - 5 || tableView.contentOffset.y > offSetY + 5 {
+            ScrollTableViewToBottom()
+        }
+    }
+    
+    //滚动到底部
+    func ScrollTableViewToBottom() {
+        
+        let indexPath:NSIndexPath = NSIndexPath.init(row: self.dataSource.count - 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: false)
+    }
+    @objc func sendMessage() {
+        
+        let message:YTChatMessage = YTChatMessage()
+        var messageText = sayStr
+        if (messageText?.count == 0)
         {
-            senderStr = "我没有听清楚,你可以尝试再说一次:\n向下移动,向上移动,向左移动,向右移动,开始,停止"
-            let thatChat =  MessageItem(body:"\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
-            Chats.add(thatChat)
+            messageText = LanguageHelper.getString(key: "voice_tips_word_again") + "\n" + LanguageHelper.getString(key: "voice_tips_Key_Word")
+            message.currentUserType = userType.me
+            message.userName = " "
+            message.messageType = 0;
         }
         else
         {
-            let thisChat =  MessageItem(body:senderStr! as NSString, user:me, date:Date(), mtype:ChatType.mine)
-            let thatChat =  MessageItem(body:"你说的是:\(senderStr!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
-            Chats.add(thisChat)
-            Chats.add(thatChat)
+            message.currentUserType = userType.other
+            message.userName = " "
+            message.messageType = 0
         }
-        self.tableView.chatDataSource = self
-        self.tableView.reloadData()
-
+        message.message = messageText!
+        createDataSource(message: message)
+        refreshChatList()
     }
     
+    //创建一条数据
+    func createDataSource(message:YTChatMessage) {
+        let cellFrame = YTChatCellFrame()
+        cellFrame.message = message
+        dataSource.add(cellFrame)
+        
+    }
     
-    
+    //刷新UI
+    func refreshChatList() {
+        let indexPath:NSIndexPath = NSIndexPath.init(row: dataSource.count - 1, section: 0)
+        tableView.insertRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.none)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+    }
     
 }
 
