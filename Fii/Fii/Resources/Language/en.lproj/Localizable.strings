@@ -8,10 +8,10 @@
 
 "home_title" = "Home";
 "home_time_efficency_analyse_title" = "Time efficiency analysis";
-"home_time_efficency_analyse_work" = "working";
-"home_time_efficency_analyse_wait" = "standby";
+"home_time_efficency_analyse_work" = "work";
+"home_time_efficency_analyse_wait" = "wait";
 "home_time_efficency_analyse_start" = "boot";
-"home_time_efficency_analyse_offline" = "offline";
+"home_time_efficency_analyse_offline" = "off";
 "home_time_efficency_analyse_alarm" = "alarm";
 "home_time_efficency_analyse_good" = "excellent";
 "home_time_efficency_analyse_decent" = "good";
