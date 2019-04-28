@@ -139,3 +139,6 @@
 "Y_axis" = "Y 軸";//y轴
 "voice" = "語音";//语音
 
+"alert_default" = "默認";
+"alert_cancel" = "取消";
+"alert_confirm" = "確定";

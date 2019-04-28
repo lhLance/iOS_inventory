@@ -19,8 +19,10 @@ protocol YTPageTitleViewDelegate: class {
 }
 
 class YTPageTitleView: UIView {
+    
     fileprivate var style: YTPageStyle
     weak var delegate : YTPageTitleViewDelegate?
+    
     fileprivate lazy var normalRGB: (CGFloat, CGFloat, CGFloat) = self.style.normalColor.getRGBValue()
     fileprivate lazy var selectRGB: (CGFloat, CGFloat, CGFloat) = self.style.selectColor.getRGBValue()
     fileprivate lazy var deltaRGB: (CGFloat, CGFloat, CGFloat) = {
@@ -32,6 +34,7 @@ class YTPageTitleView: UIView {
     
     //属性
     fileprivate var titles: [String]
+    
     //weak 一般不能修饰值类型
     fileprivate lazy var scrollview : UIScrollView = {
         let scrollview = UIScrollView(frame: self.bounds)
@@ -39,13 +42,15 @@ class YTPageTitleView: UIView {
         scrollview.scrollsToTop = false
         return scrollview
     }()
-    //下划线
+    
+    // 下划线
     fileprivate lazy var bottomLine: UIView = {
         let bottomLine = UIView()
         bottomLine.backgroundColor = self.style.bottomLineColor
         return bottomLine
     }()
-    //遮盖
+    
+    // 遮盖
     fileprivate lazy var coverView : UIView = {
         let coverView = UIView()
         coverView.alpha = self.style.coverViewAlpha
@@ -53,23 +58,26 @@ class YTPageTitleView: UIView {
     }()
     
     fileprivate lazy var titleLabels: [UILabel] = [UILabel]()
-    fileprivate var currentIndex : Int = 0
+    fileprivate var currentIndex: Int = 0
     
-    //MARK:- 构造函数
-    init(frame: CGRect , titles: [String],style: YTPageStyle)
+    // MARK:- 构造函数
+    init(frame: CGRect, titles: [String], style: YTPageStyle)
     {
         self.titles = titles
         self.style = style
         super.init(frame: frame)
+        
         setupUI()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 //MARK:-  设置ui界面
-extension YTPageTitleView{
+extension YTPageTitleView {
+    
     fileprivate func setupUI(){
 
         //1.添加scrollview
@@ -84,16 +92,17 @@ extension YTPageTitleView{
         if style.isShowCoverView {
             addCoverView()
         }
-        
-        
     }
     
-    private func addCoverView(){
+    private func addCoverView() {
+        
         scrollview.addSubview(coverView)
+        
         let coverX: CGFloat = titleLabels.first!.frame.origin.x
         let coverY: CGFloat = (style.titleViewHeight - style.coverViewHeight) * 0.5
         let coverH: CGFloat = style.coverViewHeight
         let coverW: CGFloat = titleLabels.first!.frame.width
+        
         coverView.frame = CGRect(x: coverX, y: coverY, width: coverW, height: coverH)
         if style.isScrollEnabel {
             coverView.frame.size.width += 2 * style.coverMargin
@@ -109,7 +118,8 @@ extension YTPageTitleView{
         
     }
     
-    private func setupBottomLine(){
+    private func setupBottomLine() {
+        
         scrollview.addSubview(bottomLine)
         bottomLine.frame = titleLabels.first!.frame
         bottomLine.frame.size.height = style.bottomLineHeight
@@ -120,7 +130,7 @@ extension YTPageTitleView{
         
         for (i,title) in titles.enumerated() {
             //1.创建label
-            let titleLabel: UILabel = UILabel()
+            let titleLabel = ScrollPaddingLabel()
             //2.设置label属性
             titleLabel.text = title
             titleLabel.tag = i
@@ -130,6 +140,7 @@ extension YTPageTitleView{
             titleLabel.numberOfLines = 2
             titleLabel.isUserInteractionEnabled = true
             titleLabel.adjustsFontSizeToFitWidth = true//大小自适应
+            titleLabel.textInsets = UIEdgeInsets(4, 3, 4, 3)
             //3.将label加到scrollview上去
             scrollview.addSubview(titleLabel)
 
@@ -141,7 +152,7 @@ extension YTPageTitleView{
         }
         //2.设置label的frame
         var titleLabelX : CGFloat = 0
-        let  titleLabelY : CGFloat = 0
+        let titleLabelY : CGFloat = 0
         var titleLabelW : CGFloat = bounds.width / CGFloat(titles.count)
         let titleLabelH : CGFloat = style.titleViewHeight
         
@@ -150,16 +161,14 @@ extension YTPageTitleView{
             if style.isScrollEnabel {
                 //可以滚动
                 //a.根据字体font和内容算出宽度
-                
                 titleLabelW = (titleLabel.text! as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT),
                                                                                        height: 0),
                                                                           options:.usesLineFragmentOrigin,
                                                                           attributes: [NSAttributedString.Key.font: style.titleFont],
                                                                           context: nil).width
                 titleLabelX = i == 0 ? (style.titleMargin * 0.5) : (titleLabels[i - 1].frame.maxX + style.titleMargin)
-            }else
-            {
-                //不能滚动
+            } else {
+                // 不能滚动
                 titleLabelX = CGFloat(i) * titleLabelW
             }
             titleLabel.frame = CGRect(x: titleLabelX, y: titleLabelY, width: titleLabelW, height: titleLabelH)
@@ -167,21 +176,21 @@ extension YTPageTitleView{
         
         //设置contentsize
         if style.isScrollEnabel {
+            
             scrollview.contentSize = CGSize(width:titleLabels.last!.frame.maxX + style.titleMargin * 0.5 , height: 0)
         }
         //设置缩放
         if style.isNeedScale {
             titleLabels.first?.transform = CGAffineTransform(scaleX: style.maxScale, y: style.maxScale)
         }
-        
     }
-    
 }
 
 //MARK:-  事件监听
 /*外部参数前加下划线*/
-extension YTPageTitleView{
+extension YTPageTitleView {
     @objc func titleLabelClick(_ tapGes: UITapGestureRecognizer) {
+        
         //0.判断目标选择的label有值
         guard  let targetLabel = tapGes.view as? UILabel else{
             return
@@ -297,3 +306,25 @@ extension YTPageTitleView:YTPageContenvViewDelegate{
     }
 }
 
+
+class ScrollPaddingLabel: UILabel {
+    
+    var textInsets: UIEdgeInsets = .zero
+    
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: textInsets))
+    }
+    
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insets = textInsets
+        var rect = super.textRect(forBounds: bounds.inset(by: insets),
+                                  limitedToNumberOfLines: numberOfLines)
+        
+        rect.origin.x -= insets.left
+        rect.origin.y -= insets.top
+        rect.size.width += (insets.left + insets.right)
+        rect.size.height += (insets.top + insets.bottom)
+        return rect
+    }
+    
+}

@@ -13,8 +13,8 @@ class DeviceListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -37,7 +37,10 @@ extension DeviceListVC
         titleStyle.isNeedScale = false
         //*************设置可根据你项目的实际情况进行修改******************
         
-        let titles = [LanguageHelper.getString(key: "deivce_Mobile_phone_frame"),LanguageHelper.getString(key: "deivce_Tool_processing_line"),LanguageHelper.getString(key: "deivce_Video_Surveillance")]
+        let titles = [LanguageHelper.getString(key: "deivce_Mobile_phone_frame"),
+                      LanguageHelper.getString(key: "deivce_Tool_processing_line"),
+                      LanguageHelper.getString(key: "deivce_Video_Surveillance")]
+        
         let contentH = UIScreen.height - kStatusBarH  - kNavigationBarH - kTabBarH - SafeAreaBottomHeight - titleStyle.titleViewHeight
         let titleFrame = CGRect(x: 0,
                                 y: 0,
@@ -67,7 +70,6 @@ extension DeviceListVC
                                        titleStyle: titleStyle)
         //添加你的pageView到主视图上
         view.addSubview(pageView)
-        
     }
     
 }

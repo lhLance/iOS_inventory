@@ -15,8 +15,8 @@ class Alert {
     
     static func show(title: String, message: String? = nil, action: Action? = nil) {
         
-        let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let cancel = UIAlertAction.init(title: "默认", style: UIAlertAction.Style.cancel) { _ in
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let cancel = UIAlertAction(title: LanguageHelper.getString(key: "alert_default"), style: UIAlertAction.Style.cancel) { _ in
             action?()
         }
         alertVC.addAction(cancel)
@@ -25,10 +25,10 @@ class Alert {
     
     static func show(title: String?, message: String?, ok: String, okAction: Action?) {
         
-        let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let cancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: LanguageHelper.getString(key: "alert_cancel"), style: .cancel, handler: nil)
         alertVC.addAction(cancel)
-        let ok = UIAlertAction.init(title: "确定", style: .destructive) { _ in
+        let ok = UIAlertAction(title: LanguageHelper.getString(key: "alert_confirm"), style: .destructive) { _ in
             okAction?()
         }
         alertVC.addAction(ok)

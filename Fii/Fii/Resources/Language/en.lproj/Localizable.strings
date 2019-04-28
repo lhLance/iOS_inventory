@@ -54,8 +54,8 @@
 "me_set_cache_size" = "Cache size";
 "me_set_checkUpdate" = "Check update";
 "me_set_language" = "Language";
-"me_set_click_clear_cache" = "click to clear";
-"me_set_cache_size" = "cache size";
+"me_set_click_clear_cache" = "Click to clear";
+"me_set_cache_size" = "Cache size";
 "me_set_newest_version" = "Currently the latest version";
 "me_set_update_version" = "Current version is lower, please update";
 
@@ -103,7 +103,7 @@
 "deivce_Screw_machine" = "Screw Machine";//螺丝机
 "deivce_Feeder" = "Feeder";//缺陷检测器
 "deivce_Defect_detector" = "Defect detector";//送料机
-"deivce_Mobile_phone_frame" = "Mobile phone frame";//手机中框
+"deivce_Mobile_phone_frame" = "Phone frame line";//手机中框
 "deivce_Tool_processing_line" = "Tool processing line";//刀具加工线
 "deivce_Video_Surveillance" = "Video Surveillance";//视频监控
 
@@ -138,3 +138,7 @@
 "X_axis" = "x axis";//x轴
 "Y_axis" = "y axis";//y轴
 "voice" = "voice";//语音
+
+"alert_default" = "Default";
+"alert_cancel" = "Cancel";
+"alert_confirm" = "Confirm";
