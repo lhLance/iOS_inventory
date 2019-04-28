@@ -28,7 +28,7 @@ extension VideoControlView{
         let lab = UILabel()
         lab.frame = CGRect(x:margin_x + 10.0,
                            y: buttonY,
-                           width: 40,
+                           width: 50,
                            height: 33)
         lab.backgroundColor = UIColor.clear
         lab.text = LanguageHelper.getString(key: "preset")

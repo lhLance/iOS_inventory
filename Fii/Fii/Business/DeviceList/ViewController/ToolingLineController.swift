@@ -68,6 +68,7 @@ class ToolingLineController: UIViewController {
 
 }
 extension ToolingLineController{
+    
     private func setInitData(){
     
     titleAry = [(LanguageHelper.getString(key: "machine_SuperTG"),"devList_tg.png"),
@@ -77,7 +78,7 @@ extension ToolingLineController{
                 (LanguageHelper.getString(key: "atm"),"devList_atm.png"),
                 (LanguageHelper.getString(key: "foxbot2"),"devList_Foxbot5.png")]
         
-        gifImgAry = ["super-TG","ATM","FOXBOT","AGV","ATM","FOXBOT_DJ"]
+        gifImgAry = ["Super-TG","ATM","FOXBOT","AGV","ATM","FOXBOT_DJ"]
     }
     
     

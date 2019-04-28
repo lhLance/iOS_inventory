@@ -37,7 +37,7 @@ class NavControlView: UIView {
     }
     
     override func layoutSubviews() {
-            setupUI()
+        setupUI()
     }
     
 }
@@ -109,36 +109,34 @@ extension NavControlView{
     }
 }
 
-extension NavControlView:YTSegmentControlDelegate{
+extension NavControlView: YTSegmentControlDelegate{
     
     func progressView(){
         
         
-        var titleAry:[String] = [LanguageHelper.getString(key: "aperture"),LanguageHelper.getString(key: "speed"),LanguageHelper.getString(key: "preset")]
+        var titleAry:[String] = [LanguageHelper.getString(key: "aperture"),
+                                 LanguageHelper.getString(key: "speed"),
+                                 LanguageHelper.getString(key: "preset")]
 
-        
         for i in 0..<titleAry.count
         {
             let progressOrigitH = progressOrigit_h + btn_height * CGFloat(i)
             let label = UILabel()
-            label.frame = CGRect(x:margin_x + 10.0,
+            label.frame = CGRect(x: margin_x + 10.0,
                                  y: progressOrigitH,
-                                 width: 40,
+                                 width: 60,
                                  height: 33)
             label.text = titleAry[i]
             label.FontColor(UIFont.PFRegular(14), titleColor).TextAlignment(.center)
             label.added(into: self)
             
             
-            if i == 0
-            {
+            if i == 0 {
                 let itles  = [" ", " "]
                 let selegmentV = YTSegmentControl(frame: CGRect(x: label.frame.maxX + margin_x, y: progressOrigitH, width: self.frame.size.width - label.frame.maxX - 20 - margin_x*2, height: 33), titles: itles)
                 selegmentV.delegate = self as YTSegmentControlDelegate
                 selegmentV.added(into: self)
-            }
-            else
-            {
+            } else {
                 let progressV = YTProgressLineView.init(frame: CGRect.init(x: label.frame.maxX + margin_x, y: progressOrigitH, width: self.frame.size.width - label.frame.maxX*2 - buttonW*2, height: 33), dataArr: dataArray)
                 progressV.tag = 100+i
                 self.addSubview(progressV)

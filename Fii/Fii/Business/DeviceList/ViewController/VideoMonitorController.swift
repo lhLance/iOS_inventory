@@ -64,13 +64,11 @@ class VideoMonitorController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
+        view.backgroundColor = colorWithRGBA(red: 237, green: 237, blue: 242, alpha: 1.0)
         setBackVUpUI()
         setUpNavAndMonitorUI()
-        
-
-        
     }
 
  
@@ -143,11 +141,10 @@ extension VideoMonitorController{
         navControlBtn.setTitle(LanguageHelper.getString(key: "machine_Navigation_console"), for: UIControl.State.normal)
         monitorControlBtn.setTitle(LanguageHelper.getString(key: "machine_Monitoring_console"), for: UIControl.State.normal)
 
-        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
-        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
-        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
-        
+        navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
     }
     
     
@@ -156,21 +153,21 @@ extension VideoMonitorController{
         navCV?.isHidden = false
         videoCV?.isHidden = true
         
-        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
-        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
-        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
     }
+    
     @objc func monitorControlBtnPressend(_ sender: UIButton)
     {
-
         videoCV?.isHidden = false
         navCV?.isHidden = true
         
-        monitorControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
-        navControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
-        monitorControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
-        navControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        monitorControlBtn.setBackgroundColor(normalLabelColor!, for: UIControl.State.normal)
+        navControlBtn.setBackgroundColor(selectedViewColor!, for: UIControl.State.normal)
+        monitorControlBtn.setTitleColor(normalLabelTextColor, for: UIControl.State.normal)
+        navControlBtn.setTitleColor(selectedLabelTextColor, for: UIControl.State.normal)
     }
     
 

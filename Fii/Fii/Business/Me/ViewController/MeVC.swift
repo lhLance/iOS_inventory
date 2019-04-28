@@ -111,7 +111,7 @@ class MeVC: UIViewController {
                     make.height.equalTo(20)
                     make.top.equalTo(avatar.snp.top).offset(8)
                 })
-                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.black).Font(UIFont.PFRegular(15))
+                lbl.Text(UserInfo.shared.userName).TextColor(UIColor.white).Font(UIFont.PFRegular(15))
             })
 
             _ = UILabel().then({ (lbl) in
