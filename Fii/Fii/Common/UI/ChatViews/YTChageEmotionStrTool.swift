@@ -35,14 +35,14 @@ class YTChageEmotionStrTool: NSObject {
         //执行替换过程
         setResultStrUseReplace()
         //返回结果
-        return _resultStr;
+        return _resultStr 
     }
     
     
     
     static func initProperty() {
 
-        let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle();
+        let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle() 
         let attstrDic = [NSAttributedString.Key.foregroundColor:_textColor,NSAttributedString.Key.font:_font,NSAttributedString.Key.paragraphStyle:paragraphStyle] as [NSAttributedString.Key : Any]
         let maxsize:CGSize = CGSize.init(width: screenW, height: screenH)
         let str:String = "/"
@@ -56,7 +56,7 @@ class YTChageEmotionStrTool: NSObject {
     
     static func executeMatch() {
         
-        var regex:NSRegularExpression = NSRegularExpression();
+        var regex:NSRegularExpression = NSRegularExpression() 
         
         do { regex = try NSRegularExpression.init(pattern: checkStr, options: .caseInsensitive)} catch{}
         
@@ -88,7 +88,7 @@ class YTChageEmotionStrTool: NSObject {
             
             let imageName:String? = _emojiImages.object(forKey: tagString) as? String
             
-            if (imageName == nil) {continue};
+            if (imageName == nil) {continue} 
             
             let image:UIImage = UIImage.init(named: imageName!)!
             
@@ -123,7 +123,7 @@ class YTChageEmotionStrTool: NSObject {
             
             result.replaceCharacters(in: range, with: imageStr)
         }
-        _resultStr = result;
+        _resultStr = result 
     }
     
 }

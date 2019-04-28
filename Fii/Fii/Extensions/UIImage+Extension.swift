@@ -153,7 +153,7 @@ extension UIImage {
                 
                 var images = [UIImage]()
                 
-                var duration:TimeInterval = 0.0;
+                var duration:TimeInterval = 0.0 
                 
                 for i:size_t in size_t(0.0) ..< count {
                     
@@ -163,15 +163,15 @@ extension UIImage {
                         
                         continue
                     }
-                    duration = TimeInterval(frameDuration(index: i, source: source)) + duration;
+                    duration = TimeInterval(frameDuration(index: i, source: source)) + duration 
                     
                     images.append(UIImage.init(cgImage: image!))
                 }
                 if (duration == 0.0) {
                     
-                    duration = Double(1.0 / 10.0) * Double(count);
+                    duration = Double(1.0 / 10.0) * Double(count) 
                 }
-                animatedImage = UIImage.animatedImage(with: images, duration: 2.0);
+                animatedImage = UIImage.animatedImage(with: images, duration: 2.0) 
             }
             
             return animatedImage!
@@ -185,7 +185,7 @@ extension UIImage {
     static func frameDuration(index:Int,source:CGImageSource) -> Float {
         
         
-        var frameDuration:Float = 0.1;
+        var frameDuration:Float = 0.1 
         
         let cfFrameProperties:CFDictionary = CGImageSourceCopyPropertiesAtIndex(source, index, nil)!
         
@@ -209,7 +209,7 @@ extension UIImage {
             
             if frameDuration < 0.011{
                 
-                frameDuration = 0.100;
+                frameDuration = 0.100 
             }
         }
         return frameDuration

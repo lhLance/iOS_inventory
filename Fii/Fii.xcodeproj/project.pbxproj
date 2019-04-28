@@ -20,6 +20,8 @@
 		04A8C979224BA0EE001D6987 /* PingFang_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */; };
 		04A8C97A224BA0EE001D6987 /* PingFang_ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */; };
 		04A8C97B224BA0EE001D6987 /* PingFang_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */; };
+		04C898E22275834E008DD242 /* FiiPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C898E12275834E008DD242 /* FiiPlayerView.swift */; };
+		04C898E4227583A1008DD242 /* RealtimePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C898E3227583A1008DD242 /* RealtimePlayerVC.swift */; };
 		04F39150225391320014604B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3914F225391320014604B /* UserInfoVC.swift */; };
 		04F9C016223A785C00C1859C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C015223A785C00C1859C /* LoginVC.swift */; };
 		04F9C018223A788B00C1859C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C017223A788B00C1859C /* RegisterVC.swift */; };
@@ -82,7 +84,6 @@
 		34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D78224CA3CB0059E19A /* UIImage+SwiftyGif.swift */; };
 		34F38D7E224CA3CB0059E19A /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D79224CA3CB0059E19A /* UIImageView+SwiftyGif.swift */; };
 		34F38D81224CABD10059E19A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D80224CABD10059E19A /* Common.swift */; };
-		34F38D83224CADB50059E19A /* RealTimelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D82224CADB50059E19A /* RealTimelController.swift */; };
 		34F38D86224CAE210059E19A /* RealTimeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D84224CAE210059E19A /* RealTimeCollectionCell.swift */; };
 		34F38D87224CAE210059E19A /* RealTimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F38D85224CAE210059E19A /* RealTimeCollectionCell.xib */; };
 		34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */; };
@@ -183,6 +184,8 @@
 		04A8C973224BA0ED001D6987 /* PingFang_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Medium.ttf; sourceTree = "<group>"; };
 		04A8C974224BA0EE001D6987 /* PingFang_ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_ExtraLight.ttf; sourceTree = "<group>"; };
 		04A8C975224BA0EE001D6987 /* PingFang_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang_Bold.ttf; sourceTree = "<group>"; };
+		04C898E12275834E008DD242 /* FiiPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiPlayerView.swift; sourceTree = "<group>"; };
+		04C898E3227583A1008DD242 /* RealtimePlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimePlayerVC.swift; sourceTree = "<group>"; };
 		04F3914F225391320014604B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		04F9C015223A785C00C1859C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04F9C017223A788B00C1859C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -248,7 +251,6 @@
 		34F38D78224CA3CB0059E19A /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		34F38D79224CA3CB0059E19A /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		34F38D80224CABD10059E19A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		34F38D82224CADB50059E19A /* RealTimelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimelController.swift; sourceTree = "<group>"; };
 		34F38D84224CAE210059E19A /* RealTimeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeCollectionCell.swift; sourceTree = "<group>"; };
 		34F38D85224CAE210059E19A /* RealTimeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealTimeCollectionCell.xib; sourceTree = "<group>"; };
 		34F38D88224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloumnFirstCategorTableViewCell.swift; sourceTree = "<group>"; };
@@ -970,6 +972,7 @@
 			children = (
 				34F38D84224CAE210059E19A /* RealTimeCollectionCell.swift */,
 				34F38D85224CAE210059E19A /* RealTimeCollectionCell.xib */,
+				04C898E12275834E008DD242 /* FiiPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -977,8 +980,8 @@
 		CFAEC19822374CC400F38B82 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				34F38D82224CADB50059E19A /* RealTimelController.swift */,
 				CF8C0EE62236496300DF0D99 /* RealTimeVC.swift */,
+				04C898E3227583A1008DD242 /* RealtimePlayerVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1306,6 +1309,7 @@
 				CF93DF9E224B0D5400B26509 /* NumberOfPartsView.swift in Sources */,
 				CF7CA04B2223D376005CE8A3 /* UIImageView+Extension.swift in Sources */,
 				34F38D71224CA3380059E19A /* UIImageView-SquareBorder.swift in Sources */,
+				04C898E22275834E008DD242 /* FiiPlayerView.swift in Sources */,
 				CF7CA0562223D671005CE8A3 /* Date+Extension.swift in Sources */,
 				CF8C0EE72236496300DF0D99 /* RealTimeVC.swift in Sources */,
 				042EE59D225CDA95008159F9 /* EquipmentWorkRatioAnalysisView.swift in Sources */,
@@ -1317,7 +1321,6 @@
 				34F38D6D224CA3380059E19A /* CollectionHeadView.swift in Sources */,
 				CF4B70A2223683FF00F3260F /* FiiTabBarController.swift in Sources */,
 				CF7CCEEF2241DFA900BBA836 /* HelpVC.swift in Sources */,
-				34F38D83224CADB50059E19A /* RealTimelController.swift in Sources */,
 				CF8EF53B2245BA85006BAFD1 /* UIWindow+Extension.swift in Sources */,
 				34F38D6C224CA3380059E19A /* ToolingLineController.swift in Sources */,
 				CF8C0EDF223648ED00DF0D99 /* HomeVC.swift in Sources */,
@@ -1346,6 +1349,7 @@
 				CF76EEED2238D56400182867 /* OpenScreenView.swift in Sources */,
 				34F38D6A224CA3380059E19A /* DeviceDetailController.swift in Sources */,
 				342B9AE52272B4CE003F3AB1 /* YTChatCellFrame.swift in Sources */,
+				04C898E4227583A1008DD242 /* RealtimePlayerVC.swift in Sources */,
 				34F38D7D224CA3CB0059E19A /* UIImage+SwiftyGif.swift in Sources */,
 				34F38D89224CAE4F0059E19A /* CloumnFirstCategorTableViewCell.swift in Sources */,
 				3404A37D2265CE0900EEE390 /* YTPageView.swift in Sources */,

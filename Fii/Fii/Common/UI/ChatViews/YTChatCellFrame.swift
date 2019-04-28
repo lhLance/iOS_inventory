@@ -55,12 +55,12 @@ class YTChatCellFrame: NSObject {
             let textSize:CGSize = textAtt.boundingRect(with: maxsize, options: .usesLineFragmentOrigin, context: nil).size
             let emojiSize:CGSize = CGSize.init(width: textSize.width + padding * 2, height: textSize.height + padding * 2)
             textFrame = type ? CGRect.init(x: padding * 2 + iconFrameW, y: iconFrameY + iconFrameH * 0.5, width: emojiSize.width, height: emojiSize.height) : CGRect.init(x: screenW - padding * 2 - iconFrameW - emojiSize.width, y: iconFrameY + iconFrameH * 0.5, width: emojiSize.width, height: emojiSize.height)
-            cellHeight = textFrame.maxY + padding;
+            cellHeight = textFrame.maxY + padding 
         }else if message?.messageType == 1 {
         
-            imageViewFrame = type ? CGRect.init(x: padding * 2 + iconFrameW, y: iconFrameY + iconFrameH * 0.5, width: 100, height: 100) : CGRect.init(x: screenW - padding * 2 - iconFrameW - 100, y: iconFrameY + iconFrameH * 0.5, width: 100, height: 100);
+            imageViewFrame = type ? CGRect.init(x: padding * 2 + iconFrameW, y: iconFrameY + iconFrameH * 0.5, width: 100, height: 100) : CGRect.init(x: screenW - padding * 2 - iconFrameW - 100, y: iconFrameY + iconFrameH * 0.5, width: 100, height: 100) 
             
-            cellHeight = imageViewFrame.maxY + padding;
+            cellHeight = imageViewFrame.maxY + padding 
             
         }else {
     

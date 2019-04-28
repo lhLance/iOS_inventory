@@ -94,9 +94,9 @@ class YTChatMessageCell: UITableViewCell {
                 
                 let data = NSData.init(contentsOf: NSURL.init(fileURLWithPath: path) as URL)
                 
-                let animationImage = UIImage.animationImageWithData(data: data);
+                let animationImage = UIImage.animationImageWithData(data: data) 
              
-                gifimageView.image =  animationImage;
+                gifimageView.image =  animationImage 
                 
                 gifimageView.frame = (chatCellFrame?.imageViewFrame)!
                 

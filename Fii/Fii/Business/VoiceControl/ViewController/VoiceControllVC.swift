@@ -24,8 +24,8 @@ class VoiceControllVC: UIViewController {
     var chineseDicPath:String = ""
     var errString:String! = ""
     var speechLab:UILabel!
-    var longPressGesture : UILongPressGestureRecognizer!;
-    var sayStr:String?;
+    var longPressGesture : UILongPressGestureRecognizer! 
+    var sayStr:String? 
     
     
     var dataSource:NSMutableArray = NSMutableArray()
@@ -37,7 +37,7 @@ class VoiceControllVC: UIViewController {
         createTipsData()
         initSomething()
         initChatTableView()
-        setUpPressend();
+        setUpPressend() 
         setUpUI()
         
     }
@@ -59,7 +59,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     private func  setUpPressend(){
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
-        tabBarController?.tabBar.addGestureRecognizer(longPressGesture);
+        tabBarController?.tabBar.addGestureRecognizer(longPressGesture) 
     
     }
     
@@ -86,8 +86,8 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     private func setUpUI(){
         
 
-        let wigW:CGFloat = CGFloat((self.view.width) - btnWidth)/2;
-        let wigH:CGFloat = CGFloat((self.view.height - btnHeight - 5 - SafeAreaBottomHeight - kTabBarH));
+        let wigW:CGFloat = CGFloat((self.view.width) - btnWidth)/2 
+        let wigH:CGFloat = CGFloat((self.view.height - btnHeight - 5 - SafeAreaBottomHeight - kTabBarH)) 
         startBtn = UIButton(frame: CGRect(x: wigW,
                                                y: wigH,
                                                width: btnWidth,
@@ -140,7 +140,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
             print("\(#function) + \(#file)")
             self.startBtn.setTitle(LanguageHelper.getString(key: "start"), for: UIControl.State.normal)
             self.pocketsphinx.stopListening()
-            sendMessage();
+            sendMessage() 
             
         }
         self.startBtn.isSelected = !self.startBtn.isSelected
@@ -159,7 +159,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         print("接收到的语音是 \(String(describing: hypothesis)) 分数为 \(String(describing: recognitionScore)) ID为 \(String(describing: utteranceID))")
-        sayStr = hypothesis;
+        sayStr = hypothesis 
         
 
         
@@ -203,7 +203,7 @@ extension VoiceControllVC:OEEventsObserverDelegate{
     
     func pocketsphinxDidStopListening() {
         print("\(#function)已经停止监听")
-        sayStr = nil;
+        sayStr = nil 
     }
     
     func pocketsphinxDidSuspendRecognition() {
@@ -246,7 +246,7 @@ extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
                 let tipStr = "\(LanguageHelper.getString(key: "voice_tips_word"))  \n \(LanguageHelper.getString(key: "voice_tips_Key_Word"))"
                 message.currentUserType = userType.me
                 message.userName = " "
-                message.messageType = 0;
+                message.messageType = 0 
                 messageText = tipStr
             }
             message.message = messageText
@@ -313,13 +313,13 @@ extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
         
         let chatCellFrame:YTChatCellFrame = dataSource.object(at: indexPath.row) as! YTChatCellFrame
         
-        return chatCellFrame.cellHeight;
+        return chatCellFrame.cellHeight 
     }
     
     //重设tabbleview的frame并根据是否在底部来执行滚动到底部的动画（不在底部就不执行，在底部才执行）
     func resetChatList() {
         
-        let offSetY:CGFloat = tableView.contentSize.height - tableView.height;
+        let offSetY:CGFloat = tableView.contentSize.height - tableView.height 
         //判断是否滚动到底部，会有一个误差值
         if tableView.contentOffset.y > offSetY - 5 || tableView.contentOffset.y > offSetY + 5 {
             ScrollTableViewToBottom()
@@ -341,7 +341,7 @@ extension VoiceControllVC :UITableViewDelegate,UITableViewDataSource{
             messageText = LanguageHelper.getString(key: "voice_tips_word_again") + "\n" + LanguageHelper.getString(key: "voice_tips_Key_Word")
             message.currentUserType = userType.me
             message.userName = " "
-            message.messageType = 0;
+            message.messageType = 0 
         }
         else
         {

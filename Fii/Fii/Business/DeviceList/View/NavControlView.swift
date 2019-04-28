@@ -145,14 +145,14 @@ extension NavControlView: YTSegmentControlDelegate{
                 preStepBtn.tag = 200+i
                 preStepBtn.setBackgroundImage(UIImage(named: "virtual_btn_jian"), for: UIControl.State.normal)
                 preStepBtn.frame = CGRect(x: progressV.frame.maxX + 15, y: progressOrigitH, width: buttonW, height: 33)
-                preStepBtn.addTarget(self, action: #selector(preStep), for: .touchUpInside);
+                preStepBtn.addTarget(self, action: #selector(preStep), for: .touchUpInside) 
                 self.addSubview(preStepBtn)
                 
                 let nextStepBtn = UIButton()
                 nextStepBtn.tag = 300+i
                 nextStepBtn.setBackgroundImage(UIImage(named: "virtual_btn_yinliangjia"), for: UIControl.State.normal)
                 nextStepBtn.frame = CGRect(x: preStepBtn.frame.maxX + 10, y: progressOrigitH, width: buttonW, height: 33)
-                nextStepBtn.addTarget(self, action: #selector(nextStep), for: .touchUpInside);
+                nextStepBtn.addTarget(self, action: #selector(nextStep), for: .touchUpInside) 
                 self.addSubview(nextStepBtn)
             }
         }
@@ -163,7 +163,7 @@ extension NavControlView: YTSegmentControlDelegate{
     //1、没有标签的进度条 上一步
     @objc func preStep(_ sender: UIButton) {
         
-        let tag = sender.tag - 100;
+        let tag = sender.tag - 100 
         let progressV:YTProgressLineView = self.TagView(tag)  as! YTProgressLineView
         guard progressV.index! >  0  else {
             return
@@ -174,7 +174,7 @@ extension NavControlView: YTSegmentControlDelegate{
     //1、没有标签的进度条 下一步
     @objc func nextStep(_ sender: UIButton)
     {
-        let tag = sender.tag - 200;
+        let tag = sender.tag - 200 
         let progressV:YTProgressLineView = self.TagView(tag)  as! YTProgressLineView
         guard  progressV.index! < self.dataArray.count else {
             return

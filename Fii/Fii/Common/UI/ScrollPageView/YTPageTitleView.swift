@@ -202,12 +202,12 @@ extension YTPageTitleView {
         
         print("点击了第\(targetLabel.tag)个标题 currentIndex = \(currentIndex)")
         //2.让新的label选中
-        let sourceLabel = titleLabels[currentIndex];
-        sourceLabel.textColor = style.normalColor;
-        targetLabel.textColor = style.selectColor;
+        let sourceLabel = titleLabels[currentIndex] 
+        sourceLabel.textColor = style.normalColor 
+        targetLabel.textColor = style.selectColor 
         
         //3.赋值新的currentIndex
-        currentIndex = targetLabel.tag;
+        currentIndex = targetLabel.tag 
         //4.调整label位置点击居中
         titleLabelSelected()
         //5.通知代理
@@ -249,7 +249,7 @@ extension YTPageTitleView {
     fileprivate  func titleLabelSelected(){
         guard style.isScrollEnabel else {return}
         let targetLabel = titleLabels[currentIndex]
-        var offsetX = targetLabel.center.x - scrollview.bounds.size.width * 0.5;
+        var offsetX = targetLabel.center.x - scrollview.bounds.size.width * 0.5 
         if offsetX < 0
         {
             offsetX = 0
@@ -277,8 +277,8 @@ extension YTPageTitleView:YTPageContenvViewDelegate{
         let targetLabel = titleLabels[targetIndex]
         //2.改变颜色
         if progress >= 0.5 && progress <= 1.0{
-            sourceLabel.textColor = style.normalColor;
-            targetLabel.textColor = style.selectColor;
+            sourceLabel.textColor = style.normalColor 
+            targetLabel.textColor = style.selectColor 
         }
         //3.计算bottomLIne的width变化
         let detalWidth = targetLabel.frame.width - sourceLabel.frame.width

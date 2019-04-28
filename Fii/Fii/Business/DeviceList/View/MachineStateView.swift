@@ -59,7 +59,7 @@ extension MachineStateView{
             {
                 let value:(String,String) = tuple as! (String,String)
                 
-                let titleLab = UILabel();
+                let titleLab = UILabel() 
                 titleLab.frame = CGRect(x: marginV + (labWidth + marginV) * CGFloat(index) , y: 0, width: labWidth, height: labHight)
                 titleLab.backgroundColor = UIColor.clear
                 titleLab.textAlignment = NSTextAlignment.center

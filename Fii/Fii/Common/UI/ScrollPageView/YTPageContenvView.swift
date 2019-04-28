@@ -92,7 +92,7 @@ extension YTPageContenvView:UICollectionViewDataSource{
             subView.removeFromSuperview()
         }
         //3.把外界传进来的自控制器上的View添加到cell.contenView上面去
-        let childVc = childVs[indexPath.row];
+        let childVc = childVs[indexPath.row] 
         cell.contentView.addSubview(childVc.view)
         
         return cell
@@ -139,7 +139,7 @@ extension YTPageContenvView:UICollectionViewDelegate{
             progress = (contentOffsetX - startOffsetX) / collectionW
             if (contentOffsetX - startOffsetX) == collectionW
             {
-                targetIndex = sourceIndex;
+                targetIndex = sourceIndex 
             }
         }else                                //右滑
         {

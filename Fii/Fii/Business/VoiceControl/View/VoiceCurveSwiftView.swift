@@ -15,11 +15,11 @@ import UIKit
 //    var displayLink:CADisplayLink?
 //    var blurView:UIVisualEffectView?
 //
-//    var  layer1:CAShapeLayer?;
-//    var  layer2:CAShapeLayer?;
-//    var  layer3:CAShapeLayer?;
-//    var  layer4:CAShapeLayer?;
-//    var  layer5:CAShapeLayer?;
+//    var  layer1:CAShapeLayer? 
+//    var  layer2:CAShapeLayer? 
+//    var  layer3:CAShapeLayer? 
+//    var  layer4:CAShapeLayer? 
+//    var  layer5:CAShapeLayer? 
 //
 //    init(frame: CGRect,superV:UIView) {
 //        super.init(frame: frame)
@@ -54,36 +54,36 @@ import UIKit
 //
 //        //layer1
 //        layer1 = CAShapeLayer()
-//        layer1?.fillColor = UIColor.yellow.cgColor;
+//        layer1?.fillColor = UIColor.yellow.cgColor 
 //        layer1?.opacity = 0.7
 //        blurView?.layer.addSublayer(layer1!)
 //
 //        //layer2
 //        layer2 = CAShapeLayer()
-//        layer2?.fillColor = UIColor.magenta.cgColor;
+//        layer2?.fillColor = UIColor.magenta.cgColor 
 //        layer2?.opacity = 0.7
 //        blurView?.layer.addSublayer(layer2!)
 //
 //        //layer3
 //        layer3 = CAShapeLayer()
-//        layer3?.fillColor = UIColor.orange.cgColor;
+//        layer3?.fillColor = UIColor.orange.cgColor 
 //        layer3?.opacity = 0.7
 //        blurView?.layer.addSublayer(layer3!)
 //
 //        //layer4
 //        layer4 = CAShapeLayer()
-//        layer4?.fillColor = UIColor.red.cgColor;
+//        layer4?.fillColor = UIColor.red.cgColor 
 //        layer4?.opacity = 0.7
 //        blurView?.layer.addSublayer(layer4!)
 //
 //        //layer5
 //        layer5 = CAShapeLayer()
-//        layer5?.fillColor = colorWithRGBA(red: 0, green: 184, blue: 255, alpha: 1).cgColor;
+//        layer5?.fillColor = colorWithRGBA(red: 0, green: 184, blue: 255, alpha: 1).cgColor 
 //        layer5?.opacity = 0.7
 //        blurView?.layer.addSublayer(layer5!)
 //
 //        //the label -- 正在聆听
-//        let listeningLabel = UILabel();
+//        let listeningLabel = UILabel() 
 //        listeningLabel.frame = CGRect(x: UIScreen.width/2 - 320/2, y: 100, width: 320, height: 30)
 //        listeningLabel.textAlignment = NSTextAlignment.center
 //        listeningLabel.font = UIFont.PFRegular(30)
@@ -102,7 +102,7 @@ import UIKit
 //            AVNumberOfChannelsKey : 1]
 //
 //        if (recorder == nil) {
-//            return;
+//            return 
 //        }
 //
 //        if (recorder?.isRecording)!{
@@ -120,7 +120,7 @@ import UIKit
 //        } catch {
 //            print(error)
 //        }
-//        let url:NSURL = NSURL(fileURLWithPath: fullPathAtCache(flieName:"record.wav")!);
+//        let url:NSURL = NSURL(fileURLWithPath: fullPathAtCache(flieName:"record.wav")!) 
 //        let existedData:NSData?
 //        do{
 //            try existedData = NSData(contentsOf: url as URL, options: NSData.ReadingOptions.mappedRead)
@@ -129,18 +129,18 @@ import UIKit
 //                do{
 //                    try tempFm.removeItem(atPath: url.path!)
 //                }catch{
-//                    print(error);
+//                    print(error) 
 //                }
 //            }
 //        }catch{
-//            print(error);
+//            print(error) 
 //        }
 //        do{
 //            try recorder = AVAudioRecorder.init(url: url as URL, settings: recordSettings as! [String : Any])
 //            recorder?.isMeteringEnabled = true
 //            recorder?.delegate = (self as AVAudioRecorderDelegate)
-//            recorder?.record();
-//            recorder?.prepareToRecord();
+//            recorder?.record() 
+//            recorder?.prepareToRecord() 
 //        }catch{
 //
 //        }
@@ -150,7 +150,7 @@ import UIKit
 //
 //
 //    @objc func drawRealTimeCurve(dis:CADisplayLink){
-//        recorder?.updateMeters();
+//        recorder?.updateMeters() 
 //        print("volume:\(String(describing: recorder?.averagePower(forChannel:0)))")
 //        //------重绘函数-------
 //        let volume:CGFloat =  CGFloat((recorder?.averagePower(forChannel: 0))!)
@@ -180,7 +180,7 @@ import UIKit
 //
 //    private func fullPathAtCache(flieName:String)->String?{
 //        let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
-//        let fm:FileManager = FileManager.default;
+//        let fm:FileManager = FileManager.default 
 //        if !fm.fileExists(atPath: path!)
 //        {
 //            do{
@@ -233,7 +233,7 @@ import UIKit
 //        }) { (true) in
 //            self.removeFromSuperview()
 //            self.displayLink?.invalidate()
-//            self.displayLink = nil;
+//            self.displayLink = nil 
 //        }
 //    }
 //
